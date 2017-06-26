@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>编辑我的信息</title>
+<style>
+.all {
+	width:500px;
+	height:400px;
+	border:#000 1px solid;
+}
+.head {
+	padding-top:30px;
+	width:500px;
+	text-align:center;
+}
+.item {
+	padding-left:30px;
+	padding-right:30px;
+	width:440px;
+	margin-top:30px;
+}
+.tj{
+	border-radius:4px 4px 4px 4px;
+	text-decoration:none;
+	float:right;
+	margin-right:50px;
+	text-align:center;
+	border:#000 1px solid;
+}
+
+</style>
+</head>
+<body>
+<div class="all">
+  <form action="" method="post">
+  <div class="head"> <b>基本信息</b> </div>
+  <div class="item"> <span class="label">昵称：</span>
+    <input type="text" value="" name="user.userName" id="nickName" maxlength="20" class="itxt" >
+  </div>
+  <div class="item"> <span class="label">邮箱：</span>
+    <input type="text" value="" id="user.email"  maxlength="20" class="itxt" >
+  </div>
+  <div class="item"> <span class="label">真实姓名：</span>
+    <input type="text" value="" id="user.realName"  maxlength="20" class="itxt" >
+  </div>
+  <div  class="item"> <span class="label">地址：</span>
+    <select id="province" class="selt mr5"  value="1">
+      <option value="1">北京</option>
+      <option value="2">上海</option>
+      <option value="3">天津</option>
+      <option value="4">重庆</option>
+      <option value="5">河北</option>
+      <option value="6">山西</option>
+      <option value="7">河南</option>
+      <option value="8">辽宁</option>
+      <option value="9">吉林</option>
+      <option value="10">黑龙江</option>
+      <option value="11">内蒙古</option>
+      <option value="12">江苏</option>
+      <option value="13">山东</option>
+      <option value="14">安徽</option>
+      <option value="15">浙江</option>
+      <option value="16">福建</option>
+      <option value="17">湖北</option>
+      <option value="18">湖南</option>
+      <option value="19">广东</option>
+      <option value="20">广西</option>
+      <option value="21">江西</option>
+      <option value="22">四川</option>
+      <option value="23">海南</option>
+      <option value="24">贵州</option>
+      <option value="25">云南</option>
+      <option value="26">西藏</option>
+      <option value="27">陕西</option>
+      <option value="28">甘肃</option>
+      <option value="29">青海</option>
+      <option value="30">宁夏</option>
+      <option value="31">新疆</option>
+      <option value="32">台湾</option>
+      <option value="42">香港</option>
+      <option value="43">澳门</option>
+      <option value="84">海外</option>
+    </select>
+    <select id="city" class="selt mr5" name="userVo.city" value="72">
+      <option value="72">朝阳区</option>
+      <option value="2800">海淀区</option>
+      <option value="2801">西城区</option>
+      <option value="2802">东城区</option>
+      <option value="2803">崇文区</option>
+      <option value="2804">宣武区</option>
+      <option value="2805">丰台区</option>
+      <option value="2806">石景山区</option>
+      <option value="2807">门头沟</option>
+      <option value="2808">房山区</option>
+      <option value="2809">通州区</option>
+      <option value="2810">大兴区</option>
+      <option value="2812">顺义区</option>
+      <option value="2814">怀柔区</option>
+      <option value="2816">密云区</option>
+      <option value="2901">昌平区</option>
+      <option value="2953">平谷区</option>
+      <option value="3065">延庆县</option>
+    </select>
+    <select id="county" class="selt mr5"  value="2799">
+      <option value="2799">三环以内</option>
+      <option value="2819">三环到四环之间</option>
+      <option value="2839">四环到五环之间</option>
+      <option value="2840">五环到六环之间</option>
+      <option value="4137">管庄</option>
+      <option value="4139">北苑</option>
+      <option value="4211">定福庄</option>
+      <option value="4212">北京经济技术开发区</option>
+    </select>
+  </div>
+  <div class="item"> <span class="label">街道：</span>
+    <input type="text" value="" id="address" name="userVo.address"  >
+  </div>
+  <div class="item"> <input type="submit" class="tj" value="提交"/> </div>
+  </form>
+</div>
+</body>
+</html>

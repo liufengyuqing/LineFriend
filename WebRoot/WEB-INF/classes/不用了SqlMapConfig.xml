@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" 
+	"http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+
+	<!-- 配置数据库的参数 -->
+<configuration>
+
+	<environments default="mysql">
+		<environment id="mysql">
+			<!-- 事务类型 ： 和JDBC相同 (手动操作事务) -->
+			<transactionManager type="JDBC" />
+
+			<!-- 将数据库的链接参数写到dataSource中 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/ls" />
+				<property name="username" value="root" />
+				<property name="password" value="" />
+				<property name="poolMaximumActiveConnections" value="20" />
+				<!--
+					最大连接数
+				-->
+				<property name="poolMaximumIdleConnections" value="5" />
+				<!--
+					最大空闲数
+				-->
+			</dataSource>
+		</environment>
+
+	</environments>
+
+	<!-- 定义EmpMapper文件的位置 -->
+	<!-- SqlMapConfig.xml文件位置在java代码中 -->
+	<mappers>
+		<mapper resource="cn/edu/nwsuaf/entity/UserMapper.xml" />
+	</mappers>
+
+</configuration>

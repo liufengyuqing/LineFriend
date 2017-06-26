@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+body{   
+    width: 100%;   
+    height: 100%;   
+    font-family: 'Open Sans',sans-serif;   
+    margin: 0;   
+    background-image: url(../homeImages/6.jpg);
+   /*  background-color: #4A374A; */   
+  
+}   
+*{
+	margin: 0px;
+	padding:0px;
+	box-sizing: border-box;
+}
+
+#head{
+	width: 100%;
+	
+	/* background-color: pink;  */
+	font-size: 28px;
+}
+.nav li{
+	height: 60px;
+	padding-top:22px; 
+}
+.nav{
+	background-image: url(../homeImages/6.jpg);
+}
+.tab-pane{
+	background-image: url(../homeImages/6.jpg);
+}
+#width{
+	width: 100%;
+	 
+}
+
+#left{
+	width: 20%;
+	height: 900px; 
+	float: left;
+	margin-top: 65px;
+	border-right: 1px #DDDDDD solid;
+	/* background-color: green; */
+	background-image:url(../homeImages/left.jpg); 	
+	background-repeat: no-repeat;
+}
+#right{
+	width: 80%;
+	height: 900px; 
+	float: left;
+	background-image:url(../homeImages/7.jpg); 
+	background-repeat: no-repeat;
+}
+#left ul{
+	list-style: none;
+	/* box-sizing: border-box; */
+	text-align: center;
+	padding-top: 60px;
+	
+}
+#page{
+	margin:0px;
+
+}
+#page a{
+	display: inline-block; 
+	width: 100%;
+	margin: 25px auto; 
+
+}
+#page li{
+	height: 75px;
+	font-size: 22px;
+	font-family: "微软雅黑";
+	color: #000;
+	background-color: #FBFBFB;
+	border: 1px #D4D4D4 solid;
+}
+
+#formSy{
+	display: inline-block;
+	float: left;
+	margin-left:10px;
+
+}
+.selectSy{
+	display: inline-block;
+	float: left;
+	margin-left:350px; 
+	margin-top: 5px;
+}
+

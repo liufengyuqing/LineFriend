@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <!-- 与MyBatisDemo02相比多了一个接口namespace指定接口位置 -->
+<mapper namespace="cn.edu.nwsuaf.dao.CartDao">
+<!-- 加入购物车 -->
+	
+	
+	<insert id="addCart" parameterType="cn.edu.nwsuaf.entity.Cart" >
+		insert into cart (user_id,product_id,product_count) values(#{user.id},#{product.id},#{product_count})
+	</insert>
+	
+	<!--<select id="findAllProduct" parameterType="int" resultType="">
+	
+	
+	select * from cart jion product on cart.product_id = product.id
+	 where user_id = #{user_id}
+	</select>
+	
+	
+	
+	
+	
+--></mapper>
