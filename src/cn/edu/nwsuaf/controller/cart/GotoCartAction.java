@@ -37,18 +37,22 @@ public class GotoCartAction {
 		
 		CartDao dao = ctx.getBean(CartDao.class);
 		ProductDao productDao = ctx.getBean(ProductDao.class);
-		UserDao  userDao = ctx.getBean(UserDao.class);
+		//UserDao  userDao = ctx.getBean(UserDao.class);
 		
 		//获取商品
 		String pid = request.getParameter("id");
 		System.out.println("获取商品 +"+pid);
 		Product p = productDao.findProductById(Integer.parseInt(pid));
-		//获取用户
+		
+		
+		//获取用户id
 		HttpSession session = request.getSession();
 		Integer uid = (Integer) session.getAttribute("userid");//获取userid
 		
-		System.out.println("获取用户+"+uid);
-		User u = userDao.findUserById(uid);
+		//System.out.println("获取用户+"+uid);
+		//User u = userDao.findUserById(uid);
+		
+		
 		//获取商品数量
 		String count = request.getParameter("num");
 		System.out.println("获取商品数量+"+count);
@@ -57,7 +61,7 @@ public class GotoCartAction {
 		//创建购物车
 		Cart cart = new Cart();
 		cart.setProduct(p);
-		cart.setUser(u);
+		cart.setUser_id(uid);
 		cart.setProduct_count(Integer.parseInt(count));
 		System.out.println(cart.toString());
 		//加入数据库购物车表

@@ -16,39 +16,10 @@ public class UserAddress {
 	private String phone;
 	private String postal_code;//邮编
 	
-	/**
-	 * 
-	 */
 	public UserAddress() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
-	/**
-	 * @param id
-	 * @param user
-	 * @param receiveName
-	 * @param province
-	 * @param city
-	 * @param district
-	 * @param fullAddress
-	 * @param phone
-	 * @param postalCode
-	 */
-	public UserAddress(int id, User user, String receiveName, String province,
-			String city, String district, String fullAddress, String phone,
-			String postalCode) {
-		super();
-		this.id = id;
-		this.user = user;
-		receive_name = receiveName;
-		this.province = province;
-		this.city = city;
-		this.district = district;
-		full_address = fullAddress;
-		this.phone = phone;
-		postal_code = postalCode;
-	}
 	@Override
 	public String toString() {
 		return "UserAddress [city=" + city + ", district=" + district

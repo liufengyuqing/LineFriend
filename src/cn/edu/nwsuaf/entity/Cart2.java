@@ -13,33 +13,42 @@ import java.util.List;
  */
 public class Cart2 {
 	private int id;
-	private User user;
-	private List<CartItem> cartDetails;//一对多 一个用户对一个购物车，一个购物车对应多个购物项目
+	private int user_id;
+	private int product_count;
+	private List<Product> prodcutList;//一对多 一个用户对一个购物车，一个购物车对应多个购物项目
+	
 	
 	@Override
 	public String toString() {
-		return "Cart2 [cartDetails=" + cartDetails + ", id=" + id + ", user="
-				+ user + "]";
+		return "Cart2 [count=" + product_count + ", id=" + id + ", prodcutList="
+				+ prodcutList + ", user_id=" + user_id + "]";
 	}
+	
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public User getUser() {
-		return user;
+	public int getUser_id() {
+		return user_id;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setUser_id(int userId) {
+		user_id = userId;
 	}
-	public List<CartItem> getCartDetails() {
-		return cartDetails;
+	public int getCount() {
+		return product_count;
 	}
-	public void setCartDetails(List<CartItem> cartDetails) {
-		this.cartDetails = cartDetails;
+	public void setCount(int count) {
+		this.product_count = count;
 	}
-	
+	public List<Product> getProdcutList() {
+		return prodcutList;
+	}
+	public void setProdcutList(List<Product> prodcutList) {
+		this.prodcutList = prodcutList;
+	}
 	
 	
 	

@@ -51,7 +51,7 @@
 	height: 30px;
 	width: 100px;
 }
-/* 面板二 */
+
 table img{
 	height: 100px;
 	width: 130px;
@@ -70,7 +70,8 @@ table img{
 }
 
 #seleNewimg{
-	margin-left: 500px;
+	margin-left:500px;
 	margin-top:-50px; 
 }
+
 

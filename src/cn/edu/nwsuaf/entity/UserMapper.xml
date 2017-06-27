@@ -75,5 +75,20 @@
 	<select id="findAllUser" resultType="cn.edu.nwsuaf.entity.User">
 		select * from user
 	</select>
+	<select id="findUserBySex" parameterType="String" resultType="cn.edu.nwsuaf.entity.User">
+		select * from user where sex=#{sex}
+	</select>
+	<select id="findUserByNickName" parameterType="String" resultType="cn.edu.nwsuaf.entity.User">
+		select * from user where nickName=#{nickName}
+	</select>
+	
+	<select id="findUserByEmail" parameterType="String" resultType="cn.edu.nwsuaf.entity.User">
+		select * from user where email=#{email}
+	</select>
+	
+	<select id="findUserById2" parameterType="int" resultType="cn.edu.nwsuaf.entity.User">
+		select * from user where id=#{id}
+	</select>
+	
 	
 </mapper>

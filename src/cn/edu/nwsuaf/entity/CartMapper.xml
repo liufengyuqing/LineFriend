@@ -7,18 +7,42 @@
 	
 	
 	<insert id="addCart" parameterType="cn.edu.nwsuaf.entity.Cart" >
-		insert into cart (user_id,product_id,product_count) values(#{user.id},#{product.id},#{product_count})
+		insert into cart (user_id,product_id,product_count) values(#{user_id},#{product.id},#{product_count})
 	</insert>
 	
-	<!--<select id="findAllProduct" parameterType="int" resultType="">
 	
-	
-	select * from cart jion product on cart.product_id = product.id
+	<!-- 购物车中对应多个商品，一个对多关联 -->
+	<select id="findAllProductByUserId" parameterType="int" resultMap="cartMapperProduct" >
+	  select * from cart where user_id = #{user_id}
+	 
+	 
+	 <!--
+	select * from cart join product as p on cart as c p.id = c.product_id
 	 where user_id = #{user_id}
-	</select>
+	 -->
+	 
+	 </select>
+	
+
+	<select id="findAllProdcutByProductId" parameterType="cn.edu.nwsuaf.entity.Cart2"
+		resultType="cn.edu.nwsuaf.entity.Product">
+		select * from product where id =#{product_id}
+	 </select>
+	
+	<resultMap type="cn.edu.nwsuaf.entity.Cart2" id="cartMapperProduct">
+		
+		<id property="id" column="id" />
+		<result property="product_count" column="product_count"/>
+		
+		<collection property="prodcutList" column="product_id"
+			ofType="cn.edu.nwsuaf.entity.Product" select="findAllProdcutByProductId">
+			<!-- 配置Dept类中List<Emp> -->
+			<!-- 需要指定属性名，属性的类型属性《集合元素》类型 -->
+			<!-- 属性和通过数据库哪一列和员工关联 以及执行第一个sql同时执行哪一个sql语句-->
+		</collection>
+	</resultMap>
 	
 	
 	
 	
-	
---></mapper>
+</mapper>

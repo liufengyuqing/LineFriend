@@ -16,7 +16,7 @@ import cn.edu.nwsuaf.util.GetTimeUtil;
 @Controller
 public class CommentSendAction {
 	@RequestMapping("commentSend.action")
-	public String snedComment(String cmtcontent,int product_id,HttpServletRequest request,HttpServletResponse response,HttpSession session) {
+	public String snedComment(String cmtcontent,int product_id,String anonymous,String upvote,HttpServletRequest request,HttpServletResponse response,HttpSession session) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("springMVC.xml");
 		CommentDao commentDao = ctx.getBean(CommentDao.class);
 		if(session.getAttribute("email")==null){
@@ -26,9 +26,21 @@ public class CommentSendAction {
 		}
 		else{
 			String email=(String)session.getAttribute("email");
-			commentDao.addComment(cmtcontent, email, GetTimeUtil.getFormatDate1(), product_id);
+			
+			if("anon".equals(anonymous)){	//判断是否选择匿名了
+				String email1=email.substring(0, 3);
+				String email2=email.substring(email.length()-2, email.length());
+				email=email1+"****"+email2;
+			}
+			if("hate".equals(upvote)){	//判断选的是赞还是踩
+				upvote="踩";
+			}else{
+				upvote="赞";
+			}
+			
+			commentDao.addComment(cmtcontent, email, GetTimeUtil.getFormatDate1(),upvote, product_id);
 			request.setAttribute("id", product_id);
-			return "forward:showProductdetail.action?id="+product_id;
+			return "redirect:showProductdetail.action?id="+product_id;
 		}
 		
 

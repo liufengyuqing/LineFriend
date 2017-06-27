@@ -7,4 +7,8 @@
 		resultType="cn.edu.nwsuaf.entity.Food">
 		select * from food where product_id=#{product_id}
 	</select>
+	
+	<select id="findAllFood" resultType="cn.edu.nwsuaf.entity.Food">
+		select * from food
+	</select>
 </mapper>

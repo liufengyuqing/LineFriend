@@ -12,6 +12,7 @@
 <html>
 	<head>
 		<base href="<%=basePath%>">
+		<link rel="stylesheet" href="assets/css/buttons.css" type="text/css" />
 
 		<link rel="stylesheet" href="assets/css/Goods.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Header.css" type="text/css" />
@@ -691,7 +692,7 @@ lick=addToFavorite(); href="#"><img
 												${cmt.send_time }
 											</td>
 											<td>
-												赞
+												${cmt.upvote }
 											</td>
 											<td>
 												<div class="type-item">
@@ -705,15 +706,9 @@ lick=addToFavorite(); href="#"><img
 												<div class="user-item">
 													<span class="user-name"> ${cmt.email } </span>
 												</div>
-												<div class="user-item">
-													<span class="buy-time">${cmt.send_time } </span>
-												</div>
-												<div class="user-item">
-													<span class="buy">购买</span>
-												</div>
-												<div data-cid="0" class="user-item">
-													<span class="user-access"></span>
-												</div>
+											
+												
+											
 											</td>
 										</tr>
 										</c:forEach>
@@ -770,16 +765,23 @@ lick=addToFavorite(); href="#"><img
 								
 								<tr>
 								<td>
-								
-								<input type="text" name="cmtcontent" size="60"/>
+								<textarea name="cmtcontent" style="width:100%;height:100;"></textarea>
+								<!--
+								<input type="text" name="cmtcontent" size="80" />
+								-->
 								</td>
 								<td>
-								<input type="submit" id="cmtsubmit" value="发送"/>
+								<input name="anonymous" type="checkbox" value="anon" />匿名发表<br/>
+								<label><input name="upvote" type="radio" value="like" checked />赞 </label> 
+								<label><input name="upvote" type="radio" value="hate" />踩 </label> 
+								<br/>
+								<input type="submit" id="cmtsubmit" value="发表" class="button button-pill button-primary">
+	
 								</td>
 								</tr>
 								</tbody>
 								</table>
-								<span> ${error}</span>
+								<span style="color: red"> ${error}</span>
 								</form>
 								
 							</div>

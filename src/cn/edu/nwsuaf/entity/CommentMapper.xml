@@ -14,6 +14,6 @@
 
 
 	<insert id="addComment" parameterType="cn.edu.nwsuaf.entity.Comment">
-		insert into comment(content,email,send_time,product_id)  values(#{content},#{email},#{send_time},#{product_id})
+		insert into comment(content,email,send_time,upvote,product_id)  values(#{content},#{email},#{send_time},#{upvote},#{product_id})
 	</insert>
 </mapper>

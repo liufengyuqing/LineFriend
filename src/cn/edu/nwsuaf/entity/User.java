@@ -1,4 +1,5 @@
 package cn.edu.nwsuaf.entity;
+
 import java.util.List;
 
 public class User {
@@ -10,13 +11,9 @@ public class User {
 	private long last_login_time;
 	private String is_email_verify;
 	private String email_verify_code;
-	
-	
-	
-	private List<UserAddress> addresses;//一对多 一个user对应对个收获地址
-	
-	//添加个人信息
-	
+
+	// 添加个人信息
+
 	private String nickName;
 	private String trueName;
 	private String sex;
@@ -25,30 +22,11 @@ public class User {
 	private String mouth;
 	private String day;
 	
-	public User(int id, String email, String password, String userIntegral,
-			String lastLoginIp, long lastLoginTime, String isEmailVerify,
-			String emailVerifyCode, List<UserAddress> addresses,
-			String nickName, String trueName, String sex, String cardId,
-			String year, String mouth, String day) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.password = password;
-		user_integral = userIntegral;
-		last_login_ip = lastLoginIp;
-		last_login_time = lastLoginTime;
-		is_email_verify = isEmailVerify;
-		email_verify_code = emailVerifyCode;
-		this.addresses = addresses;
-		this.nickName = nickName;
-		this.trueName = trueName;
-		this.sex = sex;
-		this.cardId = cardId;
-		this.year = year;
-		this.mouth = mouth;
-		this.day = day;
-	}
+	//关联
+	private List<UserAddress> addresses;// 一对多 一个user对应对个收获地址
 
+	
+	
 
 	@Override
 	public String toString() {
@@ -61,6 +39,7 @@ public class User {
 				+ ", sex=" + sex + ", trueName=" + trueName
 				+ ", user_integral=" + user_integral + ", year=" + year + "]";
 	}
+	
 	
 
 	public String getYear() {
@@ -119,7 +98,6 @@ public class User {
 		this.cardId = cardId;
 	}
 
-
 	public List<UserAddress> getAddresses() {
 		return addresses;
 	}
@@ -133,8 +111,6 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	
 	public int getId() {
 		return id;
 	}

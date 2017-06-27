@@ -17,5 +17,5 @@ public interface CommentDao {
 	
 	public List<Comment> findCommentsByProductId(int product_id);
 		
-	public void addComment(@Param("content")String content,@Param("email")String email,@Param("send_time")String send_time,@Param("product_id")int product_id);
+	public void addComment(@Param("content")String content,@Param("email")String email,@Param("send_time")String send_time,@Param("upvote")String upvote,@Param("product_id")int product_id);
 }

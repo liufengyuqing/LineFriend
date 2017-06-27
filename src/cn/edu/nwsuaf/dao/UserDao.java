@@ -39,8 +39,12 @@ public interface UserDao {
 	
 	public void updateEmailVerifyCodeByEmail(@Param("email")String email,@Param("email_verify_code")String email_verify_code);//更新邮箱验证码，用在邮箱验证页面重新获取邮箱验证码
 	
-	//查找所有用户
-	public List<User> findAllUser();
-	
-
+	//@Qian
+	public List<User> findAllUser();//查询所有用户
+	/*public User findUserByEmail(String email);*/
+	public List<User> findUserBySex(String sex);//按条件查询-性别
+	public List<User> findUserByAge(int age);//按年龄查询用户
+	public List<User> findUserByNickName(String nickName);//按昵称查询
+	public List<User> findUserByEmail(String email); // 
+	public List<User> findUserById2(int id);//根据id 查询用户
 }

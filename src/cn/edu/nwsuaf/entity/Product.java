@@ -7,11 +7,8 @@ import java.io.Serializable;
  * @author 张琼 2017-6-21
  */
 public class Product implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
+	private static final long serialVersionUID = -770873775097386917L;
 	private int id;
 	private String product_name;
 	private String description;
@@ -21,6 +18,8 @@ public class Product implements Serializable{
 	private String keywords;//商品关键词
 	private int has_deleted;//是否被删除 标志位
 	private String product_pic;//商品图片地址
+	
+	private Cart2 cart2;
 	
 	
 	public int getId() {
@@ -77,15 +76,24 @@ public class Product implements Serializable{
 	public void setProduct_pic(String productPic) {
 		product_pic = productPic;
 	}
+	
+	public Cart2 getCart2() {
+		return cart2;
+	}
+	public void setCart2(Cart2 cart2) {
+		this.cart2 = cart2;
+	}
+	
 	@Override
 	public String toString() {
-		return "Product [add_time=" + add_time + ", dangqian_price="
-				+ dangqian_price + ", description=" + description
-				+ ", fixed_price=" + fixed_price + ", has_deleted="
-				+ has_deleted + ", id=" + id + ", keywords=" + keywords
-				+ ", product_name=" + product_name + ", product_pic="
-				+ product_pic + "]";
+		return "Product [add_time=" + add_time + ", cart2=" + cart2
+				+ ", dangqian_price=" + dangqian_price + ", description="
+				+ description + ", fixed_price=" + fixed_price
+				+ ", has_deleted=" + has_deleted + ", id=" + id + ", keywords="
+				+ keywords + ", product_name=" + product_name
+				+ ", product_pic=" + product_pic + "]";
 	}
+	
 	
 	
 	

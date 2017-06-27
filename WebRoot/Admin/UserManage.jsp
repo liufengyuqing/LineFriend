@@ -1,594 +1,326 @@
-<%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html >
-	<head>
 
-		<base href="<%=basePath%>">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-responsive.css" />
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-responsive.min.css" />
-		<link  rel="stylesheet" type="text/css" href="https://code.jquery.com/jquery-3.2.1.min.js" />
-		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-combined.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
-		<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/npm.js"></script>
-		<script
-			src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script
-			src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<!-- TemplateBeginEditable name="doctitle" -->
-		<title>Line friend管理员--用户管理</title>
-		<!-- TemplateEndEditable -->
-		<!-- TemplateBeginEditable name="head" -->
-		<!-- TemplateEndEditable -->
-		<script>
-	$(document).ready(function() {
 
-		if (location.hash) {
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
 
-			$('a[href=' + location.hash + ']').tab('show');
 
-		}
+	
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Line friend管理员--用户管理</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<script>
 
-		$(document.body).on("click", "a[data-toggle]", function(event) {
+$(document).ready(function() {
 
-			location.hash = this.getAttribute("href");
+if(location.hash) {
 
-		});
+$('a[href=' + location.hash + ']').tab('show');
 
-	});
+}
 
-	$(window).on(
-			'popstate',
-			function() {
+$(document.body).on("click", "a[data-toggle]", function(event) {
 
-				var anchor = location.hash
-						|| $("a[data-toggle=tab]").first().attr("href");
+location.hash = this.getAttribute("href");
 
-				$('a[href=' + anchor + ']').tab('show');
+});
 
-			});
+});
+
+$(window).on('popstate', function() {
+
+var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+
+$('a[href=' + anchor + ']').tab('show');
+
+});
+
 </script>
 	</head>
+<body>
+	
+<div id="head">
+	<ul class="nav nav-tabs" contenteditable="true" style="background-color: #000;">
+		<li><a href="#">Line friend后台管理系统</a> </li>
+		<li class="active"><a href="#">首页</a></li>
+		<li><a href="AdminMsg.html">通知</a></li>
+		<li class="dropdown pull-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
+		<ul class="dropdown-menu">
+			<li><a href="#">Line friend主页</a></li>
+			<li class="divider">&nbsp;</li>
+			<li><a href="#">退出</a></li>
+		</ul>
+		</li>
+	</ul>
 
-	<body>
+</div>
 
-		<div id="head">
-			<ul class="nav nav-tabs" contenteditable="true"
-				style="background-color: #000;">
-				<li>
-					<a href="#">Line friend后台管理系统</a>
-				</li>
-				<li class="active">
-					<a href="#">首页</a>
-				</li>
-				<li>
-					<a href="AdminMsg.html">通知</a>
-				</li>
-				<li class="dropdown pull-right">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#">Line friend主页</a>
-						</li>
-						<li class="divider">
-							&nbsp;
-						</li>
-						<li>
-							<a href="#">退出</a>
-						</li>
-					</ul>
-				</li>
+<div id="width">
+	<div id="left">
+		<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="accordion" id="accordion-355567">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#userM">
+						 用户管理<img src="assets/homeImages/user.png"></a>
+					</div>
+					<div id="userM" class="accordion-body  in collapse">
+						<div class="accordion-inner">
+							<a href="">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
+							<a href="">注 销 用 户<img src="assets/homeImages/point.png"></a>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <a href="ProductManage.html" style="margin-left: 15px;margin-right: 50px;">商品管理<img src="assets/homeImages/pro.png"></a>
+					</div>
+					<div id="productM" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<a href="">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商品信息修改<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商品库存管理<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
+						 <a href="orderManage.html" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
+					</div>
+					<div id="orderM" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<a href="">订 单 检 索</a><br>
+							<a href="">订 单 状 态 修 改</a><br>
+							<a href="">作 废 订 单</a><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+	<div id="right">
+		<div class="panel panel-default">
+    		<div class="panel-body">
+       		 <!--页面-->
+       		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
+			<ul class="nav nav-tabs">
+				<li class="active"><a contenteditable="true" data-toggle="tab" href="#panel-Userach">用户查询</a></li>
+				<li><a contenteditable="true" data-toggle="tab" href="#panel-Udelect">注销用户</a></li>
+				
 			</ul>
 
-		</div>
-
-		<div id="width">
-			<div id="left">
-				<div class="container-fluid">
-					<div class="row-fluid">
-						<div class="span12">
-							<div class="accordion" id="accordion-355567">
-								<div class="accordion-group">
-									<div class="accordion-heading">
-										<a class="accordion-toggle" data-toggle="collapse"
-											data-parent="#accordion-355567" href="#userM"> 用户管理<img
-												src="assets/homeImages/user.png">
-										</a>
-									</div>
-									<div id="userM" class="accordion-body  in collapse">
-										<div class="accordion-inner">
-											<a href="">用 户 查 询<img src="assets/homeImages/point.png">
-											</a>
-											<br>
-											<a href="">注 销 用 户<img src="assets/homeImages/point.png">
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="accordion-group">
-									<div class="accordion-heading">
-										<a href="ProductManage.html"
-											style="margin-left: 15px; margin-right: 50px;">商品管理<img
-												src="assets/homeImages/pro.png">
-										</a>
-									</div>
-									<div id="productM" class="accordion-body collapse">
-										<div class="accordion-inner">
-											<a href="">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img
-													src="assets/homeImages/point.png">
-											</a>
-											<br>
-											<a href="">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img
-													src="assets/homeImages/point.png">
-											</a>
-											<br>
-											<a href="">商品信息修改<img src="assets/homeImages/point.png">
-											</a>
-											<br>
-											<a href="">商品库存管理<img src="assets/homeImages/point.png">
-											</a>
-											<br>
-											<a href="">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img
-													src="assets/homeImages/point.png">
-											</a>
-											<br>
-											<a href="">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img
-													src="assets/homeImages/point.png">
-											</a>
-											<br>
-											<a href="">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img
-													src="assets/homeImages/point.png">
-											</a>
-											<br>
-										</div>
-									</div>
-								</div>
-								<div class="accordion-group">
-									<div class="accordion-heading">
-										<!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
-										<a href="orderManage.html"
-											style="margin-left: 15px; margin-right: 50px;">订单管理<img
-												src="assets/homeImages/order.png">
-										</a>
-									</div>
-									<div id="orderM" class="accordion-body collapse">
-										<div class="accordion-inner">
-											<a href="">订 单 检 索</a>
-											<br>
-											<a href="">订 单 状 态 修 改</a>
-											<br>
-											<a href="">作 废 订 单</a>
-											<br>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="right">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<!--页面-->
-						<div class="tabbable" id="tabs-337225">
-							<!-- Only required for left/right tabs -->
-							<ul class="nav nav-tabs">
-								<li class="active">
-									<a contenteditable="true" data-toggle="tab"
-										href="#panel-Userach">用户查询</a>
-								</li>
-								<li>
-									<a contenteditable="true" data-toggle="tab"
-										href="#panel-Udelect">注销用户</a>
-								</li>
-
-							</ul>
-
-							<div class="tab-content">
-								<div class="tab-pane active" contenteditable="true"
-									id="panel-Userach">
-									<!-- <p>用户搜索</p> -->
-									<div class="navbar-inner">
-										<label
-											style="display: inline-block; margin-top: 10px; margin-left: -600px;">
-											请选择查询条件:
-										</label>
-										<!-- <span>请选择查询条件:</span> -->
-										<select class="selectSy">
-											<option>
+			<div class="tab-content">
+				<div class="tab-pane active" contenteditable="true" id="panel-Userach">
+					<!-- <p>用户搜索</p> -->
+					<div class="navbar-inner">
+						<form class="navbar-form navbar-left" role="search" id="formSy" action="userSearch.action">
+										
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+									<select class="selectSy" name="sel">
+											<option value="1" >
 												全部用户
 											</option>
-											<option>
+											<option value="2">
 												用户邮箱
 											</option>
-											<option>
+											<option value="3">
 												性别
 											</option>
-											<option>
+											<option value="4">
 												用户ID
 											</option>
-											<option>
-												年龄
-											</option>
-											<option>
-												用户昵称
-											</option>
-										</select>
-
-
-										<form class="navbar-form navbar-left" role="search"
-											id="formSy" action="userSearch.action">
-											<span><input type="text" class="form-control"
-													placeholder="请输入查询内容" id="tiaojian">
-
-												<button type="submit" class="btn btn-default"
-													style="margin-top: 5px;">
-													查询
-												</button>
-											</span>
-										</form>
-
-										<!-- 查询结果展示表格 -->
-										<div id="tbShow">
-											<div class="clean"></div>
-											<table class="table" contenteditable="true">
-												<thead>
-													<tr>
-														<th style="width: 10%;">
-															用户ID
-														</th>
-														<th style="width: 15%;">
-															注册邮箱
-														</th>
-														<th style="width: 10%;">
-															昵称
-														</th>
-														<th style="width: 15%;">
-															最后一次登录时间
-														</th>
-														<th style="width: 15%;">
-															最后一次登录IP
-														</th>
-
-														<th style="width: 10%;">
-															性别
-														</th>
-														<th style="width: 10%;">
-															身份证号
-														</th>
-														<th style="width: 15%;">
-															出生日期
-														</th>
-													</tr>
-													
-												</thead>
-												
-												<tbody>
-												
-												
-												
-												
-												
-												<c:forEach items="${userList}" var="user"
-														varStatus="status" begin = "1" end ="10">
-														<tr>
-															<td>
-																${user.id}
-															</td>
-															<td>
-																${user.email}
-															</td>
-															<td>
-																${user.nickName}
-															</td>
-															<td>
-																${user.last_login_time}
-															</td>
-															<td>
-																${user.last_login_ip}
-															</td>
-															<td>
-																${user.sex}
-															</td>
-															<td>
-																${user.cardId}
-															</td>
-															<td>
-																${user.year}年${user.mouth}月${user.day}日
-															</td>
-														</tr>
-													</c:forEach>
-													
-													
-													
-													
-													<tr>
-														<td>
-															1
-														</td>
-														<td>
-															zz@qq.com
-														</td>
-														<td>
-															自由
-														</td>
-														<td>
-															2017年6月20日
-														</td>
-														<th>
-															172.29.17.30
-														</th>
-														<td>
-															女
-														</td>
-														<td>
-															642222199805042222
-														</td>
-														<td>
-															1998年05月04日
-														</td>
-													</tr>
-													<tr>
-														<td>
-															2
-														</td>
-														<td>
-															zz@qq.com
-														</td>
-														<td>
-															自由
-														</td>
-														<td>
-															2017年6月20日
-														</td>
-														<th>
-															172.29.17.30
-														</th>
-														<td>
-															女
-														</td>
-														<td>
-															642222199805042222
-														</td>
-														<td>
-															1998年05月04日
-														</td>
-													</tr>
-													<tr>
-														<td>
-															3
-														</td>
-														<td>
-															zz@qq.com
-														</td>
-														<td>
-															自由
-														</td>
-														<td>
-															2017年6月20日
-														</td>
-														<th>
-															172.29.17.30
-														</th>
-														<td>
-															女
-														</td>
-														<td>
-															642222199805042222
-														</td>
-														<td>
-															1998年05月04日
-														</td>
-													</tr>
-												</tbody>
-												
-											</table>
 											
-										</div>
-									</div>
-								</div>
-
-								<div class="tab-pane" contenteditable="true" id="panel-Udelect">
-									<!-- <p>用户注销</p> -->
-									<!-- 搜索框 -->
-									<div class="navbar-inner">
-										<label
-											style="display: inline-block; margin-top: 10px; margin-left: -600px;">
-											请选择查询条件:
-										</label>
-										<!-- <span>请选择查询条件:</span> -->
-										<select class="selectSy">
-											<option>
-												全部用户
-											</option>
-											<option>
-												用户邮箱
-											</option>
-											<option>
-												性别
-											</option>
-											<option>
-												用户ID
-											</option>
-											<option>
-												年龄
-											</option>
-											<option>
+											<option value="5">
 												用户昵称
 											</option>
-										</select>
+											
+										</select>	
+							<button type="submit" class="btn btn-default" style="margin-top:5px; " >查询</button></span>	
+						</form>
 
-
-										<form class="navbar-form navbar-left" role="search"
-											id="formSy">
-											<span><input type="text" class="form-control"
-													placeholder="请输入查询内容" id="tiaojian">
-
-												<button type="submit" class="btn btn-default"
-													style="margin-top: 5px;">
-													查询
-												</button>
-											</span>
-										</form>
-
-										<!-- 查询结果展示表格 -->
-										<div id="tbShow">
-											<div class="clean"></div>
-											<table class="table" contenteditable="true">
-												<thead>
-													<tr>
-														<th style="width: 10%;">
-															用户ID
-														</th>
-														<th style="width: 15%;">
-															注册邮箱
-														</th>
-														<th style="width: 10%;">
-															昵称
-														</th>
-														<th style="width: 15%;">
-															最后一次登录时间
-														</th>
-														<th style="width: 10%;">
-															最后一次登录IP
-														</th>
-
-														<th style="width: 10%;">
-															性别
-														</th>
-														<th style="width: 10%;">
-															身份证号
-														</th>
-														<th style="width: 10%;">
-															出生日期
-														</th>
-														<th style="width: 10%;">
-															操作
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															1
-														</td>
-														<td>
-															zz@qq.com
-														</td>
-														<td>
-															自由
-														</td>
-														<td>
-															2017年6月20日
-														</td>
-														<th>
-															172.29.17.30
-														</th>
-														<td>
-															女
-														</td>
-														<td>
-															642222199805042222
-														</td>
-														<td>
-															1998年05月04日
-														</td>
-														<td>
-															<a href="">注销</a>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															2
-														</td>
-														<td>
-															zz@qq.com
-														</td>
-														<td>
-															自由
-														</td>
-														<td>
-															2017年6月20日
-														</td>
-														<th>
-															172.29.17.30
-														</th>
-														<td>
-															女
-														</td>
-														<td>
-															642222199805042222
-														</td>
-														<td>
-															1998年05月04日
-														</td>
-														<td>
-															<a href="">注销</a>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															3
-														</td>
-														<td>
-															zz@qq.com
-														</td>
-														<td>
-															自由
-														</td>
-														<td>
-															2017年6月20日
-														</td>
-														<th>
-															172.29.17.30
-														</th>
-														<td>
-															女
-														</td>
-														<td>
-															642222199805042222
-														</td>
-														<td>
-															1998年05月04日
-														</td>
-														<td>
-															<a href="">注销</a>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-
-							</div>
+						<!-- 查询结果展示表格 -->
+						<div id="tbShow">
+								<div class="clean"></div>
+									<table class="table" contenteditable="false">
+											<thead>
+												<tr>
+													<th style="width: 10%;">用户ID</th>
+													<th style="width: 15%;">注册邮箱</th>
+													<th style="width: 10%;">昵称</th>
+													<th style="width: 15%;">最后一次登录时间</th>
+													<th style="width: 15%;">最后一次登录IP</th>
+												
+													<th style="width: 10%;">性别</th>
+													<th style="width: 10%;">身份证号</th>
+													<th style="width: 15%;">出生日期</th>
+												</tr>
+											</thead>
+											<tbody>
+											<!--  动态加载-->
+											<c:forEach items="${userList}" var="user" varStatus="status">
+												<tr>
+													<td>${user.id}</td>
+													<td>${user.email}</td>
+													<td>${user.nickName}</td>
+													<td>${user.last_login_time}</td>
+													<th>${user.last_login_ip}</th>
+													<td>${user.sex}</td>
+													<td>${user.cardId}</td>
+													<td>${user.year}/ ${user.mouth}/${user.day}</td>
+												</tr>
+											</c:forEach></tbody>
+									</table>
 						</div>
-					</div>
+					</div>	
 				</div>
+
+				<div class="tab-pane" contenteditable="true" id="panel-Udelect">
+					<!-- <p>用户注销</p> -->
+					<!-- 搜索框 -->
+					<div class="navbar-inner">
+						
+							
+						
+						<form class="navbar-form navbar-left" role="search" id="formSy" action="userSearch.action">
+							<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+						<!-- <span>请选择查询条件:</span> -->
+										<select class="selectSy" name="sel">
+											<option value="1" >
+												全部用户
+											</option>
+											<option value="2">
+												用户邮箱
+											</option>
+											<option value="3">
+												性别
+											</option>
+											<option value="4">
+												用户ID
+											</option>
+											
+											<option value="5">
+												用户昵称
+											</option>
+											
+										</select>
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+										
+							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+						</form>
+
+						<!-- 查询结果展示表格 -->
+						<div id="tbShow">
+								<div class="clean"></div>
+									<table class="table" contenteditable="true">
+											<thead>
+												<tr>
+													<th style="width: 10%;">用户ID</th>
+													<th style="width: 15%;">注册邮箱</th>
+													<th style="width: 10%;">昵称</th>
+													<th style="width: 15%;">最后一次登录时间</th>
+													<th style="width: 10%;">最后一次登录IP</th>
+												
+													<th style="width: 10%;">性别</th>
+													<th style="width: 10%;">身份证号</th>
+													<th style="width: 10%;">出生日期</th>
+													<th style="width: 10%;">操作</th>
+												</tr>
+											</thead>
+											<tbody>
+												<!--<tr>
+													<td>1</td>
+													<td>zz@qq.com</td>
+													<td>自由</td>
+													<td>2017年6月20日</td>
+													<th>172.29.17.30</th>
+													<td>女</td>
+													<td>642222199805042222</td>
+													<td>1998年05月04日</td>
+													<td><a href="">注销</a></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>zz@qq.com</td>
+													<td>自由</td>
+													<td>2017年6月20日</td>
+													<th>172.29.17.30</th>
+													<td>女</td>
+													<td>642222199805042222</td>
+													<td>1998年05月04日</td>
+													<td><a href="">注销</a></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>zz@qq.com</td>
+													<td>自由</td>
+													<td>2017年6月20日</td>
+													<th>172.29.17.30</th>
+													<td>女</td>
+													<td>642222199805042222</td>
+													<td>1998年05月04日</td>
+													<td><a href="">注销</a></td>
+												</tr>
+											-->
+											<c:forEach items="${userList}" var="user" varStatus="status">
+												<tr>
+													<td>${user.id}</td>
+													<td>${user.email}</td>
+													<td>${user.nickName}</td>
+													<td>${user.last_login_time}</td>
+													<th>${user.last_login_ip}</th>
+													<td>${user.sex}</td>
+													<td>${user.cardId}</td>
+													<td>${user.year}/ ${user.mouth}/${user.day}</td>
+													<td><a href="">注销</a></td>
+												</tr>
+											</c:forEach>
+											</tbody>
+									</table>
+						</div>
+					</div>	
+				</div>
+
 			</div>
 		</div>
-	</body>
+    	</div>
+		</div>	
+	</div>
+</div>
+</body>
+	
 </html>

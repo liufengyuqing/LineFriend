@@ -10,8 +10,16 @@ public class Comment {
 	private String content;
 	private String email;
 	private String send_time;
+	private String upvote;
 	private int product_id;
 	
+	
+	public String getUpvote() {
+		return upvote;
+	}
+	public void setUpvote(String upvote) {
+		this.upvote = upvote;
+	}
 	public int getId() {
 		return id;
 	}

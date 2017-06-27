@@ -17,5 +17,8 @@
 		ORDER BY t1.id LIMIT 7;
 	</select>
 	
+	<select id="findAllProduct1" resultType="cn.edu.nwsuaf.entity.Product">
+		select * from product
+	</select>
 	
 </mapper>

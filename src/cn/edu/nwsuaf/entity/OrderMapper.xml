@@ -2,15 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
-<mapper namespace="cn.edu.nwsuaf.dao.UserAddressDao">
-
-	<!-- 添加用户地址 -->
-	<insert id="addUserAddress" parameterType="cn.edu.nwsuaf.entity.UserAddress">
-		insert into
-		receive_address(user_id,receive_name,province,city,district,full_address,phone,postal_code)
-		values(#{user.id},#{receive_name},#{province},#{city},#{district},#{full_address},#{phone},#{postal_code})
-	</insert>
-
+<mapper namespace="cn.edu.nwsuaf.dao.OrderDao">
 
 	<!-- 关联查询 -->
 
@@ -20,9 +12,9 @@
 		* from user where id = #{user_id}
 	</select>
 
-	<select id="findAllAddress" parameterType="cn.edu.nwsuaf.entity.User"
-		resultType="cn.edu.nwsuaf.entity.UserAddress">
-		select * from receive_address where user_id =#{id}
+	<select id="findAllOrder" 
+		resultType="cn.edu.nwsuaf.entity.Orders">
+		select * from orders 
 	 </select>
 
 
@@ -45,8 +37,8 @@
 		from receive_address where id= #{id}
 	</select>
 
-	<select id="deleteAddress" parameterType="int"> <!-- 删除地址  -->
-		delete from receive_address where id = #{id}
+	<select id="deleteOrder" parameterType="int"> <!-- 删除地址  -->
+		delete from Orders where id = #{id}
 	</select>
 
 	<!--
