@@ -115,7 +115,7 @@
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="User.jsp">我的LINEFRIEND</a>
 					</div>
 				</div>
 				<p class="img_a" onmouseover=hide_show_2(this); onmouseout=hide_show_1(this);>
@@ -269,7 +269,7 @@
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="User.jsp">我的LINEFRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">

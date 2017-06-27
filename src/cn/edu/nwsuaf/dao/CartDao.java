@@ -20,7 +20,7 @@ public interface CartDao {
 	public void addCart(Cart cart);
 	
 	//查询此用户所有购物车中商品
-	public List<Cart2> findAllProductByUserId(int userid);
+	public List<Cart> findAllProductByUserId(int userid);
 	
 	
 	

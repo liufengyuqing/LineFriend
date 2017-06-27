@@ -24,17 +24,17 @@
 	 </select>
 	
 
-	<select id="findAllProdcutByProductId" parameterType="cn.edu.nwsuaf.entity.Cart2"
+	<select id="findAllProdcutByProductId" parameterType="cn.edu.nwsuaf.entity.Cart"
 		resultType="cn.edu.nwsuaf.entity.Product">
 		select * from product where id =#{product_id}
 	 </select>
 	
-	<resultMap type="cn.edu.nwsuaf.entity.Cart2" id="cartMapperProduct">
+	<resultMap type="cn.edu.nwsuaf.entity.Cart" id="cartMapperProduct">
 		
 		<id property="id" column="id" />
 		<result property="product_count" column="product_count"/>
 		
-		<collection property="prodcutList" column="product_id"
+		<collection property="product" column="product_id"
 			ofType="cn.edu.nwsuaf.entity.Product" select="findAllProdcutByProductId">
 			<!-- 配置Dept类中List<Emp> -->
 			<!-- 需要指定属性名，属性的类型属性《集合元素》类型 -->

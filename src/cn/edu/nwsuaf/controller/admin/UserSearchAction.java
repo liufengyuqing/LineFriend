@@ -20,7 +20,7 @@ import cn.edu.nwsuaf.entity.User;
  */
 @Controller
 public class UserSearchAction {
-	@RequestMapping("/userSearch.action")
+	@RequestMapping("/Admin/userSearch.action")
 	public String userSearch(HttpServletRequest request,HttpServletResponse response){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");
@@ -71,6 +71,6 @@ public class UserSearchAction {
 			request.setAttribute("userList", userList);
 
 		}
-		return "Admin/UserManage";
+		return "/Admin/UserManage";
 	}
 }

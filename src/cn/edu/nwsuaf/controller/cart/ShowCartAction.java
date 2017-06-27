@@ -34,8 +34,8 @@ public class ShowCartAction {
 		Integer uid = (Integer) session.getAttribute("userid"); // 获取userid
 		System.out.println("获取用户+" + uid);
 
-		List<Cart2> cartList = cartDao.findAllProductByUserId(uid);
-		for (Cart2 p : cartList) {
+		List<Cart> cartList = cartDao.findAllProductByUserId(uid);
+		for (Cart p : cartList) {
 			System.out.println(p.toString());
 		}
 		request.setAttribute("cartList", cartList);

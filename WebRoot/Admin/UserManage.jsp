@@ -14,6 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
@@ -149,9 +150,11 @@ $('a[href=' + anchor + ']').tab('show');
 					<!-- <p>用户搜索</p> -->
 					<div class="navbar-inner">
 						<form class="navbar-form navbar-left" role="search" id="formSy" action="userSearch.action">
+							<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+						<!-- <span>请选择查询条件:</span> -->
 										
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
-									<select class="selectSy" name="sel">
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condtion">
+								<select class="selectSy" name="sel">
 											<option value="1" >
 												全部用户
 											</option>
@@ -169,8 +172,8 @@ $('a[href=' + anchor + ']').tab('show');
 												用户昵称
 											</option>
 											
-										</select>	
-							<button type="submit" class="btn btn-default" style="margin-top:5px; " >查询</button></span>	
+										</select>		
+							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -219,7 +222,9 @@ $('a[href=' + anchor + ']').tab('show');
 						<form class="navbar-form navbar-left" role="search" id="formSy" action="userSearch.action">
 							<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-										<select class="selectSy" name="sel">
+										
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condtion">
+								<select class="selectSy" name="sel">
 											<option value="1" >
 												全部用户
 											</option>
@@ -237,9 +242,7 @@ $('a[href=' + anchor + ']').tab('show');
 												用户昵称
 											</option>
 											
-										</select>
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
-										
+										</select>		
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
 						</form>
 

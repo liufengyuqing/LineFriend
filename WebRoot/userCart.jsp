@@ -1,5 +1,7 @@
 <%@ page language="java" import="java.util.*"
 	contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -269,18 +271,18 @@ href="#"><img
 						
 						<!-- 购物车页面开始加载购物车表中的数据 -->
 						
-						
+					<c:forEach items="${cartList}" var="cartItem" varStatus="status">
 						
 							<tr>
 								<td class="checkbox">
 									<input class="check-one check" type="checkbox" />
 								</td>
 								<td class="goods">
-									<img src="assets/homeImages/goods/goods1.jpg" alt="" />
-									<span>手撕面包营养早餐食品蛋糕口袋面包糕点点心零食</span>
+									<img src="assets/homeImages/goods/${cartItem.product.product_pic }" alt="" />
+									<span>${cartItem.product.product_name }</span>
 								</td>
 								<td class="price">
-									29.90
+									${cartItem.product.dangqian_price }
 								</td>
 								<td class="count">
 									<span class="reduce"></span>
@@ -294,9 +296,8 @@ href="#"><img
 									<span class="delete">删除</span>
 								</td>
 							</tr>
-							
-							
-							
+			
+							</c:forEach>
 							
 							
 							

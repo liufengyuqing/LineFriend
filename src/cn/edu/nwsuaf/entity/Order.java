@@ -1,77 +1,107 @@
-/**
- * author 刘志伟
- * 2017-6-26
- */
 package cn.edu.nwsuaf.entity;
 
 /**
- * @author 刘志伟
- *
- * 2017-6-26
+ * 
+ * 订单
+ * 
+ * @author 吴思颖
+ * 
  */
 public class Order {
-	private int id;
-	private User user;
-	private String status;
+	private int id;// 自增主键
+	private int user_id;
+	private int status;
 	private String order_time;
-	private UserAddress address;
-	
-	
-	public Order() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	private String receive_name;
+	private String full_adress;
+	private String postal_code;
+	private String phone;
 
-	public Order(int id, User user, String status, String orderTime,
-			UserAddress address) {
+	public Order(int id, int userId, int status, String orderTime,
+			String receiveName, String fullAdress, String postalCode,
+			String phone) {
 		super();
 		this.id = id;
-		this.user = user;
+		user_id = userId;
 		this.status = status;
 		order_time = orderTime;
-		this.address = address;
+		receive_name = receiveName;
+		full_adress = fullAdress;
+		postal_code = postalCode;
+		this.phone = phone;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Order [address=" + address + ", id=" + id + ", order_time="
-				+ order_time + ", status=" + status + ", user=" + user + "]";
-	}
-	
-	
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public User getUser() {
-		return user;
+
+	public int getUser_id() {
+		return user_id;
 	}
-	public void setUser(User user) {
-		this.user = user;
+
+	public void setUser_id(int userId) {
+		user_id = userId;
 	}
-	public String getStatus() {
+
+	public int getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+
+	public void setStatus(int status) {
 		this.status = status;
 	}
+
 	public String getOrder_time() {
 		return order_time;
 	}
+
 	public void setOrder_time(String orderTime) {
 		order_time = orderTime;
 	}
-	public UserAddress getAddress() {
-		return address;
+
+	public String getReceive_name() {
+		return receive_name;
 	}
-	public void setAddress(UserAddress address) {
-		this.address = address;
+
+	public void setReceive_name(String receiveName) {
+		receive_name = receiveName;
 	}
-	
-	
-	
+
+	public String getFull_adress() {
+		return full_adress;
+	}
+
+	public void setFull_adress(String fullAdress) {
+		full_adress = fullAdress;
+	}
+
+	public String getPostal_code() {
+		return postal_code;
+	}
+
+	public void setPostal_code(String postalCode) {
+		postal_code = postalCode;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [full_adress=" + full_adress + ", id=" + id
+				+ ", order_time=" + order_time + ", phone=" + phone
+				+ ", postal_code=" + postal_code + ", receive_name="
+				+ receive_name + ", status=" + status + ", user_id=" + user_id
+				+ "]";
+	}
 
 }
