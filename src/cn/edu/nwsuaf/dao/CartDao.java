@@ -22,6 +22,9 @@ public interface CartDao {
 	//查询此用户所有购物车中商品
 	public List<Cart> findAllProductByUserId(int userid);
 	
+	//不想要了，从购物重删除
+	public String delterCartItem(int id);//购物车item中的id
+	
 	
 	
 

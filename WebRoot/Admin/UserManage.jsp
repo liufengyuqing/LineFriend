@@ -197,7 +197,7 @@ $('a[href=' + anchor + ']').tab('show');
 											<!--  动态加载-->
 											<c:forEach items="${userList}" var="user" varStatus="status">
 												<tr>
-													<td>${user.id}</td>
+													<td name="userId">${user.id}</td>
 													<td>${user.email}</td>
 													<td>${user.nickName}</td>
 													<td>${user.last_login_time}</td>
@@ -249,7 +249,7 @@ $('a[href=' + anchor + ']').tab('show');
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">用户ID</th>
@@ -265,43 +265,10 @@ $('a[href=' + anchor + ']').tab('show');
 												</tr>
 											</thead>
 											<tbody>
-												<!--<tr>
-													<td>1</td>
-													<td>zz@qq.com</td>
-													<td>自由</td>
-													<td>2017年6月20日</td>
-													<th>172.29.17.30</th>
-													<td>女</td>
-													<td>642222199805042222</td>
-													<td>1998年05月04日</td>
-													<td><a href="">注销</a></td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>zz@qq.com</td>
-													<td>自由</td>
-													<td>2017年6月20日</td>
-													<th>172.29.17.30</th>
-													<td>女</td>
-													<td>642222199805042222</td>
-													<td>1998年05月04日</td>
-													<td><a href="">注销</a></td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>zz@qq.com</td>
-													<td>自由</td>
-													<td>2017年6月20日</td>
-													<th>172.29.17.30</th>
-													<td>女</td>
-													<td>642222199805042222</td>
-													<td>1998年05月04日</td>
-													<td><a href="">注销</a></td>
-												</tr>
-											-->
+												
 											<c:forEach items="${userList}" var="user" varStatus="status">
 												<tr>
-													<td>${user.id}</td>
+													<td name="userId">${user.id}</td>
 													<td>${user.email}</td>
 													<td>${user.nickName}</td>
 													<td>${user.last_login_time}</td>
@@ -309,7 +276,7 @@ $('a[href=' + anchor + ']').tab('show');
 													<td>${user.sex}</td>
 													<td>${user.cardId}</td>
 													<td>${user.year}/ ${user.mouth}/${user.day}</td>
-													<td><a href="">注销</a></td>
+													<td><a href="UserDelect.action">注销</a></td>
 												</tr>
 											</c:forEach>
 											</tbody>

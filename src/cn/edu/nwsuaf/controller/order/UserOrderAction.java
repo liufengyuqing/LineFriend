@@ -1,4 +1,4 @@
-package cn.edu.nwsuaf.controller;
+package cn.edu.nwsuaf.controller.order;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.nwsuaf.dao.FoodDao;
+import cn.edu.nwsuaf.dao.ProductDao;
 import cn.edu.nwsuaf.entity.Food;
+import cn.edu.nwsuaf.entity.Product;
 
 /**
  * @author 陈一婷
@@ -23,11 +25,13 @@ public class FoodSearchAction {
 	@RequestMapping("/foodSerch.action")
 	public String foodSearch(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("springMVC.xml");
-		FoodDao food=ctx.getBean(FoodDao.class);
+		ProductDao product=ctx.getBean(ProductDao.class);
 		
-		List<Food> foodList=food.findAllFood();
+		List<Product> productList=product.findAllProduct();
 		
-		request.setAttribute("foodList", foodList);
+		
+		
+		request.setAttribute("productList",productList);
 		
 		return "/Admin/ProductManage";
 	}

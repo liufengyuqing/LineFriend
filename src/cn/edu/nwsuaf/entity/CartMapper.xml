@@ -10,27 +10,23 @@
 		insert into cart (user_id,product_id,product_count) values(#{user_id},#{product.id},#{product_count})
 	</insert>
 	
-	
+	<!--关联开始-->
 	<!-- 购物车中对应多个商品，一个对多关联 -->
 	<select id="findAllProductByUserId" parameterType="int" resultMap="cartMapperProduct" >
 	  select * from cart where user_id = #{user_id}
-	 
-	 
+	  
 	 <!--
 	select * from cart join product as p on cart as c p.id = c.product_id
 	 where user_id = #{user_id}
 	 -->
-	 
 	 </select>
 	
-
 	<select id="findAllProdcutByProductId" parameterType="cn.edu.nwsuaf.entity.Cart"
 		resultType="cn.edu.nwsuaf.entity.Product">
 		select * from product where id =#{product_id}
 	 </select>
 	
 	<resultMap type="cn.edu.nwsuaf.entity.Cart" id="cartMapperProduct">
-		
 		<id property="id" column="id" />
 		<result property="product_count" column="product_count"/>
 		
@@ -41,6 +37,13 @@
 			<!-- 属性和通过数据库哪一列和员工关联 以及执行第一个sql同时执行哪一个sql语句-->
 		</collection>
 	</resultMap>
+	
+	<!--关联结束 -->
+	
+	<delete id="delterCartItem" parameterType="int">
+		delete * from cart where id = #{id}
+	</delete>
+	
 	
 	
 	

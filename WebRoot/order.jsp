@@ -122,7 +122,7 @@
 			<c:forEach items="${addList}" var="item" varStatus="status">
 				<div>
 					<input type="radio" name="address" value="add1">
-					${item.full_address}(${item.receive_name}&nbsp;收)&nbsp;${item.phone}
+					(${item.receive_name}&nbsp;收)&nbsp;${item.province}省&nbsp;${item.city}市&nbsp;${item.district}区&nbsp;${item.full_address}&nbsp;${item.phone}
 				</div>
 			</c:forEach>
 

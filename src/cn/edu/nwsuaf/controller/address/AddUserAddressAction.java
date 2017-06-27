@@ -23,7 +23,7 @@ import cn.edu.nwsuaf.entity.UserAddress;
  */
 @Controller
 public class AddUserAddressAction {
-	@RequestMapping("/order.action")
+	@RequestMapping("/addUserAddress.action")
 	public void addAddress(HttpServletRequest request,HttpServletResponse response, UserAddress address){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");

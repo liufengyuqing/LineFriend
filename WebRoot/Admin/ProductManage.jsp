@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	
 <div id="head">
-	<ul class="nav nav-tabs" contenteditable="true" style="background-color: #000;">
+	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
 		<li><a href="#">Line friend后台管理系统</a> </li>
 		<li class="active"><a href="#">首页</a></li>
 		<li><a href="AdminMsg.html">通知</a></li>
@@ -142,17 +142,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        		 <!--页面-->
        		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
 			<ul class="nav nav-tabs">
-				<li class="active"><a contenteditable="true" data-toggle="tab" href="#panel-Padd">商品上架</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Pout">商品下架</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Pupdate">商品信息修改</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Pnumber">商品库存管理</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Pserach">商品检索</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Pcheap">商品折扣</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Pkind">商品分类</a></li>
+				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-Padd">商品上架</a></li>
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pout">商品下架</a></li>
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pupdate">商品信息修改</a></li>
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pnumber">商品库存管理</a></li>
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pserach">商品检索</a></li>
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pcheap">商品折扣</a></li>
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pkind">商品分类</a></li>
 			</ul>
 
 			<div class="tab-content">
-				<div class="tab-pane active" contenteditable="true" id="panel-Padd">
+				<div class="tab-pane active" contenteditable="false" id="panel-Padd">
 					<!-- <p>商品上架</p> -->
 					<div class="navbar-inner">
 						<div class ="view" >
@@ -208,7 +208,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>		
 				</div>
 
-				<div class="tab-pane" contenteditable="true" id="panel-Pout">
+				<div class="tab-pane" contenteditable="false" id="panel-Pout">
 					<!-- <p>商品下架</p> -->
 					<!-- 搜索框 -->
 					<div class="navbar-inner">
@@ -235,7 +235,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">图片</th>
@@ -252,7 +252,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</thead>
 											<tbody>
                                             
-                                            <c:forEach items="${foodList}" var="food" varStatus="status">
+                                            <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
 													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
 													<td>2003</td>
@@ -272,7 +272,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane" contenteditable="true" id="panel-Pupdate">
+				<div class="tab-pane" contenteditable="false" id="panel-Pupdate">
 					<div class="navbar-inner">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
@@ -287,7 +287,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 						
 						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
 										
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
 						</form>
@@ -295,7 +295,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">图片</th>
@@ -334,7 +334,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					
 				</div>
-				<div class="tab-pane" contenteditable="true" id="panel-Pnumber">
+				<div class="tab-pane" contenteditable="false" id="panel-Pnumber">
 					
 					<div class="navbar-inner">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
@@ -358,7 +358,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">图片</th>
@@ -397,30 +397,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane" contenteditable="true" id="panel-Pserach">
+				<div class="tab-pane" contenteditable="false" id="panel-Pserach">
 					<div class="navbar-inner">
+                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>全部商品</option>
-							<option>商品编号</option>
-							<option>类别</option>
-							<option>名称</option>
-							<option>价格</option>
-							<option>上架时间</option>
+						<select class="selectSy" name="sel">
+							<option value="1">全部商品</option>
+							<option value="2">商品编号</option>
+							<option value="3">类别</option>
+							<option value="4">名称</option>
+							<option value="5">价格</option>
+							<option value="6">上架时间</option>
 						</select>
 							
 						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
 										
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
-						</form>
+					</form>
 
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">图片</th>
@@ -436,12 +436,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</thead>
 											<tbody>
                                             
-                                            <c:forEach items="${foodList}" var="food" varStatus="status">
+                                            <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
 													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
-													<td>2003</td>
-													<td>蓝莓干</td>
-													<td>纯天然，乐自享</td>
+													<td>${product.id}</td>
+													<td>${product.product_name}</td>
+													<td>${product.description}</td>
 													<td>100</td>
 													<td>果干</td>
 													<td>20.00</td>
@@ -457,7 +457,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 
 				</div>
-				<div class="tab-pane" contenteditable="true" id="panel-Pcheap">
+				<div class="tab-pane" contenteditable="false" id="panel-Pcheap">
 					
 					<div class="navbar-inner">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
@@ -481,7 +481,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">图片</th>
@@ -521,7 +521,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane" contenteditable="true" id="panel-Pkind">
+				<div class="tab-pane" contenteditable="false" id="panel-Pkind">
 					
 					<div class="navbar-inner">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
@@ -545,7 +545,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">图片</th>

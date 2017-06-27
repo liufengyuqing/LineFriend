@@ -24,8 +24,8 @@ public class ShowAddress {
 		HttpSession session =request.getSession();//获取session
 		Integer user_id = (Integer) session.getAttribute("userid");//获取userid
 		User user = dao.findUserAddressById(user_id);//返回用户
-		List<UserAddress> addList = user.getAddresses();//获取地址
-		request.setAttribute("addList", addList);
+		List<UserAddress> userAddressList = user.getAddresses();//获取地址
+		request.setAttribute("addList", userAddressList);
 		
 		return "order";
 	}

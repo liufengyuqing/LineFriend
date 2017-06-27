@@ -47,4 +47,5 @@ public interface UserDao {
 	public List<User> findUserByNickName(String nickName);//按昵称查询
 	public List<User> findUserByEmail(String email); // 
 	public List<User> findUserById2(int id);//根据id 查询用户
+	public List<User> delectUserById(int id);
 }
