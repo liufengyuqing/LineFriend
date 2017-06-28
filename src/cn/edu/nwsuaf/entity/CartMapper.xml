@@ -5,7 +5,6 @@
 <mapper namespace="cn.edu.nwsuaf.dao.CartDao">
 <!-- 加入购物车 -->
 	
-	
 	<insert id="addCart" parameterType="cn.edu.nwsuaf.entity.Cart" >
 		insert into cart (user_id,product_id,product_count) values(#{user_id},#{product.id},#{product_count})
 	</insert>

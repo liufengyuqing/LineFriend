@@ -277,7 +277,7 @@
 						<img src="assets/homeImages/购物车小图标.png" width="20" height="20" />
 					</div>
 					<div class="Search52">
-						<a href="gotoCart.action">去购物车结算</a>
+						<a href="showCart.action">去购物车结算</a>
 					</div>
 				</div>
 			</div>

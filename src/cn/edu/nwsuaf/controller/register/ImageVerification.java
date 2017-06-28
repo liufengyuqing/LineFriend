@@ -11,6 +11,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 图片验证码验证
+ * @author 张琼
+ * 2017-6-28
+ */
 @Controller
 public class ImageVerification {
 	@RequestMapping("/imageVerification.action")

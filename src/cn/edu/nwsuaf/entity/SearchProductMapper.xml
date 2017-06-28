@@ -3,13 +3,15 @@
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <!-- 搜索商品相关 zq  --> <!-- 暂时只用作搜索商品相关模块 勿添加修改  -->
 <mapper namespace="cn.edu.nwsuaf.dao.SearchProductDao">
+<!--
 
 	<select id="findProductByName" parameterType="String"
-		resultType="cn.edu.nwsuaf.entity.Product">  		<!-- 根据商品名查询商品、暂时没用到-->
+		resultType="cn.edu.nwsuaf.entity.Product">  		 根据商品名查询商品、暂时没用到
 		select *
 		from product where product_name=#{product_name}
 	</select>
 	
+	-->
 	<select id="findProductsByName" parameterType="String"
 		resultType="cn.edu.nwsuaf.entity.Product">  						<!-- 根据商品名查询商品 返回列表-->
 		select *

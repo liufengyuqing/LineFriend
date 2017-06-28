@@ -1,7 +1,5 @@
 package cn.edu.nwsuaf.dao;
 
-import java.util.List;
-
 import cn.edu.nwsuaf.entity.User;
 import cn.edu.nwsuaf.entity.UserAddress;
 

@@ -1,6 +1,6 @@
-#tiaojian{
-	height: 30px;width: 200px;
-
+#condtion{
+	height: 30px;
+	width: 200px;	
 }
 #tbShow{
 	font-size: 14px;
@@ -13,3 +13,15 @@
 	height: 30px;
 	width: 100%;
 }
+.selectSy{
+	
+	display: inline-block;	
+}
+#serch{
+	height: 50px;
+	width: 100%;
+}
+/* #condtion{
+	height: 50px;
+	width: 100px;
+} */

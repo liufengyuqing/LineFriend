@@ -169,7 +169,7 @@ $('a[href=' + anchor + ']').tab('show');
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="false" width="1189" height="156">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
@@ -225,7 +225,9 @@ $('a[href=' + anchor + ']').tab('show');
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+								<form action="editOrder.action">
+								
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
@@ -240,70 +242,44 @@ $('a[href=' + anchor + ']').tab('show');
 													<th style="width: 10%;">操作</th>
 												</tr>
 											</thead>
+											
 											<tbody>
+											
+											<c:forEach items="${orderList}"  var="item" varStatus="status">
 												<tr>
+												<!--<form action="editOrder.action">-->
+													<!-- 隐藏域 -->
+													<!-- <input type="hidden" value=${item.id} name="id"/> -->
+													<input type="hidden" value=${item.id} name="id"/>
 													
-													<td>5004</td>
-													<td>3</td>
-													<td>2017年6月22日</td>
-													<td>未处理</td>
+													<td>${item.order_id}</td>
+													<td>${item.user_id}</td>
+													<td>${item.order_time}</td>
+							
+													<td>${item.state}</td>
 													<td>
-														<select>
-															<option>未处理</option>
-															<option>已接单</option>
-															<option>已发货</option>
-															<option>已完成</option>
+														<select name="stateName">
+															<option value="未处理">未处理</option>
+															<option value="已接单">已接单</option>
+															<option value="已发货">已发货</option>
+															<option value="已完成">已完成</option>
 														</select>
 													</td>
-													<td>马学倩</td>
-													<td>陕西省咸阳市杨凌区西北农林科技大学</td>
-													<td>712100</td>
-													<td>18329962222</td>
-													<td><a href="">确定</a></td>
+													<td>${item.rs_name}</td>
+													<td>${item.rs_address}</td>
+													<td>${item.tomp}</td>
+													<td>${item.tel}</td>
+													<td><input type="submit" value="确定"/></td>
+													<!-- <td><input type="submit" value="确定"/></td> -->
+												   <!--<td><a href="editOrder.action?id=${item.id}&state=${stateName}">确定</a></td>-->
+												  <!-- </form>-->
+												
 												</tr>
-												<tr>
-													
-													<td>5004</td>
-													<td>3</td>
-													<td>2017年6月22日</td>
-													<td>未处理</td>
-													<td>
-														<select>
-															<option>未处理</option>
-															<option>已接单</option>
-															<option>已发货</option>
-															<option>已完成</option>
-														</select>
-													</td>
-													<td>马学倩</td>
-													<td>陕西省咸阳市杨凌区西北农林科技大学</td>
-													<td>712100</td>
-													<td>18329962222</td>
-													<td><a href="">确定</a></td>
-												</tr>
-												<tr>
-													
-													<td>5004</td>
-													<td>3</td>
-													<td>2017年6月22日</td>
-													<td>未处理</td>
-													<td>
-														<select>
-															<option>未处理</option>
-															<option>已接单</option>
-															<option>已发货</option>
-															<option>已完成</option>
-														</select>
-													</td>
-
-													<td>马学倩</td>
-													<td>陕西省咸阳市杨凌区西北农林科技大学</td>
-													<td>712100</td>
-													<td>18329962222</td>
-													<td><a href="">确定</a></td>
-												</tr>
+												</c:forEach>
+												
 											</tbody>
 									</table>
+									</form>
 						</div>
 					</div>	
 				</div>
@@ -328,7 +304,7 @@ $('a[href=' + anchor + ']').tab('show');
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="true">
+									<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
@@ -342,39 +318,19 @@ $('a[href=' + anchor + ']').tab('show');
 												</tr>
 											</thead>
 											<tbody>
+											<c:forEach items="${orderList}"  var="item" varStatus="status">
 												<tr>
 													
-													<td>5004</td>
-													<td>3</td>
-													<td>2017年6月22日</td>
-													<td>马学倩</td>
-													<td>陕西省咸阳市杨凌区西北农林科技大学</td>
-													<td>712100</td>
-													<td>18329962222</td>
-													<td><a href="">作废</a></td>
+													<td>${item.order_id}</td>
+													<td>${item.user_id}</td>
+													<td>${item.order_time}</td>
+													<td>${item.rs_name}</td>
+													<td>${item.rs_address}</td>
+													<td>${item.tomp}</td>
+													<td>${item.tel}</td>
+													<td><a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
 												</tr>
-												<tr>
-													
-													<td>5004</td>
-													<td>3</td>
-													<td>2017年6月22日</td>
-													<td>马学倩</td>
-													<td>陕西省咸阳市杨凌区西北农林科技大学</td>
-													<td>712100</td>
-													<td>18329962222</td>
-													<td><a href="">作废</a></td>
-												</tr>
-												<tr>
-													
-													<td>5004</td>
-													<td>3</td>
-													<td>2017年6月22日</td>
-													<td>马学倩</td>
-													<td>陕西省咸阳市杨凌区西北农林科技大学</td>
-													<td>712100</td>
-													<td>18329962222</td>
-													<td><a href="">作废</a></td>
-												</tr>
+												</c:forEach>
 											</tbody>
 									</table>
 						</div>

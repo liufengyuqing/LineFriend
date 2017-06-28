@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.nwsuaf.util.ImageUtil;
 
+/**
+ * 生成图片验证码
+ * @author 张琼
+ * 2017-6-28
+ */
 @Controller
 public class ImageVerifyCodeAction {
 	@RequestMapping("/imageVerifyCode.action")

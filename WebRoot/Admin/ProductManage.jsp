@@ -13,25 +13,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 
-		<base href="<%=basePath%>">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="Admin/assets/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/index.css" />
 
 		<link rel="stylesheet" type="text/css"
-			href="Admin/assets/css/bootstrap.min.css" />
+			href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css"
-			href="Admin/assets/css/bootstrap-responsive.css" />
+			href="assets/css/bootstrap-responsive.css" />
 		<link rel="stylesheet" type="text/css"
-			href="Admin/assets/css/bootstrap-responsive.min.css" />
-		<link rel="stylesheet" type="text/css" href="Admin/assets/css/ProductM.css" />
-		<script type="text/javascript" src="Admin/assets/js/bootstrap.min.js"></script>
+			href="assets/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css"
-			href="Admin/assets/css/bootstrap-combined.min.css" />
-		<link rel="stylesheet" type="text/css" href="Admin/assets/css/ProductM.css" />
-		<link rel="stylesheet" type="text/css" href="Admin/assets/css/UserM.css" />
-		<script type="text/javascript" src="Admin/assets/js/jquery.min.js" ></script>
-		<script type="text/javascript" src="Admin/assets/js/npm.js" ></script>
+			href="assets/css/bootstrap-combined.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
+		<script type="text/javascript" src="assets/js/jquery.min.js" ></script>
+		<script type="text/javascript" src="assets/js/npm.js" ></script>
 		
 
 		
@@ -72,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
 		<li><a href="#">Line friend后台管理系统</a> </li>
 		<li class="active"><a href="#">首页</a></li>
-		<li><a href="AdminMsg.html">通知</a></li>
+		<li><a href="AdminMsg.jsp">通知</a></li>
 		<li class="dropdown pull-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
 		<ul class="dropdown-menu">
 			<li><a href="#">Line friend主页</a></li>
@@ -93,35 +92,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#userM"> -->
-						 <a href="UserManage.html" style="margin-left: 15px;margin-right: 50px;">用户管理<img src="Admin/assets/homeImages/user.png"></a>
+
+						 <a href="UserManage.jsp" style="margin-left: 15px;margin-right: 50px;">用户管理<img src="Admin/assets/homeImages/user.png"></a>
+
 					</div>
 					<div id="userM" class="accordion-body collapse">
 						<div class="accordion-inner">
-							<a href="">用 户 查 询<img src="Admin/assets/homeImages/point.png"></a><br>
-							<a href="">注 销 用 户<img src="Admin/assets/homeImages/point.png"></a>
+							<a href="">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
+							<a href="">注 销 用 户<img src="assets/homeImages/point.png"></a>
 						</div>
 					</div>
 				</div>
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#productM">商品管理<img src="Admin/assets/homeImages/pro.png"></a>
+						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#productM">商品管理<img src="assets/homeImages/pro.png"></a>
 					</div>
 					<div id="productM" class="accordion-body in collapse">
 						<div class="accordion-inner">
-							<a href="">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="Admin/assets/homeImages/point.png"></a><br>
-							<a href="">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="Admin/assets/homeImages/point.png"></a><br>
-							<a href="">商品信息修改<img src="Admin/assets/homeImages/point.png"></a><br>
-							<a href="">商品库存管理<img src="Admin/assets/homeImages/point.png"></a><br>
-							<a href="">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="Admin/assets/homeImages/point.png"></a><br>
-							<a href="">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="Admin/assets/homeImages/point.png"></a><br>
-							<a href="">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="Admin/assets/homeImages/point.png"></a><br>
+							<a href="">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商品信息修改<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商品库存管理<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
 						</div>
 					</div>
 				</div>
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
-						 <a href="OrderManage.html" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="Admin/assets/homeImages/order.png"></a>
+						 <a href="OrderManage.html" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
 					</div>
 					<div id="orderM" class="accordion-body collapse">
 						<div class="accordion-inner">
@@ -214,7 +215,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="navbar-inner">
                     
                     
-                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSerch.action">
+                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
 						<select class="selectSy" name="sel">
@@ -227,7 +228,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</select>
 							
 				
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
 										
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
 						</form>
@@ -254,15 +255,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             
                                             <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
-													<td>2003</td>
-													<td>蓝莓干</td>
-													<td>纯天然，乐自享</td>
+													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td>${product.id}</td>
+													<td>${product.product_name}</td>
+													<td>${product.description}</td>
 													<td>100</td>
-													<td>果干</td>
-													<td>20.00</td>
-													<td>33.00</td>
-													<td>2017年6月20日</td>
+													<td>${product.keywords}</td>
+													<td>${product.dangqian_price}</td>
+													<td>${product.fixed_price}</td>
+													<td>${product.add_time}</td>
 													<td><a href="">下架</a></td>
 												</tr>
                                             </c:forEach>
@@ -274,19 +275,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="tab-pane" contenteditable="false" id="panel-Pupdate">
 					<div class="navbar-inner">
+                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>全部商品</option>
-							<option>商品编号</option>
-							<option>类别</option>
-							<option>名称</option>
-							<option>价格</option>
-							<option>上架时间</option>
+						<select class="selectSy" name="sel">
+							<option value="1">全部商品</option>
+							<option value="2">商品编号</option>
+							<option value="3">类别</option>
+							<option value="4">名称</option>
+							<option value="5">价格</option>
+							<option value="6">上架时间</option>
 						</select>
 							
-						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
+
 							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
 										
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
@@ -312,17 +313,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</thead>
 											<tbody>
                                             
-                                            <c:forEach items="${foodList}" var="food" varStatus="status">
+                                            <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
-													<td>2003</td>
-													<td>蓝莓干</td>
-													<td>纯天然，乐自享</td>
+													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td>${product.id}</td>
+													<td>${product.product_name}</td>
+													<td>${product.description}</td>
 													<td>100</td>
-													<td>果干</td>
-													<td>20.00</td>
-													<td>33.00</td>
-													<td>2017年6月20日</td>
+													<td>${product.keywords}</td>
+													<td>${product.dangqian_price}</td>
+													<td>${product.fixed_price}</td>
+													<td>${product.add_time}</td>
 													<td><a href="">更新</a></td>
 												</tr>
                                             </c:forEach>
@@ -337,20 +338,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="tab-pane" contenteditable="false" id="panel-Pnumber">
 					
 					<div class="navbar-inner">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
+                        
+                        
+                        <label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>全部商品</option>
-							<option>商品编号</option>
-							<option>类别</option>
-							<option>名称</option>
-							<option>价格</option>
-							<option>上架时间</option>
+						<select class="selectSy" name="sel">
+							<option value="1">全部商品</option>
+							<option value="2">商品编号</option>
+							<option value="3">类别</option>
+							<option value="4">名称</option>
+							<option value="5">价格</option>
+							<option value="6">上架时间</option>
 						</select>
 							
 						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+						
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
 										
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
 						</form>
@@ -376,17 +380,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</thead>
 											<tbody>
                                             
-                                            <c:forEach items="${foodList}" var="food" varStatus="status">
+                                            <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
-													<td>2003</td>
-													<td>蓝莓干</td>
-													<td>纯天然，乐自享</td>
+													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td>${product.id}</td>
+													<td>${product.product_name}</td>
+													<td>${product.description}</td>
 													<td>100</td>
-													<td>果干</td>
-													<td>20.00</td>
-													<td>33.00</td>
-													<td>2017年6月20日</td>
+													<td>${product.keywords}</td>
+													<td>${product.dangqian_price}</td>
+													<td>${product.fixed_price}</td>
+													<td>${product.add_time}</td>
 													<td><input type="text" name="paddNum" style="height: 30px;width: 100px;"></td>
 													<td><a href="">更新</a></td>
 												</tr>
@@ -435,18 +439,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												</tr>
 											</thead>
 											<tbody>
-                                            
+                                           
                                             <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
+													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
 													<td>${product.id}</td>
 													<td>${product.product_name}</td>
 													<td>${product.description}</td>
 													<td>100</td>
-													<td>果干</td>
-													<td>20.00</td>
-													<td>33.00</td>
-													<td>2017年6月20日</td>
+													<td>${product.keywords}</td>
+													<td>${product.dangqian_price}</td>
+													<td>${product.fixed_price}</td>
+													<td>${product.add_time}</td>
 													
 												</tr>
                                             </c:forEach>
@@ -460,20 +464,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="tab-pane" contenteditable="false" id="panel-Pcheap">
 					
 					<div class="navbar-inner">
+                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>全部商品</option>
-							<option>商品编号</option>
-							<option>类别</option>
-							<option>名称</option>
-							<option>价格</option>
-							<option>上架时间</option>
+						<select class="selectSy" name="sel">
+							<option value="1">全部商品</option>
+							<option value="2">商品编号</option>
+							<option value="3">类别</option>
+							<option value="4">名称</option>
+							<option value="5">价格</option>
+							<option value="6">上架时间</option>
 						</select>
 							
-						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+					
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
 										
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
 						</form>
@@ -499,19 +503,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</thead>
 											<tbody>
                                             
-                                            <c:forEach items="${foodList}" var="food" varStatus="status">
+                                            <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
-													<td>2003</td>
-													<td>蓝莓干</td>
-													<td>纯天然，乐自享</td>
+													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td>${product.id}</td>
+													<td>${product.product_name}</td>
+													<td>${product.description}</td>
 													<td>100</td>
 													
-													<td>果干/蜜饯</td>
-													<td>20.00</td>
+													<td>${product.keywords}</td>
+													<td>${product.dangqian_price}</td>
 													<td><input type="text" name="newCh" style="height: 30px;width: 80px;"></td>
-													<td>33.00</td>
-													<td>2017年6月20日</td>
+													<td>${product.fixed_price}</td>
+													<td>${product.add_time}</td>
 													<td><a href="">确认</a></td>
 												</tr>
                                             </c:forEach>
@@ -524,20 +528,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="tab-pane" contenteditable="false" id="panel-Pkind">
 					
 					<div class="navbar-inner">
+                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>全部商品</option>
-							<option>商品编号</option>
-							<option>类别</option>
-							<option>名称</option>
-							<option>价格</option>
-							<option>上架时间</option>
+						<select class="selectSy" name="sel">
+							<option value="1">全部商品</option>
+							<option value="2">商品编号</option>
+							<option value="3">类别</option>
+							<option value="4">名称</option>
+							<option value="5">价格</option>
+							<option value="6">上架时间</option>
 						</select>
-							
 						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
 										
 							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
 						</form>
@@ -564,14 +567,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</thead>
 											<tbody>
                                             
-                                            <c:forEach items="${foodList}" var="food" varStatus="status">
+                                            <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="Admin/assets/homeImages/gg4.jpg"></td>
-													<td>2003</td>
-													<td>蓝莓干</td>
-													<td>纯天然，乐自享</td>
+													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td>${product.id}</td>
+													<td>${product.product_name}</td>
+													<td>${product.description}</td>
 													<td>100</td>
-													<td>果干/蜜饯</td>
+													<td>${product.keywords}</td>
 													<td><select>
 															<option>坚果/炒货</option>
 															<option>果干/蜜饯</option>
@@ -582,9 +585,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 															<option>鱿鱼/海味</option>
 														</select>
 													</td>
-													<td>20.00</td>
-													<td>32.00</td>
-													<td>2017年6月20日</td>
+													<td>${product.dangqian_price}</td>
+													<td>${product.fixed_price}</td>
+													<td>${product.add_time}</td>
 													<td><a href="">确认</a></td>
 												</tr>
                                             </c:forEach>

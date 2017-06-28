@@ -15,7 +15,8 @@ public interface CommentDao {
 	
 	//public Comment findCommentByProductId(int id);
 	
-	public List<Comment> findCommentsByProductId(int product_id);
+	public List<Comment> findCommentsByProductId(int product_id);	//根据商品ID查询对应的评论列表
 		
-	public void addComment(@Param("content")String content,@Param("email")String email,@Param("send_time")String send_time,@Param("upvote")String upvote,@Param("product_id")int product_id);
+	public void addComment(@Param("content")String content,@Param("email")String email,@Param("send_time")String send_time,@Param("upvote")String upvote,@Param("product_id")int product_id); //增加评论
+
 }

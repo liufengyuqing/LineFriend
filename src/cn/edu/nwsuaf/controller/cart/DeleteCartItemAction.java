@@ -23,6 +23,7 @@ import cn.edu.nwsuaf.dao.CartDao;
  */
 @Controller
 public class DeleteCartItemAction {
+	
 	@RequestMapping("deleteCartItem.action")
 	public void delete(HttpServletRequest request,HttpServletResponse response,String id){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
@@ -36,11 +37,13 @@ public class DeleteCartItemAction {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 		//return null;
-		
 	}
+	
+	
+	
+	
+	
 	
 
 }

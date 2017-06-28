@@ -28,7 +28,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
-
+<!--从前台获取查询参数并转到后台处理-->
+<script>
+		function SearchUser(){
+			//获取输入框和下拉框狂的值
+			//alert(1);
+			//var tiaojian=document.formSy.getElementsByName("condtion").value;
+			//var sel2=document.formSy.getElementsByName("sel2").value;
+			var condtion=document.formSy.condtion.value;
+			var select=document.formSy.select.value;
+			alert(condtion);
+			alert(select);
+			//window.location.href="Admin/userDelectSearch.action?"+"condtion="+condtion+"&sel2="+sel2+"#panel-Userach";
+			//alert("sec");
+		}
+	
+</script>
+<!-- 从页面获取userID并传到后台进行action处理之后返回 #panel-Udelect-->
+<script>
+	function deleteuser(){
+		//var condtion=document.formSy.tiaojian.value;
+		//var sel2=document.formSy.sel2.value;
+		//test
+		var userId=document.getElementById("userId").innerHTML;
+		alert(userId+"确认删除该用户？");
+		window.location.href="UserDelect.action?"+"userId="+userId+"#panel-Udelect";
+		alert("该用户已删除！");
+		
+	}
+</script>
 
 	
 <!-- TemplateBeginEditable name="doctitle" -->
@@ -67,7 +95,7 @@ $('a[href=' + anchor + ']').tab('show');
 <body>
 	
 <div id="head">
-	<ul class="nav nav-tabs" contenteditable="true" style="background-color: #000;">
+	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
 		<li><a href="#">Line friend后台管理系统</a> </li>
 		<li class="active"><a href="#">首页</a></li>
 		<li><a href="AdminMsg.html">通知</a></li>
@@ -94,15 +122,15 @@ $('a[href=' + anchor + ']').tab('show');
 						 用户管理<img src="assets/homeImages/user.png"></a>
 					</div>
 					<div id="userM" class="accordion-body  in collapse">
-						<div class="accordion-inner">
-							<a href="">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
-							<a href="">注 销 用 户<img src="assets/homeImages/point.png"></a>
+						<!--<div class="accordion-inner">
+							<a href="#panel-Userach">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
+							<a href="#panel-Udelect">注 销 用 户<img src="assets/homeImages/point.png"></a>
 						</div>
-					</div>
+					--></div>
 				</div>
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						 <a href="ProductManage.html" style="margin-left: 15px;margin-right: 50px;">商品管理<img src="assets/homeImages/pro.png"></a>
+						 <a href="ProductManage.jsp" style="margin-left: 15px;margin-right: 50px;">商品管理<img src="assets/homeImages/pro.png"></a>
 					</div>
 					<div id="productM" class="accordion-body collapse">
 						<div class="accordion-inner">
@@ -119,7 +147,7 @@ $('a[href=' + anchor + ']').tab('show');
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
-						 <a href="orderManage.html" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
+						 <a href="OrderManage.jsp" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
 					</div>
 					<div id="orderM" class="accordion-body collapse">
 						<div class="accordion-inner">
@@ -140,92 +168,18 @@ $('a[href=' + anchor + ']').tab('show');
        		 <!--页面-->
        		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
 			<ul class="nav nav-tabs">
-				<li class="active"><a contenteditable="true" data-toggle="tab" href="#panel-Userach">用户查询</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Udelect">注销用户</a></li>
-				
-			</ul>
+				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-Userach">用户查询</a></li>
+				</ul>
 
 			<div class="tab-content">
-				<div class="tab-pane active" contenteditable="true" id="panel-Userach">
+				<div class="tab-pane active" contenteditable="false" id="panel-Userach">
 					<!-- <p>用户搜索</p> -->
 					<div class="navbar-inner">
-						<form class="navbar-form navbar-left" role="search" id="formSy" action="userSearch.action">
-							<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
-						<!-- <span>请选择查询条件:</span> -->
-										
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condtion">
-								<select class="selectSy" name="sel">
-											<option value="1" >
-												全部用户
-											</option>
-											<option value="2">
-												用户邮箱
-											</option>
-											<option value="3">
-												性别
-											</option>
-											<option value="4">
-												用户ID
-											</option>
-											
-											<option value="5">
-												用户昵称
-											</option>
-											
-										</select>		
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
-						</form>
-
-						<!-- 查询结果展示表格 -->
-						<div id="tbShow">
-								<div class="clean"></div>
-									<table class="table" contenteditable="false">
-											<thead>
-												<tr>
-													<th style="width: 10%;">用户ID</th>
-													<th style="width: 15%;">注册邮箱</th>
-													<th style="width: 10%;">昵称</th>
-													<th style="width: 15%;">最后一次登录时间</th>
-													<th style="width: 15%;">最后一次登录IP</th>
-												
-													<th style="width: 10%;">性别</th>
-													<th style="width: 10%;">身份证号</th>
-													<th style="width: 15%;">出生日期</th>
-												</tr>
-											</thead>
-											<tbody>
-											<!--  动态加载-->
-											<c:forEach items="${userList}" var="user" varStatus="status">
-												<tr>
-													<td name="userId">${user.id}</td>
-													<td>${user.email}</td>
-													<td>${user.nickName}</td>
-													<td>${user.last_login_time}</td>
-													<th>${user.last_login_ip}</th>
-													<td>${user.sex}</td>
-													<td>${user.cardId}</td>
-													<td>${user.year}/ ${user.mouth}/${user.day}</td>
-												</tr>
-											</c:forEach></tbody>
-									</table>
-						</div>
-					</div>	
-				</div>
-
-				<div class="tab-pane" contenteditable="true" id="panel-Udelect">
-					<!-- <p>用户注销</p> -->
-					<!-- 搜索框 -->
-					<div class="navbar-inner">
-						
+						<form class="navbar-form navbar-left" role="search" id="formSy">
+							<label style="display: inline-block;margin-top:10px;">&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>			
 							
-						
-						<form class="navbar-form navbar-left" role="search" id="formSy" action="userSearch.action">
-							<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
-						<!-- <span>请选择查询条件:</span> -->
-										
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condtion">
-								<select class="selectSy" name="sel">
-											<option value="1" >
+								<select class="selectSy" name="select" >
+											<option value="1">
 												全部用户
 											</option>
 											<option value="2">
@@ -241,9 +195,12 @@ $('a[href=' + anchor + ']').tab('show');
 											<option value="5">
 												用户昵称
 											</option>
-											
-										</select>		
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+											<option value="6">
+												年龄
+											</option>
+										</select>	
+										<input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >	
+										<button type="submit" class="btn btn-default" style="margin-top:5px;" onclik="SearchUser();">查询</button>	
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -253,11 +210,11 @@ $('a[href=' + anchor + ']').tab('show');
 											<thead>
 												<tr>
 													<th style="width: 10%;">用户ID</th>
-													<th style="width: 15%;">注册邮箱</th>
+													<th style="width: 10%;">注册邮箱</th>
 													<th style="width: 10%;">昵称</th>
-													<th style="width: 15%;">最后一次登录时间</th>
+													<th style="width: 10%;">真实姓名</th>
+													<th style="width: 10%;">最后一次登录时间</th>
 													<th style="width: 10%;">最后一次登录IP</th>
-												
 													<th style="width: 10%;">性别</th>
 													<th style="width: 10%;">身份证号</th>
 													<th style="width: 10%;">出生日期</th>
@@ -265,27 +222,27 @@ $('a[href=' + anchor + ']').tab('show');
 												</tr>
 											</thead>
 											<tbody>
-												
+											<!--  动态加载-->
 											<c:forEach items="${userList}" var="user" varStatus="status">
 												<tr>
-													<td name="userId">${user.id}</td>
+													<td>${user.id}</td>
 													<td>${user.email}</td>
 													<td>${user.nickName}</td>
+													<td>${user.trueName}</td>
 													<td>${user.last_login_time}</td>
 													<th>${user.last_login_ip}</th>
 													<td>${user.sex}</td>
 													<td>${user.cardId}</td>
-													<td>${user.year}/ ${user.mouth}/${user.day}</td>
-													<td><a href="UserDelect.action">注销</a></td>
+													<td>${user.year}/${user.mouth}/${user.day}</td>
+													<td><a href="javascript:void(0)" onclick="deleteuser();">注销</a></td>
 												</tr>
-											</c:forEach>
-											</tbody>
+											</c:forEach></tbody>
 									</table>
 						</div>
 					</div>	
 				</div>
 
-			</div>
+				</div>
 		</div>
     	</div>
 		</div>	

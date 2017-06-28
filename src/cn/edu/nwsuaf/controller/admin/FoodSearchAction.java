@@ -22,14 +22,35 @@ import cn.edu.nwsuaf.entity.Product;
  */
 @Controller
 public class FoodSearchAction {
-	@RequestMapping("/foodSerch.action")
+	@RequestMapping("/Admin/foodSearch.action")
 	public String foodSearch(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("springMVC.xml");
-		ProductDao product=ctx.getBean(ProductDao.class);
+		ProductDao productDao=ctx.getBean(ProductDao.class);
 		
-		List<Product> productList=product.findAllProduct();
+		List<Product> productList=null;
 		
+		String sel=request.getParameter("sel");
+		String condition=request.getParameter("condition");
 		
+		if(sel.equals("1")){
+			productList=productDao.findAllProduct1();
+			
+		}else if(sel.equals("2")){
+			productList=productDao.findProductById1(Integer.parseInt(condition));
+			
+		}else if(sel.equals("3")){
+			productList=productDao.findProductByCategory(condition);
+			
+		}else if(sel.equals("4")){
+			productList=productDao.findProductByName(condition);
+			
+		}else if(sel.equals("5")){
+			productList=productDao.findProductByPrice(Double.parseDouble(condition));
+			
+		}else if(sel.equals("6")){
+			productList=productDao.findProductByAddTime(Long.parseLong(condition));
+			
+		}
 		
 		request.setAttribute("productList",productList);
 		

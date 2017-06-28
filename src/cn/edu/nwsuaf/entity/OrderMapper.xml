@@ -31,10 +31,8 @@
 	</resultMap>
 
 
-	<select id="updateAddress" parameterType="int"
-		resultType="cn.edu.nwsuaf.entity.UserAddress"> <!-- 更新地址  -->
-		select receive_name, province,city,district,full_address,phone,postal_code
-		from receive_address where id= #{id}
+	<select id="updateOrder"> <!-- 更新地址  -->
+		 update orders set state=#{1} where id=#{0}
 	</select>
 
 	<select id="deleteOrder" parameterType="int"> <!-- 删除地址  -->

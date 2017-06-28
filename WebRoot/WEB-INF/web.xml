@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-	<servlet>
+	<!--<servlet>
 		<servlet-name>ImageServlet</servlet-name>
 		<servlet-class>com.dw.servlet.ImageServlet</servlet-class>
 	</servlet>
@@ -12,7 +12,8 @@
 		<url-pattern>/imageServlet</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
+	-->
+	<!--<servlet>
 		<servlet-name>VerificationServlet</servlet-name>
 		<servlet-class>com.dw.servlet.VerificationServlet</servlet-class>
 	</servlet>
@@ -20,6 +21,7 @@
 		<servlet-name>VerificationServlet</servlet-name>
 		<url-pattern>/verificationServlet</url-pattern>
 	</servlet-mapping>
+	-->
 	<!-- 编码过滤器，控制中文字符请求 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -82,10 +84,5 @@
 		</init-param>
 	</filter>
 	<!-- Session isExpired Config -->
-
-
-
-
-
 
 </web-app>

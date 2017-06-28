@@ -11,21 +11,29 @@ public class Orders {
    private String rs_address;
    private String tomp;
    private String tel;
-   
+   private String state;
 
 
 
+public String getState() {
+	return state;
+}
+public void setState(String state) {
+	this.state = state;
+}
 public String getOrder_time() {
 	return order_time;
 }
 public void setOrder_time(String orderTime) {
 	order_time = orderTime;
 }
+
 @Override
 public String toString() {
-	return "Orders [id=" + id + ", order_id=" + order_id + ", rs_address="
-			+ rs_address + ", rs_name=" + rs_name + ", tel=" + tel + ", tomp="
-			+ tomp + ", user_id=" + user_id + ", user_time=" + order_time + "]";
+	return "Orders [id=" + id + ", order_id=" + order_id + ", order_time="
+			+ order_time + ", rs_address=" + rs_address + ", rs_name="
+			+ rs_name + ", state=" + state + ", tel=" + tel + ", tomp=" + tomp
+			+ ", user_id=" + user_id + "]";
 }
 public int getId() {
 	return id;

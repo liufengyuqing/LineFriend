@@ -13,7 +13,12 @@ public interface ProductDao {
 	public Product findProductById(int id);
 	public List<Product> findAllProduct();	//home.jsp加载时动态显示商品
 	
-	
-	
+	/* 陈一婷 */
+	public List<Product> findAllProduct1();
+	public List<Product> findProductById1(int id);
+	public List<Product> findProductByName(String name);
+	public List<Product> findProductByCategory(String category);
+	public List<Product> findProductByPrice(double price);
+	public List<Product> findProductByAddTime(long addTime);
 	
 }

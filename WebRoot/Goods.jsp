@@ -363,13 +363,12 @@ lick=addToFavorite(); href="#"><img
 
 
 
-								<script>
-	var t = 1;
+								<script><!--
+	var t = $(this).parent().find('input[class*=text_box]');
 	$(".add").click(function() {
 		t = $(this).parent().find('input[class*=text_box]');
 		t.val(parseInt(t.val()) + 1);
 		//alert(t.val());
-			return t.val();
 
 		})
 	$(".min").click(function() {
@@ -386,13 +385,14 @@ lick=addToFavorite(); href="#"><img
 	function addCart() {
 		var id = document.getElementById("id").value;
 
-		alert(t.val());
-		if (t.val() == null || t.val() == 0) {
-			var num = document.getElementById("num").value;
+		alert(document.getElementById("num").value);
+		/**if (t.val() == null || t.val() == 0) {
+			
 		} else {
 			num = t.val();
-		}
+		}*/
 
+        var num = document.getElementById("num").value;
 		var action = 'gotoCart.action?id=' + id + '&num=' + num;
 		window.location.href = action;
 	}
@@ -402,7 +402,7 @@ lick=addToFavorite(); href="#"><img
 
 
 						<div class="btn">
-							<a href="JavaScript:addCart()"><font color="#FFFFFF"><b>加入购物车</b>
+							<a href="javascript:addCart();"><font color="#FFFFFF"><b>加入购物车</b>
 							</font> </a>
 						</div>
 						<div class="btn">

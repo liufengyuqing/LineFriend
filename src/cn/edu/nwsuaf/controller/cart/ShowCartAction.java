@@ -33,6 +33,9 @@ public class ShowCartAction {
 		HttpSession session = request.getSession();
 		Integer uid = (Integer) session.getAttribute("userid"); // 获取userid
 		System.out.println("获取用户+" + uid);
+		if(uid==null){
+			return "forward:UserLogin.jsp";
+		}
 
 		List<Cart> cartList = cartDao.findAllProductByUserId(uid);
 		for (Cart p : cartList) {

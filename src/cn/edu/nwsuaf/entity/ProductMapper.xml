@@ -14,11 +14,43 @@
 		`product`)-(SELECT MIN(id) FROM `product`))+(SELECT MIN(id) FROM
 		`product`)) AS id) AS t2
 		WHERE t1.id >= t2.id
-		ORDER BY t1.id LIMIT 7;
+		ORDER BY t1.id LIMIT 10;
 	</select>
 	
+	<!-- 陈一婷 -->
 	<select id="findAllProduct1" resultType="cn.edu.nwsuaf.entity.Product">
 		select * from product
 	</select>
+	
+	
+	<select id="findProductByName" parameterType="String" resultType="cn.edu.nwsuaf.entity.Product">
+	    select * from product where product_name=#{name}
+	</select>
+	
+	<select id="findProductById1" parameterType="int" resultType="cn.edu.nwsuaf.entity.Product">
+		select * from product where id=#{id}	
+	</select>
+	
+	<select id="findProductByCategory" parameterType="String" resultType="cn.edu.nwsuaf.entity.Product">
+	    select * from product where keywords=#{category}
+	</select>
+	
+	<select id="findProductByPrice" parameterType="double" resultType="cn.edu.nwsuaf.entity.Product">
+	    select * from product where dangqian_price=#{price}
+	</select>
+	
+	<select id="findProductByAddTime" parameterType="long" resultType="cn.edu.nwsuaf.entity.Product">
+	    select * from product where add_time=#{addTime}
+	</select>
+	
+	<insert id="addProduct" parameterType="cn.edu.nwsuaf.entity.Product" >
+		insert into product (id,product_name,description,fixed_price,dangqian_price,keywords,product_pic) 
+		values(#{id},#{name},#{description},#{fixed_price},#{dangqian_price},#{category},#{path})
+	</insert>
+	
+	
+	<delete id="deleteProduct" parameterType="int"> 
+		delete * from product where id = #{id}
+	</delete>
 	
 </mapper>

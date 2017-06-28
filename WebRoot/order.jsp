@@ -118,13 +118,20 @@
 				<input type="radio" name="address" value="add3">
 				陕西省咸阳市杨陵区李台街道 西北农林科技大学北校区信息工程学院(马学倩 收)  185XXXX6666
 			</div>-->
+			
+			
+			
 			<!-- 动态页面代码 -->
+			
+			
 			<c:forEach items="${addList}" var="item" varStatus="status">
 				<div>
 					<input type="radio" name="address" value="add1">
 					(${item.receive_name}&nbsp;收)&nbsp;${item.province}省&nbsp;${item.city}市&nbsp;${item.district}区&nbsp;${item.full_address}&nbsp;${item.phone}
 				</div>
 			</c:forEach>
+			
+			
 
 			<hr>
 		</div>
@@ -137,13 +144,21 @@
 				<th id="th4">小计</th>
 			</tr>
 			
-			<!--<tr class="trwidth">
+			
+			
+			
+			<tr class="trwidth">
 				<td><div class="goods_show"><a href="Goods.html"><img src="assets/homeImages/goods/goods1.jpg" id="goodsimg"></a>
 		      <p> 泰国芒果干 来自泰国友人的问候</p></a></div></td>
 				<td>32.00</td>
 				<td>1</td>
 				<td>32.00</td>
 			</tr>
+			
+			
+			
+			
+			<!--
 			<tr class="trwidth">
 				<td><div class="goods_show"><a href="Goods.html"><img src="assets/homeImages/goods/goods6.jpg" id="goodsimg"><p>夏威夷果奶油味坚果零食</p></a></div></td>
 				<td>52.50</td>

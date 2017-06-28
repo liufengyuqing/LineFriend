@@ -68,10 +68,7 @@ window.onload = function () {
 
     // 点击选择框
     for(var i = 0; i < selectInputs.length; i++ ){
-        //js获取元素的check=true
-    	//获取两个值
-    	
-    	selectInputs[i].onclick = function () {
+        selectInputs[i].onclick = function () {
             if (this.className.indexOf('check-all') >= 0) { //如果是全选，则吧所有的选择框选中
                 for (var j = 0; j < selectInputs.length; j++) {
                     selectInputs[j].checked = this.checked;
@@ -84,7 +81,6 @@ window.onload = function () {
             }
             getTotal();//选完更新总计
         }
-    	
     }
 
     // 显示已选商品弹层
@@ -115,7 +111,6 @@ window.onload = function () {
             var countInout = this.getElementsByTagName('input')[1]; // 数目input
             var value = parseInt(countInout.value); //数目
             //通过判断触发元素的class确定用户点击了哪个元素
-            getSubtotal(this);
             switch (cls) {
                 case 'add': //点击了加号
                     countInout.value = value + 1;
@@ -136,9 +131,6 @@ window.onload = function () {
             }
             getTotal();
         }
-        
-        tr[i].click();
-        
         // 给数目输入框绑定keyup事件
         tr[i].getElementsByTagName('input')[1].onkeyup = function () {
             var val = parseInt(this.value);
@@ -151,15 +143,6 @@ window.onload = function () {
             getSubtotal(this.parentNode.parentNode); //更新小计
             getTotal(); //更新总数
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
     // 点击全部删除
     deleteAll.onclick = function () {

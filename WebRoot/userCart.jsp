@@ -37,7 +37,7 @@
 		<script type="text/javascript"
 			src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 	</head>
-	<body>
+	<body onload = >
 		<div id="header">
 			<div class="header1">
 				n<a rel="sidebar" onclick=
@@ -286,11 +286,12 @@ href="#"><img
 								</td>
 								<td class="count">
 									<span class="reduce"></span>
-									<input class="count-input" type="text" value="1" />
+									<input class="count-input" type="text" value="${cartItem.product_count }" />
 									<span class="add">+</span>
 								</td>
 								<td class="subtotal">
-									29.90
+								
+									
 								</td>
 								<td class="operation">
 									<span class="delete">删除</span>
@@ -300,7 +301,7 @@ href="#"><img
 							</c:forEach>
 							
 							
-							
+							<!-- 
 							
 							<tr>
 								<td class="checkbox">
@@ -417,6 +418,9 @@ href="#"><img
 									<span class="delete">删除</span>
 								</td>
 							</tr>
+							
+							-->
+							
 						</tbody>
 					</table>
 					<div class="foot" id="foot">

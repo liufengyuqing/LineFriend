@@ -28,7 +28,7 @@ public class UserSearchAction {
 		List<User> userList=null;
 		//HttpSession session=request.getSession();
 		//User user=null;
-		String sel=request.getParameter("sel");
+		String sel=request.getParameter("select");
 		String condtion=request.getParameter("condtion");
 		System.out.print(sel);
 		System.out.print(condtion);
@@ -58,19 +58,18 @@ public class UserSearchAction {
 			System.out.print("oK");
 			userList=userDao.findUserByNickName(condtion);
 		}
-		
+		/*else{
+			System.out.print("oK");
+			userList=userDao.findAllUser();
+		}*/
 		/*if(userList==null){
 			request.setAttribute("userNull", "没有此用户的信息");
 		}else{
 			request.setAttribute("user", user);
 		}*/
 		
-		if(userList==null){
-			request.setAttribute("userListNull", "没有此用户的信息");
-		}else{
-			request.setAttribute("userList", userList);
+		request.setAttribute("userList", userList);
 
-		}
 		return "/Admin/UserManage";
 	}
 }
