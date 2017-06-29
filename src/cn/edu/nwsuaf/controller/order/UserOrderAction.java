@@ -37,7 +37,7 @@ public class UserOrderAction {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"springMVC.xml");
 		UserAddressDao dao = ctx.getBean(UserAddressDao.class);
-		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
+		Integer user_id = (Integer) session.getAttribute("user_id");// 获取userid
 		// 登录验证
 
 		if (user_id == null) {

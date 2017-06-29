@@ -19,7 +19,7 @@ import cn.edu.nwsuaf.entity.Product;
 /**
  * @author 刘志伟
  * 
- *         2017-6-23
+ * 2017-6-23
  */
 @Controller
 public class ShowProductDetailAction {

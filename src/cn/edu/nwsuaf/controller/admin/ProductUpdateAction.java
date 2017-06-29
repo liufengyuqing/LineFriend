@@ -19,16 +19,13 @@ import cn.edu.nwsuaf.entity.Product;
  * @author 陈一婷
  */
 @Controller
-public class ProductDeleteAction {
-	@RequestMapping("/Admin/productDelete.action")
-	public String productDelete(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+public class ProductUpdateAction {
+	@RequestMapping("/Admin/productAdd.action")
+	public String productAdd(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
 		ApplicationContext ctx=new ClassPathXmlApplicationContext("springMVC.xml");
 		ProductDao productDao=ctx.getBean(ProductDao.class);
 		
 		List<Product> productList=null;
-		
-		
-		
 		return "/Admin/ProductManage";
 	}
 }
