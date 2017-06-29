@@ -35,26 +35,74 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//alert(1);
 			//var tiaojian=document.formSy.getElementsByName("condtion").value;
 			//var sel2=document.formSy.getElementsByName("sel2").value;
-			var condtion=document.formSy.condtion.value;
-			var select=document.formSy.select.value;
-			alert(condtion);
-			alert(select);
-			//window.location.href="Admin/userDelectSearch.action?"+"condtion="+condtion+"&sel2="+sel2+"#panel-Userach";
-			//alert("sec");
+			//var condtion=document.formSy.condtion.value;
+			//var select=document.formSy.select.value;
+			
+			var select=document.getElementById("select").value;
+			alert("select:"+select);
+			var condtion=document.getElementById("condtion").value;
+			alert("condtion:"+condtion);
+			if(select==1){
+				alert("将搜索所有用户信息！");
+				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+			}
+			else if(select==2){
+				var Regex = /^(?:\w+\.?)*\w+@(?:\w+\.)*\w+$/;
+				if(Regex.test(condtion)){
+					alert("邮箱格式正确，正在查询!");
+					window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+				}else{
+					alert("邮箱格式不正确，请重新输入!");
+				}
+				//alert("查询全部信息1");
+			}
+			else if(select==3){
+				if(condtion!="男" &&condtion!="女"){
+					alert("请输入男或者女");
+				}else{
+					alert("正在查询！请等待！");
+					window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+				}
+					//alert("查询全部信息3");
+			}
+			else if(select==4){
+				alert("用户ID");
+				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+			}
+			else if(select==5){
+				alert("按用户昵称查询，正在查询");
+				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+			}
+			else if(select==6){
+				alert("按年龄查询，正在查询！");
+				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+			}
+
+			//window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+			
 		}
 	
 </script>
 <!-- 从页面获取userID并传到后台进行action处理之后返回 #panel-Udelect-->
-<script>
+<script type="text/javascript">
 	function deleteuser(){
 		//var condtion=document.formSy.tiaojian.value;
 		//var sel2=document.formSy.sel2.value;
 		//test
 		var userId=document.getElementById("userId").innerHTML;
-		alert(userId+"确认删除该用户？");
-		window.location.href="UserDelect.action?"+"userId="+userId+"#panel-Udelect";
+		alert("确认删除该用户？该用户ID="+userId);
+		window.location.href="UserDelect.action?"+"userId="+userId;
 		alert("该用户已删除！");
 		
+	}
+	function Updateuser(){
+		if(confirm("你确定要修改用户信息吗？")){
+			alert("确认");
+		}
+		else{
+			alert("放弃！");
+		}
+		 // ("");
 	}
 </script>
 
@@ -64,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
-<script>
+<script >
 
 $(document).ready(function() {
 
@@ -169,7 +217,8 @@ $('a[href=' + anchor + ']').tab('show');
        		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
 			<ul class="nav nav-tabs">
 				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-Userach">用户查询</a></li>
-				</ul>
+				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-UpdateUser">用户查询</a></li>
+			</ul>
 
 			<div class="tab-content">
 				<div class="tab-pane active" contenteditable="false" id="panel-Userach">
@@ -178,7 +227,7 @@ $('a[href=' + anchor + ']').tab('show');
 						<form class="navbar-form navbar-left" role="search" id="formSy">
 							<label style="display: inline-block;margin-top:10px;">&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>			
 							
-								<select class="selectSy" name="select" >
+								<select class="selectSy" name="select" id="select">
 											<option value="1">
 												全部用户
 											</option>
@@ -200,7 +249,7 @@ $('a[href=' + anchor + ']').tab('show');
 											</option>
 										</select>	
 										<input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >	
-										<button type="submit" class="btn btn-default" style="margin-top:5px;" onclik="SearchUser();">查询</button>	
+										<input type="button" value="查询"  onclick="SearchUser();">
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -225,7 +274,7 @@ $('a[href=' + anchor + ']').tab('show');
 											<!--  动态加载-->
 											<c:forEach items="${userList}" var="user" varStatus="status">
 												<tr>
-													<td>${user.id}</td>
+													<td id="userId">${user.id}</td>
 													<td>${user.email}</td>
 													<td>${user.nickName}</td>
 													<td>${user.trueName}</td>
@@ -234,7 +283,7 @@ $('a[href=' + anchor + ']').tab('show');
 													<td>${user.sex}</td>
 													<td>${user.cardId}</td>
 													<td>${user.year}/${user.mouth}/${user.day}</td>
-													<td><a href="javascript:void(0)" onclick="deleteuser();">注销</a></td>
+													<td><a href="javascript:void(0)" onclick="deleteuser();">注销</a>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="Updateuser();">修改</a></td>
 												</tr>
 											</c:forEach></tbody>
 									</table>

@@ -16,6 +16,10 @@
 		<link rel="shortcut icon" href="assets/picture/LOG0-2.png" />
 		<link href="assets/css/UserRegist.css" rel="stylesheet"
 			type="text/css" />
+		<!--<link href="assets/css/buttons.css" rel="stylesheet"
+			type="text/css" />
+		-->
+		
 		<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery.js"></script>
 		<script type="text/javascript" src="assets/js/checkUser.js"></script>
@@ -186,8 +190,10 @@
 						</label>
 						<input id="mobile" name="mobile" type="text" size="25" class="form-input2" />
 						<label class="getyzm">
-						<input id="zphone" type="button" value="发送手机验证码 " onclick="get_mobile_code();"/>
-						</label>
+						<input id="zphone" type="button" value="获取短信验证码" onclick="get_mobile_code();" class="btn btn-primary"/>
+					
+						 <!--<input id="zphone" type="button" value="获取短信验证码" onclick="get_mobile_code();" class="button button-pill button-primary"/>
+						--></label>
 						
 					</div>
 					

@@ -86,12 +86,14 @@
 		select * from user where email=#{email}
 	</select>
 	
-	<select id="findUserById2" parameterType="int" resultType="cn.edu.nwsuaf.entity.User">
+	<select id="findUserByIdList" parameterType="int" resultType="cn.edu.nwsuaf.entity.User">
 		select * from user where id=#{id}
 	</select>
 	<delete id="deleteUserById" parameterType="int">
 		DELETE FROM user WHERE id = #{id}
 	</delete>
-	
+	<select id="findUserByAge" parameterType="int" resultType="cn.edu.nwsuaf.entity.User">
+		select * from user where year=#{year}
+	</select>
 	
 </mapper>

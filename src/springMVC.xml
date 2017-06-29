@@ -41,6 +41,20 @@
 	</bean>
 
 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
 	<!-- 支持@Controller注解标记 -->
 	<context:component-scan base-package="cn.edu.nwsuaf.*" />
 

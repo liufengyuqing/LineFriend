@@ -16,7 +16,7 @@ import cn.edu.nwsuaf.dao.UserAddressDao;
 @Controller
 public class DeleteOrderAction {
 	@RequestMapping("/Admin/deleteOrder.action")
-	public void deleteUserAddress(HttpServletRequest request,HttpServletResponse response){
+	public void deleteOrder(HttpServletRequest request,HttpServletResponse response){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");
 		OrderDao dao = ctx.getBean(OrderDao.class);

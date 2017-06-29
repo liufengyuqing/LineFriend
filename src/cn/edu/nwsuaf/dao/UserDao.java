@@ -46,6 +46,6 @@ public interface UserDao {
 	public List<User> findUserByAge(int age);//按年龄查询用户
 	public List<User> findUserByNickName(String nickName);//按昵称查询
 	public List<User> findUserByEmail(String email); // 
-	public List<User> findUserById2(int id);//根据id 查询用户
+	public List<User> findUserByIdList(int id);//根据id 查询用户
 	public void deleteUserById(int id);
 }

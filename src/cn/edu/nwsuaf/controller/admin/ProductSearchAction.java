@@ -21,9 +21,9 @@ import cn.edu.nwsuaf.entity.Product;
  * @author 陈一婷
  */
 @Controller
-public class FoodSearchAction {
+public class ProductSearchAction {
 	@RequestMapping("/Admin/foodSearch.action")
-	public String foodSearch(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
+	public String productSearch(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("springMVC.xml");
 		ProductDao productDao=ctx.getBean(ProductDao.class);
 		

@@ -2,6 +2,7 @@ package cn.edu.nwsuaf.dao;
 
 import java.util.List;
 
+import cn.edu.nwsuaf.entity.Cart;
 import cn.edu.nwsuaf.entity.Product;
 
 /**
@@ -21,4 +22,9 @@ public interface ProductDao {
 	public List<Product> findProductByPrice(double price);
 	public List<Product> findProductByAddTime(long addTime);
 	
+	public void addProduct(Product product);
+	public void deleteProductById(int id);
+	public void updateProductPrice(Product product);
+	public void updateProductCategory(Product product);
+	public void updateProductInfo(Product product);
 }

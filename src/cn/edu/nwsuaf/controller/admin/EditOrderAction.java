@@ -16,7 +16,7 @@ import cn.edu.nwsuaf.entity.Orders;
 @Controller
 public class EditOrderAction {
 	@RequestMapping("/Admin/editOrder.action")
-	public void UpdateAddress(String id,String stateName,HttpServletRequest request,HttpServletResponse response){
+	public void UpdateOrder(String id,String stateName,HttpServletRequest request,HttpServletResponse response){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");
 		OrderDao dao = ctx.getBean(OrderDao.class);

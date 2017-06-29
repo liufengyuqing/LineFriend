@@ -3,21 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>com.dw.servlet.ImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/imageServlet</url-pattern>
+	</servlet-mapping>
 
-	<!--
-		<servlet> <servlet-name>ImageServlet</servlet-name>
-		<servlet-class>com.dw.servlet.ImageServlet</servlet-class> </servlet>
-		<servlet-mapping> <servlet-name>ImageServlet</servlet-name>
-		<url-pattern>/imageServlet</url-pattern> </servlet-mapping>
-	-->
-	<!--
-		<servlet> <servlet-name>VerificationServlet</servlet-name>
-		<servlet-class>com.dw.servlet.VerificationServlet</servlet-class>
-		</servlet> <servlet-mapping>
+	<servlet>
 		<servlet-name>VerificationServlet</servlet-name>
-		<url-pattern>/verificationServlet</url-pattern> </servlet-mapping>
-	-->
-
+		<servlet-class>com.dw.servlet.VerificationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VerificationServlet</servlet-name>
+		<url-pattern>/verificationServlet</url-pattern>
+	</servlet-mapping>
 	<!-- 编码过滤器，控制中文字符请求 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -32,8 +34,6 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-
 
 
 	<servlet>
@@ -51,13 +51,9 @@
 	</servlet-mapping>
 
 
-
-
 	<welcome-file-list>
 		<welcome-file>home.jsp</welcome-file>
 	</welcome-file-list>
-
-
 
 
 
@@ -69,10 +65,17 @@
 	<!-- 过滤器映射-->
 	<filter-mapping>
 		<filter-name>protect</filter-name>
-		<url-pattern>/User.jsp</url-pattern><!-- 未登录，禁止进入购物车结算界面 -->
+		<url-pattern>/User.jsp</url-pattern><!-- 未登录，禁止进入购物车结算界面 --> 
 	</filter-mapping>
-
-
+	
+	
+	<filter-mapping>
+		<filter-name>protect</filter-name>
+		<url-pattern>/gotoCart.action</url-pattern><!-- 未登录，禁止进入购物车结算界面 --> 
+	</filter-mapping>
+	
+	
+	
 	<!-- Session isExpired Config -->
 	<filter>
 		<filter-name>SessionFilter</filter-name>
@@ -87,4 +90,10 @@
 		</init-param>
 	</filter>
 	<!-- Session isExpired Config -->
+
+
+
+
+
+
 </web-app>

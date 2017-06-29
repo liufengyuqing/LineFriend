@@ -15,8 +15,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import cn.edu.nwsuaf.dao.OrderDao;
 import cn.edu.nwsuaf.dao.UserAddressDao;
 import cn.edu.nwsuaf.entity.Order;
+import cn.edu.nwsuaf.entity.OrderDetails;
+import cn.edu.nwsuaf.entity.Orders;
 import cn.edu.nwsuaf.entity.User;
 
 /**
@@ -36,26 +39,28 @@ public class UserOrderAction {
 		UserAddressDao dao = ctx.getBean(UserAddressDao.class);
 		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
 		// 登录验证
-		/*
-		 * if (user_id == null) { return "UserLogin"; } else { // 自定义userid
-		 * user_id = 1; // (1, 'zq11', ' 123', 2, '1.1.1.1', 4324234, 'y',
-		 * '2134214'); }
-		 */
-		// 自定义设置，测试
-		user_id = 1;
-		// 得到用户
-		User user = dao.findUserAddressById(user_id);
-		// 根据用户查询我的订单
 
-		// 需要根据dao查询得到order对象List
-		List<Order> orders = new ArrayList<Order>();
-		for (int i = 0; i < 3; i++) {
-			Order t = new Order(i, user_id, 1, "orderTime", "receiveName",
-					"fullAdress", "postalCode", "phone");
-			orders.add(t);
+		if (user_id == null) {
+			return "UserLogin";
+		} else { // 自定义userid
+			user_id = 1;
+			// (1, 'zq11', ' 123', 2, '1.1.1.1', 4324234, 'y', '2134214'); }
+
+			// 自定义设置，测试
+
+			User user = dao.findUserAddressById(user_id);// 得到用户
+			// 根据用户查询我的订单
+
+			OrderDao orderDao = ctx.getBean(OrderDao.class);// 实例化
+
+			// 需要根据dao查询得到order对象List
+			
+			List orders = new ArrayList<Order>();
+			orders = orderDao.findUserOrder();
+
+			request.setAttribute("orders", orders);
+			request.setAttribute("user", user);
+			return "UserOrder";
 		}
-		request.setAttribute("orders", orders);
-		request.setAttribute("user", user);
-		return "UserOrder";
 	}
 }

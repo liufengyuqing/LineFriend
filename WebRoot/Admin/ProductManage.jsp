@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#userM"> -->
 
-						 <a href="UserManage.jsp" style="margin-left: 15px;margin-right: 50px;">用户管理<img src="Admin/assets/homeImages/user.png"></a>
+						 <a href="UserManage.jsp" style="margin-left: 15px;margin-right: 50px;">用户管理<img src="assets/homeImages/user.png"></a>
 
 					</div>
 					<div id="userM" class="accordion-body collapse">

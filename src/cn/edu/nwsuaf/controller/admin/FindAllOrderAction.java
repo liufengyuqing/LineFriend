@@ -17,7 +17,7 @@ import cn.edu.nwsuaf.entity.Orders;
 @Controller
 public class FindAllOrderAction {
 	@RequestMapping("/Admin/findAllOrder.action")
-	public String findAllAddress(HttpServletRequest request) {
+	public String findAllOrder(HttpServletRequest request) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"springMVC.xml");
 		OrderDao dao = ctx.getBean(OrderDao.class);

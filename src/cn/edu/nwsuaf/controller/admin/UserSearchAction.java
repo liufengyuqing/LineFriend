@@ -26,37 +26,41 @@ public class UserSearchAction {
 		"springMVC.xml");
 		UserDao userDao=ctx.getBean(UserDao.class);
 		List<User> userList=null;
-		//HttpSession session=request.getSession();
-		//User user=null;
-		String sel=request.getParameter("select");
+		
+		String select=request.getParameter("select");
 		String condtion=request.getParameter("condtion");
-		System.out.print(sel);
-		System.out.print(condtion);
-		if(sel.equals("1")){
+		System.out.print("select:"+select);
+		System.out.print("condtion:"+condtion);
+		if(select.equals("1")){
 			//查询所有用户
-			System.out.print("oK");
+			System.out.print("查询全部用户信息");
 			userList=userDao.findAllUser();
 		}
-		if(sel.equals("2")){
+		if(select.equals("2")){
 			//邮箱
-			System.out.print("oK");
+			System.out.print("按邮箱查询");
 			userList=userDao.findUserByEmail(condtion);
 		}
-		if(sel.equals("3")){
+		if(select.equals("3")){
 			//性别
-			System.out.print("oK");
+			System.out.print("按性别查询");
 			userList=userDao.findUserBySex(condtion);
 		}
-		if(sel.equals("4")){
+		if(select.equals("4")){
 			//ID
-			System.out.print("oK");
-			userList=userDao.findUserById2(Integer.parseInt(condtion));
+			System.out.print("按ID查询");
+			userList=userDao.findUserByIdList(Integer.parseInt(condtion));
 		}
 		
-		if(sel.equals("5")){
+		if(select.equals("5")){
 			//昵称
-			System.out.print("oK");
+			System.out.print("按昵称查询");
 			userList=userDao.findUserByNickName(condtion);
+		}
+		if(select.equals("6")){
+			//年龄
+			System.out.print("按年龄查询");
+			//userList=userDao.findUserByNickName(condtion);
 		}
 		/*else{
 			System.out.print("oK");

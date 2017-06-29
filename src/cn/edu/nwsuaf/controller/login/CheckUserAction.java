@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import cn.edu.nwsuaf.dao.UserDao;
 import cn.edu.nwsuaf.entity.User;
 
+/**
+ * 检测email是否存在，然后给前端返回值。前端用了AJAX异步请求
+ * @author 张琼
+ * 2017-6-28
+ */
 @Controller
 public class CheckUserAction {
 
@@ -35,7 +40,7 @@ public class CheckUserAction {
 		} else {
 			User e = dao.emailIsRegist(email);
 			if (e != null) {
-				out.print(1);// 1用户名已存在F
+				out.print(1);// 1用户名已存在
 			} else {
 				out.print(3);// 用户名可以用
 			}

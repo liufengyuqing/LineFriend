@@ -41,7 +41,7 @@
 					sSecond = iSecond + "秒";
 				}
 			}
-			sTime=sSecond;
+			sTime=sSecond+"后获取";
 			if(iTime==0){
 				clearTimeout(Account);
 				sTime='获取手机验证码';

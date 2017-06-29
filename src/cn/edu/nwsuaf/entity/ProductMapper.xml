@@ -44,13 +44,26 @@
 	</select>
 	
 	<insert id="addProduct" parameterType="cn.edu.nwsuaf.entity.Product" >
-		insert into product (id,product_name,description,fixed_price,dangqian_price,keywords,product_pic) 
-		values(#{id},#{name},#{description},#{fixed_price},#{dangqian_price},#{category},#{path})
+		insert into product (product_name,description,fixed_price,dangqian_price,keywords,product_pic) 
+		values(#{name},#{description},#{fixed_price},#{dangqian_price},#{category},#{path})
 	</insert>
 	
 	
 	<delete id="deleteProduct" parameterType="int"> 
 		delete * from product where id = #{id}
 	</delete>
+	
+	<update id="updateProductPrice" parameterType="cn.edu.nwsuaf.entity.Product">
+	    update product set dangqian_price=#{dangqian_price} where id=#{id}
+	</update>
+	
+	<update id="updateProductCategory" parameterType="cn.edu.nwsuaf.entity.Product">
+	    update product set keywords=#{keywords} where id=#{id}
+	</update>
+	
+	<update id="updateProductInfo" parameterType="cn.edu.nwsuaf.entity.Product">
+	    update product set product_name=#{product_name},description=#{description},fixed_price=#{fixed_price},dangqian_price=#{dangqian_price},keywords=#{keywords},product_pic=#{product_pic} 
+		where id=#{id}
+	</update>
 	
 </mapper>
