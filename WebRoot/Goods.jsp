@@ -144,7 +144,7 @@ lick=addToFavorite(); href="#"><img
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="User.jsp">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">
@@ -152,7 +152,7 @@ lick=addToFavorite(); href="#"><img
 						<img src="assets/homeImages/购物车小图标.png" width="20" height="20" />
 					</div>
 					<div class="Search52">
-						<a href="userCart.html">去购物车结算</a>
+						<a href=""showCart.action"">去购物车结算</a>
 					</div>
 				</div>
 			</div>

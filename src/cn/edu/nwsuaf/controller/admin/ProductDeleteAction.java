@@ -20,15 +20,15 @@ import cn.edu.nwsuaf.entity.Product;
  */
 @Controller
 public class ProductDeleteAction {
-	@RequestMapping("/Admin/productDelete.action")
-	public String productDelete(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
-		ApplicationContext ctx=new ClassPathXmlApplicationContext("springMVC.xml");
-		ProductDao productDao=ctx.getBean(ProductDao.class);
-		
-		List<Product> productList=null;
-		
-		
-		
-		return "/Admin/ProductManage";
-	}
+//	@RequestMapping("/Admin/productDelete.action")
+//	public String productDelete(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+//		ApplicationContext ctx=new ClassPathXmlApplicationContext("springMVC.xml");
+//		ProductDao productDao=ctx.getBean(ProductDao.class);
+//		
+//		List<Product> productList=null;
+//		
+//		
+//		
+//		return "/Admin/ProductManage";
+//	}
 }

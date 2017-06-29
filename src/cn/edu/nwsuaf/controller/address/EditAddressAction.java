@@ -19,7 +19,7 @@ import cn.edu.nwsuaf.entity.UserAddress;
  */
 @Controller
 public class EditAddressAction {
-	@RequestMapping("/Admin/editAddress.action")
+	@RequestMapping("/editAddress.action")
 	public String UpdateAddress(HttpServletRequest request,HttpServletResponse httpServletResponse){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");

@@ -39,7 +39,7 @@
 		<div id="header">
 			<div class="header1">
 				<b></b><a rel="sidebar" onclick=
-	addToFavorite();;;;;
+	addToFavorite();;;;;;
 href="#"><img
 						style="position: relative; top: 2px;"
 						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
@@ -48,15 +48,42 @@ href="#"><img
 			<div class="header2">
 				<nav class="nav">
 				<ul class="nav__menu">
+
+
+					<%
+						String email = (String) session.getAttribute("email");
+						if (email == null) {
+					%>
 					<li class="nav__menu-item">
-						<a href="UserLogin.html">你好！请登录</a>
+						<a href="UserLogin.jsp">你好！请登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="UserRegister.html">免费注册</a>
+						<a href="UserRegister.jsp">免费注册</a>
+					</li>
+					<%
+						} else {
+					%>
+					<li class="nav__menu-item">
+						你好！${email}
 					</li>
 					<li class="nav__menu-item">
-						<a href="UserOrder.html">我的订单</a>
+						<a href="logout.action">退出登录</a>
 					</li>
+					<li class="nav__menu-item">
+						<a href="myorderlist">我的订单</a>
+					</li>
+					<%
+						}
+					%>
+
+
+
+
+
+
+
+
+
 					<li class="nav__menu-item">
 						客户服务^
 						<ul class="nav__submenu">
@@ -125,7 +152,7 @@ href="#"><img
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="User.jsp">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">
@@ -133,7 +160,7 @@ href="#"><img
 						<img src="assets/homeImages/购物车小图标.png" width="20" height="20" />
 					</div>
 					<div class="Search52">
-						<a href="UserCart.html">去购物车结算</a>
+						<a href="showCart.action">去购物车结算</a>
 					</div>
 				</div>
 			</div>

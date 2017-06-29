@@ -147,7 +147,7 @@ $('a[href=' + anchor + ']').tab('show');
 			</ul>
 
 			<div class="tab-content">
-				<div class="tab-pane active" contenteditable="true" id="#panel-Osearch">
+				<div class="tab-pane active" contenteditable="false" id="#panel-Osearch">
 					<!-- <p>商品上架</p> -->
 					<div class="navbar-inner">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
@@ -202,7 +202,7 @@ $('a[href=' + anchor + ']').tab('show');
 					</div>		
 				</div>
 
-				<div class="tab-pane" contenteditable="true" id="panel-Oupdate">
+				<div class="tab-pane" contenteditable="false" id="panel-Oupdate">
 					<!-- <p>商品下架</p> -->
 					<!-- 搜索框 -->
 					<div class="navbar-inner">
@@ -225,7 +225,8 @@ $('a[href=' + anchor + ']').tab('show');
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-								<form action="editOrder.action">
+								<!-- <form  id="update" action="editOrder.action"> -->
+								
 								
 									<table class="table" contenteditable="false">
 											<thead>
@@ -250,26 +251,30 @@ $('a[href=' + anchor + ']').tab('show');
 												<!--<form action="editOrder.action">-->
 													<!-- 隐藏域 -->
 													<!-- <input type="hidden" value=${item.id} name="id"/> -->
-													<input type="hidden" value=${item.id} name="id"/>
+													
 													
 													<td>${item.order_id}</td>
 													<td>${item.user_id}</td>
 													<td>${item.order_time}</td>
-							
+							                         <form  id="update" action="editOrder.action">
 													<td>${item.state}</td>
 													<td>
-														<select name="stateName">
+														<select id="stateSelect" name="stateName" >
 															<option value="未处理">未处理</option>
 															<option value="已接单">已接单</option>
 															<option value="已发货">已发货</option>
 															<option value="已完成">已完成</option>
 														</select>
+					
+
 													</td>
 													<td>${item.rs_name}</td>
 													<td>${item.rs_address}</td>
 													<td>${item.tomp}</td>
 													<td>${item.tel}</td>
-													<td><input type="submit" value="确定"/></td>
+													<input type="hidden" value=${item.id} name="id"/>
+													<td><input type="submit" value="确定"  class="aaa"/></td>
+													</form>
 													<!-- <td><input type="submit" value="确定"/></td> -->
 												   <!--<td><a href="editOrder.action?id=${item.id}&state=${stateName}">确定</a></td>-->
 												  <!-- </form>-->
@@ -279,11 +284,11 @@ $('a[href=' + anchor + ']').tab('show');
 												
 											</tbody>
 									</table>
-									</form>
+									
 						</div>
 					</div>	
 				</div>
-				<div class="tab-pane" contenteditable="true" id="panel-Odelect">
+				<div class="tab-pane" contenteditable="false" id="panel-Odelect">
 					<div class="navbar-inner">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->

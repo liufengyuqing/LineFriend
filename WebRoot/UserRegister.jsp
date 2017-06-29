@@ -12,6 +12,11 @@
 		<script
 				src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				<script type="text/javascript" src="assets/js/jQuery1.9.1.js"></script>
+		<style>
+		body {
+			cursor: url('assets/picture/cursor.ico'), auto;
+		}
+		</style>
 			
 		<link rel="shortcut icon" href="assets/picture/LOG0-2.png" />
 		<link href="assets/css/UserRegist.css" rel="stylesheet"

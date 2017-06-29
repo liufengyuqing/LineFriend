@@ -20,7 +20,8 @@ import cn.edu.nwsuaf.entity.Product;
  */
 @Controller
 public class ProductAddAction {
-	@RequestMapping("/Admin/productAdd.action")
+
+	//@RequestMapping("/Admin/productAdd.action")
 	public String productAdd(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
 		ApplicationContext ctx=new ClassPathXmlApplicationContext("springMVC.xml");
 		ProductDao productDao=ctx.getBean(ProductDao.class);
@@ -29,4 +30,15 @@ public class ProductAddAction {
 		
 		return "/Admin/ProductManage";
 	}
+
+//	@RequestMapping("/Admin/productAdd.action")
+//	public String productAdd(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+//		ApplicationContext ctx=new ClassPathXmlApplicationContext("springMVC.xml");
+//		ProductDao productDao=ctx.getBean(ProductDao.class);
+//		
+//		List<Product> productList=null;
+//		
+//		return "/Admin/ProductManage";
+//	}
+
 }

@@ -8,6 +8,10 @@
 		<title>用户登录</title>
 		<link href="assets/css/UserLogin.css" rel="stylesheet"
 			type="text/css" />
+		<style>body {
+			cursor: url('assets/picture/cursor.ico'), auto;
+		}
+		</style>
 	</head>
 
 	<body>

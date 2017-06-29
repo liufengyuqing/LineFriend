@@ -174,15 +174,37 @@ href="#"><img
 			<div class="header2">
 				<nav class="nav">
 				<ul class="nav__menu">
+				
+				
+				
+					<%
+					
+						String email=(String)session.getAttribute("email");
+						if (email == null) {
+					%>
 					<li class="nav__menu-item">
-						<a href="UserLogin.html">你好！请登录</a>
+						<a href="UserLogin.jsp">你好！请登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="UserRegister.html">免费注册</a>
+						<a href="UserRegister.jsp">免费注册</a>
+					</li>
+					<%
+						}else {
+							%>
+					<li class="nav__menu-item">
+						你好！${email}
 					</li>
 					<li class="nav__menu-item">
-						<a href="UserOrder.html">我的订单</a>
+						<a href="logout.action">退出登录</a>
 					</li>
+					<li class="nav__menu-item">
+						<a href="myorderlist">我的订单</a>
+					</li>
+					<% 
+					}
+					%>
+					
+					
 					<li class="nav__menu-item">
 						客户服务^
 						<ul class="nav__submenu">

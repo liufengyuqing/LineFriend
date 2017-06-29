@@ -21,6 +21,11 @@
 		<link rel="stylesheet" href="assets/css/BT.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
 
+		<style>body {
+			cursor: url('assets/picture/cursor.ico'), auto;
+		}
+		</style>
+		
 		<script language="JavaScript" src="assets/js/backTop.js"
 			type="text/javascript" charset="utf-8"></script>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>

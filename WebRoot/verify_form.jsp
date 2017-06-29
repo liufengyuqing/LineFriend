@@ -6,6 +6,10 @@
 		
 		<link href="assets/css/login.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/page_bottom.css" rel="stylesheet" type="text/css" />
+		<style>body {
+			cursor: url('assets/picture/cursor.ico'), auto;
+		}
+		</style>
 		<script type="text/javascript" src="assets/js/jquery-1.5.1.min.js"></script>
 		<!--
 		<script type="text/javascript">

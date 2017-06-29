@@ -1,4 +1,3 @@
-
 <%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -29,6 +28,10 @@
 		<link rel="stylesheet" href="assets/css/Search.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/BT.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
+		<style>body {
+			cursor: url('assets/picture/cursor.ico'), auto;
+		}
+		</style>
 		<script language="JavaScript" src="assets/js/jquery-1.11.3.min.js"
 			type="text/javascript" charset="utf-8"></script>
 		<script language="JavaScript" src="assets/js/cbl.js"
@@ -115,7 +118,7 @@
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="userOrder.action">我的LINEFRIEND</a>
+						<a href="userOrder.action">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<p class="img_a" onmouseover=hide_show_2(this); onmouseout=hide_show_1(this);>
@@ -170,7 +173,6 @@
 					
 					<%
 					
-						//String email = request.getParameter("email");
 						String email=(String)session.getAttribute("email");
 						if (email == null) {
 					%>
@@ -195,10 +197,6 @@
 					<% 
 					}
 					%>
-
-
-
-
 
 					<li class="nav__menu-item">
 						客户服务^
@@ -258,9 +256,9 @@
 					<div class="Search3">
 						<div class="Search31">
 							热门搜索：
-							<a href="#">草莓干</a>&nbsp;&nbsp;
-							<a href="#">牛肉</a>&nbsp;&nbsp;
-							<a href="#">鱿鱼</a>
+							<a href="searchProduct.action?product_name=草莓干"+>草莓干</a>&nbsp;&nbsp;
+							<a href="searchProduct.action?product_name=肉">肉</a>&nbsp;&nbsp;
+							<a href="searchProduct.action?product_name=鱿鱼">鱿鱼</a>
 						</div>
 					</div>
 				</div>
@@ -269,7 +267,7 @@
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="userOrder.action">我的LINEFRIEND</a>
+						<a href="userOrder.action">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">
