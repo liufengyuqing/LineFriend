@@ -34,26 +34,7 @@
 	<!-- 配置MyBatis注解     MapperScannerConfiger扫描EmpDao接口 -->
 	<bean id="msc" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="cn.edu.nwsuaf.dao" />
-		<!--
-			property name="annotationClass"
-			value="com.zq.annotation.MyBatisRepository"/
-		-->
 	</bean>
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
 
 	<!-- 支持@Controller注解标记 -->
 	<context:component-scan base-package="cn.edu.nwsuaf.*" />
@@ -67,5 +48,32 @@
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	
+	<!-- 拦截器配置 -->
+	<mvc:interceptors>
+		<!-- 文件上传拦截器 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class = "cn.edu.nwsuaf.interceptor.FileSizeInterceptor">
+				<!-- 设置文件上传的大小 -->
+				<property name="maxSize" value="52428800"></property><!-- 最大为5M -->
+			</bean>
+		</mvc:interceptor>
+		
+		<!-- 控制文件上传的类型 -->
+		<mvc:interceptor>
+		   <mvc:mapping path="/**"/>
+		   <bean class = "cn.edu.nwsuaf.interceptor.FileTypeInterceptor"></bean>
+		</mvc:interceptor>
+		
+	
+	</mvc:interceptors>
+	
+	
+	
+	
+	
+	
+	
 
 </beans>
