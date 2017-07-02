@@ -13,4 +13,8 @@ public interface FoodDao {
 	public Food findFoodByProductId(int product_id); //根据商品id查询商品详情
 	
 	public List<Food> findAllFood();
+	
+	public void addFood(Food food);//
+	
+	
 }

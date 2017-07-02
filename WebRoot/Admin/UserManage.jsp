@@ -19,17 +19,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/birthday.js"></script>
+<script type="text/javascript" src="assets/js/dialog.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
+
 <!--从前台获取查询参数并转到后台处理-->
 <script>
+<!--信息查询-->
 		function SearchUser(){
 			//获取输入框和下拉框狂的值
 			//alert(1);
@@ -74,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
 			}
 			else if(select==6){
-				alert("按年龄查询，正在查询！");
+				alert("按年龄查询！");
 				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
 			}
 
@@ -83,26 +88,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 	
 </script>
+
+ <script type="text/javascript">
+function gotoUpdate(r){
+	//var i=r.parentNode.parentNode.rowIndex;
+	//alert("行号为="+i);
+	alert("jajd");
+	var rownum=r.parentNode.parentNode.rowIndex;
+	alert("hanghao="+rownum);
+	var tab=document.getElementById("tab");
+	var id=tab.rows[rownum].cells[0].innerHTML;
+	
+	
+	alert("user="+id);
+	window.location.href="Updateuser.action?id="+id+"#panel-Update";
+	alert(成功);
+}
+</script>
 <!-- 从页面获取userID并传到后台进行action处理之后返回 #panel-Udelect-->
 <script type="text/javascript">
-	function deleteuser(){
-		//var condtion=document.formSy.tiaojian.value;
-		//var sel2=document.formSy.sel2.value;
-		//test
-		var userId=document.getElementById("userId").innerHTML;
-		alert("确认删除该用户？该用户ID="+userId);
-		window.location.href="UserDelect.action?"+"userId="+userId;
-		alert("该用户已删除！");
-		
-	}
-	function Updateuser(){
-		if(confirm("你确定要修改用户信息吗？")){
-			alert("确认");
+	<!--信息修改数据提交
+	function trueUpdateUser(){
+		var id=document.getElementById("id").value;
+		var NnickName=document.getElementById("NewnickName").value;
+		var NtrueName=document.getElementById("NewtrueName").value;
+		var Nsex=document.getElementById("Newsex").value;
+		var NcardId=document.getElementById("NewcardId").value;
+		var Nyear=document.getElementById("selYear").value;
+		var Nmouth=document.getElementById("selMonth").value;
+		var Nday=document.getElementById("selDay").value;
+		alert("更新信息："+id+"-"+NnickName+"-"+NtrueName+"-"+Nsex+"-"+NcardId+"-"+Nyear+"-"+Nmouth+"-"+Nday);
+		var reg=/^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$/;
+		if(reg.test(NcardId)){
+			alert("输入的是身份证号");
+			window.location.href="UpdateUserInfo.action?id="+id+"&nickName="+NnickName+"&trueName="+NtrueName+"&sex="+Nsex+"&cardId="+NcardId+"&year="+Nyear+"&mouth="+Nmouth+"&day="+Nday;
+			alert("该用户信息已修改!");
+			
 		}
 		else{
-			alert("放弃！");
+			alert("请输入正确的身份证号");
 		}
-		 // ("");
+		
 	}
 </script>
 
@@ -146,7 +172,7 @@ $('a[href=' + anchor + ']').tab('show');
 	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
 		<li><a href="#">Line friend后台管理系统</a> </li>
 		<li class="active"><a href="#">首页</a></li>
-		<li><a href="AdminMsg.html">通知</a></li>
+		<li><a href="AdminMsg.jsp">通知</a></li>
 		<li class="dropdown pull-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
 		<ul class="dropdown-menu">
 			<li><a href="#">Line friend主页</a></li>
@@ -170,11 +196,11 @@ $('a[href=' + anchor + ']').tab('show');
 						 用户管理<img src="assets/homeImages/user.png"></a>
 					</div>
 					<div id="userM" class="accordion-body  in collapse">
-						<!--<div class="accordion-inner">
+						<div class="accordion-inner">
 							<a href="#panel-Userach">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
-							<a href="#panel-Udelect">注 销 用 户<img src="assets/homeImages/point.png"></a>
+							<a href="#panel-Udelect">用户信息更新<img src="assets/homeImages/point.png"></a>
 						</div>
-					--></div>
+					</div>
 				</div>
 				<div class="accordion-group">
 					<div class="accordion-heading">
@@ -211,23 +237,21 @@ $('a[href=' + anchor + ']').tab('show');
 </div>
 </div>
 	<div id="right">
-		<div class="panel panel-default">
-    		<div class="panel-body">
-       		 <!--页面-->
-       		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
-			<ul class="nav nav-tabs">
-				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-Userach">用户查询</a></li>
-				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-UpdateUser">用户查询</a></li>
-			</ul>
-
-			<div class="tab-content">
-				<div class="tab-pane active" contenteditable="false" id="panel-Userach">
-					<!-- <p>用户搜索</p> -->
-					<div class="navbar-inner">
+		<div class="tabbable" id="tabs-219574">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a contenteditable="false" data-toggle="tab" href="#panel-Userach">用户查询</a>
+					</li>
+					<li>
+						<a contenteditable="false" data-toggle="tab" href="#panel-Update">用户信息修改</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-Userach">
 						<form class="navbar-form navbar-left" role="search" id="formSy">
 							<label style="display: inline-block;margin-top:10px;">&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>			
 							
-								<select class="selectSy" name="select" id="select">
+								<select class="selectSy" name="select" id="select" style="margin-top: 5px;">
 											<option value="1">
 												全部用户
 											</option>
@@ -247,15 +271,13 @@ $('a[href=' + anchor + ']').tab('show');
 											<option value="6">
 												年龄
 											</option>
-										</select>	
-										<input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >	
-										<input type="button" value="查询"  onclick="SearchUser();">
+								</select>	
+								<input type="text" class="form-control"  style="margin-top: -2px;" placeholder="请输入查询内容" id="condtion" name="condtion" >	
+								<input type="button"  class="btn" value="查询"  onclick="SearchUser();" style="margin-top: -2px;height: 30px;width: 100px;">
 						</form>
-
-						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="false">
+									<table class="table" contenteditable="false" id="tab">
 											<thead>
 												<tr>
 													<th style="width: 10%;">用户ID</th>
@@ -264,39 +286,93 @@ $('a[href=' + anchor + ']').tab('show');
 													<th style="width: 10%;">真实姓名</th>
 													<th style="width: 10%;">最后一次登录时间</th>
 													<th style="width: 10%;">最后一次登录IP</th>
-													<th style="width: 10%;">性别</th>
+													<th style="width: 5%;">性别</th>
 													<th style="width: 10%;">身份证号</th>
 													<th style="width: 10%;">出生日期</th>
-													<th style="width: 10%;">操作</th>
+													<th style="width: 15%;">操作</th>
 												</tr>
 											</thead>
 											<tbody>
 											<!--  动态加载-->
 											<c:forEach items="${userList}" var="user" varStatus="status">
+										
 												<tr>
-													<td id="userId">${user.id}</td>
+													<td>${user.id}</td>
 													<td>${user.email}</td>
 													<td>${user.nickName}</td>
 													<td>${user.trueName}</td>
 													<td>${user.last_login_time}</td>
-													<th>${user.last_login_ip}</th>
+													<td>${user.last_login_ip}</td>
 													<td>${user.sex}</td>
 													<td>${user.cardId}</td>
 													<td>${user.year}/${user.mouth}/${user.day}</td>
-													<td><a href="javascript:void(0)" onclick="deleteuser();">注销</a>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="Updateuser();">修改</a></td>
+													
+													<td><a href="UserDelect.action?id=${user.id}"><input type="button"  class="btn" value="注销" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+																									
+													<!-- <a href="Updateuser.action?id=${user.id}"><input type="button"  class="btn" value="修改" /></a> -->
+													<input type="button"  class="btn" onclick="gotoUpdate(this)" value="修改" />
+													</td>
+													
 												</tr>
+								
 											</c:forEach></tbody>
 									</table>
 						</div>
-					</div>	
-				</div>
 
+					</div><!--面板一-->
+
+
+					<div class="tab-pane" id="panel-Update">
+					<div id="UpdatePanl">
+						<form class="navbar-form">
+						
+							<div class="inputDiv"><label class="labelSy">用&nbsp;&nbsp;户&nbsp;&nbsp;ID：</label>
+							<input  type="text" id="id" value=${user.id} onfocus=this.blur() style="height: 40px;width: 250px;margin-top: -10px;">
+							</div>
+						
+							<div class="inputDiv"><label class="labelSy">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label><input  type="text" id="NewnickName" value="${user.nickName}"   style="height: 40px;width: 250px;margin-top: -10px;"></div>
+						
+							<div class="inputDiv"><label class="labelSy">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+							<select id="Newsex"  style="height: 40px;width: 250px;margin-top: -10px;">
+								<option value="男">男</option>
+								<option value="女">女</option>
+							</select>
+							<!-- <span class="spanSy" id="sex">${user.sex}</span> --></div>
+
+							<div class="inputDiv"><label class="labelSy">真实姓名：</label><input type="text" id="NewtrueName" value="${user.trueName}"   style="height: 40px;width: 250px;margin-top: -10px;"></div>
+							
+							
+							<div class="inputDiv"><label class="labelSy">身份证号：</label><input type="text" id="NewcardId" value="${user.cardId}"   style="height: 40px;width: 250px;margin-top: -10px;"></div>
+
+							<div class="inputDiv"><label class="labelSy">出生日期：</label><!-- <input  type="text" name="Newyear" style="height: 30px;width: 70px;margin-top: -5px;">&nbsp;&nbsp;年
+														  		 				  <input type="text" name="Newmouth" style="height: 30px;width: 70px;margin-top: -5px;">&nbsp;&nbsp;月
+																 				  <input type="text" name="Newday" style="height: 30px;width: 70px;margin-top: -5px;">&nbsp;&nbsp;日</div> -->
+																 				<select id="selYear" style="width: 120px;margin-top: -5px;height: 40px"></select>年
+																				<select id="selMonth" style="width: 120px;margin-top: -5px; height: 40px;"></select>月
+																				<select id="selDay"  style="width: 120px;margin-top: -5px;height: 40px;"></select>日
+																				
+							<div class="inputDiv"><input type="button"  class="btn" value="确认"  onclick="trueUpdateUser()" style="height: 40px;width: 150px;margin-left:500px;margin-top: 30px;"></div>		
+						
+						</form>
+					</div>
+					</div>
 				</div>
+			</div>
 		</div>
-    	</div>
-		</div>	
+	
 	</div>
-</div>
+
+<script type="text/javascript">
+var selYear = window.document.getElementById("selYear");
+var selMonth = window.document.getElementById("selMonth");
+var selDay = window.document.getElementById("selDay");
+// 新建一个DateSelector类的实例，将三个select对象传进去
+new DateSelector(selYear, selMonth, selDay, 1995, 1, 17);
+// 也可以试试下边的代码
+// var dt = new Date(2004, 1, 29);
+// new DateSelector(selYear, selMonth ,selDay, dt);
+</script>
+
 </body>
 	
 </html>

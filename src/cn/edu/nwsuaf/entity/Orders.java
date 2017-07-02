@@ -1,81 +1,73 @@
 package cn.edu.nwsuaf.entity;
 
-import java.util.List;
-
 public class Orders {
    private int id;
-   private String order_id;
-   private String user_id;
+   private int user_id;
    private String order_time;
-   private String rs_name;
-   private String rs_address;
-   private String tomp;
-   private String tel;
-   private String state;
+   private String price_amount;
+   private String address_id;
+   private String status;
 
-
-
-public String getState() {
-	return state;
+@Override
+public String toString() {
+	return "Orders [address_id=" + address_id + ", id=" + id + ", order_time="
+			+ order_time + ", price_amount=" + price_amount + ", status="
+			+ status + ", user_id=" + user_id + "]";
 }
-public void setState(String state) {
-	this.state = state;
+
+public int getId() {
+	return id;
 }
+
+public void setId(int id) {
+	this.id = id;
+}
+
+public int getUser_id() {
+	return user_id;
+}
+
+public void setUser_id(int userId) {
+	user_id = userId;
+}
+
 public String getOrder_time() {
 	return order_time;
 }
+
 public void setOrder_time(String orderTime) {
 	order_time = orderTime;
 }
 
-@Override
-public String toString() {
-	return "Orders [id=" + id + ", order_id=" + order_id + ", order_time="
-			+ order_time + ", rs_address=" + rs_address + ", rs_name="
-			+ rs_name + ", state=" + state + ", tel=" + tel + ", tomp=" + tomp
-			+ ", user_id=" + user_id + "]";
+public String getPrice_amount() {
+	return price_amount;
 }
-public int getId() {
-	return id;
+
+public void setPrice_amount(String priceAmount) {
+	price_amount = priceAmount;
 }
-public void setId(int id) {
-	this.id = id;
+
+public String getAddress_id() {
+	return address_id;
 }
-public String getOrder_id() {
-	return order_id;
+
+public void setAddress_id(String addressId) {
+	address_id = addressId;
 }
-public void setOrder_id(String orderId) {
-	order_id = orderId;
+
+public String getStatus() {
+	return status;
 }
-public String getUser_id() {
-	return user_id;
+
+public void setStatus(String status) {
+	this.status = status;
 }
-public void setUser_id(String userId) {
-	user_id = userId;
+
+public Orders() {
+	super();
+	// TODO Auto-generated constructor stub
 }
-public String getRs_name() {
-	return rs_name;
-}
-public void setRs_name(String rsName) {
-	rs_name = rsName;
-}
-public String getRs_address() {
-	return rs_address;
-}
-public void setRs_address(String rsAddress) {
-	rs_address = rsAddress;
-}
-public String getTomp() {
-	return tomp;
-}
-public void setTomp(String tomp) {
-	this.tomp = tomp;
-}
-public String getTel() {
-	return tel;
-}
-public void setTel(String tel) {
-	this.tel = tel;
-}
- 
+
+
+
 }

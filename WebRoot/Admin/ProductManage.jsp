@@ -147,7 +147,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pout">商品下架</a></li>
 				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pupdate">商品信息修改</a></li>
 				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pnumber">商品库存管理</a></li>
-				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pserach">商品检索</a></li>
 				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pcheap">商品折扣</a></li>
 				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pkind">商品分类</a></li>
 			</ul>
@@ -157,62 +156,63 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<!-- <p>商品上架</p> -->
 					<div class="navbar-inner">
 						<div class ="view" >
-							<form class="form-horizontal" role="form">
+							<form action="productAdd.action" class="form-horizontal" role="form">
 										
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">产品名称：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="product_name" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="product_name" id="product_name" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">产品描述：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="description" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="description" id="description" style="height: 30px;"></div>
 										</div><br>
-										<div class="form-group">
-											<label for="pnumber" class="col-sm-2 control-label">数量：</label>
+										<!--<div class="form-group">
+											<label for="pname" class="col-sm-2 control-label">上架时间：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="add_time" id="add_time" style="height: 30px;"></div>
 										</div><br>
+										-->
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">原价：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="fixed_price" id="fixed_price" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">折后价：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="dangqian_price" id="dangqian_price" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">分类：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="keywords" id="keywords" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">生产商：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="producer" id="producer" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">生产日期：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="produce_date" id="produce_date" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">保质期：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="expiration_date" id="expiration_date" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">库存：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="storge" id="storge" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">净含量(g)：</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="pname" style="height: 30px;"></div>
+												<input type="text" class="form-control" name="specification" id="specification" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group" id="seleimg">
 											 <label for="exampleInputFile">选择商品图片</label>
@@ -222,7 +222,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div class="form-group" id="sjbotton">
 											
 											<div class="col-sm-10">
-												<input type="submit" class="form-control" id="pname" value="上架"></div>
+												<input type="submit" class="form-control" id="psubmit" value="上架"></div>
 										</div><br>
 							</form>
 						</div>
@@ -260,7 +260,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<thead>
 												<tr>
 													<th style="width: 9%;">图片</th>
-													<th style="width: 9%;">编号</th>
+													<th style="width: 7%;">编号</th>
 													<th style="width: 10%;">名称</th>
 													<th style="width: 10%;">描述</th>
 													<th style="width: 9%;">数量</th>
@@ -269,7 +269,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<th style="width: 9%;">原价</th>
 													<th style="width: 9%;">上架日期</th>
                                                     <th style="width: 8%;">是否下架</th>
-													<th style="width: 9%;">操作</th>
+													<th style="width: 11%;">操作</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -286,7 +286,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<td>${product.fixed_price}</td>
 													<td>${product.add_time}</td>
                                                     <td>${product.has_deleted}</td>
-													<td><a href="">下架</a></td>
+													<td><a href="productDelete.action?id=${product.id}">下架</a>&nbsp;&nbsp;&nbsp;<a href="productResume.action?id=${product.id}">上架</a></td>
 												</tr>
                                             </c:forEach>
                                             
@@ -322,9 +322,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<thead>
 												<tr>
 													<th style="width: 10%;">图片</th>
-													<th style="width: 10%;">编号</th>
-													<th style="width: 10%;">名称</th>
-													<th style="width: 10%;">描述</th>
+													<th style="width: 5%;">编号</th>
+													<th style="width: 12%;">名称</th>
+													<th style="width: 13%;">描述</th>
 													<th style="width: 10%;">数量</th>
 													<th style="width: 10%;">类别</th>
 													<th style="width: 10%;">折后价</th>
@@ -339,14 +339,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<tr>
 													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
 													<td>${product.id}</td>
-													<td>${product.product_name}</td>
-													<td>${product.description}</td>
-													<td>100</td>
-													<td>${product.keywords}</td>
-													<td>${product.dangqian_price}</td>
+													<td><input type="text" name="name" value="${product.product_name}" style="width:100%;"></td>
+													<td><input type="text" name="description" value="${product.description}" style="width:100%;"></td>
+													<td><input type="text" name="storage" value="100" style="width:100%;"></td>
+													<td><input type="text" name="category" value="${product.keywords}" style="width:100%;"></td>
+													<td><input type="text" name="price" value="${product.dangqian_price}" style="width:100%;"></td>
 													<td>${product.fixed_price}</td>
 													<td>${product.add_time}</td>
-													<td><a href="">更新</a></td>
+													<td><a href="productUpdate.action">更新</a></td>
 												</tr>
                                             </c:forEach>
                                             
@@ -423,66 +423,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane" contenteditable="false" id="panel-Pserach">
-					<div class="navbar-inner">
-                    <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
-						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="sel">
-							<option value="1">全部商品</option>
-							<option value="2">商品编号</option>
-							<option value="3">类别</option>
-							<option value="4">名称</option>
-							<option value="5">价格</option>
-							<option value="6">上架时间</option>
-						</select>
-							
-						
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
-										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
-					</form>
-
-						<!-- 查询结果展示表格 -->
-						<div id="tbShow">
-								<div class="clean"></div>
-									<table class="table" contenteditable="false">
-											<thead>
-												<tr>
-													<th style="width: 10%;">图片</th>
-													<th style="width: 10%;">编号</th>
-													<th style="width: 10%;">名称</th>
-													<th style="width: 10%;">描述</th>
-													<th style="width: 10%;">数量</th>
-													<th style="width: 10%;">类别</th>
-													<th style="width: 5%;">折后价</th>
-													<th style="width: 5%;">原价</th>
-													<th style="width: 10%;">上架日期</th>
-												</tr>
-											</thead>
-											<tbody>
-                                           
-                                            <c:forEach items="${productList}" var="product" varStatus="status">
-												<tr>
-													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
-													<td>${product.id}</td>
-													<td>${product.product_name}</td>
-													<td>${product.description}</td>
-													<td>100</td>
-													<td>${product.keywords}</td>
-													<td>${product.dangqian_price}</td>
-													<td>${product.fixed_price}</td>
-													<td>${product.add_time}</td>
-													
-												</tr>
-                                            </c:forEach>
-												
-											</tbody>
-									</table>
-						</div>
-					</div>
-
-				</div>
+			
 				<div class="tab-pane" contenteditable="false" id="panel-Pcheap">
 					
 					<div class="navbar-inner">

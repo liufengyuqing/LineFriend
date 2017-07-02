@@ -14,21 +14,22 @@ public class Food {
 	private String category;//分类
 	private String specification;//规格
 	private int product_id;   //商品id
+	private Product product;
 	
+	
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 	public int getProduct_id() {
 		return product_id;
 	}
 	public void setProduct_id(int productId) {
 		product_id = productId;
 	}
-	@Override
-	public String toString() {
-		return "Food [category=" + category + ", expiration_date="
-				+ expiration_date + ", id=" + id + ", produce_date="
-				+ produce_date + ", producer=" + producer + ", product_id="
-				+ product_id + ", specification=" + specification + ", storge="
-				+ storge + "]";
-	}
+	
 	public int getId() {
 		return id;
 	}

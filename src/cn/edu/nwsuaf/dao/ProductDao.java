@@ -1,14 +1,12 @@
 package cn.edu.nwsuaf.dao;
 
 import java.util.List;
-
-import cn.edu.nwsuaf.entity.Cart;
+import cn.edu.nwsuaf.entity.Food;
 import cn.edu.nwsuaf.entity.Product;
 
 /**
- * @author 刘志伟
- *
- * 2017-6-23
+ * @author 张琼
+ * 2017-6-30
  */
 public interface ProductDao {
 	public Product findProductById(int id);
@@ -22,9 +20,15 @@ public interface ProductDao {
 	public List<Product> findProductByPrice(double price);
 	public List<Product> findProductByAddTime(long addTime);
 	
-	public void addProduct(Product product);
+	public void addProduct(Product product);	//上架商品
+	
 	public void deleteProductById(int id);
-	public void updateProductPrice(Product product);
-	public void updateProductCategory(Product product);
-	public void updateProductInfo(Product product);
+	public void resumeProductById(int id);
+	public void updateProductName(int id,String name);
+	public void updateProductDescription(int id,String description);
+	public void updateProductPrice(int id,double price);
+	public void updateProductCategory(int id,String category);
+	
+
+	
 }

@@ -10,21 +10,32 @@
 
 	<select id="findAllOrder" 
 		resultType="cn.edu.nwsuaf.entity.Orders">
-		select * from orders 
+		select * from ls.order
 	 </select>
 	 
 	 <select id="findUserOrder" 
 		resultType="cn.edu.nwsuaf.entity.Orders">
-		select * from orders
+		select * from ls.order
 	 </select>
 
 	<select id="updateOrder"> <!-- 修改订单状态  -->
-		 update orders set state=#{1} where id=#{0}
+		 update ls.order set status=#{1} where id=#{0}
 	</select>
 
 	<select id="deleteOrder" parameterType="int"> <!-- 删除订单  -->
-		delete from Orders where id = #{id}
+		delete from ls.order where id = #{id}
 	</select>
-
+	 <!-- 按条件查询订单  -->
+	<select id="findOrderByorder_id" parameterType="int" resultType="cn.edu.nwsuaf.entity.Orders">
+		select * from ls.order where id=#{id}
+	</select>
+	
+	<select id="findOrderByorder_time" parameterType="String" resultType="cn.edu.nwsuaf.entity.Orders">
+		select * from ls.order where order_time=#{order_time}
+	</select>
+	
+	<select id="findOrderByuser_id" parameterType="int" resultType="cn.edu.nwsuaf.entity.Orders">
+		select * from ls.order where user_id=#{user_id}
+	</select>
 	
 </mapper>

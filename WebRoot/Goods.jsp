@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="assets/css/BT.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Search.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
-
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">	
 		<script language="JavaScript" src="assets/js/backTop.js"
 			type="text/javascript" charset="utf-8"></script>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -34,17 +34,26 @@
 			src="assets/js/qh.js"></script>
 		<script language="javascript" type="text/javascript"
 			src="assets/js/fd.js"></script>
+	
+		<!-- ......................................... -->
+		<!-- layer,jquery-1.8.3 这两个js有顺序的 必须先引入jquery1.8.3 -->
+		<script src="assets/js/jquery-1.8.3.min.js"></script>
+		<script src="assets/js/layer.js"></script>
+		<!-- 调用浮动窗口 -->
+		<script type="text/javascript" src="assets/js/IMChat.js"></script>
+		<!-- ....................................... -->
+		
+	
 	</head>
+
 
 	<body>
 		<div id="header">
 			<div class="header1">
-				<b></b><a 
-	
-lick=addToFavorite(); href="#"><img
+				<b></b><a onclick=addToFavorite(); href="#"><img
 						style="position: relative; top: 2px;"
-						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
-					FRIEND</a>
+						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE FRIEND</a>
+					&nbsp;&nbsp;<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>
 			</div>
 			<div class="header2">
 				<nav class="nav">
@@ -771,12 +780,13 @@ lick=addToFavorite(); href="#"><img
 								-->
 								</td>
 								<td>
-								<input name="anonymous" type="checkbox" value="anon" />匿名发表<br/>
-								<label><input name="upvote" type="radio" value="like" checked />赞 </label> 
-								<label><input name="upvote" type="radio" value="hate" />踩 </label> 
+								
+								 <i class="fa fa-user-o">&nbsp;&nbsp;<input name="anonymous" type="checkbox" value="anon" />匿名发表</i><br/><br/>
+								<label><i class="fa fa-thumbs-o-up">&nbsp;&nbsp;<input name="upvote" type="radio" value="like" checked />赞 </i></label>&nbsp;&nbsp; 
+								<label><i class="fa fa-thumbs-down">&nbsp;&nbsp;<input name="upvote" type="radio" value="hate" />踩 </i></label> 
 								<br/>
 								<input type="submit" id="cmtsubmit" value="发表" class="button button-pill button-primary">
-	
+									
 								</td>
 								</tr>
 								</tbody>

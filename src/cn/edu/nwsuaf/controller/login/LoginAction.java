@@ -1,5 +1,4 @@
 package cn.edu.nwsuaf.controller.login;
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -18,23 +17,16 @@ import cn.edu.nwsuaf.entity.User;
 import cn.edu.nwsuaf.util.EncryptUtil;
 import cn.edu.nwsuaf.util.GetIpUtil;
 import cn.edu.nwsuaf.util.GetTimeUtil;
-
 /**
  * @author 张琼 2017-6-13
  */
 @Controller
 public class LoginAction {
 	/**
-	 * @throws IOException 
-	 * @throws ServletException 
+	 * @throws IOException ServletException 
 	 * 创建时间：2017-6-14 开发者：张琼
-	 * 
-	 * @参数： @param email
-	 * @参数： @param password
-	 * @参数： @param request
-	 * @参数： @return
+	 * @参数： @param email password request
 	 * @return String
-	 * @throws
 	 */
 	@RequestMapping("/login.action")
 	public String login(String email, String password,
@@ -72,22 +64,19 @@ public class LoginAction {
 					HttpSession session = request.getSession();
 					session.setAttribute("email", email); // 将email传过去
 					request.setAttribute("email", email); // 将email传过去
-					return "emailverify_test"; // TODO //未验证则跳转验证页面 继续验证
+					return "verify_form"; // TODO //未验证则跳转验证页面 继续验证
 				}
 
 			} else { // 用户名密码不对
 				request.setAttribute("loginError", "登录失败");
 				return "UserLogin";// TODO //跳回登录页面
-				//request.getRequestDispatcher("/page/UserLogin.jsp").forward(request, response);
 			}
 
 		} else { // 数据库中没有这个email
 			request.setAttribute("loginError", "该邮箱未注册");
-			return "UserLogin";// TODO 这里要跳回登录页面 需要将登录页面改为jsp
-			//request.getRequestDispatcher("/page/UserLogin.jsp").forward(request, response);
+			return "UserLogin";// TODO 这里要跳回登录页面
 
 		}
-		
 
 	}
 }

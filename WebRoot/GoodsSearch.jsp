@@ -33,6 +33,16 @@
 			type="text/javascript" charset="utf-8"></script>
 		<script language="JavaScript" src="assets/js/AdminEmail.js"
 			type="text/javascript" charset="utf-8"></script>
+			
+			<!-- ......................................... -->
+		<!-- layer,jquery-1.8.3 这两个js有顺序的 必须先引入jquery1.8.3 -->
+		<script src="assets/js/jquery-1.8.3.min.js"></script>
+		<script src="assets/js/layer.js"></script>
+		<!-- 调用浮动窗口 -->
+		<script type="text/javascript" src="assets/js/IMChat.js"></script>
+		<!-- ....................................... -->
+			
+			
 	</head>
 	<body>
 		<div id="header">
@@ -40,6 +50,7 @@
 				<b></b><a rel="sidebar" onclick=addToFavorite(); href="#"><img
 						style="position: relative; top: 2px;"
 						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINEFRIEND</a>
+			&nbsp;<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>
 			</div>
 			<div class="header2">
 				<nav class="nav">

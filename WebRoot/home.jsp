@@ -28,6 +28,17 @@
 		<link rel="stylesheet" href="assets/css/Search.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/BT.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
+		
+		<!-- ......................................... -->
+		<!-- layer,jquery-1.8.3 这两个js有顺序的 必须先引入jquery1.8.3 -->
+		<script src="assets/js/jquery-1.8.3.min.js"></script>
+		<script src="assets/js/layer.js"></script>
+		<!-- 调用浮动窗口 -->
+		<script type="text/javascript" src="assets/js/IMChat.js"></script>
+		<!-- ....................................... -->
+		
+		
+		
 		<style>body {
 			cursor: url('assets/picture/cursor.ico'), auto;
 		}
@@ -50,7 +61,7 @@
 			type="text/javascript" charset="utf-8"></script>
 	
 		
-		<script language="JavaScript" type="text/javascript" charset="utf-8"><!--
+		<script language="JavaScript" type="text/javascript" charset="utf-8">
 			
 			
 			window.onload=function (){
@@ -79,7 +90,7 @@
 			};
 	  </script>
 
-	
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
 	
 	</head>
@@ -95,10 +106,10 @@
 			</p>
 			<p class="img_a" onmouseover=hide_show_2(this);
 				onmouseout=hide_show_1(this);>
-				<a href="UserFavorite.html"> <img
+				<a href="javascript:IMChat();"> <img
 						src="assets/homeImages/heart.png" /> </a>
 				<div class="hide_show" style="top: 33px;">
-					我的收藏
+					实时吐槽
 				</div>
 			</p>
 			<p class="img_a" onmouseover=hide_show_2(this);
@@ -139,6 +150,7 @@
 						style="position: relative; top: 2px;"
 						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
 					FRIEND</a>
+					<i class="fa fa-optin-monster"></i>&nbsp;<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>
 			</div>
 			<div class="header2">
 				<nav class="nav">
@@ -367,7 +379,7 @@
 						<div class="message_div_1">
 							<ul>
 								<li>
-									<a href="#" target="_blank"><b>[特惠]</b> LINE FRIEND新成立
+									<a href="javascript:IMChat();" target="_blank"><b>[特惠]</b> LINE FRIEND新成立
 										满200减50</a>
 								</li>
 								<li>

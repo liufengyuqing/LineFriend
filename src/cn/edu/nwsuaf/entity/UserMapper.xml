@@ -95,5 +95,9 @@
 	<select id="findUserByAge" parameterType="int" resultType="cn.edu.nwsuaf.entity.User">
 		select * from user where year=#{year}
 	</select>
+	<update id="UpdateInfo" parameterType="cn.edu.nwsuaf.entity.User">
+		update user set nickName=#{nickName},trueName=#{trueName},sex=#{sex},cardId=#{cardId},year=#{year},mouth=#{mouth},day=#{day}
+		where id=#{id}
+	</update>
 	
 </mapper>

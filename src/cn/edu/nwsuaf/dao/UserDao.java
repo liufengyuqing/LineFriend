@@ -48,4 +48,5 @@ public interface UserDao {
 	public List<User> findUserByEmail(String email); // 
 	public List<User> findUserByIdList(int id);//根据id 查询用户
 	public void deleteUserById(int id);
+	public void UpdateInfo(User user);
 }

@@ -21,14 +21,24 @@
 	height: 50px;
 	width: 100%;
 }
-/* #condtion{
-	height: 50px;
-	width: 100px;
-} */
-.aaa{
-	border:none;
-	outline:none;
-	background-color: #F3F3F3;
-	color:#0088CC;
 
+
+.UpdatePanl input{
+	height: 30px;
+	width: 100px;
+}
+.labelSy{
+	display: inline;
+	float: left; 
+}
+#UpdatePanl{
+	padding-top: 50px;
+	padding-left:30px;
+	height: 800px;
+	width: 750px;
+	margin:30px auto; 
+	border: 3px #9FCDDA dashed;
+}
+.inputDiv{
+	height: 100px;
 }

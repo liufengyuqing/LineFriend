@@ -17,7 +17,13 @@ public class GetTimeUtil {
 		return Long.parseLong(dateString); // 返回long基本数据类型
 
 	}
-	
+	public static String getFormatDateProduct() { // 上架商品用这个
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+		String dateString = formatter.format(date);
+		return dateString; // 
+
+	}
 	public static String getFormatDate1() { 
 		Date date = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -31,6 +32,10 @@ public class ProductSearchAction {
 		
 		String sel=request.getParameter("sel");
 		String condition=request.getParameter("condition");
+		
+		HttpSession session=request.getSession();
+		session.setAttribute("condition", condition);
+		session.setAttribute("sel", sel);
 		
 		if(sel.equals("1")){
 			productList=productDao.findAllProduct1();

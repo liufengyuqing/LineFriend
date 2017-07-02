@@ -20,7 +20,7 @@ import cn.edu.nwsuaf.entity.UserAddress;
 @Controller
 public class EditAddressAction {
 	@RequestMapping("/editAddress.action")
-	public String UpdateAddress(HttpServletRequest request,HttpServletResponse httpServletResponse){
+	public String UpdateAddress(HttpServletRequest request ){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");
 		UserAddressDao dao = ctx.getBean(UserAddressDao.class);

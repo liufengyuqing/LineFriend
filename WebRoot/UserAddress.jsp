@@ -81,11 +81,7 @@ href="#"><img
 					<%
 						}
 					%>
-
-					
-					
-					
-					
+	
 					
 					<li class="nav__menu-item">
 						客户服务^
@@ -354,7 +350,7 @@ href="#"><img
 					<div class="addAddress">
 						<a href="AddUserAddress.jsp"> 
 						<input class="addAddressButton1"
-								name="" type="text" value="新增收货地址" align="center" /> </a>
+								name="" type="text" value="新增收货地址" style="text-align:center;" /> </a>
 						<div class="prompt1">
 							您已创建 ${size}个收货地址，最多可创建20个收货地址
 						</div>

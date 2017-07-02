@@ -24,7 +24,7 @@ public class DeleteOrderAction {
 		System.out.println(id);
 		dao.deleteOrder(Integer.parseInt(id));
 		try {
-			response.sendRedirect("findAllOrder.action");
+			response.sendRedirect("findAllOrder.action#panel-Odelect");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -29,6 +29,9 @@ public class UserSearchAction {
 		
 		String select=request.getParameter("select");
 		String condtion=request.getParameter("condtion");
+		HttpSession session=request.getSession();
+		session.setAttribute("select",select);
+		session.setAttribute("condtion",condtion);
 		System.out.print("select:"+select);
 		System.out.print("condtion:"+condtion);
 		if(select.equals("1")){
@@ -62,18 +65,7 @@ public class UserSearchAction {
 			System.out.print("按年龄查询");
 			//userList=userDao.findUserByNickName(condtion);
 		}
-		/*else{
-			System.out.print("oK");
-			userList=userDao.findAllUser();
-		}*/
-		/*if(userList==null){
-			request.setAttribute("userNull", "没有此用户的信息");
-		}else{
-			request.setAttribute("user", user);
-		}*/
-		
 		request.setAttribute("userList", userList);
-
 		return "/Admin/UserManage";
 	}
 }

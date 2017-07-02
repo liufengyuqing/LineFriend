@@ -29,6 +29,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
 <script>
+		function SearchUser(){
+			//获取输入框和下拉框狂的值
+			//alert(1);
+			//var tiaojian=document.formSy.getElementsByName("condtion").value;
+			//var sel2=document.formSy.getElementsByName("sel2").value;
+			//var condtion=document.formSy.condtion.value;
+			//var select=document.formSy.select.value;
+			
+			var select=document.getElementById("select").value;
+			alert("select:"+select);
+			var condtion=document.getElementById("condtion").value;
+			alert("condtion:"+condtion);
+			if(select==1){
+				alert("将搜索所有用户信息！");
+				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
+			}
+			else if(select==2){
+				alert("订单编号");
+				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
+			}
+			else if(select==3){
+				alert("下单时间");
+				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
+			}
+			else if(select==4){
+				alert("用户ID");
+				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
+			}
+			
+			
+		}
+	
+</script>
+<script>
 
 $(document).ready(function() {
 
@@ -150,20 +184,22 @@ $('a[href=' + anchor + ']').tab('show');
 				<div class="tab-pane active" contenteditable="false" id="#panel-Osearch">
 					<!-- <p>商品上架</p> -->
 					<div class="navbar-inner">
+					<form class="navbar-form navbar-left" role="search" id="formSy">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>订单编号</option>
-							<option>下单时间</option>
-							<option>用户ID</option>
+						<select class="selectSy" name="select" id="select">
+						    <option value="1">全部订单</option>
+							<option value="2">订单编号</option>
+							<option value="3">下单时间</option>
+							<option value="4">用户ID</option>
 							
 						</select>
 							
 						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+						
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="button" class="btn btn-default" style="margin-top:5px; " onclick="SearchUser();">查询</button></span>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -173,26 +209,27 @@ $('a[href=' + anchor + ']').tab('show');
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
-													<th style="width: 10%;">用户ID</th>
 													<th style="width: 10%;">下单时间</th>
-													<th style="width: 10%;">收货人</th>
+													<th style="width: 10%;">用户ID</th>
+													<th style="width: 10%;">订单状态</th>
+													<th style="width: 10%;">总金额</th>
 													<th style="width: 10%;">收货地址</th>
-													<th style="width: 10%;">邮编</th>
-													<th style="width: 10%;">联系方式</th>
+													<th style="width: 10%;">收货人</th>
 													<th style="width: 10%;">操作</th>
 												</tr>
 											</thead>
 											<tbody>
+											<!--  动态加载-->
 											<c:forEach items="${orderList}"  var="item" varStatus="status">
 												<tr>
 													
-													<td>${item.order_id}</td>
-													<td>${item.user_id}</td>
+													<td>${item.id}</td>
 													<td>${item.order_time}</td>
-													<td>${item.rs_name}</td>
-													<td>${item.rs_address}</td>
-													<td>${item.tomp}</td>
-													<td>${item.tel}</td>
+													<td>${item.user_id}</td>
+													<td>${item.status}</td>
+													<td>${item.price_amount}</td>
+													<td>${item.address_id}</td>
+													<td>${item.address_id}</td>
 													<td><a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">详情查看</a></td>
 												</tr>
 												</c:forEach>
@@ -206,21 +243,24 @@ $('a[href=' + anchor + ']').tab('show');
 					<!-- <p>商品下架</p> -->
 					<!-- 搜索框 -->
 					<div class="navbar-inner">
+					<form class="navbar-form navbar-left" role="search" id="formSy">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>订单编号</option>
-							<option>下单时间</option>
-							<option>用户ID</option>
+						<select class="selectSy" name="select" id="select">
+						    <option value="1">全部订单</option>
+							<option value="2">订单编号</option>
+							<option value="3">下单时间</option>
+							<option value="4">用户ID</option>
 							
 						</select>
 							
 						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+						
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="submit" class="btn btn-default" style="margin-top:5px; " onclick="SearchUser();">查询</button></span>
 						</form>
+
 
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
@@ -232,14 +272,14 @@ $('a[href=' + anchor + ']').tab('show');
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
-													<th style="width: 10%;">用户ID</th>
 													<th style="width: 10%;">下单时间</th>
+													<th style="width: 10%;">用户ID</th>
 													<th style="width: 10%;">订单状态</th>
+						                             
 													<th style="width: 10%;">订单状态修改</th>
+													<th style="width: 10%;">总金额</th>
+													<th style="width: 10%;">收货地址</th>
 													<th style="width: 10%;">收货人</th>
-													<th style="width: 13%;">收货地址</th>
-													<th style="width: 7%;">邮编</th>
-													<th style="width: 10%;">联系方式</th>
 													<th style="width: 10%;">操作</th>
 												</tr>
 											</thead>
@@ -253,13 +293,13 @@ $('a[href=' + anchor + ']').tab('show');
 													<!-- <input type="hidden" value=${item.id} name="id"/> -->
 													
 													
-													<td>${item.order_id}</td>
-													<td>${item.user_id}</td>
+													<td>${item.id}</td>
 													<td>${item.order_time}</td>
+													<td>${item.user_id}</td>
 							                         <form  id="update" action="editOrder.action">
-													<td>${item.state}</td>
+													<td>${item.status}</td>
 													<td>
-														<select id="stateSelect" name="stateName" >
+														<select id="stateName" name="stateName" >
 															<option value="未处理">未处理</option>
 															<option value="已接单">已接单</option>
 															<option value="已发货">已发货</option>
@@ -268,11 +308,11 @@ $('a[href=' + anchor + ']').tab('show');
 					
 
 													</td>
-													<td>${item.rs_name}</td>
-													<td>${item.rs_address}</td>
-													<td>${item.tomp}</td>
-													<td>${item.tel}</td>
-													<input type="hidden" value=${item.id} name="id"/>
+													<td>${item.price_amount}</td>
+													<td>${item.address_id}</td>
+													<td>${item.address_id}</td>
+											
+													 <input type="hidden" value=${item.id} name="id"/>
 													<td><input type="submit" value="确定"  class="aaa"/></td>
 													</form>
 													<!-- <td><input type="submit" value="确定"/></td> -->
@@ -290,20 +330,22 @@ $('a[href=' + anchor + ']').tab('show');
 				</div>
 				<div class="tab-pane" contenteditable="false" id="panel-Odelect">
 					<div class="navbar-inner">
+						<form class="navbar-form navbar-left" role="search" id="formSy">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy">
-							<option>订单编号</option>
-							<option>下单时间</option>
-							<option>用户ID</option>
+						<select class="selectSy" name="select" id="select">
+						    <option value="1">全部订单</option>
+							<option value="2">订单编号</option>
+							<option value="3">下单时间</option>
+							<option value="4">用户ID</option>
 							
 						</select>
 							
 						
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian">
+						
+							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="submit" class="btn btn-default" style="margin-top:5px; " onclick="SearchUser();">查询</button></span>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -313,12 +355,12 @@ $('a[href=' + anchor + ']').tab('show');
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
-													<th style="width: 10%;">用户ID</th>
 													<th style="width: 10%;">下单时间</th>
-													<th style="width: 10%;">收货人</th>
+													<th style="width: 10%;">用户ID</th>
+													<th style="width: 10%;">订单状态</th>
+													<th style="width: 10%;">总金额</th>
 													<th style="width: 10%;">收货地址</th>
-													<th style="width: 10%;">邮编</th>
-													<th style="width: 10%;">联系方式</th>
+													<th style="width: 10%;">收货人</th>
 													<th style="width: 10%;">操作</th>
 												</tr>
 											</thead>
@@ -326,13 +368,13 @@ $('a[href=' + anchor + ']').tab('show');
 											<c:forEach items="${orderList}"  var="item" varStatus="status">
 												<tr>
 													
-													<td>${item.order_id}</td>
-													<td>${item.user_id}</td>
+													<td>${item.id}</td>
 													<td>${item.order_time}</td>
-													<td>${item.rs_name}</td>
-													<td>${item.rs_address}</td>
-													<td>${item.tomp}</td>
-													<td>${item.tel}</td>
+													<td>${item.user_id}</td>
+													<td>${item.status}</td>
+													<td>${item.price_amount}</td>
+													<td>${item.address_id}</td>
+													<td>${item.address_id}</td>
 													<td><a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
 												</tr>
 												</c:forEach>
