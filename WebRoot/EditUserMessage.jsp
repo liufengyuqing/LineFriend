@@ -336,7 +336,7 @@ href="#"><img
 						<a href="User.html">我的LINEFRIEND</a>
 					</div>
 					<div class="Personality2">
-						<a href="User.html">个人主页</a>
+						<a href="User.jsp">个人主页</a>
 					</div>
 					<div class="Personality3">
 						<ul>
@@ -389,7 +389,7 @@ href="#"><img
 							</p>
 						</div>
 						<div class="Same">
-							<a href="EditUserMessage.html">个人信息</a>
+							<a href="EditUserMessage.jsp">个人信息</a>
 						</div>
 						<div class="Same">
 							<a href="UserAddress.html">收货地址</a>
@@ -408,8 +408,8 @@ href="#"><img
 								</div>
 								<div class="info-m">
 									<div class="u-name">
-										<a href="#">小李</a>
-									</div>
+										<!--<a href="#">小李</a>
+									--></div>
 									<div class="u-level">
 										<span class="rank r1"> <s></s><a href="#">注册会员</a> </span>
 									</div>
@@ -465,7 +465,7 @@ href="#"><img
 					<div class="all">
 
 
-						<form action="editUserInfo.action" method="post">
+						<form action="editUserInfo.action" method="post"  enctype="multipart/form-data">
 							<div class="head">
 								<b>基本信息</b>
 							</div>
@@ -479,6 +479,16 @@ href="#"><img
 								<input type="text" value="${user.trueName}" name="trueName"
 									id="text2" maxlength="20" class="itxt">
 							</div>
+							
+							<!-- 上传头像标签 -->
+							<div class="item">
+								<span class="label">上传头像：</span>
+								<input type="file" name="headImage"
+									id="text2" maxlength="20" class="itxt">
+							</div>
+							
+							
+							
 							<div class="item">
 								<span class="label">性别：</span>
 								<label>
@@ -489,7 +499,9 @@ href="#"><img
 									<input type="radio" value="" name="sex">
 									女
 								</label>
-							</div>
+							</div>$(:radio).click(){
+							
+							}
 							<div class="item">
 								<span class="label">生日：</span>
 								<select id="province" name="year" class="selt mr5"

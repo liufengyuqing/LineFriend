@@ -15,22 +15,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/birthday.js"></script>
+<script type="text/javascript" src="assets/js/dialog.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" /> -->
+<link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
+ <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" /> 
 
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-responsive.css" />
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-responsive.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-combined.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" /> -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
-		<script type="text/javascript" src="assets/js/jquery.min.js" ></script>
-		<script type="text/javascript" src="assets/js/npm.js" ></script>
+
 		
 
 		
@@ -69,16 +72,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 <div id="head">
 	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
-		<li><a href="#">Line friend后台管理系统</a> </li>
-		<li class="active"><a href="#">首页</a></li>
 		<li><a href="AdminMsg.jsp">通知</a></li>
-		<li class="dropdown pull-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
-		<ul class="dropdown-menu">
-			<li><a href="#">Line friend主页</a></li>
-			<li class="divider">&nbsp;</li>
-			<li><a href="#">退出</a></li>
-		</ul>
-		</li>
+		<li class="active"><a href="#">首页</a></li>
+		
+		<span>Line friend Admin</span>
+
+		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdminLogin.jsp">退出</a></span>
 	</ul>
 
 </div>
@@ -109,20 +108,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<div id="productM" class="accordion-body in collapse">
 						<div class="accordion-inner">
-							<a href="">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商品信息修改<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商品库存管理<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#panel-Padd">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#panel-Pout">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#panel-Pupdate">商品信息修改<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#panel-Pnumber">商品库存管理<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#panel-Pcheap">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#panel-Pkind">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
 						</div>
 					</div>
 				</div>
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
-						 <a href="OrderManage.html" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
+						 <a href="OrderManage.jsp" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
 					</div>
 					<div id="orderM" class="accordion-body collapse">
 						<div class="accordion-inner">
@@ -138,8 +136,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 </div>
 	<div id="right">
-		<div class="panel panel-default">
-    		<div class="panel-body">
+		
        		 <!--页面-->
        		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
 			<ul class="nav nav-tabs">
@@ -154,9 +151,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="tab-content">
 				<div class="tab-pane active" contenteditable="false" id="panel-Padd">
 					<!-- <p>商品上架</p> -->
-					<div class="navbar-inner">
+					
 						<div class ="view" >
-							<form action="productAdd.action" class="form-horizontal" role="form">
+							<form action="productAdd.action" class="form-horizontal" role="form" enctype="multipart/form-data" method="post">
 										
 										<div class="form-group">
 											<label for="pname" class="col-sm-2 control-label">产品名称：</label>
@@ -175,22 +172,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</div><br>
 										-->
 										<div class="form-group">
-											<label for="pname" class="col-sm-2 control-label">原价：</label>
+											<label for="pname" class="col-sm-2 control-label">原&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control" name="fixed_price" id="fixed_price" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
-											<label for="pname" class="col-sm-2 control-label">折后价：</label>
+											<label for="pname" class="col-sm-2 control-label">折 后 价：</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control" name="dangqian_price" id="dangqian_price" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
-											<label for="pname" class="col-sm-2 control-label">分类：</label>
+											<label for="pname" class="col-sm-2 control-label">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类：</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control" name="keywords" id="keywords" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
-											<label for="pname" class="col-sm-2 control-label">生产商：</label>
+											<label for="pname" class="col-sm-2 control-label">生 产 商：</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control" name="producer" id="producer" style="height: 30px;"></div>
 										</div><br>
@@ -200,12 +197,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<input type="text" class="form-control" name="produce_date" id="produce_date" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
-											<label for="pname" class="col-sm-2 control-label">保质期：</label>
+											<label for="pname" class="col-sm-2 control-label">保 质 期：</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control" name="expiration_date" id="expiration_date" style="height: 30px;"></div>
 										</div><br>
 										<div class="form-group">
-											<label for="pname" class="col-sm-2 control-label">库存：</label>
+											<label for="pname" class="col-sm-2 control-label">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存：</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control" name="storge" id="storge" style="height: 30px;"></div>
 										</div><br>
@@ -216,27 +213,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</div><br>
 										<div class="form-group" id="seleimg">
 											 <label for="exampleInputFile">选择商品图片</label>
-											 <input type="file" id="exampleInputFile" accept="image/png,image/jpg,image/gif" />
+											 <input type="file" name="file" id="exampleInputFile" accept="image/png,image/jpg,image/gif"  style="width: 300px;height: 30px;margin-top: 10px;margin-bottom: 10px;" />
 										</div><br>
-
-										<div class="form-group" id="sjbotton">
-											
+										<div class="form-group" id="sjbotton">				
 											<div class="col-sm-10">
-												<input type="submit" class="form-control" id="psubmit" value="上架"></div>
+												<input type="submit" class="form-control" id="psubmit" value="上架" style="margin-left: 150px;width: 150px;"></div>
 										</div><br>
 							</form>
 						</div>
-					</div>		
+						
 				</div>
 
 				<div class="tab-pane" contenteditable="false" id="panel-Pout">
 					<!-- <p>商品下架</p> -->
 					<!-- 搜索框 -->
-					<div class="navbar-inner">
+					
                     
                     
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+						<label sstyle="display: inline-block;margin-top:20px;left: 20%;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
 						<select class="selectSy" name="sel">
 							<option value="1">全部商品</option>
@@ -293,10 +288,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tbody>
 									</table>
 						</div>
-					</div>
+					
 				</div>
 				<div class="tab-pane" contenteditable="false" id="panel-Pupdate">
-					<div class="navbar-inner">
+					
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
@@ -354,12 +349,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tbody>
 									</table>
 						</div>
-					</div>
+				
 					
 				</div>
 				<div class="tab-pane" contenteditable="false" id="panel-Pnumber">
 					
-					<div class="navbar-inner">
+					
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
                         
                         
@@ -421,12 +416,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tbody>
 									</table>
 						</div>
-					</div>
+					
 				</div>
 			
 				<div class="tab-pane" contenteditable="false" id="panel-Pcheap">
 					
-					<div class="navbar-inner">
+				
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
@@ -486,11 +481,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tbody>
 									</table>
 						</div>
-					</div>
+				
 				</div>
 				<div class="tab-pane" contenteditable="false" id="panel-Pkind">
 					
-					<div class="navbar-inner">
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
 						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
@@ -558,13 +552,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tbody>
 									</table>
 						</div>
-					</div>
+					
 
 				</div>
 			</div>
 		</div>
-    	</div>
-		</div>	
+    		
 	</div>
 </div>
 </body>

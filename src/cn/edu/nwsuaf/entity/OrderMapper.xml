@@ -4,9 +4,35 @@
 
 <mapper namespace="cn.edu.nwsuaf.dao.OrderDao">
 
-	<!-- 关联查询 -->
+	<!--刘志伟-->
+	<delete id="deteleByProductId" parameterType="int">
+		detele * form ls.item where product_id = #{product_id}
+	</delete>
+	
+	<select id="findUserOrderByUserId">
+		select * from ls.order where user_id = #{user_id}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-	<!-- 查询所有订单信息 -->
+	<!-- 后台 查询所有订单信息 -->
 
 	<select id="findAllOrder" 
 		resultType="cn.edu.nwsuaf.entity.Orders">

@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@page import="cn.edu.nwsuaf.entity.*"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -19,7 +18,9 @@
 		<link rel="stylesheet" href="assets/css/BT.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Search.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">	
+		<link
+			href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet">
 		<script language="JavaScript" src="assets/js/backTop.js"
 			type="text/javascript" charset="utf-8"></script>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -34,7 +35,7 @@
 			src="assets/js/qh.js"></script>
 		<script language="javascript" type="text/javascript"
 			src="assets/js/fd.js"></script>
-	
+
 		<!-- ......................................... -->
 		<!-- layer,jquery-1.8.3 这两个js有顺序的 必须先引入jquery1.8.3 -->
 		<script src="assets/js/jquery-1.8.3.min.js"></script>
@@ -42,8 +43,81 @@
 		<!-- 调用浮动窗口 -->
 		<script type="text/javascript" src="assets/js/IMChat.js"></script>
 		<!-- ....................................... -->
-		
-	
+
+		<style type="text/css">
+#tip {
+	position: absolute;
+	color: #333;
+	display: none;
+}
+
+#tip s {
+	position: absolute;
+	top: 40px;
+	left: -20px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	border-color: transparent #BBA transparent transparent;
+	border-style: dashed solid dashed dashed;
+	border-width: 10px;
+}
+
+#tip s i {
+	position: absolute;
+	top: -10px;
+	left: -8px;
+	display: block;
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	border-color: transparent #fff transparent transparent;
+	border-style: dashed solid dashed dashed;
+	border-width: 10px;
+}
+
+#tip .t_box {
+	position: relative;
+	background-color: #CCC;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
+	bottom: -3px;
+	right: -3px;
+}
+
+#tip .t_box div {
+	position: relative;
+	background-color: #FFF;
+	border: 1px solid #ACA899;
+	background: #FFF;
+	padding: 1px;
+	top: -3px;
+	left: -3px;
+}
+
+.tip {
+	width: 400px;
+	height: 300px;
+	border: 1px solid #DDD;
+}
+</style>
+
+		<script type="text/javascript">
+$(function(){
+  $('.tip').mouseover(function(){
+   var $tip=$('<div id="tip"><div class="t_box"><div><s><i></i></s><img src="'+this.src+'" /></div></div></div>');
+   $('body').append($tip);
+   $('#tip').show('fast');
+  }).mouseout(function(){
+   $('#tip').remove();
+  }).mousemove(function(e){
+   $('#tip').css({"top":(e.pageY-60)+"px","left":(e.pageX+30)+"px"})
+  })
+})
+</script>
 	</head>
 
 
@@ -52,14 +126,13 @@
 			<div class="header1">
 				<b></b><a onclick=addToFavorite(); href="#"><img
 						style="position: relative; top: 2px;"
-						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE FRIEND</a>
-					&nbsp;&nbsp;<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>
+						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
+					FRIEND</a> &nbsp;&nbsp;
+				<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>
 			</div>
 			<div class="header2">
 				<nav class="nav">
 				<ul class="nav__menu">
-
-
 
 					<%
 						//String email = request.getParameter("email");
@@ -161,7 +234,7 @@
 						<img src="assets/homeImages/购物车小图标.png" width="20" height="20" />
 					</div>
 					<div class="Search52">
-						<a href=""showCart.action"">去购物车结算</a>
+						<a href="showCart.action">去购物车结算</a>
 					</div>
 				</div>
 			</div>
@@ -237,14 +310,13 @@
 					<div class="content4">
 						<div id="content42">
 							<div class="content41">
-								<img src="assets/homeImages/detail/${product.product_pic} }"
-									width="400" height="300" />
+								<img src="${product.product_pic}" class="tip" width="400"
+									height="300" />
 							</div>
 							<ul id="linkBox">
 								<li>
-									<a href="assets/homeImages/detail/3.1.png"><img
-											src="assets/homeImages/detail/3.1.png" width="60" height="60" />
-									</a>
+									<a href="${product.product_pic}"><img
+											src="${product.product_pic}" width="60" height="60" /> </a>
 								</li>
 								<li>
 									<a href="assets/homeImages/detail/3.2.png"><img
@@ -372,7 +444,7 @@
 
 
 
-								<script><!--
+								<script>
 	var t = $(this).parent().find('input[class*=text_box]');
 	$(".add").click(function() {
 		t = $(this).parent().find('input[class*=text_box]');
@@ -428,9 +500,12 @@
 				</div>
 			</div>
 			<div class="content6">
-				<a href="https://shop151103206.taobao.com/p/rd204604.htm?spm=2013.1.0.0.6TIgpY
-				"><img src="assets/homeImages/detail.jpg" width="1100" height="100"
-					alt="间隔图片" /></a>
+				<a
+					href="https://shop151103206.taobao.com/p/rd204604.htm?spm=2013.1.0.0.6TIgpY
+				"><img
+						src="assets/homeImages/detail.jpg" width="1100" height="100"
+						alt="间隔图片" />
+				</a>
 			</div>
 			<div class="content7">
 				<div class="content8">
@@ -501,8 +576,8 @@
 						<div class="tab-body">
 							<br />
 							<div class="tab-panel active" id="tab-js">
-							
-								
+
+
 								商品名称：${product.product_name }
 								<br />
 								生产商：${food.producer}
@@ -691,35 +766,35 @@
 												评论者
 											</th>
 										</tr>
-										<c:forEach items ="${commentList}" var="cmt">
-										
-										<tr>
-											<td>
-												${cmt.content }
-											</td>
-											<td>
-												${cmt.send_time }
-											</td>
-											<td>
-												${cmt.upvote }
-											</td>
-											<td>
-												<div class="type-item">
-													<span class="label">口味：</span><span class="text">原味</span>
-												</div>
-												<div class="type-item">
-													<span class="label">组合：</span><span class="text">组合1</span>
-												</div>
-											</td>
-											<td>
-												<div class="user-item">
-													<span class="user-name"> ${cmt.email } </span>
-												</div>
-											
-												
-											
-											</td>
-										</tr>
+										<c:forEach items="${commentList}" var="cmt">
+
+											<tr>
+												<td>
+													${cmt.content }
+												</td>
+												<td>
+													${cmt.send_time }
+												</td>
+												<td>
+													${cmt.upvote }
+												</td>
+												<td>
+													<div class="type-item">
+														<span class="label">口味：</span><span class="text">原味</span>
+													</div>
+													<div class="type-item">
+														<span class="label">组合：</span><span class="text">组合1</span>
+													</div>
+												</td>
+												<td>
+													<div class="user-item">
+														<span class="user-name"> ${cmt.email } </span>
+													</div>
+
+
+
+												</td>
+											</tr>
 										</c:forEach>
 										<tr>
 											<td>
@@ -754,46 +829,58 @@
 												</div>
 											</td>
 										</tr>
-										
-									
-									
-										
+
+
+
+
 									</tbody>
 								</table>
-								<br/>
+								<br />
 								<form action="commentSend.action">
-								<input type="hidden" name="product_id" value=${id } />
-								<table width="100%" cellpadding="0" cellspacing="0">
-								<tbody>
-					
-								<tr height="20">
-								<th class="tdTitle">
-												发评论
-								</th>
-								</tr>
-								
-								<tr>
-								<td>
-								<textarea name="cmtcontent" style="width:100%;height:100;"></textarea>
-								<!--
+									<input type="hidden" name="product_id" value=${id } />
+									<table width="100%" cellpadding="0" cellspacing="0">
+										<tbody>
+
+											<tr height="20">
+												<th class="tdTitle">
+													发评论
+												</th>
+											</tr>
+
+											<tr>
+												<td>
+													<textarea name="cmtcontent"
+														style="width: 100%; height: 100;"></textarea>
+													<!--
 								<input type="text" name="cmtcontent" size="80" />
 								-->
-								</td>
-								<td>
-								
-								 <i class="fa fa-user-o">&nbsp;&nbsp;<input name="anonymous" type="checkbox" value="anon" />匿名发表</i><br/><br/>
-								<label><i class="fa fa-thumbs-o-up">&nbsp;&nbsp;<input name="upvote" type="radio" value="like" checked />赞 </i></label>&nbsp;&nbsp; 
-								<label><i class="fa fa-thumbs-down">&nbsp;&nbsp;<input name="upvote" type="radio" value="hate" />踩 </i></label> 
-								<br/>
-								<input type="submit" id="cmtsubmit" value="发表" class="button button-pill button-primary">
-									
-								</td>
-								</tr>
-								</tbody>
-								</table>
-								<span style="color: red"> ${error}</span>
+												</td>
+												<td>
+
+													<i class="fa fa-user-o">&nbsp;&nbsp;<input
+															name="anonymous" type="checkbox" value="anon" />匿名发表</i>
+													<br />
+													<br />
+													<label>
+														<i class="fa fa-thumbs-o-up">&nbsp;&nbsp;<input
+																name="upvote" type="radio" value="like" checked />赞 </i>
+													</label>
+													&nbsp;&nbsp;
+													<label>
+														<i class="fa fa-thumbs-down">&nbsp;&nbsp;<input
+																name="upvote" type="radio" value="hate" />踩 </i>
+													</label>
+													<br />
+													<input type="submit" id="cmtsubmit" value="发表"
+														class="button button-pill button-primary">
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<span style="color: red"> ${error}</span>
 								</form>
-								
+
 							</div>
 							<div class="clearfloat"></div>
 							<div class="tab-panel" id="tab-fw">
@@ -909,9 +996,7 @@
 				</div>
 			</div>
 
-			<div class="totop" id="totop" onclick=
-	bt();
->
+			<div class="totop" id="totop" onclick=bt();>
 				<img src="assets/homeImages/top.png" width="21" height="40" />
 			</div>
 		</div>

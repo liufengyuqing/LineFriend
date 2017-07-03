@@ -56,6 +56,7 @@ href="#"><img
 				<nav class="nav">
 				<ul class="nav__menu">
 					
+					
 					<%
 						String email = (String) session.getAttribute("email");
 						if (email == null) {
@@ -233,10 +234,10 @@ href="#"><img
 			<div id="Content">
 				<div id="Personality">
 					<div class="Personality1">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="findUserInfo.action">我的LINE FRIEND</a>
 					</div>
 					<div class="Personality2">
-						<a href="User.html">个人主页</a>
+						<a href="findUserInfo.action">个人主页</a>
 					</div>
 					<div class="Personality3">
 						<ul>

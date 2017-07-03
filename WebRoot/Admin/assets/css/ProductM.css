@@ -21,13 +21,14 @@
 	margin-left: 25px;
 }
 .view{
+	height: 700px;
+	width: 35%;
 	margin-top:20px;
-	margin-left: 500px;
-	padding:30px 20px; 
+	margin-left:30%;
+	padding:5px 30px; 
 	margin-bottom: 25px;
 	float: left;
-	width:450px;
-	border: 1px #D4D4D4 solid;
+	border: 3px #9FCDDA dashed;
 } 
 .col-sm-10{
 	float: left;

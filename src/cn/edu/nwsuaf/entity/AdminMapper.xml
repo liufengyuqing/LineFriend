@@ -4,18 +4,6 @@
 
 <mapper namespace="cn.edu.nwsuaf.dao.AdminDao">
 
-	<select id="findByUserName" parameterType="String"
-		resultType="cn.edu.nwsuaf.entity.Admin">  <!-- 查找userName是否存在 -->
-		select * from admin where adminName=#{adminName}
-	</select>
-
-	<select id="findByLogin1" parameterType="String"
-		resultType="cn.edu.nwsuaf.entity.Admin">  <!-- 登录  -->
-		select *
-		from admin where adminName=#{userName} and
-		password=#{password}
-	</select>
-
 	<select id="findByLogin" parameterType="cn.edu.nwsuaf.entity.Admin"
 		resultType="cn.edu.nwsuaf.entity.Admin">  <!-- 登录  -->
 		select *

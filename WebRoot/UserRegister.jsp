@@ -194,7 +194,7 @@
 						</label>
 						<input class="form-input2" type="text" name="checkcode" id="checkcode" onblur="verificationcode()"/>
 						<label class="getyzm">
-							<a href="#" onclick="reload()"><img src="<%=request.getContextPath() %>/imageVerifyCode.action" alt="验证码" id="image" /></a>
+							<a href="#" onclick="reload()"><img src="<%=request.getContextPath() %>/imageVerifyCode.action" alt="验证码" id="image" style="margin-top: -15px;"/></a>
 							<!--button onclick="return reload();"><label>换一张</label></button--> 
 							<span id="span"></span>
 						</label>
@@ -204,8 +204,8 @@
 							手&nbsp;机&nbsp;验&nbsp;证:
 						</label>
 						<input id="mobile" name="mobile" type="text" size="25" class="form-input2" />
-						<label class="getyzm">
-						<input id="zphone" type="button" value="获取短信验证码" onclick="get_mobile_code();" class="btn btn-primary"/>
+						<label class="getyzm" >
+						<input id="zphone" type="button" value="获取短信验证码" onclick="get_mobile_code();" class="btn btn-primary"  style="margin-top: -15px;" />
 					
 						 <!--<input id="zphone" type="button" value="获取短信验证码" onclick="get_mobile_code();" class="button button-pill button-primary"/>
 						--></label>

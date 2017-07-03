@@ -17,7 +17,7 @@ body {
 	color:#666;
 	font:12px/180% Arial, Helvetica, sans-serif, "新宋体";
 }
-clearfix:after {
+.clearfix:after {
 	content:".";
 	display:block;
 	height:0;
@@ -51,12 +51,14 @@ clearfix:after {
 	width:100%;
 }
 .catbox table th, .catbox table td {
-	border:1px solid #CADEFF;
+	/* border:1px solid #CADEFF; */
+	border-bottom: 1px #000 solid;
 }
 .catbox table th {
-	background:#e2f2ff;
-	border-top:3px solid #a7cbff;
+	background:#f36;
+	border-top:3px solid #f36;
 	height:30px;
+	color: #fff;
 }
 .catbox table td {
 	padding:10px;
@@ -274,6 +276,9 @@ height:25px;}
 }
 #space{
 	
-	height:10px;
+	height:30px;
 	
+}
+.clearfloat{
+	height: 20px;
 }

@@ -22,26 +22,32 @@ public class User {
 	private String mouth;
 	private String day;
 	
+	private String head_image;//用户头像
+	
 	//关联
 	private List<UserAddress> addresses;// 一对多 一个user对应对个收获地址
-
-	
-	
 
 	@Override
 	public String toString() {
 		return "User [addresses=" + addresses + ", cardId=" + cardId + ", day="
 				+ day + ", email=" + email + ", email_verify_code="
-				+ email_verify_code + ", id=" + id + ", is_email_verify="
-				+ is_email_verify + ", last_login_ip=" + last_login_ip
-				+ ", last_login_time=" + last_login_time + ", mouth=" + mouth
-				+ ", nickName=" + nickName + ", password=" + password
-				+ ", sex=" + sex + ", trueName=" + trueName
-				+ ", user_integral=" + user_integral + ", year=" + year + "]";
+				+ email_verify_code + ", head_image=" + head_image + ", id="
+				+ id + ", is_email_verify=" + is_email_verify
+				+ ", last_login_ip=" + last_login_ip + ", last_login_time="
+				+ last_login_time + ", mouth=" + mouth + ", nickName="
+				+ nickName + ", password=" + password + ", sex=" + sex
+				+ ", trueName=" + trueName + ", user_integral=" + user_integral
+				+ ", year=" + year + "]";
+	}
+
+	public String getHead_image() {
+		return head_image;
+	}
+
+	public void setHead_image(String headImage) {
+		head_image = headImage;
 	}
 	
-	
-
 	public String getYear() {
 		return year;
 	}

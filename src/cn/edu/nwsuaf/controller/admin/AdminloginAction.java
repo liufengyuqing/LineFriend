@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -35,7 +37,9 @@ public class AdminloginAction {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"springMVC.xml");
 		AdminDao adminDao = ctx.getBean(AdminDao.class);
-
+		/*Qian*/
+		HttpSession session=request.getSession();
+		
 		// String encrypt_pwd=EncryptUtil.md5Encrypt(password);
 		// //将密码转码后再去和数据库中比较
 
@@ -52,6 +56,9 @@ public class AdminloginAction {
 		if (admin == null) {
 			return "/Admin/AdminLogin";
 		} else {
+			/*Qian*/
+			session.setAttribute("AdminName", userName);
+			System.out.println("userName"+userName);
 			return "/Admin/AdminMsg";
 
 		}

@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*"
 	contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-	
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
@@ -16,6 +16,17 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<title>Line friend零食铺-我的购物车</title>
+
+		<script src="http://code.jquery.com/jquery-1.6.1.min.js"
+			type="text/javascript"></script>
+		<script language="JavaScript" src="assets/js/cart.js"
+			type="text/javascript" charset="utf-8"></script>
+		<script language="JavaScript" src="assets/js/backTop.js"
+			type="text/javascript" charset="utf-8"></script>
+		<script language="JavaScript" src="assets/js/addToFavorite.js"
+			type="text/javascript" charset="utf-8"></script>
+		<script language="JavaScript" src="assets/js/AdminEmail.js"
+			type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="assets/css/buy.css" charset="utf-8" />
 		<link rel="stylesheet" href="assets/css/Header.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Search.css" type="text/css" />
@@ -23,25 +34,14 @@
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/UserCart.css" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/cartStyle.css">
-		<script language="JavaScript" src="assets/js/cart.js"
-			type="text/javascript" charset="utf-8"></script>
-		<script language="JavaScript" src="assets/js/backTop.js"
-			type="text/javascript" charset="utf-8"></script>
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script language="JavaScript" src="assets/js/addToFavorite.js"
-			type="text/javascript" charset="utf-8"></script>
-		<script language="JavaScript" src="assets/js/AdminEmail.js"
-			type="text/javascript" charset="utf-8"></script>
-		<script language="JavaScript" src="assets/js/choosechange.js"
-			type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript"
-			src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+
+
 	</head>
-	<body onload = >
+	<body onload=>
 		<div id="header">
 			<div class="header1">
-				n<a rel="sidebar" onclick=
-	addToFavorite();
+				<a rel="sidebar" onclick=
+	addToFavorite();;;;;;
 href="#"><img
 						style="position: relative; top: 2px;"
 						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
@@ -51,9 +51,8 @@ href="#"><img
 				<nav class="nav">
 				<ul class="nav__menu">
 					<%
-					
 						//String email = request.getParameter("email");
-						String email=(String)session.getAttribute("email");
+						String email = (String) session.getAttribute("email");
 						if (email == null) {
 					%>
 					<li class="nav__menu-item">
@@ -63,8 +62,8 @@ href="#"><img
 						<a href="UserRegister.jsp">免费注册</a>
 					</li>
 					<%
-						}else {
-							%>
+						} else {
+					%>
 					<li class="nav__menu-item">
 						你好！${email}
 					</li>
@@ -74,19 +73,10 @@ href="#"><img
 					<li class="nav__menu-item">
 						<a href="myorderlist">我的订单</a>
 					</li>
-					<% 
-					}
+					<%
+						}
 					%>
-					<!--<li class="nav__menu-item">
-						<a href="UserLogin.html">你好！请登录</a>
-					</li>
-					<li class="nav__menu-item">
-						<a href="UserRegister.html">免费注册</a>
-					</li>
-					<li class="nav__menu-item">
-						<a href="UserOrder.html">我的订单</a>
-					</li>
-					-->
+
 					<li class="nav__menu-item">
 						客户服务^
 						<ul class="nav__submenu">
@@ -129,9 +119,8 @@ href="#"><img
 		<div id="con">
 			<div id="Search">
 				<div class="Search1">
-					<a href="home.html"><img src="assets/homeImages/logo.png"
-							width="195" height="60" />
-					</a>
+					<a href="home.jsp"><img src="assets/homeImages/logo.png"
+							style="height: 80px; width: 195px;" /> </a>
 					<div class="welcome">
 						<font size="+6" color="#CCCCCC">|</font><font size="+2">购物车</font>
 					</div>
@@ -155,8 +144,8 @@ href="#"><img
 					<div class="Search41">
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
-					<div class="Search42" style="width: 135px;">
-						<a href="User.jsp">我的LINE FRIEND</a>
+					<div class="Search42" style="width: 200px;">
+						<a href="userOrder.action">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">
@@ -164,7 +153,7 @@ href="#"><img
 						<img src="assets/homeImages/购物车小图标.png" width="20" height="20" />
 					</div>
 					<div class="Search52">
-						<a href="UserCart.html">结算中......</a>
+						<a href="showCart.action">结算中......</a>
 					</div>
 				</div>
 			</div>
@@ -173,7 +162,7 @@ href="#"><img
 				<div class="content1">
 					<div class="bt">
 						<ul class="bt0">
-							<li class="bt1" style="width: 224px;">
+							<li class="bt1" style="width: 150px;">
 								<a target="_blank" href="#">全部商品分类</a>
 								<ul class="bt2">
 									<li class="bt3">
@@ -210,28 +199,28 @@ href="#"><img
 									</li>
 								</ul>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 100px;">
 								<a href="home.jsp">首页</a>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 130px;">
 								<a href="nut.html">坚果/炒货</a>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 130px;">
 								<a href="fruit.html">果干/蜜饯</a>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 130px;">
 								<a href="meat.html">肉类/熟食</a>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 130px;">
 								<a href="biscuit.html">饼干/膨化</a>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 130px;">
 								<a href="biscuit.html">糕点/点心</a>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 130px;">
 								<a href="fruit.html">素食/豆类</a>
 							</li>
-							<li class="bt1">
+							<li class="bt1" style="width: 130px;">
 								<a href="seafood.html">鱿鱼/海味</a>
 							</li>
 						</ul>
@@ -249,6 +238,12 @@ href="#"><img
 										&nbsp;&nbsp;全选
 									</label>
 								</th>
+								<!--
+								<th>
+									编号
+								</th>
+
+								-->
 								<th>
 									商品
 								</th>
@@ -267,160 +262,80 @@ href="#"><img
 							</tr>
 						</thead>
 						<tbody>
-						
-						
-						<!-- 购物车页面开始加载购物车表中的数据 -->
-						
-					<c:forEach items="${cartList}" var="cartItem" varStatus="status">
-						
-							<tr>
-								<td class="checkbox">
-									<input class="check-one check" type="checkbox" />
-								</td>
-								<td class="goods">
-									<img src="assets/homeImages/goods/${cartItem.product.product_pic }" alt="" />
-									<span>${cartItem.product.product_name }</span>
-								</td>
-								<td class="price">
-									${cartItem.product.dangqian_price }
-								</td>
-								<td class="count">
-									<span class="reduce"></span>
-									<input class="count-input" type="text" value="${cartItem.product_count }" />
-									<span class="add">+</span>
-								</td>
-								<td class="subtotal">
+
+
+<script>
+
+
+	//获取每行的商品id和数量
+
+	function getProductId() {
+		var id = "";
+		var num = "";
+		var table = document.getElementById('cartTable'); // 购物车表格
+		var tr = table.children[1].rows; //行
+		alert(tr.length);
+
+		for ( var i = 0, len = tr.length; i < len; i++) {
+		alert(i+"---" );
+		alert(tr[i].getElementsByTagName('input')[0].checked);
+			if (tr[i].getElementsByTagName('input')[0].checked) {
+				id = "liuzhiwei" ;
+				num = "liuzhi" ;
+				alert(id+num);
+				
+				id = document.getElementsByName("product_id")[i].value;
+				alert(id+"----"+document.getElementsByName("product_id").length);
+				num = document.getElementsByName("product_count")[i].value;
+				alert(num);
+			}
+		}
+		
+
+		var action = 'gotoOrder.action?id=' + id + '&num=' + num;
+		window.location.href = action;
+	}
+</script>
+
+
+							<!-- 购物车页面开始加载购物车表中的数据 -->
+
+							<c:forEach items="${cartList}" var="cartItem" varStatus="status">
+
+								<input id="product_id" type="hidden" name="product_id"
+									value="${cartItem.product.id} " size="2" />
+								<tr>
 								
-									
-								</td>
-								<td class="operation">
-									<span class="delete">删除</span>
-								</td>
-							</tr>
-			
+								
+
+									<td class="checkbox">
+										<input class="check-one check" type="checkbox" />
+									</td>
+
+									<td class="goods">
+										<img
+											src="assets/homeImages/goods/${cartItem.product.product_pic }"
+											alt="" />
+										<span>${cartItem.product.product_name}</span>
+									</td>
+									<td class="price">
+										${cartItem.product.dangqian_price}
+									</td>
+									<td class="count">
+										<span class="reduce"></span>
+										<input id="product_count" class="count-input" type="text"
+											name="product_count" value="${cartItem.product_count}" />
+										<span class="add">+</span>
+									</td>
+									<td class="subtotal">
+									</td>
+									<td class="operation">
+										<span class="delete">删除</span>
+									</td>
+								</tr>
 							</c:forEach>
-							
-							
-							<!-- 
-							
-							<tr>
-								<td class="checkbox">
-									<input class="check-one check" type="checkbox" />
-								</td>
-								<td class="goods">
-									<img src="assets/homeImages/goods/goods2.jpg" alt="" />
-									<span>奶油味夏威夷果 奶油口味特产干货干果坚果零食小吃袋装</span>
-								</td>
-								<td class="price">
-									39.90
-								</td>
-								<td class="count">
-									<span class="reduce"></span>
-									<input class="count-input" type="text" value="1" />
-									<span class="add">+</span>
-								</td>
-								<td class="subtotal">
-									39.90
-								</td>
-								<td class="operation">
-									<span class="delete">删除</span>
-								</td>
-							</tr>
-							<tr>
-								<td class="checkbox">
-									<input class="check-one check" type="checkbox" />
-								</td>
-								<td class="goods">
-									<img src="assets/homeImages/goods/goods3.jpg" alt="" />
-									<span>风琴鱿鱼丝 香辣味手撕鱿鱼片原味即食海鲜零食小吃袋装</span>
-								</td>
-								<td class="price">
-									9.90
-								</td>
-								<td class="count">
-									<span class="reduce"></span>
-									<input class="count-input" type="text" value="1" />
-									<span class="add">+</span>
-								</td>
-								<td class="subtotal">
-									9.90
-								</td>
-								<td class="operation">
-									<span class="delete">删除</span>
-								</td>
-							</tr>
-							<tr>
-								<td class="checkbox">
-									<input class="check-one check" type="checkbox" />
-								</td>
-								<td class="goods">
-									<img src="assets/homeImages/goods/goods4.jpg" alt="" />
-									<span>靖江猪肉脯 特产零食小吃猪肉干肉脯猪肉铺原味休闲食品</span>
-								</td>
-								<td class="price">
-									15.90
-								</td>
-								<td class="count">
-									<span class="reduce"></span>
-									<input class="count-input" type="text" value="1" />
-									<span class="add">+</span>
-								</td>
-								<td class="subtotal">
-									15.90
-								</td>
-								<td class="operation">
-									<span class="delete">删除</span>
-								</td>
-							</tr>
-							<tr>
-								<td class="checkbox">
-									<input class="check-one check" type="checkbox" />
-								</td>
-								<td class="goods">
-									<img src="assets/homeImages/goods/goods5.jpg" alt="" />
-									<span>芒果干蜜饯果脯果干零食酸甜水果干芒果片果干类休闲食品</span>
-								</td>
-								<td class="price">
-									22.90
-								</td>
-								<td class="count">
-									<span class="reduce"></span>
-									<input class="count-input" type="text" value="1" />
-									<span class="add">+</span>
-								</td>
-								<td class="subtotal">
-									22.90
-								</td>
-								<td class="operation">
-									<span class="delete">删除</span>
-								</td>
-							</tr>
-							<tr>
-								<td class="checkbox">
-									<input class="check-one check" type="checkbox" />
-								</td>
-								<td class="goods">
-									<img src="assets/homeImages/goods/goods6.jpg" alt="" />
-									<span>手剥松子 开口东北手拨红松子原味坚果特产零食炒货袋装</span>
-								</td>
-								<td class="price">
-									45.90
-								</td>
-								<td class="count">
-									<span class="reduce"></span>
-									<input class="count-input" type="text" value="1" />
-									<span class="add">+</span>
-								</td>
-								<td class="subtotal">
-									45.90
-								</td>
-								<td class="operation">
-									<span class="delete">删除</span>
-								</td>
-							</tr>
-							
-							-->
-							
+
+
 						</tbody>
 					</table>
 					<div class="foot" id="foot">
@@ -429,10 +344,8 @@ href="#"><img
 							&nbsp;&nbsp;全选
 						</label>
 						<a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
-						<div class="fr closing" onclick=
-	getTotal();;
->
-							<a href="gotoOrder.action">结 算</a>
+						<div class="fr closing" onclick=getTotal();>
+							<a href="javascript:getProductId();">结 算</a>
 						</div>
 						<input type="hidden" id="cartTotalPrice" />
 						<div class="fr total">
@@ -451,15 +364,14 @@ href="#"><img
 									<span>取消选择</span>
 								</div>
 							</div>
-							<span class="arrow">◆<span>◆</span>
-							</span>
+							<span class="arrow">◆<span>◆</span> </span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="clearfloat"></div>
-			
-			<div id="ban">
+
+			<div id="ban" style="margin-left: 80px;">
 				<img src="assets/homeImages/ban2.jpg" width="1050" height="100"
 					alt="间隔图片" />
 			</div>
@@ -548,7 +460,7 @@ href="#"><img
 					<img src="assets/homeImages/foot.png" />
 				</div>
 			</div>
-			
+
 			<div class="clearfloat"></div>
 			<div id="footer">
 				<hr />
@@ -562,7 +474,7 @@ href="#"><img
 				<div class="footer2">
 					<div class="copyright">
 						Copyright&copy;&nbsp;&nbsp;2016-2017&nbsp;&nbsp;Line
-						friend零食铺&nbsp;SC.com&nbsp;&nbsp;版权所有
+						friend零食铺&nbsp;&nbsp;&nbsp;版权所有
 					</div>
 				</div>
 			</div>

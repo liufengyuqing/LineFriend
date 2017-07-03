@@ -22,15 +22,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="assets/js/birthday.js"></script>
 <script type="text/javascript" src="assets/js/dialog.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" /> -->
 <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
-
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
+ <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" /> 
+
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" /> -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
+
 
 <!--从前台获取查询参数并转到后台处理-->
 <script>
@@ -167,23 +170,18 @@ $('a[href=' + anchor + ']').tab('show');
 </script>
 	</head>
 <body>
-	
+
+
 <div id="head">
 	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
-		<li><a href="#">Line friend后台管理系统</a> </li>
-		<li class="active"><a href="#">首页</a></li>
 		<li><a href="AdminMsg.jsp">通知</a></li>
-		<li class="dropdown pull-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
-		<ul class="dropdown-menu">
-			<li><a href="#">Line friend主页</a></li>
-			<li class="divider">&nbsp;</li>
-			<li><a href="#">退出</a></li>
-		</ul>
-		</li>
+		<li class="active" style="margin-left: 0%;"><a href="#">首页</a></li>
+		
+		<span>Line friend Admin</span>
+		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdminLogin.jsp">退出</a></span>
 	</ul>
 
 </div>
-
 <div id="width">
 	<div id="left">
 		<div class="container-fluid">
@@ -197,8 +195,8 @@ $('a[href=' + anchor + ']').tab('show');
 					</div>
 					<div id="userM" class="accordion-body  in collapse">
 						<div class="accordion-inner">
-							<a href="#panel-Userach">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
-							<a href="#panel-Udelect">用户信息更新<img src="assets/homeImages/point.png"></a>
+							<a href="UserManage.jsp#panel-Userach">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
+							<a href="UserManage.jsp#panel-Update">用户信息更新<img src="assets/homeImages/point.png"></a>
 						</div>
 					</div>
 				</div>
@@ -208,13 +206,13 @@ $('a[href=' + anchor + ']').tab('show');
 					</div>
 					<div id="productM" class="accordion-body collapse">
 						<div class="accordion-inner">
-							<a href="">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商品信息修改<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商品库存管理<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#">商品信息修改<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#">商品库存管理<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="ProductManage.jsp#">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
 						</div>
 					</div>
 				</div>
@@ -228,7 +226,7 @@ $('a[href=' + anchor + ']').tab('show');
 							<a href="">订 单 检 索</a><br>
 							<a href="">订 单 状 态 修 改</a><br>
 							<a href="">作 废 订 单</a><br>
-						</div>
+						</div>+
 					</div>
 				</div>
 			</div>
@@ -249,9 +247,9 @@ $('a[href=' + anchor + ']').tab('show');
 				<div class="tab-content">
 					<div class="tab-pane active" id="panel-Userach">
 						<form class="navbar-form navbar-left" role="search" id="formSy">
-							<label style="display: inline-block;margin-top:10px;">&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>			
+							<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>			
 							
-								<select class="selectSy" name="select" id="select" style="margin-top: 5px;">
+								<select class="selectSy" name="select" id="select" style="margin-top: 5px;height: 30px;width: 150px;">
 											<option value="1">
 												全部用户
 											</option>
@@ -272,10 +270,10 @@ $('a[href=' + anchor + ']').tab('show');
 												年龄
 											</option>
 								</select>	
-								<input type="text" class="form-control"  style="margin-top: -2px;" placeholder="请输入查询内容" id="condtion" name="condtion" >	
-								<input type="button"  class="btn" value="查询"  onclick="SearchUser();" style="margin-top: -2px;height: 30px;width: 100px;">
+								<input type="text" class="form-control"  style="margin-top: -5px;height: 30px;" placeholder="请输入查询内容" id="condtion" name="condtion" >	
+								<input type="button"  class="btn" value="查询"  onclick="SearchUser();" style="margin-top: -5px;height: 30px;width: 100px;">
 						</form>
-						<div id="tbShow">
+						<div class="tbShow">
 								<div class="clean"></div>
 									<table class="table" contenteditable="false" id="tab">
 											<thead>
@@ -284,8 +282,8 @@ $('a[href=' + anchor + ']').tab('show');
 													<th style="width: 10%;">注册邮箱</th>
 													<th style="width: 10%;">昵称</th>
 													<th style="width: 10%;">真实姓名</th>
-													<th style="width: 10%;">最后一次登录时间</th>
-													<th style="width: 10%;">最后一次登录IP</th>
+													<th style="width: 10%;">上次登录时间</th>
+													<th style="width: 10%;">上次登录IP</th>
 													<th style="width: 5%;">性别</th>
 													<th style="width: 10%;">身份证号</th>
 													<th style="width: 10%;">出生日期</th>
@@ -347,9 +345,9 @@ $('a[href=' + anchor + ']').tab('show');
 							<div class="inputDiv"><label class="labelSy">出生日期：</label><!-- <input  type="text" name="Newyear" style="height: 30px;width: 70px;margin-top: -5px;">&nbsp;&nbsp;年
 														  		 				  <input type="text" name="Newmouth" style="height: 30px;width: 70px;margin-top: -5px;">&nbsp;&nbsp;月
 																 				  <input type="text" name="Newday" style="height: 30px;width: 70px;margin-top: -5px;">&nbsp;&nbsp;日</div> -->
-																 				<select id="selYear" style="width: 120px;margin-top: -5px;height: 40px"></select>年
-																				<select id="selMonth" style="width: 120px;margin-top: -5px; height: 40px;"></select>月
-																				<select id="selDay"  style="width: 120px;margin-top: -5px;height: 40px;"></select>日
+																 				<select id="selYear" style="width: 120px;margin-top: -5px;height: 40px"></select>&nbsp;&nbsp;年
+																				<select id="selMonth" style="width: 120px;margin-top: -5px; height: 40px;"></select>&nbsp;&nbsp;月
+																				<select id="selDay"  style="width: 120px;margin-top: -5px;height: 40px;"></select>&nbsp;&nbsp;日
 																				
 							<div class="inputDiv"><input type="button"  class="btn" value="确认"  onclick="trueUpdateUser()" style="height: 40px;width: 150px;margin-left:500px;margin-top: 30px;"></div>		
 						
@@ -367,7 +365,7 @@ var selYear = window.document.getElementById("selYear");
 var selMonth = window.document.getElementById("selMonth");
 var selDay = window.document.getElementById("selDay");
 // 新建一个DateSelector类的实例，将三个select对象传进去
-new DateSelector(selYear, selMonth, selDay, 1995, 1, 17);
+new DateSelector(selYear, selMonth, selDay, 1996, 1, 1);
 // 也可以试试下边的代码
 // var dt = new Date(2004, 1, 29);
 // new DateSelector(selYear, selMonth ,selDay, dt);

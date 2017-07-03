@@ -14,15 +14,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="assets/css/Login.css"/>   
 
   </head>
+  <script type="text/javascript">
+        function checkLength(){
   
+       var password=document.getElementById("password"); //获取密码框值
+       var adminname= document.getElementById("userName");
+    if(password.value.length<6){
+         alert("密码长度不少于六位！");
+        window.location.href="adminlogin.action?&userName="+userName+"&password="+password;
+    }else{
+
+    }
+      
+    }
+  </script>
   <body>
     <img src="assets/homeImages/8.jpg"> 
     <div id="login">  
         <h1>管理员</h1>  
-        <form method="post" action="adminlogin.action">  
-            <input type="text" required="required" placeholder="请输入用户名" name="userName"></input>  
-            <input type="password" required="required" placeholder="输入口令" name="password"></input> 
-            <button class="but" type="submit">登录</button>  
+        <form method="post">  
+            <input type="text" required="required" placeholder="请输入用户名" name="userName" id="userName"></input>  
+            <input type="password" required="required" placeholder="输入口令" name="password" id="password"></input> 
+            <button class="but" type="submit" onclick="checkLength();">登录</button>  
         </form>  
     </div>  
   </body>

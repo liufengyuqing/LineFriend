@@ -101,16 +101,12 @@ $('a[href=' + anchor + ']').tab('show');
   <body>
 	
 <div id="head">
-	<ul class="nav nav-tabs" contenteditable="true" style="background-color: #000;">
-		<li><a href="#">Line friend后台管理系统</a> </li>
-		<li class="active"><a href="#">首页</a></li>
+	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
+		
 		<li><a href="AdminMsg.html">通知</a></li>
-		<li class="dropdown pull-right"><a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
-		<ul class="dropdown-menu">
-			<li><a href="#">Line friend主页</a></li>
-			<li class="divider">&nbsp;</li>
-			<li><a href="#">退出</a></li>
-		</ul>
+		<li class="active"><a href="#">首页</a></li>
+		<span>Line friend Admin</span>
+		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdminLogin.jsp">退出</a></span>
 		</li>
 	</ul>
 
@@ -125,7 +121,7 @@ $('a[href=' + anchor + ']').tab('show');
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#userM"> -->
-						 <a href="UserManage.html" style="margin-left: 15px;">用户管理<img src="assets/homeImages/user.png"></a>
+						 <a href="UserManage.jsp" style="margin-left: 15px;">用户管理<img src="assets/homeImages/user.png"></a>
 					</div>
 					<div id="userM" class="accordion-body collapse">
 						<div class="accordion-inner">
@@ -137,7 +133,7 @@ $('a[href=' + anchor + ']').tab('show');
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#productM"> -->
-						 <a href="productManage.html" style="margin-left: 15px;">商品管理<img src="assets/homeImages/pro.png"></a>
+						 <a href="ProductManage.jsp" style="margin-left: 15px;">商品管理<img src="assets/homeImages/pro.png"></a>
 					</div>
 					<div id="productM" class="accordion-body collapse">
 						<div class="accordion-inner">
@@ -157,9 +153,9 @@ $('a[href=' + anchor + ']').tab('show');
 					</div>
 					<div id="orderM" class="accordion-body in  collapse">
 						<div class="accordion-inner">
-							<a href="">订 单 检 索</a><br>
-							<a href="">订 单 状 态 修 改</a><br>
-							<a href="">作 废 订 单</a><br>
+							<a href="OrderManage.jsp#panel-Osearch">订 单 查 询&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							
+							<a href="OrderManage.jsp#panel-Oitem">订 单 详 情&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
 						</div>
 					</div>
 				</div>
@@ -169,25 +165,24 @@ $('a[href=' + anchor + ']').tab('show');
 </div>
 </div>
 	<div id="right">
-		<div class="panel panel-default">
-    		<div class="panel-body">
+		
        		 <!--页面-->
        		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
 			<ul class="nav nav-tabs">
-				<li class="active"><a contenteditable="true" data-toggle="tab" href="#panel-Osearch">订单检索</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Oupdate">订单状态修改</a></li>
-				<li><a contenteditable="true" data-toggle="tab" href="#panel-Odelect">作废订单</a></li>
+				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-Osearch">订单查询</a></li>
+
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Oitem">订单详情</a></li>
 				
 			</ul>
 
 			<div class="tab-content">
-				<div class="tab-pane active" contenteditable="false" id="#panel-Osearch">
+				<div class="tab-pane active" contenteditable="false" id="panel-Osearch">
 					<!-- <p>商品上架</p> -->
-					<div class="navbar-inner">
+					
 					<form class="navbar-form navbar-left" role="search" id="formSy">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+						<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请选择查询条件:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="select" id="select">
+						<select class="selectSy" name="select" id="select" style="margin-top: 5px;height: 30px;width: 150px;">
 						    <option value="1">全部订单</option>
 							<option value="2">订单编号</option>
 							<option value="3">下单时间</option>
@@ -197,78 +192,15 @@ $('a[href=' + anchor + ']').tab('show');
 							
 						
 						
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >
+							<input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" style="margin-top: -5px;height: 30px;">
 										
-							<button type="button" class="btn btn-default" style="margin-top:5px; " onclick="SearchUser();">查询</button></span>
+							<button type="button" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;" onclick="SearchUser();">查询</button>
 						</form>
 
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-									<table class="table" contenteditable="false">
-											<thead>
-												<tr>
-													<th style="width: 10%;">订单编号</th>
-													<th style="width: 10%;">下单时间</th>
-													<th style="width: 10%;">用户ID</th>
-													<th style="width: 10%;">订单状态</th>
-													<th style="width: 10%;">总金额</th>
-													<th style="width: 10%;">收货地址</th>
-													<th style="width: 10%;">收货人</th>
-													<th style="width: 10%;">操作</th>
-												</tr>
-											</thead>
-											<tbody>
-											<!--  动态加载-->
-											<c:forEach items="${orderList}"  var="item" varStatus="status">
-												<tr>
-													
-													<td>${item.id}</td>
-													<td>${item.order_time}</td>
-													<td>${item.user_id}</td>
-													<td>${item.status}</td>
-													<td>${item.price_amount}</td>
-													<td>${item.address_id}</td>
-													<td>${item.address_id}</td>
-													<td><a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">详情查看</a></td>
-												</tr>
-												</c:forEach>
-											</tbody>
-									</table>
-						</div>
-					</div>		
-				</div>
-
-				<div class="tab-pane" contenteditable="false" id="panel-Oupdate">
-					<!-- <p>商品下架</p> -->
-					<!-- 搜索框 -->
-					<div class="navbar-inner">
-					<form class="navbar-form navbar-left" role="search" id="formSy">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
-						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="select" id="select">
-						    <option value="1">全部订单</option>
-							<option value="2">订单编号</option>
-							<option value="3">下单时间</option>
-							<option value="4">用户ID</option>
-							
-						</select>
-							
-						
-						
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >
-										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; " onclick="SearchUser();">查询</button></span>
-						</form>
-
-
-						<!-- 查询结果展示表格 -->
-						<div id="tbShow">
-								<div class="clean"></div>
-								<!-- <form  id="update" action="editOrder.action"> -->
-								
-								
-									<table class="table" contenteditable="false">
+								<table class="table" contenteditable="false">
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
@@ -276,11 +208,11 @@ $('a[href=' + anchor + ']').tab('show');
 													<th style="width: 10%;">用户ID</th>
 													<th style="width: 10%;">订单状态</th>
 						                             
-													<th style="width: 10%;">订单状态修改</th>
-													<th style="width: 10%;">总金额</th>
-													<th style="width: 10%;">收货地址</th>
-													<th style="width: 10%;">收货人</th>
-													<th style="width: 10%;">操作</th>
+													<th style="width: 15%;">订单状态修改</th>
+													<th style="width: 5%;">总金额</th>
+													<th style="width: 15%;">收货地址</th>
+													<th style="width: 5%;">收货人</th>
+													<th style="width: 20%;">操作</th>
 												</tr>
 											</thead>
 											
@@ -313,7 +245,7 @@ $('a[href=' + anchor + ']').tab('show');
 													<td>${item.address_id}</td>
 											
 													 <input type="hidden" value=${item.id} name="id"/>
-													<td><input type="submit" value="确定"  class="aaa"/></td>
+													<td><input type="submit" value="确定"  class="aaa"/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">详情查看</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
 													</form>
 													<!-- <td><input type="submit" value="确定"/></td> -->
 												   <!--<td><a href="editOrder.action?id=${item.id}&state=${stateName}">确定</a></td>-->
@@ -323,71 +255,22 @@ $('a[href=' + anchor + ']').tab('show');
 												</c:forEach>
 												
 											</tbody>
-									</table>
-									
+									</table>	
 						</div>
-					</div>	
+					
 				</div>
-				<div class="tab-pane" contenteditable="false" id="panel-Odelect">
-					<div class="navbar-inner">
-						<form class="navbar-form navbar-left" role="search" id="formSy">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
-						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="select" id="select">
-						    <option value="1">全部订单</option>
-							<option value="2">订单编号</option>
-							<option value="3">下单时间</option>
-							<option value="4">用户ID</option>
-							
-						</select>
-							
-						
-						
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" >
-										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; " onclick="SearchUser();">查询</button></span>
-						</form>
 
-						<!-- 查询结果展示表格 -->
-						<div id="tbShow">
-								<div class="clean"></div>
-									<table class="table" contenteditable="false">
-											<thead>
-												<tr>
-													<th style="width: 10%;">订单编号</th>
-													<th style="width: 10%;">下单时间</th>
-													<th style="width: 10%;">用户ID</th>
-													<th style="width: 10%;">订单状态</th>
-													<th style="width: 10%;">总金额</th>
-													<th style="width: 10%;">收货地址</th>
-													<th style="width: 10%;">收货人</th>
-													<th style="width: 10%;">操作</th>
-												</tr>
-											</thead>
-											<tbody>
-											<c:forEach items="${orderList}"  var="item" varStatus="status">
-												<tr>
-													
-													<td>${item.id}</td>
-													<td>${item.order_time}</td>
-													<td>${item.user_id}</td>
-													<td>${item.status}</td>
-													<td>${item.price_amount}</td>
-													<td>${item.address_id}</td>
-													<td>${item.address_id}</td>
-													<td><a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
-												</tr>
-												</c:forEach>
-											</tbody>
-									</table>
-						</div>
-					</div>	
+
+				<div class="tab-pane" contenteditable="false" id="panel-Oitem">
+				
+					
+					
 					
 				</div>
 			</div>
 		</div>
-    	</div>
-		</div>	
+    	
+			
 	</div>
 </div>
 </body>

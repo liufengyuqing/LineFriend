@@ -9,26 +9,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/birthday.js"></script>
+<script type="text/javascript" src="assets/js/dialog.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" /> -->
+<link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
+ <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" /> 
 
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-responsive.css">
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-responsive.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css">
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css"
-			href="assets/css/bootstrap-combined.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/UserM.css">
-		<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/js/npm.js"></script>
-		<script
-			src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script
-			src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" /> -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
+
+
 		<!-- TemplateBeginEditable name="doctitle" -->
 		<title>Line friend管理员--消息通知</title>
 		<!-- TemplateEndEditable -->
@@ -67,30 +66,16 @@
 	<body>
 
 		<div id="head">
-			<ul class="nav nav-tabs" contenteditable="false">
-				<li>
-					<a href="#">Line friend后台管理系统</a>
-				</li>
+			<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
+				
 				<li>
 					<a href="ProductManage.jsp">首页</a>
 				</li>
 				<li class="active">
 					<a href="#">通知</a>
 				</li>
-				<li class="dropdown pull-right">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">菜单</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="../home.jsp">Line friend主页</a>
-						</li>
-						<li class="divider">
-							&nbsp;
-						</li>
-						<li>
-							<a href="#">退出</a>
-						</li>
-					</ul>
-				</li>
+				<span>Line friend Admin</span>
+				<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="">退出</a></span>
 			</ul>
 
 		</div>
@@ -156,7 +141,7 @@
 								<div class="accordion-group">
 									<div class="accordion-heading">
 										<!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
-										<a href="ProductManage.html"
+										<a href="OrderManage.jsp"
 											style="margin-left: 15px; margin-right: 50px;">订单管理<img
 												src="assets/homeImages/order.png">
 										</a>

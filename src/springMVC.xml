@@ -18,7 +18,8 @@
 	<!-- 配置数据源 -->
 	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://172.29.17.32:3306/ls?useUnicode=true&amp;characterEncoding=utf-8" />
+		<property name="url"
+			value="jdbc:mysql://172.29.17.32:3306/ls?useUnicode=true&amp;characterEncoding=utf-8" />
 		<property name="username" value="root" />
 		<property name="password" value="" />
 		<property name="maxActive" value="20" />
@@ -48,32 +49,40 @@
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	
-	<!-- 拦截器配置 -->
+
+	<!-- 文件上传的配置 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 指定所上传文件的总大小不能超过200KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+		<!--<property name="maxUploadSize" value="5242880" /> 5M -->
+	</bean>
+	<!--该异常是SpringMVC在检查上传的文件信息时抛出来的，而且此时还没有进入到Controller方法中-->
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!--
+					遇到MaxUploadSizeExceededException异常时，自动跳转到WebContent目录下的error.jsp页面
+				-->
+				<prop
+					key="org.springframework.web.multipart.MaxUploadSizeExceededException">errorMsg</prop>
+			</props>
+		</property>
+	</bean>
+
 	<mvc:interceptors>
-		<!-- 文件上传拦截器 -->
 		<mvc:interceptor>
-			<mvc:mapping path="/**"/>
-			<bean class = "cn.edu.nwsuaf.interceptor.FileSizeInterceptor">
-				<!-- 设置文件上传的大小 -->
-				<property name="maxSize" value="52428800"></property><!-- 最大为5M -->
+			<mvc:mapping path="/**" />
+			<bean class="cn.edu.nwsuaf.interceptor.FileUploadInterceptor">
+				<property name="maxSize" value="5242880"></property>
 			</bean>
 		</mvc:interceptor>
-		
-		<!-- 控制文件上传的类型 -->
+
 		<mvc:interceptor>
-		   <mvc:mapping path="/**"/>
-		   <bean class = "cn.edu.nwsuaf.interceptor.FileTypeInterceptor"></bean>
+			<mvc:mapping path="/**" />
+			<bean class="cn.edu.nwsuaf.interceptor.FileTypeInterceptor"></bean>
 		</mvc:interceptor>
-		
-	
 	</mvc:interceptors>
-	
-	
-	
-	
-	
-	
-	
+
 
 </beans>

@@ -314,7 +314,7 @@ href="#"><img
 						<a href="User.html">我的LINEFRIEND</a>
 					</div>
 					<div class="Personality2">
-						<a href="User.html">个人主页</a>
+						<a href="findUserInfo.action">个人主页</a>
 					</div>
 					<div class="Personality3">
 						<ul>
@@ -429,14 +429,14 @@ href="#"><img
 						<div class="inf">
 							<div class="info-lcol">
 								<div class="u-pic">
-									<img src="assets/homeImages/tx.png" width="66" height="66" />
+									<img src="assets/homeImages/headImage/${user.head_image}" width="66" height="66" />
 								</div>
 								<div class="info-m">
 									<div class="u-name">
-										<a href="#">小李</a>
+										<a href="#"></a>
 									</div>
 									<div class="u-level">
-										<span class="rank r1"> <s></s><a href="#">注册会员</a> </span>
+										<span class="rank r1"> <s></s><a href="#">${user.trueName}</a> </span>
 									</div>
 								</div>
 							</div>

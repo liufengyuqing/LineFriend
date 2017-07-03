@@ -23,7 +23,7 @@ import cn.edu.nwsuaf.entity.UserAddress;
 public class GotoOrderAction {
 	@RequestMapping("/gotoOrder.action")
 	public String goToOrder(HttpServletRequest request,
-			HttpServletResponse response,ArrayList list) {// 获取收货地址
+			HttpServletResponse response) {// 获取收货地址
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"springMVC.xml");
 		UserAddressDao dao = ctx.getBean(UserAddressDao.class);
@@ -31,6 +31,13 @@ public class GotoOrderAction {
 		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
 		User user = dao.findUserAddressById(user_id);// 返回用户
 		List<UserAddress> userAddressList = user.getAddresses();// 获取地址
+		
+		String product_id = request.getParameter("id");
+		String product_count = request.getParameter("num");
+		
+		System.out.println("获取的订单商品数据------"+product_id+"----"+product_count+"\n");
+		
+		
 		request.setAttribute("addList", userAddressList);
 		return "order";
 	}

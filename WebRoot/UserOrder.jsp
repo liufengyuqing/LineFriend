@@ -247,7 +247,7 @@ href="#"><img
 						<a href="User.html">我的LINEFRIEND</a>
 					</div>
 					<div class="Personality2">
-						<a href="User.html">个人主页</a>
+						<a href="User.jsp">个人主页</a>
 					</div>
 					<div class="Personality3">
 						<ul>
@@ -255,13 +255,13 @@ href="#"><img
 								<a href="">设置</a>
 								<ul class="Personality41">
 									<li class="Personality42">
-										<a href="EditUserMessage.html">编辑个人信息</a>
+										<a href="EditUserMessage.jsp">编辑个人信息</a>
 									</li>
 									<li class="Personality42">
 										<a href="findAllAddress.action">管理收货地址</a>
 									</li>
 									<li class="Personality42">
-										<a href="UserOrder.html">查看订单记录</a>
+										<a href="UserOrder.jsp">查看订单记录</a>
 									</li>
 								</ul>
 							</li>

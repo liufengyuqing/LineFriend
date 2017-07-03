@@ -76,7 +76,7 @@
 					
 					  for(var i = 0;i<len;i++){
 			
-					  	html+='<div id="pics"><a href="showProductdetail.action?id='+result[i].id+'"><img src="assets/homeImages/brandandcategory/'+result[i].product_pic+'" /><div id="detail">'+result[i].product_name+'<br><span>折扣价：'+result[i].dangqian_price+'</span></div> </a></div>'
+					  	html+='<div id="pics"><a href="showProductdetail.action?id='+result[i].id+'"><img src="'+result[i].product_pic+'" /><div id="detail">'+result[i].product_name+'<br><span>折扣价：'+result[i].dangqian_price+'</span></div> </a></div>'
 					  }
 					    $("#P1").html(html);
 					  

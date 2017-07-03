@@ -15,10 +15,11 @@ public interface OrderDao {
 	public List<Orders> findOrderByorder_time(String user_time);//根据下单时间 查询订单
 	public List<Orders> findOrderByuser_id(int user_id);//根据用户id 查询订单
 	
+	
 	/*前台功能接口*/
 	public List<Orders> findUserOrder();
-	public String findAllOrder(int id);//通过用户ID获取此用户的所有的订单
-	public String deteleOrder(int orderId);//删除订
+	public String findUserOrderByUserId(int user_id);//通过用户ID获取此用户的所有的订单
+	public String deteleByProductId(int orderId);//删除订单单项
 
    
 }

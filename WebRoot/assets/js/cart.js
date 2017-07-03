@@ -49,6 +49,11 @@ window.onload = function () {
 			foot.className = 'foot';
 		}
 	}
+    
+   
+    
+    
+    
     // 计算单行价格
     function getSubtotal(tr) {
         var cells = tr.cells;
@@ -107,6 +112,7 @@ window.onload = function () {
 
     //为每行元素添加事件
     for (var i = 0; i < tr.length; i++) {
+    	
         //将点击事件绑定到tr元素
         tr[i].onclick = function (e) {
             var e = e || window.event;

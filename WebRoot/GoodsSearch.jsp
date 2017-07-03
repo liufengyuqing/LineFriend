@@ -707,7 +707,7 @@
 										<table class="innertable">
 											<tr>
 												<td>
-													<a href="showProductdetail.action?id=<%=productList.get(i).getId()%>"><img src="assets/homeImages/search/1.jpg"
+													<a href="showProductdetail.action?id=<%=productList.get(i).getId()%>"><img src="<%=productList.get(i).getProduct_pic()%>"
 															width="200" height="200" /> </a>
 												</td>
 											</tr>
