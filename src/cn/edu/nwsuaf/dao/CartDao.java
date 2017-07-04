@@ -25,6 +25,9 @@ public interface CartDao {
 	//不想要了，从购物重删除
 	public void delterCartItem(int id);//购物车item中的id
 	
+	//从购物车表中查询是否之前加入该商品
+	public int findProductByIdInCart(int id);
+	
 	
 	
 

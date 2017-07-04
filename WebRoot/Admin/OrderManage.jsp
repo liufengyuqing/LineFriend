@@ -5,7 +5,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,6 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="assets/js/npm.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/refreshTab.js"></script>
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>Line friend管理员--订单管理</title>
 <!-- TemplateEndEditable -->
@@ -78,31 +79,6 @@ function gotoUpdate(r){
 }
 </script>
 <script>
-
-$(document).ready(function() {
-
-if(location.hash) {
-
-$('a[href=' + location.hash + ']').tab('show');
-
-}
-
-$(document.body).on("click", "a[data-toggle]", function(event) {
-
-location.hash = this.getAttribute("href");
-
-});
-
-});
-
-$(window).on('popstate', function() {
-
-var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
-
-$('a[href=' + anchor + ']').tab('show');
-
-});
-
     function delcfm() {
         if (!confirm("确认要删除？")) {
             window.event.returnValue = false;
@@ -113,7 +89,6 @@ $('a[href=' + anchor + ']').tab('show');
             window.event.returnValue = false;
         }
     }
-
 </script>
 
   </head>
@@ -123,11 +98,14 @@ $('a[href=' + anchor + ']').tab('show');
 <div id="head">
 	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
 		
-		<li><a href="AdminMsg.html">通知</a></li>
-		<li class="active"><a href="#">首页</a></li>
-		<span>Line friend Admin</span>
-		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdminLogin.jsp">退出</a></span>
+		<li >
+			<a href="AdminMsg.jsp" style="color: #fff;">通&nbsp;&nbsp;&nbsp;&nbsp;知<img src="assets/homeImages/mes.png"></a>
 		</li>
+		<li class="active">
+			<a href="ProductManage.jsp"  style="color: #000;">首&nbsp;&nbsp;&nbsp;&nbsp;页<img src="assets/homeImages/home.png"></a>
+		</li>		
+		<span>Line friend Admin</span>
+		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="">退出<img src="assets/homeImages/quit.png"></a></span>
 	</ul>
 
 </div>

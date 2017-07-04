@@ -5,6 +5,7 @@ body{
     height: 100%;   
     font-family: 'Open Sans',sans-serif;   
     margin: 0;   
+   	box-sizing:border-box;
    /*  background-image: url(../homeImages/6.jpg); */
    /*  background-color: #4A374A; */   
   
@@ -19,22 +20,32 @@ body{
 	width: 100%;
 	height: 80px;
 	font-size: 26px;
+	background-color: #000;
 }
+#head img{
+	margin-left: 30px;
+	height: 32px;
+	width: 32px;
+}
+
 #head>.nav li{
 	height: 80px; 
 	width: 200px;
 	text-align: center;
-	padding-top: 40px;
+	padding-top: 47px;
 	
 }
+
 #head>.nav{
 	width: 100%;
 
 }
 #head>.nav>li>a{
 	line-height: 35px;
-	margin-top:-10px;
+	margin-top:-20px;
+	
 }
+
 
 #width{
 	width: 100%;
@@ -45,12 +56,14 @@ body{
 	width: 18%;
 	height: 1200px; 
 	float: left;
+	border-top: 1px #DDDDDD solid;
 	border-right: 3px #DDDDDD solid;
 	background-color: #000;
 	/* background-color: green; */
 	/* background-image:url(../homeImages/left.jpg); 	 */
 	/* background-repeat: no-repeat; */
 }
+
 .accordion-heading .accordion-toggle{
 	padding-top: 5px;
 	font-size:28px;
@@ -59,6 +72,14 @@ body{
 	padding-left: 30px;
 	background-color: #fff;
 	
+}
+
+
+#left .accordion-group a{
+	color: #fff;
+}
+#left .accordion-inner a{
+	color: #000;
 }
 .accordion-body a{
 	font-size: 28px;

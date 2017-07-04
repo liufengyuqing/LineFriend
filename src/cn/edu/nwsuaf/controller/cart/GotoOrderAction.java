@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.nwsuaf.dao.ProductDao;
 import cn.edu.nwsuaf.dao.UserAddressDao;
+import cn.edu.nwsuaf.entity.Cart;
 import cn.edu.nwsuaf.entity.Product;
 import cn.edu.nwsuaf.entity.User;
 import cn.edu.nwsuaf.entity.UserAddress;
@@ -47,15 +48,16 @@ public class GotoOrderAction {
 		for(int i = 0;i<length;i++){
 			System.out.println(pros[i]);
 		}
-		List<Product> list = new ArrayList<Product>();
+		List<Cart> list = new ArrayList<Cart>();
 		for(int i = 0; i< length; i++){
 			int id =Integer.parseInt(pros[i].trim());
 			Product p = productDao.findProductById(id);
-			list.add(p);
+			Cart c = new Cart();
+			c.setProduct(p);
+			c.setProduct_count(Integer.parseInt(counts[i].trim()));
+			list.add(c);
 		}
-		
-		
-		
+
 		request.setAttribute("list", list);
 		request.setAttribute("addressList", userAddressList);
 		return "order";

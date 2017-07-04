@@ -28,6 +28,7 @@ public class UpdateUserInfo {
 		String  day=request.getParameter("day");
 		System.out.println(userId+"--"+nickName+"--"+trueName+"--"+sex+"--"+cardId+"--"+year+"--"+mouth+"--"+day+"--");
 		User user=userDao.findUserById(userId);
+		user.setId(userId);
 		user.setNickName(nickName);
 		user.setTrueName(trueName);
 		user.setSex(sex);
@@ -35,7 +36,7 @@ public class UpdateUserInfo {
 		user.setYear(year);
 		user.setMouth(mouth);
 		user.setDay(day);
-		
+		userDao.UpdateInfo(user);
 		return "/Admin/UserManage";
 		}
 }

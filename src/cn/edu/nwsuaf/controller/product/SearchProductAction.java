@@ -57,27 +57,35 @@ public class SearchProductAction {
 
 		return "GoodsSearch";
 	}
-
-/*	public static void main(String[] args) {
+	@RequestMapping("/searchProductByPrice.action")
+	public String searchProductByPrice(String pricelow,String pricehigh,HttpServletRequest request, HttpServletResponse response){
+		HttpSession session = request.getSession();
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"springMVC.xml");
+
 		SearchProductDao searchProductDao = ctx.getBean(SearchProductDao.class);
 
+
+		List<Product> productList = searchProductDao
+				.findProductsByPrice(Double.parseDouble(pricelow),Double.parseDouble(pricehigh));// 查询商品
+		int productTotalCount = productList.size();// 商品总数
+
+		System.out.println(productTotalCount);
+
+		int countPage = (productTotalCount / 8) + 1; // 总页数，每页8个商品
+
+		session.setAttribute("productList", productList); // list传过去
+
+		session.setAttribute("countPage", countPage); // 页数传过去
+
 		
-		 * Product p=new Product(); p.setProduct_name("草莓干");
-		 
-		List<Product> list = searchProductDao.findProductsByName("%" + "草莓干" + "%");
-		System.out.println(list.size());
-		System.out.println(list.size() / 8 + 1);
-		// for (Product product : list) {
-		// System.out.println(product);
-
-		// }
-
-		if (list.get(100) == null) {
-			System.out.println("dadsads");
-		}
-
-	}*/
+		int pageNos=1; //页码；初始为1
+		session.setAttribute("pageNos", pageNos);
+		
+		return "GoodsSearch";
+		
+	}
+	
+	
 
 }

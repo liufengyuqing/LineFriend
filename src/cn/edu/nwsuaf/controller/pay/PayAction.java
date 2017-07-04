@@ -31,8 +31,11 @@ public class PayAction {
 				.lastIndexOf('.'));
 		System.out.println("action--------" + action);
 		if ("/toPay".equals(action)) {// 1.访问选择支付银行的页面(payWay.jsp)
-			String orderId = "201608080000075";// 后期自动生成订单编号//"201608080000002"
-			double totalPrice = 0.01;// 后期用代码计算出订单总价
+			//String orderId = "201608080000075";// 后期自动生成订单编号//"201608080000002"
+			String orderId = request.getParameter("orderId");
+			String price = request.getParameter("price");
+			double totalPrice = Double.parseDouble(price);
+			//double totalPrice = 0.01;// 后期用代码计算出订单总价
 			String address = "陕西咸阳杨凌";// 后期改成从数据库获取收货地址
 			String username = "赵永齐";
 			request.setAttribute("orderId", orderId);

@@ -10,13 +10,16 @@
 	</select>
 
 	<select id="findAllProduct" resultType="cn.edu.nwsuaf.entity.Product">
-		SELECT *
+	<!--	SELECT *
 		FROM `product` AS
 		t1 JOIN (SELECT ROUND(RAND() * ((SELECT MAX(id) FROM
 		`product`)-(SELECT MIN(id) FROM `product`))+(SELECT MIN(id) FROM
 		`product`)) AS id) AS t2
 		WHERE t1.id >= t2.id
-		ORDER BY t1.id LIMIT 10;
+		ORDER BY t1.id LIMIT 20;
+	-->
+	 select * from product order by rand() limit 30
+	
 	</select>
 
 	<!-- 陈一婷 -->

@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="assets/js/birthday.js"></script>
 <script type="text/javascript" src="assets/js/dialog.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/refreshTab.js"></script>
 <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" /> -->
 <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
@@ -31,46 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
 
 		
 
 		
 		<title>Line friend管理员--用户管理</title>
-		<script>
-		$(document).ready(function() {
-
-			if (location.hash) {
-
-				$('a[href=' + location.hash + ']').tab('show');
-
-			}
-
-			$(document.body).on("click", "a[data-toggle]", function(event) {
-
-				location.hash = this.getAttribute("href");
-
-			});
-
-		});
-
-		$(window).on(
-				'popstate',
-				function() {
-
-					var anchor = location.hash
-							|| $("a[data-toggle=tab]").first().attr("href");
-
-					$('a[href=' + anchor + ']').tab('show');
-
-				});
-	</script>
-    
-    
-    
-    
-    
     
     <script type="text/javascript">
         function submitInfo(row){
@@ -78,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			var tab=document.getElementById("tab");
 	        var id=tab.rows[rownum].cells[1].innerHTML;
 			alert(rownum);
-		    var description=document.getElementsByName("description")[rownum-1].value;
+		    var description=document.getElementsByName("description")[rownum].value;
 			var name=document.getElementsByName("productName")[rownum-1].value;
 			var storage=document.getElementsByName("storage")[rownum-1].value;
 			var category=document.getElementsByName("category")[rownum-1].value;
@@ -93,12 +59,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 <div id="head">
 	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
-		<li><a href="AdminMsg.jsp">通知</a></li>
-		<li class="active"><a href="#">首页</a></li>
-		
+		<li >
+			<a href="AdminMsg.jsp" style="color: #fff;">通&nbsp;&nbsp;&nbsp;&nbsp;知<img src="assets/homeImages/mes.png"></a>
+		</li>
+		<li class="active">
+			<a href="ProductManage.jsp" style="color: #000;">首&nbsp;&nbsp;&nbsp;&nbsp;页<img src="assets/homeImages/home.png"></a>
+		</li>
 		<span>Line friend Admin</span>
-
-		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdminLogin.jsp">退出</a></span>
+		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="">退出<img src="assets/homeImages/quit.png"></a></span>
 	</ul>
 
 </div>
@@ -248,13 +216,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="tab-pane" contenteditable="false" id="panel-Pout">
 					<!-- <p>商品下架</p> -->
 					<!-- 搜索框 -->
-					
-                    
-                    
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
-						<label sstyle="display: inline-block;margin-top:20px;left: 20%;">请选择查询条件:</label>
+						<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="sel">
+						<select class="selectSy" name="sel" style="margin-top: 5px;height: 30px;width: 150px;">
 							<option value="1">全部商品</option>
 							<option value="2">商品编号</option>
 							<option value="3">类别</option>
@@ -264,9 +229,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</select>
 							
 				
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
+							<input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition" style="margin-top: -5px;height: 30px;">
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="submit" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;">查询</button>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -292,7 +257,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             
                                             <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td><img src="../${product.product_pic}"></td>
 													<td>${product.id}</td>
 													<td>${product.product_name}</td>
 													<td>${product.description}</td>
@@ -314,9 +279,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="tab-pane" contenteditable="false" id="panel-Pupdate">
 					
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+						<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="sel">
+						<select class="selectSy" name="sel" tyle="margin-top: 5px;height: 30px;width: 150px;">
 							<option value="1">全部商品</option>
 							<option value="2">商品编号</option>
 							<option value="3">类别</option>
@@ -326,9 +291,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</select>
 							
 
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
+							<input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition" style="margin-top: -5px;height: 30px;">
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="submit" class="btn btn-default"  style="margin-top: -5px;height: 30px;width: 100px;">查询</button>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -354,7 +319,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             <c:forEach items="${productList}" var="product" varStatus="status">
                                             <form>
 												<tr>
-													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td><img src="../${product.product_pic}"></td>
 													<td>${product.id}</td>
 													<td><input type="text" name="productName" value="${product.product_name}" style="width:100%;"></td>
 													<td><input type="text" name="description" value="${product.description}" style="width:100%;"></td>
@@ -382,9 +347,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
                         
                         
-                        <label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+                        <label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="sel">
+						<select class="selectSy" name="sel" tyle="margin-top: 5px;height: 30px;width: 150px;">
 							<option value="1">全部商品</option>
 							<option value="2">商品编号</option>
 							<option value="3">类别</option>
@@ -395,9 +360,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 						
 						
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
+						<input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition" style="margin-top: -5px;height: 30px;">
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="submit" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;">查询</button>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -423,7 +388,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             
                                             <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td><img src="../${product.product_pic}"></td>
 													<td>${product.id}</td>
 													<td>${product.product_name}</td>
 													<td>${product.description}</td>
@@ -447,9 +412,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					
 				
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+						<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="sel">
+						<select class="selectSy" name="sel" tyle="margin-top: 5px;height: 30px;width: 150px;">
 							<option value="1">全部商品</option>
 							<option value="2">商品编号</option>
 							<option value="3">类别</option>
@@ -459,9 +424,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</select>
 							
 					
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
+							<input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition" style="margin-top: -5px;height: 30px;">
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="submit" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;">查询</button>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -487,7 +452,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             
                                             <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td><img src="../${product.product_pic}"></td>
 													<td>${product.id}</td>
 													<td>${product.product_name}</td>
 													<td>${product.description}</td>
@@ -510,9 +475,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="tab-pane" contenteditable="false" id="panel-Pkind">
 					
                     <form class="navbar-form navbar-left" role="search" id="formSy" action="foodSearch.action">
-						<label style="display: inline-block;margin-top: 10px;margin-left: -600px;">请选择查询条件:</label>
+						<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>
 						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" name="sel">
+						<select class="selectSy" name="sel" tyle="margin-top: 5px;height: 30px;width: 100px;">
 							<option value="1">全部商品</option>
 							<option value="2">商品编号</option>
 							<option value="3">类别</option>
@@ -521,9 +486,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<option value="6">上架时间</option>
 						</select>
 						
-							<span><input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition">
+							<input type="text" class="form-control" placeholder="请输入查询内容" id="tiaojian" name="condition" style="margin-top: -5px;height: 30px;">
 										
-							<button type="submit" class="btn btn-default" style="margin-top:5px; ">查询</button></span>	
+							<button type="submit" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;">查询</button>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -550,7 +515,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             
                                             <c:forEach items="${productList}" var="product" varStatus="status">
 												<tr>
-													<td><img src="../assets/homeImages/brandandcategory/${product.product_pic}"></td>
+													<td><img src="../${product.product_pic}"></td>
 													<td>${product.id}</td>
 													<td>${product.product_name}</td>
 													<td>${product.description}</td>

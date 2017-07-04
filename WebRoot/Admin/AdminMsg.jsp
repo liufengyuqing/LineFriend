@@ -5,7 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -69,14 +69,18 @@
 			<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
 				
 				<li>
-					<a href="ProductManage.jsp">首页</a>
+					<a href="ProductManage.jsp" style="color: #fff;">首&nbsp;&nbsp;&nbsp;&nbsp;页<img src="assets/homeImages/home.png"></a>
 				</li>
 				<li class="active">
-					<a href="#">通知</a>
+					<a href="#" style="color: #000;">通&nbsp;&nbsp;&nbsp;&nbsp;知<img src="assets/homeImages/mes.png"></a>
 				</li>
+				
 				<span>Line friend Admin</span>
-				<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="">退出</a></span>
+				<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="">退出<img src="assets/homeImages/quit.png"></a></span>
+			
 			</ul>
+				 
+			
 
 		</div>
 
@@ -84,7 +88,7 @@
 			<div id="left">
 				<div class="container-fluid">
 					<div class="row-fluid">
-						<div class="span12">
+						
 							<div class="accordion" id="accordion-355567">
 								<div class="accordion-group">
 									<div class="accordion-heading">
@@ -156,7 +160,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -169,11 +173,11 @@
 						<div class="panel panel-default" style="margin-bottom: 30px;">
 							<div class="panel-heading">
 								<a class="panel-title" data-toggle="collapse"
-									data-parent="#panel-478535" href="#tz4" contenteditable="true"
+									data-parent="#panel-478535" href="#tz4" contenteditable="false"
 									style="font-size: 22px;">2017年6月25日</a>
 							</div>
 							<div id="tz4" class="panel-collapse in" style="height: auto;">
-								<div class="panel-body" contenteditable="true"
+								<div class="panel-body" contenteditable="false"
 									style="font-size: 18px;">
 									2017年6月25日--请大家积极工作，共同进步！！！
 								</div>
@@ -182,12 +186,12 @@
 						<div class="panel panel-default" style="margin-bottom: 30px;">
 							<div class="panel-heading">
 								<a class="panel-title collapsed" data-toggle="collapse"
-									data-parent="#panel-478535" href="#tz3" contenteditable="true"
+									data-parent="#panel-478535" href="#tz3" contenteditable="false"
 									tyle="font-size: 22px;">2017年6月24日</a>
 							</div>
 							<div id="tz3" class="panel-collapse collapse"
 								style="height: 0px;">
-								<div class="panel-body" contenteditable="true"
+								<div class="panel-body" contenteditable="false"
 									style="font-size: 18px;">
 									2017年6月24日--请大家积极工作，共同进步！！！
 								</div>
@@ -196,12 +200,12 @@
 						<div class="panel panel-default" style="margin-bottom: 30px;">
 							<div class="panel-heading">
 								<a class="panel-title collapsed" data-toggle="collapse"
-									data-parent="#panel-478535" href="#tz3" contenteditable="true"
+									data-parent="#panel-478535" href="#t1" contenteditable="false"
 									tyle="font-size: 22px;">2017年6月23日</a>
 							</div>
-							<div id="tz3" class="panel-collapse collapse"
+							<div id="t1" class="panel-collapse collapse"
 								style="height: 0px;">
-								<div class="panel-body" contenteditable="true"
+								<div class="panel-body" contenteditable="false"
 									style="font-size: 18px;">
 									2017年6月23日--请大家积极工作，共同进步！！！
 								</div>
@@ -210,12 +214,12 @@
 						<div class="panel panel-default" style="margin-bottom: 30px;">
 							<div class="panel-heading">
 								<a class="panel-title collapsed" data-toggle="collapse"
-									data-parent="#panel-478535" href="#tz3" contenteditable="true"
+									data-parent="#panel-478535" href="#t2" contenteditable="false"
 									tyle="font-size: 22px;">2017年6月22日</a>
 							</div>
-							<div id="tz3" class="panel-collapse collapse"
+							<div id="t2" class="panel-collapse collapse"
 								style="height: 0px;">
-								<div class="panel-body" contenteditable="true"
+								<div class="panel-body" contenteditable="false"
 									style="font-size: 18px;">
 									2017年6月22日--请大家积极工作，共同进步！！！
 								</div>
@@ -224,12 +228,12 @@
 						<div class="panel panel-default" style="margin-bottom: 30px;">
 							<div class="panel-heading">
 								<a class="panel-title collapsed" data-toggle="collapse"
-									data-parent="#panel-478535" href="#tz3" contenteditable="true"
+									data-parent="#panel-478535" href="#t3" contenteditable="false"
 									tyle="font-size: 22px;">2017年6月21日</a>
 							</div>
-							<div id="tz3" class="panel-collapse collapse"
+							<div id="t3" class="panel-collapse collapse"
 								style="height: 0px;">
-								<div class="panel-body" contenteditable="true"
+								<div class="panel-body" contenteditable="false"
 									style="font-size: 18px;">
 									2017年6月21日--请大家积极工作，共同进步！！！
 								</div>

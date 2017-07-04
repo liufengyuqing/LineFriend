@@ -199,7 +199,7 @@ img{border:0px;}
 }
 .message_div_1 {
 	border-bottom:#E6E6E6 dotted 1px;
-	height:130px;
+	height:370px;
 	position:relative;
 	top:0px;
 	
@@ -549,20 +549,20 @@ img{border:0px;}
 }
 #ban{
 	position:absolute;
-	top:4650px;
+	top:2560px;
 	width:1200px;
 	height:100px;
 	background-color:#B70409;
 }
 #foot_server {
 	position:absolute;
-	top:4750px;
+	top:2660px;
 	text-indent:inherit;
 	width:1200px;
 }
 #footer{
 	position:absolute;
-	top: 5000px;
+	top: 2890px;
 	width:1200px;
 	height:100px;
 	text-align:center;

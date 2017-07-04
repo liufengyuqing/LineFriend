@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,6 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="assets/js/birthday.js"></script>
 <script type="text/javascript" src="assets/js/dialog.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/refreshTab.js"></script>
+
 <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" /> -->
 <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
@@ -83,7 +85,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 			else if(select==6){
 				alert("按年龄查询！");
-				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
+				var date=new Date;
+ 				var year=date.getFullYear(); 
+ 				alert("yaer--"+year);
+ 				var birdayYaer=year-condtion;
+ 				alert("birdayYaer--"+birdayYaer);
+				window.location.href="userSearch.action?"+"condtion="+birdayYaer+"&select="+select;
 			}
 
 			//window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
@@ -141,44 +148,21 @@ function gotoUpdate(r){
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
-<script >
 
-$(document).ready(function() {
-
-if(location.hash) {
-
-$('a[href=' + location.hash + ']').tab('show');
-
-}
-
-$(document.body).on("click", "a[data-toggle]", function(event) {
-
-location.hash = this.getAttribute("href");
-
-});
-
-});
-
-$(window).on('popstate', function() {
-
-var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
-
-$('a[href=' + anchor + ']').tab('show');
-
-});
-
-</script>
 	</head>
 <body>
 
 
 <div id="head">
 	<ul class="nav nav-tabs" contenteditable="false" style="background-color: #000;">
-		<li><a href="AdminMsg.jsp">通知</a></li>
-		<li class="active" style="margin-left: 0%;"><a href="#">首页</a></li>
-		
+		<li>
+			<a href="AdminMsg.jsp" style="color: #fff;">通&nbsp;&nbsp;&nbsp;&nbsp;知<img src="assets/homeImages/mes.png"></a>
+		</li>
+		<li class="active">
+			<a href="ProductManage.jsp" style="color: #000;">首&nbsp;&nbsp;&nbsp;&nbsp;页<img src="assets/homeImages/home.png"></a>
+		</li>
 		<span>Line friend Admin</span>
-		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdminLogin.jsp">退出</a></span>
+		<span class="adminid">欢迎！${AdminName}&nbsp;&nbsp;&nbsp;&nbsp;<a href="">退出<img src="assets/homeImages/quit.png"></a></span>
 	</ul>
 
 </div>
@@ -195,7 +179,7 @@ $('a[href=' + anchor + ']').tab('show');
 					</div>
 					<div id="userM" class="accordion-body  in collapse">
 						<div class="accordion-inner">
-							<a href="UserManage.jsp#panel-Userach">用 户 查 询<img src="assets/homeImages/point.png"></a><br>
+							<a href="UserManage.jsp#panel-Userach">用户查询&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
 							<a href="UserManage.jsp#panel-Update">用户信息更新<img src="assets/homeImages/point.png"></a>
 						</div>
 					</div>
@@ -303,7 +287,7 @@ $('a[href=' + anchor + ']').tab('show');
 													<td>${user.last_login_ip}</td>
 													<td>${user.sex}</td>
 													<td>${user.cardId}</td>
-													<td>${user.year}/${user.mouth}/${user.day}</td>
+													<td>${user.year}-${user.mouth}-${user.day}</td>
 													
 													<td><a href="UserDelect.action?id=${user.id}"><input type="button"  class="btn" value="注销" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
 																									
@@ -325,9 +309,13 @@ $('a[href=' + anchor + ']').tab('show');
 						<form class="navbar-form">
 						
 							<div class="inputDiv"><label class="labelSy">用&nbsp;&nbsp;户&nbsp;&nbsp;ID：</label>
-							<input  type="text" id="id" value=${user.id} onfocus=this.blur() style="height: 40px;width: 250px;margin-top: -10px;">
+							<input  type="text" id="id" value=${user.id} placeholder="这里将显示用户ID" disabled="true" style="height: 40px;width: 250px;margin-top: -10px;">
 							</div>
-						
+							
+							<div class="inputDiv"><label class="labelSy">用户邮箱：</label>
+							<input  type="text" id="email" value=${user.email} placeholder="这里将显示用户邮箱" disabled="true"  style="height: 40px;width: 250px;margin-top: -10px;">
+							</div>
+
 							<div class="inputDiv"><label class="labelSy">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label><input  type="text" id="NewnickName" value="${user.nickName}"   style="height: 40px;width: 250px;margin-top: -10px;"></div>
 						
 							<div class="inputDiv"><label class="labelSy">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>

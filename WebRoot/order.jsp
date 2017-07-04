@@ -40,27 +40,27 @@
 
 </head>
 <body>
-	<div id="header">
-  <div class="header1"> <br /><a rel="sidebar" onClick="addToFavorite()" href="#"><img
-				style="position: relative; top: 2px;" src="assets/homeImages/love2.jpg"
-				height="12" width="12" />&nbsp;&nbsp;收藏LINE FRIEND</a> 
-	&nbsp;<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>			
-				
-				</div>
-  <div class="header2">
-    <nav class="nav">
-      <ul class="nav__menu">
-      				<%
+		<div id="header">
+			<div class="header1">
+				<b></b><a rel="sidebar" onClick="addToFavorite();" href=""><img
+						style="position: relative; top: 2px;"
+						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
+					FRIEND</a>
+					<i class="fa fa-optin-monster"></i>&nbsp;<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>
+			</div>
+			<div class="header2">
+				<nav class="nav">
+				<ul class="nav__menu">
+					<%
 					
-						//String email = request.getParameter("email");
 						String email=(String)session.getAttribute("email");
 						if (email == null) {
 					%>
 					<li class="nav__menu-item">
-						<a href="page/UserLogin.html">你好！请登录</a>
+						<a href="UserLogin.jsp">你好！请登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="page/UserRegister.jsp">免费注册</a>
+						<a href="UserRegister.jsp">免费注册</a>
 					</li>
 					<%
 						}else {
@@ -77,30 +77,52 @@
 					<% 
 					}
 					%>
-<!--<li class="nav__menu-item"><a href="UserLogin.html">你好！请登录</a></li>
-        <li class="nav__menu-item"><a href="UserRegister.html">免费注册</a></li>
-        <li class="nav__menu-item"><a href="UserOrder.html">我的订单</a></li>
--->
-        	<li class="nav__menu-item">客户服务^
-          <ul class="nav__submenu">
-            <li class="nav__submenu-item"><a href="UserQuestion.html">常见问题</a></li>
-            <li class="nav__submenu-item"><a href="javascript:AdminEmail()">客服邮箱</a></li>
-          </ul>
-        </li>
-        <li class="nav__menu-item">网站导航^
-          <ul class="nav__submenu">
-            <li class="nav__menu-item"><a href="home.jsp">网站主页</a></li>
-            <li class="nav__menu-item"><a href="GoodsSearch.html">商品检索</a></li>
-            <li class="nav__menu-item"><a href="User.html">用户管理</a></li>
-            <li class="nav__menu-item"><a href="userCart.html">购物车</a></li>
-            <li class="nav__menu-item"><a href="UserOrder.html">我的订单</a></li>
-            <li class="nav__menu-item"><a href="UserFavorite.html">我的收藏</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
+
+					<li class="nav__menu-item">
+						客户服务^
+						<ul class="nav__submenu">
+							<li class="nav__submenu-item">
+								<a href="UserQuestion.html">常见问题</a>
+							</li>
+							<li class="nav__submenu-item">
+								<a href="javascript:AdminEmail()">客服邮箱</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav__menu-item">
+						网站导航^
+						<ul class="nav__submenu">
+							<li class="nav__menu-item">
+								<a href="home.jsp">网站主页</a>
+							</li>
+							<li class="nav__menu-item">
+								<a href="GoodsSearch.jsp">商品检索</a>
+							</li>
+							<li class="nav__menu-item">
+								<a href="User.html">用户管理</a>
+							</li>
+							<!--<li class="nav__menu-item">
+								<a href="userCart.html">购物车</a>
+							</li>
+							-->
+							<li class="nav__menu-item">
+								<a href="gotoCart.action">购物车</a>
+							</li>
+							<li class="nav__menu-item">
+								<a href="UserOrder.html">我的订单</a>
+							</li>
+							<li class="nav__menu-item">
+								<a href="UserFavorite.html">我的收藏</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="banner">
+		</div>
+
 <!--head列表-->
 <!--详细订单信息-->
 <!---->
@@ -131,19 +153,21 @@
 	<div id="orderinfo"><span>确认订单信息</span><hr>
 		<table id="tb">
 			<tr id="tbhead">
-				<th id="th1" width="70%">商品信息</th>
-				<th id="th2" width="10%">单价</th>
-				<th id="th3" width="10%">数量</th>
-				<th id="th4" width="10%">小计</th>
+				<th id="th1" width="30%">商品名称</th>
+				<th id="th2" width="40%">商品描述</th>
+				<th id="th3" width="10%">单价</th>
+				<th id="th4" width="10%">数量</th>
+				<th id="th5" width="10%">小计</th>
 			</tr>
 		
 		<c:forEach items="${list}" var="item" varStatus="status">
 			<tr class="trwidth">
-				<td><div class="goods_show"><a href="showProductdetail.action?id=${item.id }"><img src="assets/homeImages/goods/${item.product_pic }" id="goodsimg"></a>
-		      <p> ${item.product_name }</p></a></div></td>
-				<td>${item.dangqian_price }</td>
-				<td>3</td>
-				<td>${item.dangqian_price }*3</td>
+				<td><div class="goods_show"><a href="showProductdetail.action?id=${item.product.id }"><img src="${item.product.product_pic }" id="goodsimg"></a>
+		        <p> ${item.product.product_name }</p></a></div></td>
+		      	<td>${item.product.description}</td>
+				<td>${item.product.dangqian_price }</td>
+				<td>${item.product_count }</td>
+				<td>${item.product.dangqian_price }*${item.product_count }</td>
 			</tr>
 		</c:forEach>
 		
@@ -167,7 +191,7 @@
 			收货人：<span id="ReName"></span><br><br>
 			联系方式：<span id="RePhone"></span><br>
 		</div>
-	  <a href="order.action" id="submit"><img src="assets/homeImages/submit.jpg"></a>
+	  <a href="submitOrder.action?list=${list }" id="submit"><img src="assets/homeImages/submit.jpg"></a>
 	</div>
 	</form>
 

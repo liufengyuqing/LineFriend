@@ -82,7 +82,7 @@
 #tip .t_box {
 	position: relative;
 	background-color: #CCC;
-	filter: alpha(opacity = 50);
+	filter: alpha(opacity =     50);
 	-moz-opacity: 0.5;
 	bottom: -3px;
 	right: -3px;
@@ -281,26 +281,25 @@ $(function(){
 						<li class="bt1">
 							<a href="home.jsp">首页</a>
 						</li>
-						
-						<li class="bt1" style="width: 132px;">
+						<li class="bt1">
 							<a href="searchByCategory.action?keywords=果干蜜饯">果干/蜜饯</a>
 						</li>
-						<li class="bt1" style="width: 134px;">
+						<li class="bt1">
 							<a href="searchByCategory.action?keywords=坚果炒货">坚果/炒货</a>
 						</li>
-						<li class="bt1" style="width: 132px;">
+						<li class="bt1">
 							<a href="searchByCategory.action?keywords=肉类熟食">肉类/熟食</a>
 						</li>
-						<li class="bt1" style="width: 132px;">
+						<li class="bt1">
 							<a href="searchByCategory.action?keywords=饼干膨化">饼干/膨化</a>
 						</li>
-						<li class="bt1" style="width: 132px;">
+						<li class="bt1">
 							<a href="searchByCategory.action?keywords=糕点点心">糕点/点心</a>
 						</li>
-						<li class="bt1" style="width: 132px;">
+						<li class="bt1">
 							<a href="searchByCategory.action?keywords=素食豆类">素食/豆类</a>
 						</li>
-						<li class="bt1" style="width: 135px;">
+						<li class="bt1">
 							<a href="searchByCategory.action?keywords=鱿鱼海味">鱿鱼/海味</a>
 						</li>
 					</ul>
@@ -376,25 +375,6 @@ $(function(){
 						<div class="dd">
 							<strong>￥${product.fixed_price }</strong>
 						</div>
-						<!--
-						<div class="dd">
-							<select>
-								<option value="1">
-									我们家
-								</option>
-								<option value="2">
-									你们家
-								</option>
-								<option value="3">
-									他们家
-								</option>
-								<option value="4">
-									咱们家
-								</option>
-							</select>
-						</div>
-					-->
-
 					</div>
 					<div class="clearfloat"></div>
 					<div id="summary-service">
@@ -402,22 +382,6 @@ $(function(){
 							由 LINE FRIEND 发货并提供售后服务。
 						</div>
 					</div>
-					<div id="choose">
-						<div class="dtd">
-							选择口味：
-						</div>
-						<div class="item">
-							<b></b><a title="原味" href="#"><img width="25" height="25"
-									alt="原味" src="assets/homeImages/detail/3.1.png" data-img="1">
-								原味 </a>
-						</div>
-						<div class="item">
-							<b></b><a title="五香" href="#none"><img width="25" height="25"
-									alt="五香" src="assets/homeImages/detail/3.1.png" data-img="1">
-								五香 </a>
-						</div>
-					</div>
-					<div class="clearfloat"></div>
 					<div id="choose-version">
 						<div class="dt">
 							库存：
@@ -450,8 +414,6 @@ $(function(){
 	$(".add").click(function() {
 		t = $(this).parent().find('input[class*=text_box]');
 		t.val(parseInt(t.val()) + 1);
-		//alert(t.val());
-
 		})
 	$(".min").click(function() {
 		t = $(this).parent().find('input[class*=text_box]');
@@ -459,21 +421,11 @@ $(function(){
 		if (parseInt(t.val()) < 1) {
 			t.val(1);
 		}
-		//alert(t.val());
-			return t.val();
-		})
+	})
 
 	//加入购物车发送请求
 	function addCart() {
 		var id = document.getElementById("id").value;
-
-		alert(document.getElementById("num").value);
-		/**if (t.val() == null || t.val() == 0) {
-			
-		} else {
-			num = t.val();
-		}*/
-
         var num = document.getElementById("num").value;
 		var action = 'gotoCart.action?id=' + id + '&num=' + num;
 		window.location.href = action;
@@ -505,8 +457,7 @@ $(function(){
 					href="https://shop151103206.taobao.com/p/rd204604.htm?spm=2013.1.0.0.6TIgpY
 				"><img
 						src="assets/homeImages/detail.jpg" width="1100" height="100"
-						alt="间隔图片" />
-				</a>
+						alt="间隔图片" /> </a>
 			</div>
 			<div class="content7">
 				<div class="content8">

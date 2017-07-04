@@ -248,15 +248,15 @@
 							<ul>
 								<li>
 									<s></s>
-									<a href="#">坚果</a>
+									<a href="searchByCategory.action?keywords=坚果炒货">坚果</a>
 								</li>
 								<li>
 									<s></s>
-									<a href="#">果干</a>
+									<a href="searchByCategory.action?keywords=果干蜜饯">果干</a>
 								</li>
 								<li>
 									<s></s>
-									<a href="#">糕点</a>
+									<a href="searchByCategory.action?keywords=糕点点心">糕点</a>
 								</li>
 							</ul>
 						</div>
@@ -268,15 +268,15 @@
 							<ul>
 								<li>
 									<s></s>
-									<a href="#">坚果</a>
+									<a href="searchByCategory.action?keywords=坚果炒货">坚果</a>
 								</li>
 								<li>
 									<s></s>
-									<a href="#">果干</a>
+									<a href="searchByCategory.action?keywords=果干蜜饯">果干</a>
 								</li>
 								<li>
 									<s></s>
-									<a href="#">糕点</a>
+									<a href="searchByCategory.action?keywords=糕点点心">糕点</a>
 								</li>
 								<li>
 									<s class="tree_last"></s>
@@ -376,97 +376,66 @@
 							<!--sxtitle-->
 						</div>
 						<!--sxtitlecontent-->
-						<div class="sxselect" id="selected">
-							<div class="description">
-								已选条件：
-							</div>
-							<!--description-->
-							<div class="detail" id="detail">
-								<a href="#">类别：<strong>&nbsp;坚果&nbsp;</strong> </a>
-							</div>
-							<!--detail-->
-							<div class="drop">
-								<a href="#">全部撤销</a>
-							</div>
+						<div class="" id="selected">
+							
 							<div class="clear"></div>
 						</div>
 						<!--selected-->
-						<div class="sxselect" id="selected">
-							<div class="description">
-								品牌：
-							</div>
-							<!--description-->
-							<div class="detail">
-								<ul>
-									<li>
-										<a href="#">三只松鼠</a>
-									</li>
-									&nbsp;&nbsp;
-									<li>
-										<a href="#">百草味</a>
-									</li>
-									&nbsp;&nbsp;
-									<li>
-										<a href="#">良品铺子</a>
-									</li>
-									&nbsp;&nbsp;
-									<li>
-										<a href="#">费列罗</a>
-									</li>
-								</ul>
-							</div>
-							<div class="drop">
-								<a href="#"><img src="assets/homeImages/conditionselect.PNG" />
-								</a>
-							</div>
+						<div class="" id="">
+						
 							<!--detail-->
 							<div class="clear"></div>
 						</div>
 						<!--selected-->
+						<form action="searchProductByPrice.action">
 						<div class="sxselect" id="selected">
 							<div class="description">
 								价格：
 							</div>
 							<!--description-->
+							
 							<div class="detail">
 								<ul>
 									<li>
-										<a href="#">0-10</a>
+										<a href="searchProductByPrice.action?pricelow=0&pricehigh=10">0-10</a>
 									</li>
 									&nbsp;&nbsp;
 									<li>
-										<a href="#">20-50</a>
+										<a href="searchProductByPrice.action?pricelow=20&pricehigh=50">20-50</a>
 									</li>
 									&nbsp;&nbsp;
 									<li>
-										<a href="#">50-100</a>
+										<a href="searchProductByPrice.action?pricelow=50&pricehigh=100">50-100</a>
 									</li>
 									&nbsp;&nbsp;
 									<li>
-										<a href="#">100-300</a>
+										<a href="searchProductByPrice.action?pricelow=100&pricehigh=300">100-300</a>
 									</li>
 									&nbsp;&nbsp;
 									<li>
-										<a href="#">300以上</a>
+										<a href="searchProductByPrice.action?pricelow=300&pricehigh=1000000">300以上</a>
 									</li>
 									&nbsp;&nbsp;
 									<li>
-										<input type="text" />
+									
+										<input type="text" name="pricelow"/>
 										-
-										<input type="text" />
+										<input type="text" name="pricehigh" />
 										<input type="submit" value="确定" />
+										
 									</li>
 								</ul>
 							</div>
 							<!--detail-->
 							<div class="clear"></div>
 						</div>
+						</form>
 						<!--selected-->
 						<div class="sxselect" id="selected">
 							<div class="description">
 								热点：
 							</div>
-							<!--description-->
+						
 							<div class="detail">
 								<ul>
 									<li>
@@ -487,52 +456,22 @@
 								<a href="#"><img src="assets/homeImages/conditionselect.PNG"/>
 								</a>
 							</div>
-							<!--detail-->
+							
 							<div class="clear"></div>
 						</div>
-						<!--selected-->
-						<div class="sxselect" id="selected">
-							<div class="description">
-								大家说：
-							</div>
-							<!--description-->
-							<div class="detail">
-								<ul>
-									<li>
-										<a href="#">好吃</a>
-									</li>
-									&nbsp;&nbsp;
-									<li>
-										<a href="#">好吃</a>
-									</li>
-									&nbsp;&nbsp;
-									<li>
-										<a href="#">推荐</a>
-									</li>
-									&nbsp;&nbsp;
-									<li>
-										<a href="#">看着不错</a>
-									</li>
-									&nbsp;&nbsp;
-									<li>
-										<a id="more" href="#">更多</a>
-									</li>
-									&nbsp;&nbsp;
-								</ul>
-							</div>
-							<div class="drop">
-								<a href="#"><img src="assets/homeImages/conditionselect.PNG"/>
-								</a>
-							</div>
-							<!--detail-->
+						
+						<div class="" id="selected">
+							
+							
+							
 							<div class="clear"></div>
 						</div>
-						<!--selected-->
+						
 						<div class="sxselect" id="selected">
 							<div class="description">
 								净重：
 							</div>
-							<!--description-->
+							
 							<div class="detail">
 								<ul>
 									<li>
@@ -557,16 +496,17 @@
 								<a href="#"><img src="assets/homeImages/conditionselect.PNG" />
 								</a>
 							</div>
-							<!--detail-->
+							
 							<div class="clear"></div>
 						</div>
 
+						
 						<!--selected-->
-						<div class="sxselect" id="selected">
+						<!--<div class="sxselect" id="selected">
 							<div class="description">
 								购买方式：
 							</div>
-							<!--description-->
+							description
 							<div class="detail">
 								<ul>
 									<li>
@@ -579,15 +519,15 @@
 									&nbsp;&nbsp;
 								</ul>
 							</div>
-							<!--detail-->
+							detail
 							<div class="clear"></div>
 						</div>
-						<!--selected-->
+						selected
 						<div class="sxselect" id="selected">
 							<div class="description">
 								产地：
 							</div>
-							<!--description-->
+							description
 							<div class="detail">
 								<ul>
 									<li>
@@ -629,12 +569,12 @@
 								<a href="#"><img src="assets/homeImages/conditionselect.PNG" />
 								</a>
 							</div>
-							<!--detail-->
+							detail
 							<div class="clear"></div>
 						</div>
-						<!--selected-->
+						selected
 					</div>
-					<!--sx筛选条件-->
+					sx筛选条件
 					<div class="tj">
 						<div id="tj_top">
 							<div id="tj_top1">
@@ -683,7 +623,7 @@
 							</div>
 							<div id="clear"></div>
 						</div>
-						<!--tj_bottom-->
+						--><!--tj_bottom-->
 					</div>
 					<!--tj排序条件-->
 

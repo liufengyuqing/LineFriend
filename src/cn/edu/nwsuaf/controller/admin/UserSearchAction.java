@@ -63,7 +63,8 @@ public class UserSearchAction {
 		if(select.equals("6")){
 			//年龄
 			System.out.print("按年龄查询");
-			//userList=userDao.findUserByNickName(condtion);
+			userList=userDao.findUserByAge(Integer.parseInt(condtion));
+			
 		}
 		request.setAttribute("userList", userList);
 		return "/Admin/UserManage";

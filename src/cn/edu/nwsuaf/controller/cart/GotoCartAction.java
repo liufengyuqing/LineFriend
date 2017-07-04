@@ -33,13 +33,20 @@ public class GotoCartAction {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"springMVC.xml");
 
-		CartDao dao = ctx.getBean(CartDao.class);
+		CartDao cartDao = ctx.getBean(CartDao.class);
 		ProductDao productDao = ctx.getBean(ProductDao.class);
 		// UserDao userDao = ctx.getBean(UserDao.class);
 
 		// 获取商品
 		String pid = request.getParameter("id");
 		System.out.println("获取商品 +" + pid);
+		
+		//判断购物车中是否已经存在此商品
+		//Integer is_product_id = cartDao.findProductByIdInCart(Integer.parseInt(pid));
+		//System.out.println("购物车标中是否存在此商品-----"+cartDao.findProductByIdInCart(Integer.parseInt(pid)));
+		//if(is_product_id!=null){
+			//cartDao.delterCartItem(Integer.parseInt(pid));
+		//}
 		Product p = productDao.findProductById(Integer.parseInt(pid));
 
 		// 获取用户id
@@ -67,7 +74,7 @@ public class GotoCartAction {
 		cart.setProduct_count(Integer.parseInt(count));
 		System.out.println(cart.toString());
 		// 加入数据库购物车表
-		dao.addCart(cart);
+		cartDao.addCart(cart);
 		// 跳转到购物页面
 
 		try {

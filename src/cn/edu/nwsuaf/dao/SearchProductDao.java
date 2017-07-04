@@ -12,6 +12,7 @@ public interface SearchProductDao {
 	public List<Product> findProductsByName(String product_name);   //根据商品名查询商品(模糊搜索) 返回List
 	//public List<Product> findProductsByName(Product p);
 	
+	public List<Product> findProductsByPrice(double pricelow,double pricehigh);
 	
-	
+//	public List<Product> findProductsByWeight(double weightlow,double weighthigh);
 }

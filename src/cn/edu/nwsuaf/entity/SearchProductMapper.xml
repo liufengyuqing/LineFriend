@@ -24,4 +24,9 @@
 		select count(product_name) from product where product_name LIKE #{product_name}
 	</select>
 	
+	
+	<select id="findProductsByPrice" resultType="cn.edu.nwsuaf.entity.Product">
+		SELECT * from product where fixed_price between #{0} and #{1}
+	</select>
+	
 </mapper>

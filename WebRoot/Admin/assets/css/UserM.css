@@ -25,7 +25,7 @@
 
 .UpdatePanl input{
 	height: 30px;
-	width: 100px;
+	width: 80px;
 }
 .labelSy{
 	display: inline;
@@ -34,11 +34,11 @@
 #UpdatePanl{
 	padding-top: 50px;
 	padding-left:30px;
-	height: 600px;
+	height: 550px;
 	width: 750px;
 	margin:30px auto; 
 	border: 3px #9FCDDA dashed;
 }
 .inputDiv{
-	height: 80px;
+	height: 60px;
 }

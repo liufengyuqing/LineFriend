@@ -4,11 +4,8 @@
 
 <mapper namespace="cn.edu.nwsuaf.dao.AdminDao">
 
-	<select id="findByLogin" parameterType="cn.edu.nwsuaf.entity.Admin"
-		resultType="cn.edu.nwsuaf.entity.Admin">  <!-- 登录  -->
-		select *
-		from admin where adminName=#{adminName} and
-		password=#{password}
+	<select id="findByLogin" parameterType="cn.edu.nwsuaf.entity.Admin" resultType="cn.edu.nwsuaf.entity.Admin">  <!-- 登录  -->
+		select * from admin where adminName=#{adminName} and password=#{password}
 	</select>
 
 </mapper>

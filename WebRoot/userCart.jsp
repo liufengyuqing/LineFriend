@@ -27,6 +27,7 @@
 			type="text/javascript" charset="utf-8"></script>
 		<script language="JavaScript" src="assets/js/AdminEmail.js"
 			type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript" src="assets/js/IMChat.js"></script>
 		<link rel="stylesheet" href="assets/css/buy.css" charset="utf-8" />
 		<link rel="stylesheet" href="assets/css/Header.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Search.css" type="text/css" />
@@ -44,7 +45,9 @@
 						style="position: relative; top: 2px;"
 						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
 					FRIEND</a>
+				<i class="fa fa-optin-monster"></i>&nbsp;<a rel="sidebar" href="javascript:IMChat();">实时聊天吐槽墙</a>
 			</div>
+
 			<div class="header2">
 				<nav class="nav">
 				<ul class="nav__menu">
@@ -303,7 +306,7 @@
 
 									<td class="goods">
 										<img
-											src="assets/homeImages/goods/${cartItem.product.product_pic }"
+											src="${cartItem.product.product_pic}"
 											alt="" />
 										<span>${cartItem.product.product_name}</span>
 									</td>
