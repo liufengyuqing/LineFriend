@@ -2,7 +2,9 @@ package cn.edu.nwsuaf.dao;
 
 import java.util.List;
 
+import cn.edu.nwsuaf.entity.Item;
 import cn.edu.nwsuaf.entity.Orders;
+import cn.edu.nwsuaf.entity.UserAddress;
 
 public interface OrderDao {
 	
@@ -14,8 +16,8 @@ public interface OrderDao {
 	public List<Orders> findOrderByorder_id(int id);//根据订单id 查询订单
 	public List<Orders> findOrderByorder_time(String user_time);//根据下单时间 查询订单
 	public List<Orders> findOrderByuser_id(int user_id);//根据用户id 查询订单
-	
-	
+	public List<UserAddress> findAddressById(int id);//根据地址id 查询订单
+	public List<Item> findItemById(int order_id);//根据订单id 查询订单
 	/*前台功能接口*/
 	public List<Orders> findUserOrder();
 	public String findUserOrderByUserId(int user_id);//通过用户ID获取此用户的所有的订单

@@ -12,11 +12,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <title>Line friend零食铺-后台管理登录</title>  
     <link rel="stylesheet" type="text/css" href="assets/css/Login.css"/>   
-
-  </head>
-  <script type="text/javascript">
-        function checkLength(){
-  
+<script type="text/javascript">
+    function checkLength(){
        var password=document.getElementById("password"); //获取密码框值
        var adminname= document.getElementById("userName");
     if(password.value.length<6){
@@ -28,11 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
     }
   </script>
+  </head>
+  
   <body>
-    <img src="assets/homeImages/8.jpg"> 
+    <img src="assets/homeImages/8.jpg"/> 
     <div id="login">  
         <h1>管理员</h1>  
-        <form method="post">  
+        <form action="adminlogin.action">  
             <input type="text" required="required" placeholder="请输入用户名" name="userName" id="userName"></input>  
             <input type="password" required="required" placeholder="输入口令" name="password" id="password"></input> 
             <button class="but" type="submit" onclick="checkLength();">登录</button>  

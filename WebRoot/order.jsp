@@ -14,10 +14,12 @@
 	<base href="<%=basePath%>">
 	<title>Line friend零食铺——确认订单</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+	<link rel="stylesheet" href="assets/css/order_css.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/buy.css" charset="utf-8"/>
+	<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/Header.css" type="text/css" />
-<link rel="stylesheet" href="assets/css/order_css.css" type="text/css" />
+<script type="text/javascript" src="assets/js/Order.js" language="javascript"></script>
+
 <script language="JavaScript" src="assets/js/backTop.js"
 	type="text/javascript" charset="utf-8"></script>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -107,7 +109,7 @@
 	<ul>
 		<li>1.选择商品</li>
 		<li id="li-sy">2.确认订单</li>
-		<li>3.支付到支付宝</li>
+		<li>3.订单支付</li>
 		<li>4.确认收货</li>
 	</ul>
 </div>
@@ -115,58 +117,36 @@
 	<form>
 	<span>确认收货地址</span>
 		<div id="alladd"><hr>
-			<!--<div>
-				<input type="radio" name="address" value="add1">
-				陕西省咸阳市杨陵区李台街道 西北农林科技大学南校区(张志忠 收) 185XXXX2326
-			</div>
-			
-			<div>
-				<input type="radio" name="address" value="add2">
-				陕西省咸阳市杨陵区李台街道 西北农林科技大学北校区(王苏杰 收) 185XXXX8888
-			</div>
-
-			<div>
-				<input type="radio" name="address" value="add3">
-				陕西省咸阳市杨陵区李台街道 西北农林科技大学北校区信息工程学院(马学倩 收)  185XXXX6666
-			</div>-->
-			
-			
 			
 			<!-- 动态页面代码 -->
 			
-			
-			<c:forEach items="${addList}" var="item" varStatus="status">
-				<div>
-					<input type="radio" name="address" value="add1">
-					(${item.receive_name}&nbsp;收)&nbsp;${item.province}省&nbsp;${item.city}市&nbsp;${item.district}区&nbsp;${item.full_address}&nbsp;${item.phone}
+			<c:forEach items="${addressList}" var="item" varStatus="status">
+				<div name="add" class="addressInput">
+					<input type="radio" name="address" value=${item.full_address} onclick="javascript:orderPrice();" style="margin-right: 10px;">
+					(<span id="receive_name"  name="receive_name">${item.receive_name}</span>&nbsp;&nbsp;&nbsp;收)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${item.province}省&nbsp;&nbsp;&nbsp;&nbsp;${item.city}市&nbsp;&nbsp;&nbsp;&nbsp;${item.district}区&nbsp;&nbsp;&nbsp;&nbsp;${item.full_address}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="phone" name="phone" style="margin-right: 5%;">${item.phone}</span>
 				</div>
 			</c:forEach>
-			
-			
-
 			<hr>
 		</div>
 	<div id="orderinfo"><span>确认订单信息</span><hr>
 		<table id="tb">
 			<tr id="tbhead">
-				<th id="th1">商品信息</th>
-				<th id="th2">单价</th>
-				<th id="th3">数量</th>
-				<th id="th4">小计</th>
+				<th id="th1" width="70%">商品信息</th>
+				<th id="th2" width="10%">单价</th>
+				<th id="th3" width="10%">数量</th>
+				<th id="th4" width="10%">小计</th>
 			</tr>
-			
-			
-			
-			
+		
+		<c:forEach items="${list}" var="item" varStatus="status">
 			<tr class="trwidth">
-				<td><div class="goods_show"><a href="Goods.html"><img src="assets/homeImages/goods/goods1.jpg" id="goodsimg"></a>
-		      <p> 泰国芒果干 来自泰国友人的问候</p></a></div></td>
-				<td>32.00</td>
-				<td>1</td>
-				<td>32.00</td>
+				<td><div class="goods_show"><a href="showProductdetail.action?id=${item.id }"><img src="assets/homeImages/goods/${item.product_pic }" id="goodsimg"></a>
+		      <p> ${item.product_name }</p></a></div></td>
+				<td>${item.dangqian_price }</td>
+				<td>3</td>
+				<td>${item.dangqian_price }*3</td>
 			</tr>
-			
-			
+		</c:forEach>
+		
 			
 			
 			<!--
@@ -179,20 +159,132 @@
 			<!-- 动态页面代码 -->
 			</table><hr>
 	</div>
-	<div id="summ">共137.00¥</div>
+	
 	<div id="ordershow">
 		<div id="sure">
-			订单金额:137.00¥<br>
-			寄送至：西北农林科技大学北校区信息工程学院<br>
-			收货人:马学倩 185XXXX6666<br>
+			订单金额:<span name="sumPrice">137.00</span>¥<br><br>
+			寄送至：<span id="AddressRE"></span><br><br>
+			收货人：<span id="ReName"></span><br><br>
+			联系方式：<span id="RePhone"></span><br>
 		</div>
-		
-	  <!-- <input type="submit" name="sum" value="" id="inputs"> -->
-	  <a href="pay_success.html" id="submit"><img src="assets/homeImages/submit.jpg"></a>
+	  <a href="order.action" id="submit"><img src="assets/homeImages/submit.jpg"></a>
 	</div>
 	</form>
-	<div id="cp">Copyright&reg 2016-2017 Line friend零食铺</div>
-</div>
+
 	
+	
+	
+</div>
+<div id="fontsy">
+	<div class="clearfloat"></div>
+
+			<div id="ban">
+				<img src="assets/homeImages/ban2.jpg" width="1200" height="100"
+					alt="间隔图片" />
+			</div>
+			<div id="foot_server">
+				<dl>
+					<dt>
+						购物指南
+					</dt>
+					<dd>
+						<a target="_blank" href="#">购物流程</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">会员介绍</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">生活旅行/团购</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">常见问题</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">联系客服</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						配送方式
+					</dt>
+					<dd>
+						<a target="_blank" href="#">上门自提</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">211限时送达</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">配送服务查询</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">配送费收取标准</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">海外配送</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						支付方式
+					</dt>
+					<dd>
+						<a target="_blank" href="#">货到付款</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">在线支付</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">分期付款</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">邮局汇款</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">公司转账</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						售后服务
+					</dt>
+					<dd>
+						<a target="_blank" href="#">售后政策</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">价格保护</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">退款说明</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">返修/退换货</a>
+					</dd>
+					<dd>
+						<a target="_blank" href="#">取消订单</a>
+					</dd>
+				</dl>
+				<div>
+					<img src="assets/homeImages/foot.png" />
+				</div>
+			</div>
+
+			<div class="clearfloat"></div>
+			<div id="footer">
+				<hr />
+				<br />
+				<div class="footer1">
+					<a href="ShoppingProcess.html"> 关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="#">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="#">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="#">Line friend零食铺</a>
+				</div>
+				<div class="footer2">
+					<div class="copyright">
+						Copyright&copy;&nbsp;&nbsp;2016-2017&nbsp;&nbsp;Line
+						friend零食铺&nbsp;&nbsp;&nbsp;版权所有
+					</div>
+				</div>
+			</div>
+			</div>
 </body>
 </html>

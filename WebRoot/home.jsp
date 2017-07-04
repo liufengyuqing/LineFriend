@@ -252,6 +252,8 @@
 				</nav>
 			</div>
 		</div>
+		
+		
 		<div class="banner">
 		</div>
 		<div id="con">
@@ -402,14 +404,7 @@
 					<div id="inP">
 						<div id="P1" align="center">
 						
-							<!--<div id="pics"><a href="Goods.html"><img src="assets/homeImages/brandandcategory/bg.jpg" /><div id="detail">日式拉面说番茄豚骨拉面条速食面方便面<br><span>折扣价：23.00</span></div> </a></div>
-							<div id="pics"><a href="Goods.html"><img src="assets/homeImages/brandandcategory/jg2.jpg" /><div id="detail">U100开心果手剥坚果干果休闲炒货<br><span>折扣价：14.45</span></div> </a></div>
-							<div id="pics"><a href="Goods.html"><img src="assets/homeImages/gg3.jpg" /><div id="detail">熊猫有礼什锦果蔬干脆片酥脆休闲小吃<br><span>折扣价：19.90</span></div></a></div>
-							<div id="pics"><a href="Goods.html"><img src="assets/homeImages/gg6.jpg" /><div id="detail">U100牌菠萝干<br><span>折扣价：10.68</span></div></a></div>
-							<div id="pics"><a href="Goods.html"><img src="assets/homeImages/brandandcategory/bg3.jpg" /><div id="detail">正宗广西柳州特产螺蛳粉真空方便面<br><span>折扣价：12.50</span></div> </a></div>
-							<div id="pics"><a href="Goods.html"><img src="assets/homeImages/brandandcategory/rl2.jpg" /><div id="detail">灯影牛肉丝休闲零食特产四川麻辣牛肉干<br><span>折扣价：28.00</span></div> </a></div>
-							<div id="pics"><a href="Goods.html"><img src="assets/homeImages/brandandcategory/bg8.jpg" /> <div id="detail">奥莱曼椰子汁鸡蛋卷酥脆饼干水果味<br><span>折扣价：15.80</span></div></a></div>
-						-->
+							<!-- 在上面js中 -->
 						</div>
 					</div>
 					<script language="JavaScript" src="assets/js/marquee2.js"

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
-	<!-- author：张琼  -->
 	
 <mapper namespace="cn.edu.nwsuaf.dao.ProductDao">
 	<!-- 查询商品信息 -->
@@ -59,19 +58,16 @@
 		update product set has_deleted=0 where id = #{id}
 	</update>
 
-	<update id="updateProductPrice" parameterType="cn.edu.nwsuaf.entity.Product">
-		update product set dangqian_price=#{dangqian_price} where id=#{id}
-	</update>
-
-	<update id="updateProductCategory" parameterType="cn.edu.nwsuaf.entity.Product">
-		update product set keywords=#{keywords} where id=#{id}
-	</update>
 
 	<update id="updateProductInfo" parameterType="cn.edu.nwsuaf.entity.Product">
 		update product set
-		product_name=#{product_name},description=#{description},fixed_price=#{fixed_price},dangqian_price=#{dangqian_price},keywords=#{keywords},product_pic=#{product_pic}
+		product_name=#{product_name},description=#{description},dangqian_price=#{dangqian_price},keywords=#{keywords} 
 		where id=#{id}
 	</update>
+	
+	
+	
+	
 
 	<!-- 张琼  -->
 	<!-- product和food 一对一关联插入   (用于 上架商品功能) -->

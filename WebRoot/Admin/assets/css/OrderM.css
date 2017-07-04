@@ -4,3 +4,10 @@
 #meunSy{
 	padding-top: 10px;
 }
+.button3{
+	border:none;
+	outline:none;
+	background-color:white;
+	color:#0088CC;
+	font:20px;
+}

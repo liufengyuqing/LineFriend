@@ -23,7 +23,7 @@ public interface CartDao {
 	public List<Cart> findAllProductByUserId(int userid);
 	
 	//不想要了，从购物重删除
-	public String delterCartItem(int id);//购物车item中的id
+	public void delterCartItem(int id);//购物车item中的id
 	
 	
 	

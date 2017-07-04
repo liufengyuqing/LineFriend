@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="assets/css/index.css">
-
+<link rel="stylesheet" type="text/css" href="assets/css/OrderM.css">
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css">
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css">
@@ -62,6 +62,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 	
 </script>
+<script type="text/javascript">
+function gotoUpdate(r){
+	//var i=r.parentNode.parentNode.rowIndex;
+	//alert("行号为="+i);
+	alert("订单详情");
+	var rownum=r.parentNode.parentNode.rowIndex;
+	alert("行号="+rownum);
+	var tab=document.getElementById("tab");
+	var id=tab.rows[rownum].cells[0].innerHTML;
+	
+	alert("order="+id);
+	window.location.href="showOrder.action?id="+id+"&address_id="+id+"#panel-Oitem";
+	alert(成功);
+}
+</script>
 <script>
 
 $(document).ready(function() {
@@ -90,6 +105,11 @@ $('a[href=' + anchor + ']').tab('show');
 
     function delcfm() {
         if (!confirm("确认要删除？")) {
+            window.event.returnValue = false;
+        }
+    }
+     function delcfmm() {
+        if (!confirm("确认要修改？")) {
             window.event.returnValue = false;
         }
     }
@@ -200,7 +220,7 @@ $('a[href=' + anchor + ']').tab('show');
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
-								<table class="table" contenteditable="false">
+								<table class="table" contenteditable="false" id="tab">
 											<thead>
 												<tr>
 													<th style="width: 10%;">订单编号</th>
@@ -241,11 +261,15 @@ $('a[href=' + anchor + ']').tab('show');
 
 													</td>
 													<td>${item.price_amount}</td>
+													
 													<td>${item.address_id}</td>
 													<td>${item.address_id}</td>
-											
+											        
 													 <input type="hidden" value=${item.id} name="id"/>
-													<td><input type="submit" value="确定"  class="aaa"/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">详情查看</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
+													<td><input type="submit" value="确定"  class="button3" onClick="delcfmm()"/>&nbsp;&nbsp;&nbsp;&nbsp;
+													<!-- <a href="showOrder.action?id=${item.id}&address_id=${item.address_id}">详情查看</a> -->
+													<a href="#"onClick="gotoUpdate(this);">详情查看</a>
+													&nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
 													</form>
 													<!-- <td><input type="submit" value="确定"/></td> -->
 												   <!--<td><a href="editOrder.action?id=${item.id}&state=${stateName}">确定</a></td>-->
@@ -262,10 +286,75 @@ $('a[href=' + anchor + ']').tab('show');
 
 
 				<div class="tab-pane" contenteditable="false" id="panel-Oitem">
+				<c:forEach items="${orderitemList}"  var="item"  varStatus="status">
+				<table name="detil"border="1px" style="margin:50px;width:800px;font:18px;">
+				<caption>基本信息</caption>
+				    <tr>
+				    <td>订单号：</td>
+				     <td>${item.id}</td>
+				      <td>订单状态：</td>
+				      <td>${item.status}</td>
+				   </tr>
+				   <tr>
+				    <td>用户ID：</td>
+				     <td>${item.user_id}</td>
+				      <td>下单时间：</td>
+				      <td>${item.order_time}</td>
+				   </tr>
+				</table>
+				</c:forEach>
+				<c:forEach items="${addressList}"  var="item"  varStatus="status">
+				<table name="detil"border="1px" style="margin:50px;width:800px;font:18px;">
+				<caption>地址详细信息</caption>
+				   <tr>
+				    <td colspan="2">收货人：</td>
+				     <td colspan="2">${item.receive_name}</td>
+		
+				   </tr>
+				    <tr>
+				    <td>所在地区：</td>
+				     <td>${item.province}省${item.city}市${item.district}区</td>
+				      <td>详细地址：</td>
+				      <td>${item.full_address}</td>
+				   </tr>
+				   <tr>
+				    <td>电话：</td>
+				     <td>${item.phone}</td>
+				      <td>邮编：</td>
+				      <td>${item.postal_code}</td>
+				   </tr>
+				</table>
+				</c:forEach>
 				
-					
-					
-					
+				
+				<table name="product" border="1px" style="margin:50px;width:800px;font:18px;">
+				<caption>商品信息</caption>
+				   <tr>
+				    <th>商品编号</th>
+				    <th>商品名称</th>
+		            <th>单价</th>
+				    <th>数量</th>
+				    <th>小计</th>
+				    <th>操作</th>
+				   </tr>
+				   <c:forEach items="${itemList}"  var="item"  varStatus="status">	
+				    <tr>
+				    <td>${item.product_id}</td>
+				    <td>${item.product_name}</td>
+		            <td>${item.price}</td>
+				    <td>${item.product_num}</td>
+				    <td>${item.amount}</td>
+				    <td>查看商品详情</td>
+				   </tr>
+				   </c:forEach>
+				   <tr>
+				    <td colspan="4"></td>
+				    <td colspan="2">总计：</td>
+				   </tr>
+				
+				</table>
+				
+			
 				</div>
 			</div>
 		</div>

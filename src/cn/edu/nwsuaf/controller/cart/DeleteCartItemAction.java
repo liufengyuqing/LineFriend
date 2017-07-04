@@ -25,16 +25,15 @@ import cn.edu.nwsuaf.dao.CartDao;
 public class DeleteCartItemAction {
 	
 	@RequestMapping("deleteCartItem.action")
-	public void delete(HttpServletRequest request,HttpServletResponse response,String id){
+	public void delete(HttpServletRequest request,HttpServletResponse response){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");
 		CartDao cartDao = ctx.getBean(CartDao.class);
+		String id = request.getParameter("id");
 		cartDao.delterCartItem(Integer.parseInt(id));
-		
 		try {
 			response.sendRedirect("showCart.action");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//return null;

@@ -1,9 +1,14 @@
+<%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+		<base href="<%=basePath%>">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Line friend零食铺-支付成功</title>
-
 		<link rel="stylesheet" href="assets/css/buy.css" charset="utf-8" />
 		<link rel="stylesheet" href="assets/css/Header.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/Search.css" type="text/css" />
@@ -11,19 +16,19 @@
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/UserCart.css" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/pay.css">
-			<script language="JavaScript" src="assets/js/backTop.js"
-				type="text/javascript" charset="utf-8"></script>
-			<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-			<script language="JavaScript" src="assets/js/addToFavorite.js"
-				type="text/javascript" charset="utf-8"></script>
-			<script language="JavaScript" src="assets/js/AdminEmail.js"
-				type="text/javascript" charset="utf-8"></script>
-			<script language="JavaScript" src="assets/js/choosechange.js"
-				type="text/javascript" charset="utf-8"></script>
-			<script type="text/javascript"
-				src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-			<script type="text/javascript" src="assets/js/cart.js"
-				language="javascript"></script>
+		<script language="JavaScript" src="assets/js/backTop.js"
+			type="text/javascript" charset="utf-8"></script>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script language="JavaScript" src="assets/js/addToFavorite.js"
+			type="text/javascript" charset="utf-8"></script>
+		<script language="JavaScript" src="assets/js/AdminEmail.js"
+			type="text/javascript" charset="utf-8"></script>
+		<script language="JavaScript" src="assets/js/choosechange.js"
+			type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript"
+			src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/cart.js"
+			language="javascript"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -36,15 +41,34 @@
 			<div class="header2">
 				<nav class="nav">
 				<ul class="nav__menu">
+				
+					<%
+						String email = (String) session.getAttribute("email");
+						if (email == null) {
+					%>
 					<li class="nav__menu-item">
-						<a href="UserLogin.html">你好！请登录</a>
+						<a href="UserLogin.jsp">你好！请登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="UserRegister.html">免费注册</a>
+						<a href="UserRegister.jsp">免费注册</a>
+					</li>
+					<%
+						} else {
+					%>
+					<li class="nav__menu-item">
+						你好！${email}
 					</li>
 					<li class="nav__menu-item">
-						<a href="UserOrder.html">我的订单</a>
+						<a href="logout.action">退出登录</a>
 					</li>
+					<li class="nav__menu-item">
+						<a href="myorderlist">我的订单</a>
+					</li>
+					<%
+						}
+					%>
+					
+					
 					<li class="nav__menu-item">
 						客户服务^
 						<ul class="nav__submenu">
@@ -88,9 +112,9 @@
 		<!--支付成功-->
 		<div id="headpay">
 			<img src="assets/homeImages/logo.png">
-				<div>
-					支付结果
-				</div>
+			<div>
+				支付结果
+			</div>
 		</div>
 
 		<div id="pay_re">
@@ -112,7 +136,5 @@
 			friend零食铺&nbsp;SC.com&nbsp;&nbsp;版权所有
 		</p>
 		<!--bottom-->
-
-
-
 	</body>
+</html>

@@ -24,11 +24,6 @@ public interface ProductDao {
 	
 	public void deleteProductById(int id);
 	public void resumeProductById(int id);
-	public void updateProductName(int id,String name);
-	public void updateProductDescription(int id,String description);
-	public void updateProductPrice(int id,double price);
-	public void updateProductCategory(int id,String category);
-	
-
+	public void updateProductInfo(Product product);
 	
 }

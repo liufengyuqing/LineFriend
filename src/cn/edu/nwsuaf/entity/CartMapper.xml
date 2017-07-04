@@ -40,7 +40,7 @@
 	<!--关联结束 -->
 	
 	<delete id="delterCartItem" parameterType="int">
-		delete * from cart where id = #{id}
+		delete from cart where product_id = #{id}
 	</delete>
 	
 	

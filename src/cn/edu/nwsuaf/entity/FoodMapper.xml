@@ -37,4 +37,11 @@
 	<select id="findAllFood" resultType="cn.edu.nwsuaf.entity.Food">
 		select * from food
 	</select>
+	
+	<!-- 陈一婷 -->
+	
+	<update id="updateFoodInfo">
+	    update food set storge=#{storge} where product_id=#{product_id}
+	</update>
+	
 </mapper>

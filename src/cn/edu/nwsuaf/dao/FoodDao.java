@@ -16,5 +16,6 @@ public interface FoodDao {
 	
 	public void addFood(Food food);//
 	
-	
+	/* 陈一婷 */
+	public void updateFoodInfo(Food food);
 }

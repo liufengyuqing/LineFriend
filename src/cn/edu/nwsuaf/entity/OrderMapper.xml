@@ -63,5 +63,10 @@
 	<select id="findOrderByuser_id" parameterType="int" resultType="cn.edu.nwsuaf.entity.Orders">
 		select * from ls.order where user_id=#{user_id}
 	</select>
-	
+	<select id="findAddressById" parameterType="int" resultType="cn.edu.nwsuaf.entity.UserAddress">
+		select * from receive_address where id=#{id}
+	</select>
+	<select id="findItemById" parameterType="int" resultType="cn.edu.nwsuaf.entity.Item">
+		select * from item where order_id=#{order_id}
+	</select>
 </mapper>

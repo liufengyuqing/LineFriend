@@ -281,26 +281,27 @@ $(function(){
 						<li class="bt1">
 							<a href="home.jsp">首页</a>
 						</li>
-						<li class="bt1">
-							<a href="nut.html">坚果/炒货</a>
+						
+						<li class="bt1" style="width: 132px;">
+							<a href="searchByCategory.action?keywords=果干蜜饯">果干/蜜饯</a>
 						</li>
-						<li class="bt1">
-							<a href="fruit.html">果干/蜜饯</a>
+						<li class="bt1" style="width: 134px;">
+							<a href="searchByCategory.action?keywords=坚果炒货">坚果/炒货</a>
 						</li>
-						<li class="bt1">
-							<a href="meat.html">肉类/熟食</a>
+						<li class="bt1" style="width: 132px;">
+							<a href="searchByCategory.action?keywords=肉类熟食">肉类/熟食</a>
 						</li>
-						<li class="bt1">
-							<a href="biscuit.html">饼干/膨化</a>
+						<li class="bt1" style="width: 132px;">
+							<a href="searchByCategory.action?keywords=饼干膨化">饼干/膨化</a>
 						</li>
-						<li class="bt1">
-							<a href="biscuit.html">糕点/点心</a>
+						<li class="bt1" style="width: 132px;">
+							<a href="searchByCategory.action?keywords=糕点点心">糕点/点心</a>
 						</li>
-						<li class="bt1">
-							<a href="fruit.html">素食/豆类</a>
+						<li class="bt1" style="width: 132px;">
+							<a href="searchByCategory.action?keywords=素食豆类">素食/豆类</a>
 						</li>
-						<li class="bt1">
-							<a href="seafood.html">鱿鱼/海味</a>
+						<li class="bt1" style="width: 135px;">
+							<a href="searchByCategory.action?keywords=鱿鱼海味">鱿鱼/海味</a>
 						</li>
 					</ul>
 				</div>

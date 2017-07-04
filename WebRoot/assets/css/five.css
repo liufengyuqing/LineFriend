@@ -6,25 +6,17 @@
 }
 #content{
 	width:1800px;
-	height:9700px;
+	height:5000px;
 	margin:0 auto;
-	border:1px;
+	border:0px;
 	border-color:black;
 	border-style:solid;
 	background-color:#5F9DDB;
 }
 
-
 #div_head{
 	width:100%;
-	height:1604px;
-	margin:0px;
-	margin-left: 0px;
-	float: left;
-}
-#div_head1{
-	width:100%;
-	height:3300px;
+	height:900px;
 	margin:0px;
 	margin-left: 0px;
 	float: left;
@@ -46,7 +38,7 @@
 	width: 41%;
 	height:430px;
 	background-color: #B2D4F2;
-	padding-left: 20px;
+	padding-left: 25px;
 	padding-top:20px;
 	float: left;
 	margin-left:43px; 

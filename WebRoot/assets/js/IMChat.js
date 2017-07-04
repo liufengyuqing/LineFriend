@@ -6,6 +6,6 @@ function IMChat(){
         shadeClose: true,
         maxmin: true,
         area: ['1000px', '500px'],
-        content: 'http://localhost:3000/',
+        content: 'http://172.29.17.33:3000/',
     });  
 }

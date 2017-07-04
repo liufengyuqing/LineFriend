@@ -1,6 +1,8 @@
-#Tue Jun 27 16:46:01 CST 2017
+#Tue Jul 04 09:42:29 CST 2017
 eclipse.preferences.version=1
 encoding//WebRoot/UserAddress.jsp=UTF-8
 encoding//WebRoot/assets/css/login.css=UTF-8
+encoding//src/cn/edu/nwsuaf/controller/pay/PayServlet.java=UTF-8
+encoding//src/cn/edu/nwsuaf/controller/pay/PaymentUtil.java=UTF-8
 encoding//src/cn/edu/nwsuaf/util/MailUtil.java=UTF-8
 encoding/<project>=UTF-8

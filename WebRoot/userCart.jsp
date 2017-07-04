@@ -40,9 +40,7 @@
 	<body onload=>
 		<div id="header">
 			<div class="header1">
-				<a rel="sidebar" onclick=
-	addToFavorite();;;;;;
-href="#"><img
+				<a rel="sidebar" onclick=addToFavorite();;;;;; href="#"><img
 						style="position: relative; top: 2px;"
 						src="assets/homeImages/love2.jpg" height="12" width="12" />&nbsp;&nbsp;收藏LINE
 					FRIEND</a>
@@ -264,7 +262,7 @@ href="#"><img
 						<tbody>
 
 
-<script>
+							<script>
 
 
 	//获取每行的商品id和数量
@@ -274,40 +272,31 @@ href="#"><img
 		var num = "";
 		var table = document.getElementById('cartTable'); // 购物车表格
 		var tr = table.children[1].rows; //行
-		alert(tr.length);
-
+		var all = tr.length;
 		for ( var i = 0, len = tr.length; i < len; i++) {
-		alert(i+"---" );
-		alert(tr[i].getElementsByTagName('input')[0].checked);
 			if (tr[i].getElementsByTagName('input')[0].checked) {
-				id = "liuzhiwei" ;
-				num = "liuzhi" ;
-				alert(id+num);
-				
-				id = document.getElementsByName("product_id")[i].value;
-				alert(id+"----"+document.getElementsByName("product_id").length);
-				num = document.getElementsByName("product_count")[i].value;
-				alert(num);
+				id += tr[i].getElementsByTagName('input')[2].value+",";
+				num +=tr[i].getElementsByTagName('input')[1].value+",";
+				//alert(id+"----"+num);
+				all=all-1;
 			}
 		}
-		
-
+		if(all==tr.length){
+		alert("您还没有选中要提交的商品，请先选中要提交了的商品");
+		}else{
 		var action = 'gotoOrder.action?id=' + id + '&num=' + num;
 		window.location.href = action;
 	}
+	}
+	
+	
 </script>
 
 
 							<!-- 购物车页面开始加载购物车表中的数据 -->
 
 							<c:forEach items="${cartList}" var="cartItem" varStatus="status">
-
-								<input id="product_id" type="hidden" name="product_id"
-									value="${cartItem.product.id} " size="2" />
 								<tr>
-								
-								
-
 									<td class="checkbox">
 										<input class="check-one check" type="checkbox" />
 									</td>
@@ -330,8 +319,11 @@ href="#"><img
 									<td class="subtotal">
 									</td>
 									<td class="operation">
-										<span class="delete">删除</span>
+										<span class="delete"><a href="deleteCartItem.action?id=${cartItem.product.id}">删除</a></span>
 									</td>
+
+									<input id="product_id" type="hidden" name="product_id"
+										value="${cartItem.product.id} " size="2" />
 								</tr>
 							</c:forEach>
 
@@ -371,8 +363,8 @@ href="#"><img
 			</div>
 			<div class="clearfloat"></div>
 
-			<div id="ban" style="margin-left: 80px;">
-				<img src="assets/homeImages/ban2.jpg" width="1050" height="100"
+			<div id="ban" >
+				<img src="assets/homeImages/ban2.jpg" width="1200" height="100"
 					alt="间隔图片" />
 			</div>
 			<div id="foot_server">
@@ -478,9 +470,7 @@ href="#"><img
 					</div>
 				</div>
 			</div>
-			<div class="totop" id="totop" onclick=
-	bt();
->
+			<div class="totop" id="totop" onclick=bt();>
 				<img src="assets/homeImages/top.png" width="21" height="40" />
 			</div>
 		</div>
