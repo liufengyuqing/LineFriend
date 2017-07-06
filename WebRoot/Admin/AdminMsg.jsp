@@ -93,7 +93,7 @@
 								<div class="accordion-group">
 									<div class="accordion-heading">
 										<!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#userM"> -->
-										<a href="UserManage.jsp"
+										<a href="userSearch.action?condtion=&select=1"
 											style="margin-left: 15px; margin-right: 50px;">用户管理<img
 												src="assets/homeImages/user.png" />
 										</a>
@@ -145,7 +145,7 @@
 								<div class="accordion-group">
 									<div class="accordion-heading">
 										<!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
-										<a href="OrderManage.jsp"
+										<a href="searchOrder.action?condtion=&select=1"
 											style="margin-left: 15px; margin-right: 50px;">订单管理<img
 												src="assets/homeImages/order.png">
 										</a>

@@ -11,3 +11,18 @@
 	color:#0088CC;
 	font:20px;
 }
+caption{
+	font-size: 20PX;
+	font-family: "ºÚÌå";
+	margin-bottom: 10px;
+}
+#xiangqing tr{
+	height: 50px;
+}
+#xiangqing table td{
+	border: 1px #9FCDDA dashed;
+	text-align: center;
+}
+#xiangqing table th{
+	border: 1px #9FCDDA dashed;
+}

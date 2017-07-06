@@ -18,8 +18,8 @@ public class Product implements Serializable{
 	private String keywords;//商品关键词
 	private int has_deleted;//是否被删除 标志位
 	private String product_pic;//商品图片地址
-	
 	private Cart2 cart2;
+	
 	
 	
 	public int getId() {

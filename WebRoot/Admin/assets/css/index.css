@@ -167,3 +167,15 @@ span{
 	height:30px;
 	margin-left:27%;
 }
+#page{
+	position: relative;
+	height: 40px;
+	/* margin-top: 10px; */
+	margin-left:30%;
+	
+}
+#page input{
+	height: 30px;
+	font-size: 16px;
+	width: 60px;
+}

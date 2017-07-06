@@ -16,132 +16,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/userM.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="assets/js/birthday.js"></script>
-<script type="text/javascript" src="assets/js/dialog.js"></script>
+
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/refreshTab.js"></script>
 
-<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" /> -->
+<script type="text/javascript" src="assets/js/ui.js"></script>
+
+<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/ProductM.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/UserM.css" />
+
  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" /> 
 
-<!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" /> -->
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.min.css" />
 
 
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-combined.min.css" />
 
-
-<!--从前台获取查询参数并转到后台处理-->
-<script>
-<!--信息查询-->
-		function SearchUser(){
-			//获取输入框和下拉框狂的值
-			//alert(1);
-			//var tiaojian=document.formSy.getElementsByName("condtion").value;
-			//var sel2=document.formSy.getElementsByName("sel2").value;
-			//var condtion=document.formSy.condtion.value;
-			//var select=document.formSy.select.value;
-			
-			var select=document.getElementById("select").value;
-			alert("select:"+select);
-			var condtion=document.getElementById("condtion").value;
-			alert("condtion:"+condtion);
-			if(select==1){
-				alert("将搜索所有用户信息！");
-				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
-			}
-			else if(select==2){
-				var Regex = /^(?:\w+\.?)*\w+@(?:\w+\.)*\w+$/;
-				if(Regex.test(condtion)){
-					alert("邮箱格式正确，正在查询!");
-					window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
-				}else{
-					alert("邮箱格式不正确，请重新输入!");
-				}
-				//alert("查询全部信息1");
-			}
-			else if(select==3){
-				if(condtion!="男" &&condtion!="女"){
-					alert("请输入男或者女");
-				}else{
-					alert("正在查询！请等待！");
-					window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
-				}
-					//alert("查询全部信息3");
-			}
-			else if(select==4){
-				alert("用户ID");
-				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
-			}
-			else if(select==5){
-				alert("按用户昵称查询，正在查询");
-				window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
-			}
-			else if(select==6){
-				alert("按年龄查询！");
-				var date=new Date;
- 				var year=date.getFullYear(); 
- 				alert("yaer--"+year);
- 				var birdayYaer=year-condtion;
- 				alert("birdayYaer--"+birdayYaer);
-				window.location.href="userSearch.action?"+"condtion="+birdayYaer+"&select="+select;
-			}
-
-			//window.location.href="userSearch.action?"+"condtion="+condtion+"&select="+select;
-			
-		}
-	
-</script>
-
- <script type="text/javascript">
-function gotoUpdate(r){
-	//var i=r.parentNode.parentNode.rowIndex;
-	//alert("行号为="+i);
-	alert("jajd");
-	var rownum=r.parentNode.parentNode.rowIndex;
-	alert("hanghao="+rownum);
-	var tab=document.getElementById("tab");
-	var id=tab.rows[rownum].cells[0].innerHTML;
-	
-	
-	alert("user="+id);
-	window.location.href="Updateuser.action?id="+id+"#panel-Update";
-	alert(成功);
-}
-</script>
-<!-- 从页面获取userID并传到后台进行action处理之后返回 #panel-Udelect-->
-<script type="text/javascript">
-	<!--信息修改数据提交
-	function trueUpdateUser(){
-		var id=document.getElementById("id").value;
-		var NnickName=document.getElementById("NewnickName").value;
-		var NtrueName=document.getElementById("NewtrueName").value;
-		var Nsex=document.getElementById("Newsex").value;
-		var NcardId=document.getElementById("NewcardId").value;
-		var Nyear=document.getElementById("selYear").value;
-		var Nmouth=document.getElementById("selMonth").value;
-		var Nday=document.getElementById("selDay").value;
-		alert("更新信息："+id+"-"+NnickName+"-"+NtrueName+"-"+Nsex+"-"+NcardId+"-"+Nyear+"-"+Nmouth+"-"+Nday);
-		var reg=/^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$/;
-		if(reg.test(NcardId)){
-			alert("输入的是身份证号");
-			window.location.href="UpdateUserInfo.action?id="+id+"&nickName="+NnickName+"&trueName="+NtrueName+"&sex="+Nsex+"&cardId="+NcardId+"&year="+Nyear+"&mouth="+Nmouth+"&day="+Nday;
-			alert("该用户信息已修改!");
-			
-		}
-		else{
-			alert("请输入正确的身份证号");
-		}
-		
-	}
-</script>
-
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>Line friend管理员--用户管理</title>
@@ -174,12 +70,11 @@ function gotoUpdate(r){
 			<div class="accordion" id="accordion-355567">
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#userM">
-						 用户管理<img src="assets/homeImages/user.png"></a>
+						 <a class="accordion-toggle"  href="userSearch.action?condtion=&select=1">用户管理<img src="assets/homeImages/user.png"></a>
 					</div>
 					<div id="userM" class="accordion-body  in collapse">
 						<div class="accordion-inner">
-							<a href="UserManage.jsp#panel-Userach">用户查询&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="userSearch.action?condtion=&select=1">用户查询&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
 							<a href="UserManage.jsp#panel-Update">用户信息更新<img src="assets/homeImages/point.png"></a>
 						</div>
 					</div>
@@ -203,14 +98,14 @@ function gotoUpdate(r){
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#orderM"> -->
-						 <a href="OrderManage.jsp" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
+						 <a href="searchOrder.action?condtion=&select=1" style="margin-left: 15px;margin-right: 50px;">订单管理<img src="assets/homeImages/order.png"></a>
 					</div>
 					<div id="orderM" class="accordion-body collapse">
 						<div class="accordion-inner">
 							<a href="">订 单 检 索</a><br>
 							<a href="">订 单 状 态 修 改</a><br>
 							<a href="">作 废 订 单</a><br>
-						</div>+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -234,7 +129,7 @@ function gotoUpdate(r){
 							<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>			
 							
 								<select class="selectSy" name="select" id="select" style="margin-top: 5px;height: 30px;width: 150px;">
-											<option value="1">
+											<option value="1"  selected="selected">
 												全部用户
 											</option>
 											<option value="2">
@@ -299,6 +194,25 @@ function gotoUpdate(r){
 								
 											</c:forEach></tbody>
 									</table>
+									
+									<!--<div>翻页
+										<a  href="#" id="btn2">上一页</a>
+		                                <a  href="#" id="btn3">下一页</a>
+									</div>-->
+									<div id="page">翻页
+										<a id="btn0"></a>
+		                                <input id="pageSize" type="text" size="1" maxlength="2" value="getDefaultValue()"/><a> 条</a> <a href="#" id="pageSizeSet">设置</a> 
+		                                <a id="sjzl"></a> 
+		                                <a  href="#" id="btn1">首页</a>
+		                                <a  href="#" id="btn2">上一页</a>
+		                                <a  href="#" id="btn3">下一页</a>
+		                                <a  href="#" id="btn4">尾页</a> 
+		                                <a>转到 </a>
+		                                <input id="changePage" type="text" size="1" maxlength="4"/>
+		                                <a>页 </a>
+		                                <a  href="#" id="btn5">跳转</a>
+									</div>
+									
 						</div>
 
 					</div><!--面板一-->
@@ -358,7 +272,6 @@ new DateSelector(selYear, selMonth, selDay, 1996, 1, 1);
 // var dt = new Date(2004, 1, 29);
 // new DateSelector(selYear, selMonth ,selDay, dt);
 </script>
-
+<script type="text/javascript" src="assets/js/page.js"></script>
 </body>
-	
 </html>

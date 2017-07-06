@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/refreshTab.js"></script>
+	<script type="text/javascript" src="assets/js/page.js"></script>
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>Line friend管理员--订单管理</title>
 <!-- TemplateEndEditable -->
@@ -47,14 +48,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
 			}
 			else if(select==2){
+			if(condtion==null)
+				alert("查询条件不能为空");
 				alert("订单编号");
+	
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
 			}
 			else if(select==3){
+			if(condtion==null)
+				alert("查询条件不能为空");
 				alert("下单时间");
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
 			}
 			else if(select==4){
+			if(condtion==null)
+				alert("查询条件不能为空");
 				alert("用户ID");
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
 			}
@@ -72,9 +80,10 @@ function gotoUpdate(r){
 	alert("行号="+rownum);
 	var tab=document.getElementById("tab");
 	var id=tab.rows[rownum].cells[0].innerHTML;
-	
+	var address_id=tab.rows[rownum].cells[6].innerHTML;
 	alert("order="+id);
-	window.location.href="showOrder.action?id="+id+"&address_id="+id+"#panel-Oitem";
+	alert("address_id="+address_id);
+	window.location.href="showOrder.action?id="+id+"&address_id="+address_id+"#panel-Oitem";
 	alert(成功);
 }
 </script>
@@ -90,7 +99,6 @@ function gotoUpdate(r){
         }
     }
 </script>
-
   </head>
   
   <body>
@@ -119,7 +127,7 @@ function gotoUpdate(r){
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#userM"> -->
-						 <a href="UserManage.jsp" style="margin-left: 15px;">用户管理<img src="assets/homeImages/user.png"></a>
+						 <a href="userSearch.action?condtion=&select=1" style="margin-left: 15px;">用户管理<img src="assets/homeImages/user.png"></a>
 					</div>
 					<div id="userM" class="accordion-body collapse">
 						<div class="accordion-inner">
@@ -198,6 +206,7 @@ function gotoUpdate(r){
 						<!-- 查询结果展示表格 -->
 						<div id="tbShow">
 								<div class="clean"></div>
+								
 								<table class="table" contenteditable="false" id="tab">
 											<thead>
 												<tr>
@@ -246,7 +255,7 @@ function gotoUpdate(r){
 													 <input type="hidden" value=${item.id} name="id"/>
 													<td><input type="submit" value="确定"  class="button3" onClick="delcfmm()"/>&nbsp;&nbsp;&nbsp;&nbsp;
 													<!-- <a href="showOrder.action?id=${item.id}&address_id=${item.address_id}">详情查看</a> -->
-													<a href="#"onClick="gotoUpdate(this);">详情查看</a>
+													<a href="#" onclick="gotoUpdate(this);">详情查看</a>
 													&nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
 													</form>
 													<!-- <td><input type="submit" value="确定"/></td> -->
@@ -257,82 +266,101 @@ function gotoUpdate(r){
 												</c:forEach>
 												
 											</tbody>
-									</table>	
+									</table>
+									<div id="page">
+									<a id="btn0"></a>
+                                    <input id="pageSize" type="text" size="1" maxlength="2" value="getDefaultValue()"/><a> 条 </a> <a href="#" id="pageSizeSet">设置</a> 
+                                    <a id="sjzl"></a> 
+                                     <a  href="#" id="btn1">首页</a>
+                                     <a  href="#" id="btn2">上一页</a>
+                                      <a  href="#" id="btn3">下一页</a>
+                                      <a  href="#" id="btn4">尾页</a> 
+                                      <a>转到 </a>
+                                      <input id="changePage" type="text" size="1" maxlength="4"/>
+                                     <a>页 </a>
+                                     <a  href="#" id="btn5">跳转</a>	
+                                     </div>
 						</div>
-					
+						
 				</div>
 
 
 				<div class="tab-pane" contenteditable="false" id="panel-Oitem">
-				<c:forEach items="${orderitemList}"  var="item"  varStatus="status">
-				<table name="detil"border="1px" style="margin:50px;width:800px;font:18px;">
-				<caption>基本信息</caption>
-				    <tr>
-				    <td>订单号：</td>
-				     <td>${item.id}</td>
-				      <td>订单状态：</td>
-				      <td>${item.status}</td>
-				   </tr>
-				   <tr>
-				    <td>用户ID：</td>
-				     <td>${item.user_id}</td>
-				      <td>下单时间：</td>
-				      <td>${item.order_time}</td>
-				   </tr>
-				</table>
-				</c:forEach>
-				<c:forEach items="${addressList}"  var="item"  varStatus="status">
-				<table name="detil"border="1px" style="margin:50px;width:800px;font:18px;">
-				<caption>地址详细信息</caption>
-				   <tr>
-				    <td colspan="2">收货人：</td>
-				     <td colspan="2">${item.receive_name}</td>
-		
-				   </tr>
-				    <tr>
-				    <td>所在地区：</td>
-				     <td>${item.province}省${item.city}市${item.district}区</td>
-				      <td>详细地址：</td>
-				      <td>${item.full_address}</td>
-				   </tr>
-				   <tr>
-				    <td>电话：</td>
-				     <td>${item.phone}</td>
-				      <td>邮编：</td>
-				      <td>${item.postal_code}</td>
-				   </tr>
-				</table>
-				</c:forEach>
 				
-				
-				<table name="product" border="1px" style="margin:50px;width:800px;font:18px;">
-				<caption>商品信息</caption>
-				   <tr>
-				    <th>商品编号</th>
-				    <th>商品名称</th>
-		            <th>单价</th>
-				    <th>数量</th>
-				    <th>小计</th>
-				    <th>操作</th>
-				   </tr>
-				   <c:forEach items="${itemList}"  var="item"  varStatus="status">	
-				    <tr>
-				    <td>${item.product_id}</td>
-				    <td>${item.product_name}</td>
-		            <td>${item.price}</td>
-				    <td>${item.product_num}</td>
-				    <td>${item.amount}</td>
-				    <td>查看商品详情</td>
-				   </tr>
-				   </c:forEach>
-				   <tr>
-				    <td colspan="4"></td>
-				    <td colspan="2">总计：</td>
-				   </tr>
-				
-				</table>
-				
+
+				<div id="xiangqing" style=" margin-left: 20%;" >
+					<c:forEach items="${orderitemList}"  var="item"  varStatus="status">
+					<table name="detil" style="margin:50px;width:800px;font:18px;">
+					<caption>基本信息</caption>
+					    <tr>
+					    <td>订单号：${item.id}</td>
+					     
+					    <td>订单状态：${item.status}</td>
+					     
+					   </tr>
+					   <tr>
+					    <td>用户ID：${item.user_id}</td>
+					    
+					    <td>下单时间：${item.order_time}</td>
+					      
+					   </tr>
+					</table>
+					</c:forEach>
+					<c:forEach items="${addressList}"  var="item"  varStatus="status">
+					<table name="detil"  style="margin:50px;width:800px;font:18px;">
+					<caption>地址详细信息</caption>
+					   <tr>
+					    <th colspan="4">收货人：${item.receive_name}</th>
+					   
 			
+					   </tr>
+					    <tr>
+					    <th>所在地区：</th>
+					     <td>${item.province}省${item.city}市${item.district}区</td>
+					      <th>详细地址：</th>
+					      <td>${item.full_address}</td>
+					   </tr>
+					   <tr>
+					    <th>电话：</th>
+					     <td>${item.phone}</td>
+					      <th>邮编：</th>
+					      <td>${item.postal_code}</td>
+					   </tr>
+					</table>
+					</c:forEach>
+					
+					
+					<table name="product"  style="margin:50px;width:800px;font:18px;">
+					<caption>商品信息</caption>
+					   <tr>
+					    <th>商品编号</th>
+					    <th>商品名称</th>
+			            <th>单价</th>
+					    <th>数量</th>
+					    <th>小计</th>
+					    <th>操作</th>
+					   </tr>
+					   <c:forEach items="${itemList}"  var="item"  varStatus="status">	
+					    <tr>
+					    <td>${item.product_id}</td>
+					    <td>${item.product_name}</td>
+			            <td>${item.price}</td>
+					    <td>${item.product_num}</td>
+					    <td>${item.amount}</td>
+					    <td><a href="foodSearch.action?sel=2&condition=${item.product_id}#panel-Pout" >查看商品详情</a></td>
+					   </tr>
+					   </c:forEach>
+					   <tr>
+					    <td colspan="4" name="xiaoji"></td>
+					    <td colspan="2" >总计：118.5元</td>
+					   </tr>
+					
+					</table>
+				
+			</div>
+
+			<!---->
+
 				</div>
 			</div>
 		</div>

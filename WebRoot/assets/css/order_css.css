@@ -144,3 +144,22 @@ span{
 #fontsy{
 	margin-left: 20%;
 }
+#leaveMsgDiv{
+	height: 50px;
+
+}
+#textareaDiv{
+	float: left;
+}
+#titiDiv{
+	margin-left: 82%;
+
+	font-size: 22px;
+}
+#msg{
+	margin-top: -50px;
+}
+.priceSpan{
+	font-size: 20px;
+	color: red;
+}

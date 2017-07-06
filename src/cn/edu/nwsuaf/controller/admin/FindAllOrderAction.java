@@ -1,6 +1,5 @@
 package cn.edu.nwsuaf.controller.admin;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.nwsuaf.dao.OrderDao;
-import cn.edu.nwsuaf.entity.Orders;
+import cn.edu.nwsuaf.entity.Order;
 
 @Controller
 public class FindAllOrderAction {
@@ -25,9 +24,9 @@ public class FindAllOrderAction {
 		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
 		System.out.println(user_id + "获取到user_id");
 
-		List<Orders> ordersList = dao.findAllOrder();// 返回用户
+		List<Order> ordersList = dao.findAllOrder();// 返回用户
 
-		for (Orders o : ordersList) {
+		for (Order o : ordersList) {
 
 			System.out.println(o.toString());// 打印用户信息包含地址
 		}

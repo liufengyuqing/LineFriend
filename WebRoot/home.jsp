@@ -131,10 +131,10 @@ body {
 onmouseout=
 	hide_show_1(this);
 >
-				<a href="UserCart.html"><img
+				<a href="showCart.action"><img
 						src="assets/homeImages/shopping.png" /> </a>
 				<div class="hide_show" style="top: 0px;">
-					<a href="gotoCart.action">购物车</a>
+					<a href="showCart.action">购物车</a>
 				</div>
 			</p>
 			<p class="img_a" onmouseover=
@@ -172,7 +172,7 @@ onmouseout=
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="userOrder.action">我的LINE FRIEND</a>
+						<a href="User.jsp">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<p class="img_a" onmouseover=
@@ -259,20 +259,20 @@ href=""><img
 								<a href="GoodsSearch.jsp">商品检索</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="User.html">用户管理</a>
+								<a href="User.jsp">用户管理</a>
 							</li>
 							<!--<li class="nav__menu-item">
 								<a href="userCart.html">购物车</a>
 							</li>
 							-->
 							<li class="nav__menu-item">
-								<a href="gotoCart.action">购物车</a>
+								<a href="showCart.action">购物车</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserOrder.html">我的订单</a>
+								<a href="userOrder.action">我的订单</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserFavorite.html">我的收藏</a>
+								<a href="gotoFavouriteList.action?email=${email}">我的收藏</a>
 							</li>
 						</ul>
 					</li>
@@ -310,7 +310,7 @@ href=""><img
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="userOrder.action">我的LINE FRIEND</a>
+						<a href="User.jsp">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">
@@ -410,42 +410,43 @@ href=""><img
 						<div class="message_div_1">
 							<ul>
 								<li>
-									<a href="" target="_blank"><b>[特惠]</b> LINE FRIEND新成立
-										满200减50</a>
+									<a href="Gonggao.jsp?content=LINE FRIEND新成立
+										满200减50" target="_blank">
+										<b>[特惠]</b> LINE FRIEND新成立 满200减50</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[热销]</b> 每日十点新品发布 火热销售中</a>
+									<a href="Gonggao.jsp?content=每日十点新品发布 火热销售中" target="_blank"><b>[热销]</b> 每日十点新品发布 火热销售中</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[公告]</b> 订单数量剧增 部分地区配送延迟</a>
+									<a href="Gonggao.jsp?content=订单数量剧增 部分地区配送延迟" target="_blank"><b>[公告]</b> 订单数量剧增 部分地区配送延迟</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[公告]</b> 快来！！！！</a>
+									<a href="Gonggao.jsp?content=快来！！！！" target="_blank"><b>[公告]</b> 快来！！！！</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[消息]</b> 亦可赛艇！？</a>
+									<a href="Gonggao.jsp?content=亦可赛艇！？" target="_blank"><b>[消息]</b> 亦可赛艇！？</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[公告]</b> 苟利国家生死以</a>
+									<a href="Gonggao.jsp?content=苟利国家生死以" target="_blank"><b>[公告]</b> 苟利国家生死以</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[通知]</b> 订单数量剧增 部分地区配送延迟</a>
+									<a href="Gonggao.jsp?content=订单数量剧增 部分地区配送延迟" target="_blank"><b>[通知]</b> 订单数量剧增 部分地区配送延迟</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[公告]</b>
+									<a href="Gonggao.jsp?content=Linefriend迎来第一百万个客户！" target="_blank"><b>[公告]</b>
 										Linefriend迎来第一百万个客户！</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[公告]</b> 订单数量剧增 部分地区配送延迟</a>
+									<a href="Gonggao.jsp?content=订单数量剧增 部分地区配送延迟" target="_blank"><b>[公告]</b> 订单数量剧增 部分地区配送延迟</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[通知]</b> 快点买吧！！！！！</a>
+									<a href="Gonggao.jsp?content=快点买吧！！！！！" target="_blank"><b>[通知]</b> 快点买吧！！！！！</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[公告]</b> 免费送奖品！！！</a>
+									<a href="Gonggao.jsp?content=免费送奖品！！！" target="_blank"><b>[公告]</b> 免费送奖品！！！</a>
 								</li>
 								<li>
-									<a href="#" target="_blank"><b>[娱乐]</b> 满100送100</a>
+									<a href="Gonggao.jsp?content=满100送100" target="_blank"><b>[娱乐]</b> 满100送100</a>
 								</li>
 							</ul>
 						</div>
@@ -543,7 +544,7 @@ href=""><img
 						</div>
 						<!--rightBottom-->
 						<div class="rightfooter">
-							<a href="#"><img src="assets/homeImages/reload.png"
+							<a href="javascript:location.reload();"><img src="assets/homeImages/reload.png"
 									width="20" height="20">换一批</a>
 						</div>
 					</div>
@@ -608,7 +609,7 @@ href=""><img
 				<div class="conContenter">
 					<div class="contenterLeft">
 						<div class="leftTop">
-							<img src="assets/homeImages/brandandcategory/gg.jpg" />
+							<img src="assets/homeImages/jianguo.jpg" />
 						</div>
 						<!--leftTop-->
 						<div class="leftBottom">
@@ -637,7 +638,7 @@ href=""><img
 						</div>
 						<!--rightBottom-->
 						<div class="rightfooter">
-							<a href="#"><img src="assets/homeImages/reload.png"
+							<a href="javascript:location.reload();"><img src="assets/homeImages/reload.png"
 									width="20" height="20">换一批</a>
 						</div>
 					</div>
@@ -701,7 +702,7 @@ href=""><img
 				<div class="conContenter">
 					<div class="contenterLeft">
 						<div class="leftTop">
-							<img src="assets/homeImages/brandandcategory/rl.jpg" />
+							<img src="assets/homeImages/jianguo.jpg" />
 						</div>
 						<!--leftTop-->
 						<div class="leftBottom">
@@ -730,7 +731,7 @@ href=""><img
 						</div>
 						<!--rightBottom-->
 						<div class="rightfooter">
-							<a href="#"><img src="assets/homeImages/reload.png"
+							<a href="javascript:location.reload();"><img src="assets/homeImages/reload.png"
 									width="20" height="20">换一批</a>
 						</div>
 					</div>
@@ -776,10 +777,10 @@ href=""><img
 						购物指南
 					</dt>
 					<dd>
-						<a target="_blank" href="UserQuestion.html">购物流程</a>
+						<a target="_blank" href="foot/MemberIntroduction.html">购物流程</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="UserQuestion.html">会员介绍</a>
+						<a target="_blank" href="foot/MemberIntroduction.html">会员介绍</a>
 					</dd>
 					<dd>
 						<a target="_blank" href="UserQuestion.html">生活旅行/团购</a>
@@ -800,16 +801,16 @@ href=""><img
 						<a target="_blank" href="UserQuestion.html">上门自提</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">211限时送达</a>
+						<a target="_blank" href="foot/Tingri.html">限时送达</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">配送服务查询</a>
+						<a target="_blank" href="foot/DiliveryService.html">配送服务查询</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">配送费收取标准</a>
+						<a target="_blank" href="foot/DistributionFee%20.html">配送费收取标准</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">海外配送</a>
+						<a target="_blank" href="foot/OverseasDistribution.html">海外配送</a>
 					</dd>
 				</dl>
 				<dl>
@@ -820,16 +821,16 @@ href=""><img
 						<a target="_blank" href="http://blog.nwafu.me">货到付款</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">在线支付</a>
+						<a target="_blank" href="foot/Dilivery3.html">在线支付</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">分期付款</a>
+						<a target="_blank" href="foot/Dilivery5.html">信用卡支付</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">邮局汇款</a>
+						<a target="_blank" href="foot/Dilivery4.html">蚂蚁花呗</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">公司转账</a>
+						<a target="_blank" href="foot/Dilivery1.html">快捷支付</a>
 					</dd>
 				</dl>
 				<dl>
@@ -840,20 +841,20 @@ href=""><img
 						<a target="_blank" href="http://www.nwafulive.cn">售后政策</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">价格保护</a>
+						<a target="_blank" href="PriceProtect.html">价格保护</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">退款说明</a>
+						<a target="_blank" href="PriceProtect.html">退款说明</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">返修/退换货</a>
+						<a target="_blank" href="PriceProtect.html">返修/退换货</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">取消订单</a>
+						<a target="_blank" href="PriceProtect.html">取消订单</a>
 					</dd>
 				</dl>
 				<div>
-					<img src="assets/homeImages/gg4.jpg" width="300px" height="200px" />
+					<img src="assets/homeImages/foot.png"/>
 				</div>
 			</div>
 			<div id="footer">

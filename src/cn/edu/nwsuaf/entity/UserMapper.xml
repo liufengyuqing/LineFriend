@@ -6,8 +6,8 @@
 
 	<insert id="register" parameterType="cn.edu.nwsuaf.entity.User"> <!-- 注册  -->
 		insert into user(email,password,user_integral, last_login_ip,
-		last_login_time,is_email_verify,email_verify_code)
-		values(#{email},#{password},#{user_integral},#{last_login_ip},#{last_login_time},#{is_email_verify},#{email_verify_code})
+		last_login_time,is_email_verify,email_verify_code,head_image)
+		values(#{email},#{password},#{user_integral},#{last_login_ip},#{last_login_time},#{is_email_verify},#{email_verify_code},#{head_image})
 	</insert>
 
 	<select id="emailIsRegist" parameterType="String"

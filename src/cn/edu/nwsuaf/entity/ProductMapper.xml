@@ -93,6 +93,8 @@
 		,fixed_price,dangqian_price,keywords,product_pic)
 		values(#{product_name},#{description},#{add_time},#{fixed_price},#{dangqian_price},#{keywords},#{product_pic})
 	</insert>
+	
+	
 	<!-- ................................................. -->
 
 

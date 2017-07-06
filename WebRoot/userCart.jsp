@@ -108,7 +108,7 @@
 								<a href="UserOrder.html">我的订单</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserFavorite.html">我的收藏</a>
+								<a href="gotoFavouriteList.action?email=${email}">我的收藏</a>
 							</li>
 						</ul>
 					</li>
@@ -376,19 +376,20 @@
 						购物指南
 					</dt>
 					<dd>
-						<a target="_blank" href="#">购物流程</a>
+						<a target="_blank" href="foot/MemberIntroduction.html">购物流程</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">会员介绍</a>
+						<a target="_blank" href="foot/MemberIntroduction.html">会员介绍</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">生活旅行/团购</a>
+						<a target="_blank" href="UserQuestion.html">生活旅行/团购</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">常见问题</a>
+						<a target="_blank" href="UserQuestion.html">常见问题</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">联系客服</a>
+						<a target="_blank"
+							href="http://wpa.qq.com/msgrd?v=3&uin=804194244&site=qq&menu=yes">联系客服</a>
 					</dd>
 				</dl>
 				<dl>
@@ -396,19 +397,19 @@
 						配送方式
 					</dt>
 					<dd>
-						<a target="_blank" href="#">上门自提</a>
+						<a target="_blank" href="UserQuestion.html">上门自提</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">211限时送达</a>
+						<a target="_blank" href="foot/Tingri.html">限时送达</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">配送服务查询</a>
+						<a target="_blank" href="foot/DiliveryService.html">配送服务查询</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">配送费收取标准</a>
+						<a target="_blank" href="foot/DistributionFee%20.html">配送费收取标准</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">海外配送</a>
+						<a target="_blank" href="foot/OverseasDistribution.html">海外配送</a>
 					</dd>
 				</dl>
 				<dl>
@@ -416,19 +417,19 @@
 						支付方式
 					</dt>
 					<dd>
-						<a target="_blank" href="#">货到付款</a>
+						<a target="_blank" href="http://blog.nwafu.me">货到付款</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">在线支付</a>
+						<a target="_blank" href="foot/Dilivery3.html">在线支付</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">分期付款</a>
+						<a target="_blank" href="foot/Dilivery5.html">信用卡支付</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">邮局汇款</a>
+						<a target="_blank" href="foot/Dilivery4.html">蚂蚁花呗</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">公司转账</a>
+						<a target="_blank" href="foot/Dilivery1.html">快捷支付</a>
 					</dd>
 				</dl>
 				<dl>
@@ -436,45 +437,41 @@
 						售后服务
 					</dt>
 					<dd>
-						<a target="_blank" href="#">售后政策</a>
+						<a target="_blank" href="http://www.nwafulive.cn">售后政策</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">价格保护</a>
+						<a target="_blank" href="PriceProtect.html">价格保护</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">退款说明</a>
+						<a target="_blank" href="PriceProtect.html">退款说明</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">返修/退换货</a>
+						<a target="_blank" href="PriceProtect.html">返修/退换货</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">取消订单</a>
+						<a target="_blank" href="PriceProtect.html">取消订单</a>
 					</dd>
 				</dl>
 				<div>
-					<img src="assets/homeImages/foot.png" />
+					<img src="assets/homeImages/foot.png"/>
 				</div>
 			</div>
-
-			<div class="clearfloat"></div>
 			<div id="footer">
 				<hr />
 				<br />
 				<div class="footer1">
 					<a href="ShoppingProcess.html"> 关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="#">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="#">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="#">Line friend零食铺</a>
+					<a
+						href="http://wpa.qq.com/msgrd?v=3&uin=804194244&site=qq&menu=yes">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="ShoppingProcess.html">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="http://www.nwafulive.cn">LINE FRIEND社区</a>
 				</div>
 				<div class="footer2">
 					<div class="copyright">
-						Copyright&copy;&nbsp;&nbsp;2016-2017&nbsp;&nbsp;Line
-						friend零食铺&nbsp;&nbsp;&nbsp;版权所有
+						Copyright&copy;&nbsp;&nbsp;2016-2017&nbsp;&nbsp;LINE FRIEND&nbsp;
+						nwafu.me&nbsp;&nbsp;版权所有
 					</div>
 				</div>
-			</div>
-			<div class="totop" id="totop" onclick=bt();>
-				<img src="assets/homeImages/top.png" width="21" height="40" />
 			</div>
 		</div>
 	</body>

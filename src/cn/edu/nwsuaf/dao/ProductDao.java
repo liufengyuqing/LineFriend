@@ -1,7 +1,8 @@
 package cn.edu.nwsuaf.dao;
 
 import java.util.List;
-import cn.edu.nwsuaf.entity.Food;
+
+import cn.edu.nwsuaf.entity.Favourite;
 import cn.edu.nwsuaf.entity.Product;
 
 /**
@@ -25,5 +26,9 @@ public interface ProductDao {
 	public void deleteProductById(int id);
 	public void resumeProductById(int id);
 	public void updateProductInfo(Product product);
+	
+	public void favorProduct(int product_id,String email,String product_name,double product_price,String product_pic);
+	
+	public List<Favourite> findFavouriteProByEmail(String email);
 	
 }

@@ -27,6 +27,9 @@ function orderPrice(){
 	//span名字
 	  var RePhone=document.getElementById("RePhone");
 	  RePhone.innerHTML=phone;
+
+
+	   
 	  /*赋值*/
 	 	return true;
 	  }
@@ -35,6 +38,20 @@ function orderPrice(){
 	return false;
 	
 }
+function sumPriceFun(){
+    　var  sumPrice=0;
+	  var xiaoji=document.getElementsByName("xiaoji");
+	  for(var i=0;i<xiaoji.length;i++){
+	   sumPrice=parseFloat(sumPrice)+parseFloat(xiaoji[i].innerText);
+	   //alert(sumPrice.toFixed(2));
+	  }
+	  var sumPriceSpan =document.getElementsByName("sumPrice");
+	   for (var i =0; i< sumPriceSpan.length;i++) {
+		   //	alert(sumPrice.toFixed(2));
+		   	sumPriceSpan[i].innerHTML=sumPrice.toFixed(2)
+	   }
+
+};
 
 
 

@@ -24,7 +24,7 @@ public class EditOrderAction {
 		//String state=request.getParameter("stateName");
 		System.out.println(id);
 		System.out.println(stateName);
-		dao.updateOrder(Integer.parseInt(id),stateName);
+		dao.updateOrder(id,stateName);
 		//System.out.println(order.toString());
 		//dao.deleteAddress(Integer.parseInt(id));
 		//request.setAttribute("editOrder", order);

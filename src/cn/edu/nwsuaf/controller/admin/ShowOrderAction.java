@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.nwsuaf.dao.OrderDao;
 import cn.edu.nwsuaf.entity.Item;
-import cn.edu.nwsuaf.entity.Orders;
+import cn.edu.nwsuaf.entity.Order;
 import cn.edu.nwsuaf.entity.UserAddress;
 
 @Controller
@@ -25,12 +25,17 @@ public class ShowOrderAction {
 		HttpSession session = request.getSession();// 获取session
 		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
 		System.out.println(user_id + "获取到user_id");
-		int Id=Integer.parseInt(request.getParameter("id"));
-		System.out.print(Id);
-		int address_id=Integer.parseInt(request.getParameter("address_id"));
+		String id=request.getParameter("id");
+		System.out.print(id);
+		String address_id=request.getParameter("address_id");
+		
 		List<UserAddress> addressList = dao.findAddressById(address_id);// 返回收货地址
-		List<Item> itemList = dao.findItemById(Id);// 返回订单详情
-		List<Orders> orderitemList = dao.findOrderByorder_id(Id);// 返回订单
+		System.out.println(address_id + "获取到address_id");
+		
+		List<Item> itemList = dao.findItemById(id);// 返回订单详情
+		List<Order> orderitemList = dao.findOrderByorder_id(id);// 返回订单
+		
+		
 		for (Item i : itemList) {
 
 			System.out.println(i.toString());// 打印用户信息包含地址

@@ -66,6 +66,7 @@ public class UserSearchAction {
 			userList=userDao.findUserByAge(Integer.parseInt(condtion));
 			
 		}
+		
 		request.setAttribute("userList", userList);
 		return "/Admin/UserManage";
 	}

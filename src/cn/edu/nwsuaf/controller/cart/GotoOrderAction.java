@@ -6,6 +6,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import net.sf.json.JSONArray;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -55,8 +58,13 @@ public class GotoOrderAction {
 			Cart c = new Cart();
 			c.setProduct(p);
 			c.setProduct_count(Integer.parseInt(counts[i].trim()));
+			c.setUser_id(user_id);
 			list.add(c);
 		}
+		
+		JSONArray jsonarray = JSONArray.fromObject(list);  
+		System.out.println(jsonarray.toString());
+		session.setAttribute("list", jsonarray.toString());
 
 		request.setAttribute("list", list);
 		request.setAttribute("addressList", userAddressList);

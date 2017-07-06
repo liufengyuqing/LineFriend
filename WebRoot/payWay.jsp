@@ -26,6 +26,8 @@
 			type="text/css" />
 		<link rel="stylesheet" href="assets/css/Footer.css" type="text/css"
 			charset="utf-8" />
+			<link rel="stylesheet" href="assets/css/payWay.css" type="text/css"
+			charset="utf-8" />
 		<script language="JavaScript" src="assets/js/addToFavorite.js"
 			type="text/javascript" charset="utf-8"></script>
 		<script language="JavaScript" src="assets/js/AdminEmail.js"
@@ -35,70 +37,7 @@
 		<script language="JavaScript" src="assets/js/backTop.js"
 			type="text/javascript" charset="utf-8"></script>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<style>
-#AllOrders {
-	height: 240px;
-}
-
-.AllOrders32 {
-	float: right;
-	margin-right: 40px;
-	margin-top: 20px;
-}
-
-.Search1 {
-	position: relative;
-	left: 100px;
-	top: 30px;
-	float: left;
-	clip: rect(auto, auto, 50px, auto);
-	right: 10px;
-}
-
-#mymessage {
-	position: absolute;
-	top: 20px;
-	width: 1000px;
-	left: 100px;
-}
-
-#AllOrders {
-	width: 1000px;
-	height: 300px;
-	background-color: #FFF;
-	float: left;
-}
-
-#Content {
-	width: 1200px;
-	height: 450px;
-	position: absolute;
-	top: 50px;
-}
-
-#ban {
-	position: absolute;
-	top: 600px;
-	width: 1200px;
-	background-color: none;
-	height: 100px;
-}
-
-#foot_server {
-	position: absolute;
-	top: 500px;
-	text-indent: inherit;
-	width: 1200px;
-}
-
-#footer {
-	position: absolute;
-	top: 750px;
-	width: 1200px;
-	height: 100px;
-	text-align: center;
-}
-</style>
+		
 	</head>
 	<body>
 		<div id="header">
@@ -187,101 +126,108 @@
 					<br />
 					<br />
 					<br />
-					<table width="100%" align="left" style="font-size: 20;">
+					<table id="payTable">
 						<tr>
-							<td bgcolor="#F7FEFF" colspan="4">
+							<td  colspan="4">
 								<!-- 订单号：<INPUT TYPE="text" NAME="ordernum" value="201608080000002"> 
 				支付金额：<INPUT TYPE="text" NAME="money" size="6" value="0.01">元 -->
 
-
-								订单编号:${orderId} &nbsp;&nbsp; 支付金额:${totalPrice}元 &nbsp;&nbsp;
-								收货人:${username} &nbsp;&nbsp; 收货地址:${address} 其他(电话之类)....(省略
-								<后期自己补充> ) <input type="hidden" name="orderId"
+							<div class="orderDiv">订单编号:${orderId} </div>
+										
+							<div class="orderDiv">支付金额:${totalPrice}元 </div>			
+							<div class="orderDiv">收货人:${username} </div>			 
+							<div class="orderDiv">收货地址:${address}</div>			
+							<div class="orderDiv">联系方式:${phone}</div>		 
+							<input type="hidden" name="orderId"
 									value="${orderId}  " /> <input type="hidden" name="totalPrice"
 									value="${totalPrice}" />
 							</td>
-							<td>
-								fwe
-							</td>
-							<td>
-								fwe
-							</td>
-							<td>
-								fwe
+							
+						</tr>
+						<tr >
+							<td colspan="4">
+								<br>
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<br />
-							</td>
-						</tr>
-						<tr>
-							<td>
+							<td colspan="4" class="backDiv">
 								请您选择在线支付银行
 							</td>
 						</tr>
-						<tr>
+						<tr class="backDiv">
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="BOC-NET">
 									中国银行 
+								<img src="assets/homeImages/Bank/zh.png">
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="ICBC-NET">
 									工商银行 
+								<img src="assets/homeImages/Bank/gs.png">
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="ABC-NET">
 									农业银行 
+								<img src="assets/homeImages/Bank/ny.png">
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="CCB-NET">
-									建设银行 
+									建设银行
+								<img src="assets/homeImages/Bank/jh.png"> 
 							</td>
 						</tr>
-						<tr>
+						<tr class="backDiv">
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="CMBC-NET">
-									民生银行 
+									民生银行
+								<img src="assets/homeImages/Bank/ms.png"> 
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="CEB-NET">
 									光大银行 
+								<img src="assets/homeImages/Bank/gd.png">
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="BOCO-NET">
-									交通银行 
+									交通银行
+								<img src="assets/homeImages/Bank/jt.png"> 
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="SDB-NET">
 									深圳银行 
+								<img src="assets/homeImages/Bank/sz.png">
 							</td>
 						</tr>
-						<tr>
+						<tr class="backDiv">
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="BCCB-NET">
-									北京银行 
+									北京银行
+								<img src="assets/homeImages/Bank/bj.png"> 
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="CIB-NET">
-									兴业银行 
+									兴业银行
+								<img src="assets/homeImages/Bank/xy.png"> 
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="SPDB-NET">
 									浦东银行 
+								<img src="assets/homeImages/Bank/pd.png">
 							</td>
 							<td>
 								<INPUT TYPE="radio" NAME="pd_FrpId" value="ECITIC-NET">
-									中信银行 
+									中信银行
+								<img src="assets/homeImages/Bank/zx.png"> 
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<br />
+							<td colspan="4">
+								<br>
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<INPUT TYPE="submit" value="确定支付">
+							<td colspan="4">
+								<INPUT TYPE="submit" value="确认支付" id="payBotton">
 							</td>
 						</tr>
 					</table>

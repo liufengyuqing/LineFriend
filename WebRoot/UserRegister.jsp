@@ -44,7 +44,11 @@
 		<!-- 调用浮动窗口 -->
 		<script type="text/javascript" src="assets/js/IMChat.js"></script>
 		<!-- ....................................... -->
-		
+		<script type="text/javascript">
+        function open(){
+          window.location.href="UserDeal.jsp";
+           }
+        </script> 
 		</head>
 	<body>
 		<div align="center">
@@ -225,7 +229,7 @@
 					<div class="content2-line" align="center">
 						<input type="checkbox" checked="checked" id="agree" name="checkBox"/>
 						<font size="2" class="toxy"> 我已阅读并同意 <a
-							href="javascript:openxy()">《Line friend用户注册协议》</a> </font>
+							href="javascript:openxy()" onclick="location.href='UserDeal.jsp';">《Line friend用户注册协议》</a> </font>
 						<br />
 						<br />
 

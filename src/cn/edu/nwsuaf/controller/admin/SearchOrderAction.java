@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.edu.nwsuaf.dao.OrderDao;
-import cn.edu.nwsuaf.entity.Orders;
+import cn.edu.nwsuaf.entity.Order;
 
 @Controller
 public class SearchOrderAction {
@@ -20,7 +20,7 @@ public class SearchOrderAction {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 		"springMVC.xml");
 		OrderDao orderDao=ctx.getBean(OrderDao.class);
-		List<Orders> orderList=null;
+		List<Order> orderList=null;
 		
 		String select=request.getParameter("select");
 		String condtion=request.getParameter("condtion");
@@ -32,17 +32,18 @@ public class SearchOrderAction {
 			orderList=orderDao.findAllOrder();
 		}
 		if(select.equals("2")){
-			//邮箱
-			System.out.print("按订单编号查询");
-			orderList=orderDao.findOrderByorder_id(Integer.parseInt(condtion));
+			//订单	
+				System.out.print("按订单编号查询");
+				orderList=orderDao.findOrderByorder_id(condtion);
 		}
 		if(select.equals("3")){
-			//性别
+			//下单时间
 			System.out.print("按下单时间查询");
 			orderList=orderDao.findOrderByorder_time(condtion);
 		}
 		if(select.equals("4")){
 			//ID
+			
 			System.out.print("按用户ID查询");
 			orderList=orderDao.findOrderByuser_id(Integer.parseInt(condtion));
 		}
@@ -50,5 +51,10 @@ public class SearchOrderAction {
 		request.setAttribute("orderList", orderList);
 
 		return "/Admin/OrderManage";
+	}
+
+	private void alert(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 }

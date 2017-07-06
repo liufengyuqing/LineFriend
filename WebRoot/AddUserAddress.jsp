@@ -198,7 +198,7 @@ href="#"><img
 						<a href="logout.action">退出登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="myorderlist">我的订单</a>
+						<a href="userOrder.action">我的订单</a>
 					</li>
 					<% 
 					}
@@ -220,22 +220,22 @@ href="#"><img
 						网站导航^
 						<ul class="nav__submenu">
 							<li class="nav__menu-item">
-								<a href="home.html">网站主页</a>
+								<a href="home.jsp">网站主页</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="GoodsSearch.html">商品检索</a>
+								<a href="GoodsSearch.jsp">商品检索</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="User.html">用户管理</a>
+								<a href="User.jsp">用户管理</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="userCart.html">购物车</a>
+								<a href="showCart.action">购物车</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserOrder.html">我的订单</a>
+								<a href="userOrder.action">我的订单</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserFavorite.html">我的收藏</a>
+								<a href="gotoFavouriteList.action?email=${email}">我的收藏</a>
 							</li>
 						</ul>
 					</li>
@@ -274,7 +274,7 @@ href="#"><img
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="User.jsp">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">
@@ -282,7 +282,7 @@ href="#"><img
 						<img src="assets/homeImages/购物车小图标.png" width="20" height="20" />
 					</div>
 					<div class="Search52">
-						<a href="userCart.html">去购物车结算</a>
+						<a href="showCart.action">去购物车结算</a>
 					</div>
 				</div>
 			</div>
@@ -356,10 +356,10 @@ href="#"><img
 			<div id="Content">
 				<div id="Personality">
 					<div class="Personality1">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="User.jsp">我的LINEFRIEND</a>
 					</div>
 					<div class="Personality2">
-						<a href="User.html">个人主页</a>
+						<a href="User.jsp">个人主页</a>
 					</div>
 					<div class="Personality3">
 						<ul>
@@ -367,13 +367,13 @@ href="#"><img
 								<a href="">设置</a>
 								<ul class="Personality41">
 									<li class="Personality42">
-										<a href="getUserInfo.action">编辑个人信息</a>
+										<a href="EditUserMessage.jsp">编辑个人信息</a>
 									</li>
 									<li class="Personality42">
 										<a href="findAllAddress.action">管理收货地址</a>
 									</li>
 									<li class="Personality42">
-										<a href="UserOrder.html">查看订单记录</a>
+										<a href="userOrder.action">查看订单记录</a>
 									</li>
 								</ul>
 							</li>
@@ -389,7 +389,7 @@ href="#"><img
 							</p>
 						</div>
 						<div class="Same">
-							<a href="UserOrder.html">我的订单</a>
+							<a href="userOrder.action">我的订单</a>
 						</div>
 						<div class="Same">
 							<a href="UserRecommendInfo.html">评价晒单</a>
@@ -415,7 +415,7 @@ href="#"><img
 							<a href="getUserInfo.action">个人信息</a>
 						</div>
 						<div class="Same">
-							<a href="UserAddress.html">收货地址</a>
+							<a href="UserAddress.jsp">收货地址</a>
 						</div>
 						<div class="Same">
 							<a href="UserQuestion.html">常见问题</a>

@@ -2,7 +2,7 @@ package cn.edu.nwsuaf.entity;
 
 public class Item {
 	private int id; //订单详情编号
-	private int order_id; 
+	private String order_id; 
 	private int product_id;
 	private String product_name;
 	private double price;
@@ -17,10 +17,10 @@ public class Item {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getOrder_id() {
+	public String getOrder_id() {
 		return order_id;
 	}
-	public void setOrder_id(int orderId) {
+	public void setOrder_id(String orderId) {
 		order_id = orderId;
 	}
 	public int getProduct_id() {
@@ -54,7 +54,7 @@ public class Item {
 		this.amount = amount;
 	}
 	@Override
-	public String toString() {
+	public String	 toString() {
 		return "Item [amount=" + amount + ", id=" + id + ", order_id="
 				+ order_id + ", price=" + price + ", product_id=" + product_id
 				+ ", product_name=" + product_name + ", product_num="

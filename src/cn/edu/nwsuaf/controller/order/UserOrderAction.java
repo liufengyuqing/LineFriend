@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.edu.nwsuaf.dao.OrderDao;
 import cn.edu.nwsuaf.dao.UserAddressDao;
+import cn.edu.nwsuaf.dao.UserDao;
 import cn.edu.nwsuaf.entity.Order;
 import cn.edu.nwsuaf.entity.OrderDetails;
 import cn.edu.nwsuaf.entity.Orders;
@@ -36,30 +37,21 @@ public class UserOrderAction {
 		HttpSession session = request.getSession();
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"springMVC.xml");
-		UserAddressDao dao = ctx.getBean(UserAddressDao.class);
 		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
-		System.out.println(user_id+"我的Line Friend");
+		
 		// 登录验证
-
 		if (user_id == null) {
 			return "UserLogin";
-		} else { // 自定义userid
-			user_id = 1;
-			// (1, 'zq11', ' 123', 2, '1.1.1.1', 4324234, 'y', '2134214'); }
-
-			// 自定义设置，测试
-
-			User user = dao.findUserAddressById(user_id);// 得到用户
-			// 根据用户查询我的订单
+		} else { 
+			UserDao userDao = ctx.getBean(UserDao.class);
+			User user = userDao.findUserById(user_id);
 
 			OrderDao orderDao = ctx.getBean(OrderDao.class);// 实例化
-
-			// 需要根据dao查询得到order对象List
 			
-			List orders = new ArrayList<Order>();
-			orders = orderDao.findUserOrder();
-
-			request.setAttribute("orders", orders);
+			System.out.println("-------------------------------");
+			List<Order> orderList = orderDao.findUserOrderByUserId(user_id);
+			
+			request.setAttribute("orderList", orderList);
 			request.setAttribute("user", user);
 			return "UserOrder";
 		}

@@ -32,7 +32,8 @@ public class SearchProductAction {
 		SearchProductDao searchProductDao = ctx.getBean(SearchProductDao.class);
 	
 		String searchContent = "%" + product_name + "%"; // 拼接一下 用于执行sql模糊查询
-
+		session.setAttribute("product_name", product_name);
+		
 		List<Product> productList = searchProductDao
 				.findProductsByName(searchContent);// 查询商品
 		int productTotalCount = productList.size();// 商品总数

@@ -173,7 +173,7 @@ href="#"><img
 						<a href="logout.action">退出登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="myorderlist">我的订单</a>
+						<a href="userOrder.action">我的订单</a>
 					</li>
 					<%
 						}
@@ -199,19 +199,19 @@ href="#"><img
 								<a href="home.jsp">网站主页</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="GoodsSearch.html">商品检索</a>
+								<a href="GoodsSearch.jsp">商品检索</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="User.html">用户管理</a>
+								<a href="User.jsp">用户管理</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="userCart.html">购物车</a>
+								<a href="showCart.action">购物车</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserOrder.html">我的订单</a>
+								<a href="userOrder.action">我的订单</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserFavorite.html">我的收藏</a>
+								<a href="gotoFavouriteList.action?email=${email}">我的收藏</a>
 							</li>
 						</ul>
 					</li>
@@ -350,7 +350,7 @@ href="#"><img
 										<a href="findAllAddress.action">管理收货地址</a>
 									</li>
 									<li class="Personality42">
-										<a href="UserOrder.html">查看订单记录</a>
+										<a href="userOrder.action">查看订单记录</a>
 									</li>
 								</ul>
 							</li>
@@ -371,6 +371,7 @@ href="#"><img
 						<div class="Same">
 							<a href="UserRecommendInfo.html">评价晒单</a>
 						</div>
+						<div class="Same"><a href="#">取消订单记录</a></div>
 					</div>
 					<div class="VerticalBar2">
 						<div class="VerticalBar21">
@@ -382,6 +383,20 @@ href="#"><img
 							<a href="UserFavorite.html">收藏的商品</a>
 						</div>
 					</div>
+					  <div class="VerticalBar3">
+                      <div class="VerticalBar41">
+                         <p>客户服务</p>
+                      </div>
+                      <div class="Same">
+			          <a href="PriceProtect.html">价格保护</a>
+		              </div>
+		              <div class="Same">
+			          <a href="UserIssue.html">意见建议</a>
+		              </div>
+		              <div class="Same">
+			           <a href="UserAdvice.html">购买咨询</a>
+		               </div>
+                    </div>
 					<div class="VerticalBar5">
 						<div class="VerticalBar51">
 							<p>
@@ -393,9 +408,6 @@ href="#"><img
 						</div>
 						<div class="Same">
 							<a href="UserAddress.html">收货地址</a>
-						</div>
-						<div class="Same">
-							<a href="UserQuestion.html">常见问题</a>
 						</div>
 					</div>
 				</div>
@@ -431,13 +443,7 @@ href="#"><img
 												id="waitReceive">0</em> </a>
 										</div>
 									</li>
-									<li>
-										<div class="count-item">
-											<a href="#"><img src="assets/homeImages/zt.png" /> <i
-												class="count-icon count-icon03"></i> 待自提 <em id="waitPick">0</em>
-											</a>
-										</div>
-									</li>
+						
 									<li>
 										<div class="count-item">
 											<a href="#"><img src="assets/homeImages/pj.png" /> <i
@@ -499,7 +505,7 @@ href="#"><img
 									<input type="radio" value="" name="sex">
 									女
 								</label>
-							</div>$(:radio).click(){
+							</div>
 							
 							}
 							<div class="item">

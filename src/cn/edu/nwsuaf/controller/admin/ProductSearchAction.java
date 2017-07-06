@@ -62,3 +62,4 @@ public class ProductSearchAction {
 		return "/Admin/ProductManage";
 	}
 }
+

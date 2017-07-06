@@ -38,8 +38,11 @@ public class FindUserInfoAction {
 		User user = dao.findUserById(userid);
 		
 		System.out.println("获取用户的头像"+user.toString());
+	
+		session.setAttribute("user", user);
+		session.setAttribute("headImage", user.getHead_image());
 		
-		request.setAttribute("user", user);
+		
 		return "User";
 
 	}

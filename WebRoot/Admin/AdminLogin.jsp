@@ -34,12 +34,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <form action="adminlogin.action">  
             <input type="text" required="required" placeholder="请输入用户名" name="userName" id="userName"></input>  
             <input type="password" required="required" placeholder="输入口令" name="password" id="password"></input> 
-<<<<<<< .mine
-            <button class="but" type="button" onclick="checkLength();">登录</button>  
+
+
+            <button class="but" type="submit" onclick="checkLength();">登录</button>  
             <div name="errMsg"></div>
-=======
-            <button class="but" type="submit">登录</button>  
->>>>>>> .r481
+
+
+
+
         </form>  
     </div>  
   </body>

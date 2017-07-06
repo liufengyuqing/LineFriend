@@ -79,6 +79,8 @@ public class RegisterAction {
 			info.setContent(content);
 			MailSendUtil.sendHtmlMail(info);
 			
+			user.setHead_image("morentouxiang.jpg");//设置默认头像
+			
 			userDao.register(user); // 传入user对象参数，调用注册
 
 			request.setAttribute("email", email);

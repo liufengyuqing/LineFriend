@@ -77,7 +77,7 @@
 						<a href="logout.action">退出登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="myorderlist">我的订单</a>
+						<a href="UserOrder.action">我的订单</a>
 					</li>
 					<% 
 					}
@@ -103,16 +103,16 @@
 								<a href="GoodsSearch.jsp">商品检索</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="User.html">用户管理</a>
+								<a href="User.jsp">用户管理</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="userCart.html">购物车</a>
+								<a href="showCart.action">购物车</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserOrder.html">我的订单</a>
+								<a href="userOrder.action">我的订单</a>
 							</li>
 							<li class="nav__menu-item">
-								<a href="UserFavorite.html">我的收藏</a>
+								<a href="gotoFavouriteList.action?email=${email}">我的收藏</a>
 							</li>
 						</ul>
 					</li>
@@ -150,7 +150,7 @@
 						<img src="assets/homeImages/小人.png" width="20" height="20" />
 					</div>
 					<div class="Search42" style="width: 135px;">
-						<a href="User.html">我的LINEFRIEND</a>
+						<a href="User.jsp">我的LINE FRIEND</a>
 					</div>
 				</div>
 				<div class="Search5">
@@ -158,7 +158,7 @@
 						<img src="assets/homeImages/购物车小图标.png" width="20" height="20" />
 					</div>
 					<div class="Search52">
-						<a href="userCart.html">去购物车结算</a>
+						<a href="showCart.action">去购物车结算</a>
 					</div>
 				</div>
 			</div>
@@ -205,10 +205,10 @@
 									</li>
 								</ul>
 							</li>
-							<li class="bt1" style="width: 132px;">
+							<li class="bt1" style="width: 130px;">
 							<a href="searchByCategory.action?keywords=果干蜜饯">果干/蜜饯</a>
 						</li>
-						<li class="bt1" style="width: 134px;">
+						<li class="bt1" style="width: 132px;">
 							<a href="searchByCategory.action?keywords=坚果炒货">坚果/炒货</a>
 						</li>
 						<li class="bt1" style="width: 132px;">
@@ -231,7 +231,7 @@
 				</div>
 				<div id="beforecontent">
 					全部结果&nbsp;>&nbsp;
-					<strong>"坚果"</strong>
+					<strong>"${product_name}"</strong>
 				</div>
 				<div class="content1">
 					<div id="content1_title">
@@ -365,7 +365,7 @@
 						<div id="sxtitlecontent">
 							<div id="sxtitle">
 								<h1>
-									坚果&nbsp;&nbsp;
+									${product_name }&nbsp;&nbsp;
 									<strong>商品筛选</strong>
 								</h1>
 								<div id="total">
@@ -500,10 +500,10 @@
 							<div class="clear"></div>
 						</div>
 
-						
 						<!--selected-->
 						<!--<div class="sxselect" id="selected">
 							<div class="description">
+
 								购买方式：
 							</div>
 							description
@@ -525,6 +525,7 @@
 						selected
 						<div class="sxselect" id="selected">
 							<div class="description">
+
 								产地：
 							</div>
 							description
@@ -1080,19 +1081,20 @@
 						购物指南
 					</dt>
 					<dd>
-						<a target="_blank" href="#">购物流程</a>
+						<a target="_blank" href="foot/MemberIntroduction.html">购物流程</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">会员介绍</a>
+						<a target="_blank" href="foot/MemberIntroduction.html">会员介绍</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">生活旅行/团购</a>
+						<a target="_blank" href="UserQuestion.html">生活旅行/团购</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">常见问题</a>
+						<a target="_blank" href="UserQuestion.html">常见问题</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">联系客服</a>
+						<a target="_blank"
+							href="http://wpa.qq.com/msgrd?v=3&uin=804194244&site=qq&menu=yes">联系客服</a>
 					</dd>
 				</dl>
 				<dl>
@@ -1100,19 +1102,19 @@
 						配送方式
 					</dt>
 					<dd>
-						<a target="_blank" href="#">上门自提</a>
+						<a target="_blank" href="UserQuestion.html">上门自提</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">211限时送达</a>
+						<a target="_blank" href="foot/Tingri.html">限时送达</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">配送服务查询</a>
+						<a target="_blank" href="foot/DiliveryService.html">配送服务查询</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">配送费收取标准</a>
+						<a target="_blank" href="foot/DistributionFee%20.html">配送费收取标准</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">海外配送</a>
+						<a target="_blank" href="foot/OverseasDistribution.html">海外配送</a>
 					</dd>
 				</dl>
 				<dl>
@@ -1120,19 +1122,19 @@
 						支付方式
 					</dt>
 					<dd>
-						<a target="_blank" href="#">货到付款</a>
+						<a target="_blank" href="http://blog.nwafu.me">货到付款</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">在线支付</a>
+						<a target="_blank" href="foot/Dilivery3.html">在线支付</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">分期付款</a>
+						<a target="_blank" href="foot/Dilivery5.html">信用卡支付</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">邮局汇款</a>
+						<a target="_blank" href="foot/Dilivery4.html">蚂蚁花呗</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">公司转账</a>
+						<a target="_blank" href="foot/Dilivery1.html">快捷支付</a>
 					</dd>
 				</dl>
 				<dl>
@@ -1140,23 +1142,23 @@
 						售后服务
 					</dt>
 					<dd>
-						<a target="_blank" href="#">售后政策</a>
+						<a target="_blank" href="http://www.nwafulive.cn">售后政策</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">价格保护</a>
+						<a target="_blank" href="PriceProtect.html">价格保护</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">退款说明</a>
+						<a target="_blank" href="PriceProtect.html">退款说明</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">返修/退换货</a>
+						<a target="_blank" href="PriceProtect.html">返修/退换货</a>
 					</dd>
 					<dd>
-						<a target="_blank" href="#">取消订单</a>
+						<a target="_blank" href="PriceProtect.html">取消订单</a>
 					</dd>
 				</dl>
 				<div>
-					<img src="assets/homeImages/foot.png" />
+					<img src="assets/homeImages/foot.png"/>
 				</div>
 			</div>
 			<div id="footer">
@@ -1164,20 +1166,17 @@
 				<br />
 				<div class="footer1">
 					<a href="ShoppingProcess.html"> 关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="http://wpa.qq.com/msgrd?v=3&uin=804194244&site=qq&menu=yes">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="#">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-					<a href="#">LINE FRIEND零食铺</a>
+					<a
+						href="http://wpa.qq.com/msgrd?v=3&uin=804194244&site=qq&menu=yes">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="ShoppingProcess.html">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="http://www.nwafulive.cn">LINE FRIEND社区</a>
 				</div>
 				<div class="footer2">
 					<div class="copyright">
-						Copyright&copy;&nbsp;&nbsp;2016-2017&nbsp;&nbsp;LINE
-						FRIEND&nbsp;nwafu.me&nbsp;&nbsp;版权所有
+						Copyright&copy;&nbsp;&nbsp;2016-2017&nbsp;&nbsp;LINE FRIEND&nbsp;
+						nwafu.me&nbsp;&nbsp;版权所有
 					</div>
 				</div>
-			</div>
-
-			<div class="totop" id="totop" onclick="bt()">
-				<img src="assets/homeImages/top.png" width="21" height="65" />
 			</div>
 		</div>
 	</body>

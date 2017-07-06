@@ -8,24 +8,30 @@ package cn.edu.nwsuaf.entity;
  * 
  */
 public class Order {
-	private int id;// 自增主键
+	private String id;// 自增主键
 	private int user_id;
-	private int status;
+	private String status;
 	private String order_time;
 	private String address_id;
-	public Order(int id, int userId, int status, String orderTime,
-			String addressId) {
-		super();
-		this.id = id;
-		user_id = userId;
-		this.status = status;
-		order_time = orderTime;
-		address_id = addressId;
+	private String price_amount;
+	private String message;
+	
+	public String getPrice_amount() {
+		return price_amount;
 	}
-	public int getId() {
+	public void setPrice_amount(String priceAmount) {
+		price_amount = priceAmount;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public int getUser_id() {
@@ -34,10 +40,10 @@ public class Order {
 	public void setUser_id(int userId) {
 		user_id = userId;
 	}
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public String getOrder_time() {
@@ -54,9 +60,10 @@ public class Order {
 	}
 	@Override
 	public String toString() {
-		return "Order [address_id=" + address_id + ", id=" + id
-				+ ", order_time=" + order_time + ", status=" + status
-				+ ", user_id=" + user_id + "]";
+		return "Order [address_id=" + address_id + ", id=" + id + ", message="
+				+ message + ", order_time=" + order_time + ", price_amount="
+				+ price_amount + ", status=" + status + ", user_id=" + user_id
+				+ "]";
 	}
 	
 	
