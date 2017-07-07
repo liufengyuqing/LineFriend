@@ -10,7 +10,7 @@ public interface OrderDao {
 	/*后台功能接口*/
 	//public void addUserOrder(UserAddress address);//添加用户地址
 	public void updateOrder(String id,String status);//根据订单id修改订单状态
-	public void deleteOrder(int id);//根据订单ID删除订单
+	public void deleteOrder(String id);//根据订单ID删除订单
 	public List<Order> findAllOrder();//查询所有订单并显示
 	public List<Order> findOrderByorder_id(String id);//根据订单id 查询订单
 	public List<Order> findOrderByorder_time(String user_time);//根据下单时间 查询订单

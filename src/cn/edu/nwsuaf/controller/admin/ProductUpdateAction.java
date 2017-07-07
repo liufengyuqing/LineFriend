@@ -23,7 +23,7 @@ import cn.edu.nwsuaf.entity.Product;
 @Controller
 public class ProductUpdateAction {
 	@RequestMapping("/Admin/productUpdate.action")
-	public String productUpdate(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+	public void productUpdate(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
 		ApplicationContext ctx=new ClassPathXmlApplicationContext("springMVC.xml");
 		ProductDao productDao=ctx.getBean(ProductDao.class);
 		FoodDao foodDao=ctx.getBean(FoodDao.class);
@@ -60,6 +60,7 @@ public class ProductUpdateAction {
 		food.setProduct_id(product.getId());
 		food.setStorge(foodStorage);
 		foodDao.updateFoodInfo(food);
-		return "/Admin/ProductManage";
+		response.sendRedirect("foodSearch.action?sel=1&condition=#panel-Pupdate");
+		
 	}
 }

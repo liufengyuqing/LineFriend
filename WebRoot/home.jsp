@@ -232,7 +232,7 @@ href=""><img
 						<a href="logout.action">退出登录</a>
 					</li>
 					<li class="nav__menu-item">
-						<a href="myorderlist">我的订单</a>
+						<a href="userOrder.action">我的订单</a>
 					</li>
 					<%
 						}

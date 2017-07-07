@@ -462,7 +462,7 @@ href="#"><img
 											</td>
 											<td width="82">
 												<a href="#">查看</a>|
-												<a href="#">删除</a>
+												<a href="deleteOrder.action?id=${item.id }">删除</a>
 												<form id="form1" name="form1" method="post" action="">
 													<input type="submit" name="button" id="button" value="还要买" />
 												</form>

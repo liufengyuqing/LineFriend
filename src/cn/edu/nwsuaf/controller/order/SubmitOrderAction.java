@@ -53,8 +53,6 @@ public class SubmitOrderAction {
 		String addressId = request.getParameter("id");
 		String message = request.getParameter("message");
 		
-		
-		
 		HttpSession session = request.getSession();
 		//获取订单中内容
 		String listString = (String) session.getAttribute("list");
@@ -67,12 +65,23 @@ public class SubmitOrderAction {
 		
 		//获取用户id
 		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
-		User user = userDao.findUserById(user_id);
+		System.out.println(user_id);
+		
+		
+		User user = addressDao.findUserAddressById(user_id);
+		
+		
 		String address="";
+		String receive_name="";
+		String phone ="";
+		
+		
 		List<UserAddress> listAddress = user.getAddresses();
 		for(UserAddress a:listAddress){
 			if(a.getId()==Integer.parseInt(addressId)){
-				 address = a.getProvince()+"省 "+a.getCity()+"市  "+a.getDistrict()+"区 "+a.getFull_address()+" "+a.getPhone();
+				 address = a.getProvince()+"省 "+a.getCity()+"市  "+a.getDistrict()+"区 "+a.getFull_address();
+				 receive_name = a.getReceive_name();
+				 phone = a.getPhone();
 			}
 		}
 		
@@ -127,7 +136,7 @@ public class SubmitOrderAction {
 		UUID r = UUID.randomUUID();//UUID无构造函数，不可改
 		//String price = "0.02";
 		try {
-			response.sendRedirect("toPay.action?orderId="+orderId+"&price="+price_amount+"&receive_name="+user.getNickName()+"&address="+address);
+			response.sendRedirect("toPay.action?orderId="+orderId+"&price="+price_amount+"&receive_name="+receive_name+"&address="+address+"&phone="+phone);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

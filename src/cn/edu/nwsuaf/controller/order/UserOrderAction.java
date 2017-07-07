@@ -1,5 +1,6 @@
 package cn.edu.nwsuaf.controller.order;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -56,4 +57,39 @@ public class UserOrderAction {
 			return "UserOrder";
 		}
 	}
+	
+	@RequestMapping("/deleteOrder.action")
+	public String deleteOrder(String product_name,
+			HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("LOG : userOrder.action");
+		HttpSession session = request.getSession();
+		ApplicationContext ctx = new ClassPathXmlApplicationContext(
+				"springMVC.xml");
+		Integer user_id = (Integer) session.getAttribute("userid");// 获取userid
+		String id = request.getParameter("id");
+		
+		// 登录验证
+		if (user_id == null) {
+			return "UserLogin";
+		} else { 
+			UserDao userDao = ctx.getBean(UserDao.class);
+			User user = userDao.findUserById(user_id);
+			OrderDao orderDao = ctx.getBean(OrderDao.class);// 实例化
+			orderDao.deleteOrder(id);
+			try {
+				response.sendRedirect("userOrder.action");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}			
+		}
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
 }

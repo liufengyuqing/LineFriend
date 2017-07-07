@@ -360,7 +360,7 @@ href="#"><img
 							</p>
 						</div>
 						<div class="Same">
-							<a href="#">关注的商品</a>
+							<a href="gotoFavouriteList.action?email=${email}">关注的商品</a>
 						</div>
 					</div>
 					<div class="VerticalBar3">

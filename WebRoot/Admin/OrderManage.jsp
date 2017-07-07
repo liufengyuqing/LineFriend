@@ -40,9 +40,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//var select=document.formSy.select.value;
 			
 			var select=document.getElementById("select").value;
-			alert("select:"+select);
+			//alert("select:"+select);
 			var condtion=document.getElementById("condtion").value;
-			alert("condtion:"+condtion);
+			//alert("condtion:"+condtion);
 			if(select==1){
 				alert("将搜索所有用户信息！");
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
@@ -50,20 +50,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			else if(select==2){
 			if(condtion==null)
 				alert("查询条件不能为空");
-				alert("订单编号");
+				//alert("订单编号");
 	
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
 			}
 			else if(select==3){
 			if(condtion==null)
 				alert("查询条件不能为空");
-				alert("下单时间");
+				//alert("下单时间");
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
 			}
 			else if(select==4){
 			if(condtion==null)
 				alert("查询条件不能为空");
-				alert("用户ID");
+				//alert("用户ID");
 				window.location.href="searchOrder.action?"+"condtion="+condtion+"&select="+select;
 			}
 			
@@ -75,14 +75,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 function gotoUpdate(r){
 	//var i=r.parentNode.parentNode.rowIndex;
 	//alert("行号为="+i);
-	alert("订单详情");
+	//alert("订单详情");
 	var rownum=r.parentNode.parentNode.rowIndex;
-	alert("行号="+rownum);
+	//alert("行号="+rownum);
 	var tab=document.getElementById("tab");
 	var id=tab.rows[rownum].cells[0].innerHTML;
 	var address_id=tab.rows[rownum].cells[6].innerHTML;
-	alert("order="+id);
-	alert("address_id="+address_id);
+	//alert("order="+id);
+	//alert("address_id="+address_id);
 	window.location.href="showOrder.action?id="+id+"&address_id="+address_id+"#panel-Oitem";
 	alert(成功);
 }
@@ -139,17 +139,14 @@ function gotoUpdate(r){
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						 <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-355567" href="#productM"> -->
-						 <a href="ProductManage.jsp" style="margin-left: 15px;">商品管理<img src="assets/homeImages/pro.png"></a>
+						 <a href="foodSearch.action?condtion=&sel=1" style="margin-left: 15px;">商品管理<img src="assets/homeImages/pro.png"></a>
 					</div>
 					<div id="productM" class="accordion-body collapse">
 						<div class="accordion-inner">
-							<a href="">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商品信息修改<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商品库存管理<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="foodSearch.action?condtion=&sel=1#panel-Pupdate">商品信息修改<img src="assets/homeImages/point.png"></a><br>
+                            <a href="ProductManage.jsp#panel-Padd">商 品 上 新&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+                            <a href="foodSearch.action?condtion=&sel=1#panel-Pout">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							
 						</div>
 					</div>
 				</div>
@@ -200,7 +197,7 @@ function gotoUpdate(r){
 						
 							<input type="text" class="form-control" placeholder="请输入查询内容" id="condtion" name="condtion" style="margin-top: -5px;height: 30px;">
 										
-							<button type="button" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;" onclick="SearchUser();">查询</button>
+							<button type="button" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;" onClick="SearchUser();">查询</button>
 						</form>
 
 						<!-- 查询结果展示表格 -->
@@ -255,7 +252,7 @@ function gotoUpdate(r){
 													 <input type="hidden" value=${item.id} name="id"/>
 													<td><input type="submit" value="确定"  class="button3" onClick="delcfmm()"/>&nbsp;&nbsp;&nbsp;&nbsp;
 													<!-- <a href="showOrder.action?id=${item.id}&address_id=${item.address_id}">详情查看</a> -->
-													<a href="#" onclick="gotoUpdate(this);">详情查看</a>
+													<a href="#" onClick="gotoUpdate(this);">详情查看</a>
 													&nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteOrder.action?id=${item.id}" onClick="delcfm()">作废</a></td>
 													</form>
 													<!-- <td><input type="submit" value="确定"/></td> -->

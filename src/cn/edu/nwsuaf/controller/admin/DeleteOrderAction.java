@@ -22,7 +22,7 @@ public class DeleteOrderAction {
 		OrderDao dao = ctx.getBean(OrderDao.class);
 		String id = request.getParameter("id");
 		System.out.println(id);
-		dao.deleteOrder(Integer.parseInt(id));
+		dao.deleteOrder(id);
 		try {
 			response.sendRedirect("findAllOrder.action#panel-Odelect");
 		} catch (IOException e) {

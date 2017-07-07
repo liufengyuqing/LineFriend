@@ -507,7 +507,7 @@ href="#"><img
 								</label>
 							</div>
 							
-							}
+							
 							<div class="item">
 								<span class="label">生日：</span>
 								<select id="province" name="year" class="selt mr5"

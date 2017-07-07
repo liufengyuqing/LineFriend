@@ -33,9 +33,14 @@ public class PayAction {
 		if ("/toPay".equals(action)) {// 1.访问选择支付银行的页面(payWay.jsp)
 			//String orderId = "201608080000075";// 后期自动生成订单编号//"201608080000002"
 			String orderId = request.getParameter("orderId");
+		
 			String price = request.getParameter("price");
 			String receive_name = request.getParameter("receive_name");
+			receive_name = new String(receive_name.getBytes("gbk"), "UTF-8");  
 			String address = request.getParameter("address");
+			address = new String(address.getBytes("iso-8859-1"), "UTF-8");  
+			String phone = request.getParameter("phone");
+			System.out.println(orderId+price+receive_name+address+phone);
 			double totalPrice = Double.parseDouble(price);
 			//double totalPrice = 0.01;// 后期用代码计算出订单总价
 			//String address = "陕西咸阳杨凌";// 后期改成从数据库获取收货地址
@@ -44,6 +49,7 @@ public class PayAction {
 			request.setAttribute("address", address);
 			request.setAttribute("username", username);
 			request.setAttribute("totalPrice", totalPrice);
+			request.setAttribute("phone", phone);
 			request.getRequestDispatcher("/payWay.jsp").forward(request,
 					response);
 		}

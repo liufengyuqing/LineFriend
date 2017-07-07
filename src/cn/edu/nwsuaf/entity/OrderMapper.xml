@@ -35,7 +35,7 @@
 		 update ls.order set status=#{1} where id=#{0}
 	</select>
 
-	<select id="deleteOrder" parameterType="int"> <!-- 删除订单  -->
+	<select id="deleteOrder" parameterType="String"> <!-- 删除订单  -->
 		delete from ls.order where id = #{id}
 	</select>
 	 <!-- 按条件查询订单  -->

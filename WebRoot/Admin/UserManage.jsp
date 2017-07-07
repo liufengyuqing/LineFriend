@@ -81,17 +81,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						 <a href="ProductManage.jsp" style="margin-left: 15px;margin-right: 50px;">商品管理<img src="assets/homeImages/pro.png"></a>
+						 <a href="foodSearch.action?condtion=&sel=1" style="margin-left: 15px;margin-right: 50px;">商品管理<img src="assets/homeImages/pro.png"></a>
 					</div>
 					<div id="productM" class="accordion-body collapse">
 						<div class="accordion-inner">
-							<a href="ProductManage.jsp#">商 品 上 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#">商品信息修改<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#">商品库存管理<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#">商 品 检 索&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#">商 品 折 扣&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							<a href="foodSearch.action?condtion=&sel=1#panel-Pupdate">商品信息修改<img src="assets/homeImages/point.png"></a><br>
+                            <a href="ProductManage.jsp#panel-Padd">商 品 上 新&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+                            <a href="foodSearch.action?condtion=&sel=1#panel-Pout">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
 						</div>
 					</div>
 				</div>
@@ -187,7 +183,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<td><a href="UserDelect.action?id=${user.id}"><input type="button"  class="btn" value="注销" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
 																									
 													<!-- <a href="Updateuser.action?id=${user.id}"><input type="button"  class="btn" value="修改" /></a> -->
-													<input type="button"  class="btn" onclick="gotoUpdate(this)" value="修改" />
+													<input type="button"  class="btn" onClick="gotoUpdate(this)" value="修改" />
 													</td>
 													
 												</tr>

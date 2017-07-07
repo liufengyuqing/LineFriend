@@ -44,13 +44,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			var rownum=row.parentNode.parentNode.rowIndex;
 			var tab=document.getElementById("tab");
 	        var id=tab.rows[rownum].cells[1].innerHTML;
-			alert(rownum);
 		    var description=document.getElementsByName("description")[rownum].value;
 			var name=document.getElementsByName("productName")[rownum-1].value;
 			var storage=document.getElementsByName("storage")[rownum-1].value;
 			var category=document.getElementsByName("category")[rownum-1].value;
 			var price=document.getElementsByName("price")[rownum-1].value;
 			window.location.href="productUpdate.action?id="+id+"&productName="+name+"&description="+description+"&category="+category+"&price="+price+"&storage="+storage;
+
 		}
     </script>
     
@@ -70,7 +70,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			window.location.href="foodSearch.action?sel="+sel+"&condition="+condition+"#panel-Pupdate";
 		}
     </script>
-    
     
     
     
@@ -131,7 +130,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 });
 
 
-                $("#pageSizeSet").click(function setPageSize(){    // 设置每页显示多少条记录
+                $("#pageSizeSetc").click(function setPageSize(){    // 设置每页显示多少条记录
                     pageSize = document.getElementById("pageSizec").value;    //每页显示的记录条数
                     if (!/^[1-9]\d*$/.test(pageSize)) {
                         alert("请输入正整数");
@@ -141,7 +140,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     page=len % pageSize==0 ? len/pageSize : Math.floor(len/pageSize)+1;//根据记录条数，计算页数
                     curPage=1;        //当前页
                      direct=0;        //方向
-                     firstPage();
+                    // firstPage();
+                    displayPage();
                 });
             });
 
@@ -225,10 +225,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<div id="productM" class="accordion-body in collapse">
 						<div class="accordion-inner">
+                            <a href="ProductManage.jsp#panel-Pupdate">商品信息修改<img src="assets/homeImages/point.png"></a><br>
+                            <a href="ProductManage.jsp#panel-Padd">商 品 上 新&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
                             <a href="ProductManage.jsp#panel-Pout">商 品 下 架&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#panel-Padd">商 品 上 新&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#panel-Pupdate">商品信息修改<img src="assets/homeImages/point.png"></a><br>
-							<a href="ProductManage.jsp#panel-Pkind">商 品 分 类&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/homeImages/point.png"></a><br>
+							
+							
 						</div>
 					</div>
 				</div>
@@ -255,10 +256,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        		 <!--页面-->
        		<div class="tabbable" id="tabs-337225"><!-- Only required for left/right tabs -->
 			<ul class="nav nav-tabs">
-				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-Pout">商品下架</a></li>
+				<li class="active"><a contenteditable="false" data-toggle="tab" href="#panel-Pupdate">商品信息修改</a></li>
 				<li><a contenteditable="false" data-toggle="tab" href="#panel-Padd">商品上新</a></li>
-				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pupdate">商品信息修改</a></li>
-				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pkind">商品分类</a></li>
+				<li><a contenteditable="false" data-toggle="tab" href="#panel-Pout">商品下架</a></li>
 			</ul>
 
 			<div class="tab-content">
@@ -337,7 +337,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 				</div>
 
-				<div class="tab-pane active" contenteditable="false" id="panel-Pout">
+				<div class="tab-pane" contenteditable="false" id="panel-Pout">
 					<!-- <p>商品下架</p> -->
 					<!-- 搜索框 -->
                     <form class="navbar-form navbar-left" role="search" id="formSy">
@@ -391,7 +391,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<td>${product.fixed_price}</td>
 													<td>${product.add_time}</td>
                                                     <td>${product.has_deleted}</td>
-													<td><a href="productDelete.action?id=${product.id}">下架</a>&nbsp;&nbsp;&nbsp;<a href="productResume.action?id=${product.id}">上架</a></td>
+													<td><a href="productDelete.action?id=${product.id}#panel-Pout">下架</a>&nbsp;&nbsp;&nbsp;<a href="productResume.action?id=${product.id}#panel-Pout">上架</a></td>
 												</tr>
                                             </c:forEach>
                                             
@@ -413,7 +413,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 					
 				</div>
-				<div class="tab-pane" contenteditable="false" id="panel-Pupdate">
+				<div class="tab-pane active" contenteditable="false" id="panel-Pupdate">
 					
                     <form class="navbar-form navbar-left" role="search" id="formSy">
 						<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>
@@ -490,56 +490,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 					
 				</div>		
-
-				<div class="tab-pane" contenteditable="false" id="panel-Pkind">
-					
-                    <form class="navbar-form navbar-left" role="search" id="formSy">
-						<label style="display: inline-block;margin-top:10px;left: 20%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入查询内容:</label>
-						<!-- <span>请选择查询条件:</span> -->
-						<select class="selectSy" id="sel4" tyle="margin-top: 5px;height: 30px;width: 100px;">
-							<option value="1">全部商品</option>
-							<option value="2">商品编号</option>
-							<option value="3">类别</option>
-							<option value="4">名称</option>
-							<option value="5">价格</option>
-							<option value="6">上架时间</option>
-						</select>
-						
-							<input type="text" class="form-control" placeholder="请输入查询内容" id="condition4" style="margin-top: -5px;height: 30px;">
-										
-							<button type="button" onClick="" class="btn btn-default" style="margin-top: -5px;height: 30px;width: 100px;">查询</button>
-						</form>
-
-						<!-- 查询结果展示表格 -->
-						<div id="tbShow">
-								<div class="clean"></div>
-									<table class="table" contenteditable="false" id="tab">
-											<thead>
-												<tr>
-													<th style="width: 10%;">图片</th>
-													<th style="width: 10%;">编号</th>
-													<th style="width: 10%;">名称</th>
-													<th style="width: 10%;">描述</th>
-													<th style="width: 10%;">数量</th>
-													<th style="width: 10%;">类别</th>
-
-													<th style="width: 10%;">新增类别标签</th>
-													<th style="width: 5%;">折扣</th>
-													<th style="width: 5%;">原价</th>
-													<th style="width: 10%;">上架日期</th>
-													<th style="width: 10%;">操作</th>
-												</tr>
-											</thead>
-											<tbody>
-                                            
-                                            <c:forEach items="${productList}" var="product" varStatus="status">
-												<tr>
-													<td><img src="../${product.product_pic}"></td>
-													<td>${product.id}</td>
-													<td>${product.product_name}</td>
-													<td>${product.description}</td>
-													<td>100</td>
-													<td>${product.keywords}</td>
+               
+                                            <!--
 													<td><select>
 															<option>坚果/炒货</option>
 															<option>果干/蜜饯</option>
@@ -549,31 +501,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 															<option>素食/豆类</option>
 															<option>鱿鱼/海味</option>
 														</select>
-													</td>
-													<td>${product.dangqian_price}</td>
-													<td>${product.fixed_price}</td>
-													<td>${product.add_time}</td>
-													<td><a href="">确认</a></td>
-												</tr>
-                                            </c:forEach>
-												
-											</tbody>
-									</table>
-                                    <a id="btn0"></a>
-                                    <input id="pageSize" type="text" size="1" maxlength="2" value="getDefaultValue()"/><a> 条 </a> <a href="#" id="pageSizeSet">设置</a> 
-                                    <a id="sjzl"></a> 
-                                     <a  href="#" id="btn1">首页</a>
-                                     <a  href="#" id="btn2">上一页</a>
-                                      <a  href="#" id="btn3">下一页</a>
-                                      <a  href="#" id="btn4">尾页</a> 
-                                      <a>转到 </a>
-                                      <input id="changePage" type="text" size="1" maxlength="4"/>
-                                     <a>页 </a>
-                                     <a  href="#" id="btn5">跳转</a>	
-						</div>
-					
-
-				</div>
+													</td>-->
+								
 			</div>
 		</div>
     		

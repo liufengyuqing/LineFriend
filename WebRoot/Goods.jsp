@@ -33,8 +33,7 @@
 			src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 		<script language="javascript" type="text/javascript"
 			src="assets/js/qh.js"></script>
-		<script language="javascript" type="text/javascript"
-			src="assets/js/fd.js"></script>
+		<script language="javascript" type="text/javascript"></script>
 
 		<!-- ......................................... -->
 		<!-- layer,jquery-1.8.3 这两个js有顺序的 必须先引入jquery1.8.3 -->
@@ -432,6 +431,13 @@ $(function(){
 		var action = 'gotoCart.action?id=' + id + '&num=' + num;
 		window.location.href = action;
 	}
+	//加入购物车发送请求
+	function directBuy() {
+		var id = document.getElementById("id").value;
+        var num = document.getElementById("num").value;
+		var action = 'direct.action?id=' + id + '&num=' + num;
+		window.location.href = action;
+	}
 </script>
 							</div>
 						</div>
@@ -443,7 +449,7 @@ $(function(){
 						</div>
 						<div class="btn">
 							<div class="btnn">
-								<a href="order.action"><font color="#FFFFFF"><b>直接购买</b>
+								<a href="javascript:directBuy();"><font color="#FFFFFF"><b>直接购买</b>
 								</font> </a>
 							</div>
 							
